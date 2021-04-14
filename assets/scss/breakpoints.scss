@@ -1,0 +1,20 @@
+$md: 1200px;
+$sm: 768px;
+
+@mixin md- {
+  @media (max-width: $md - 1px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: $xs) and (max-width: $md - 1px) {
+    @content;
+  }
+}
+
+@mixin sm- {
+  @media (max-width: $xs - 1px), only screen and (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+    @content;
+  }
+}

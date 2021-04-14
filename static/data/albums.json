@@ -1,0 +1,44 @@
+[
+  {
+    "id": "ceramic",
+    "title": "Карамика",
+    "date": "08.03.1990",
+    "description": "Ut ac orci at sem <em>maximus</em> iaculis nec eu nunc",
+    "cover": "/imgs/20210222125437_IMG_4602.JPG"
+  },
+  {
+    "id": "ceramic2",
+    "title": "Один город",
+    "date": "01.01.2000",
+    "description": "Ut ac orci at sem <em>maximus</em> iaculis nec eu nunc",
+    "cover": "/imgs/20210222125205_IMG_4597.JPG"
+  },
+  {
+    "id": "ceramic3",
+    "title": "Другой город",
+    "date": "15.12.1956",
+    "description": "Ut ac orci at sem <em>maximus</em> iaculis nec eu nunc",
+    "cover": "/imgs/20210222130335_IMG_4632.JPG"
+  },
+  {
+    "id": "ceramic4",
+    "title": "Одиноко стоящий дуб",
+    "date": "31.02.1995",
+    "description": "Ut ac orci at sem <em>maximus</em> iaculis nec eu nunc",
+    "cover": "/imgs/20210207162602_IMG_4274.JPG"
+  },
+  {
+    "id": "ceramic5",
+    "title": "Коты",
+    "date": "45.08.1970",
+    "description": "Ut ac orci at sem <em>maximus</em> iaculis nec eu nunc",
+    "cover": "/imgs/20210222160024_IMG_4659.JPG"
+  },
+  {
+    "id": "ceramic6",
+    "title": "Морские котики",
+    "date": "01.08.1840",
+    "description": "Ut ac orci at sem <em>maximus</em> iaculis nec eu nunc",
+    "cover": "/imgs/20210222125437_IMG_4602.JPG"
+  }
+]
