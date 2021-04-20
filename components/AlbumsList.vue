@@ -1,5 +1,5 @@
 <template>
-  <div class="albums">
+  <div>
     <div v-if="error" class="error">{{ error }}</div>
     <Album v-for="(album, index) in albums" :key="index" :album="album" />
   </div>
@@ -8,7 +8,11 @@
 <script>
 export default {
   props: {
-    albumLink: {
+    isShownOnIndex: {
+      type: Boolean,
+      default: null,
+    },
+    category: {
       type: String,
       default: '',
     },
@@ -20,20 +24,26 @@ export default {
     }
   },
   async fetch() {
-    const response = await fetch(
-      process.env.baseUrl + `/data/${albumLink}.json`
-    )
+    const response = await fetch(process.env.baseUrl + `/data/albums.json`)
     if (response.status !== 200) {
       this.error = 'Не удалось выгрузить альбомы'
     }
-    this.albums = await response.json()
+
+    const albums = await response.json()
+
+    if (this.isShownOnIndex) {
+      for (let i = 0; i < albums.length; i++) {
+        if (albums[i].shownOnIndexPage === true) {
+          this.albums.push(albums[i])
+        }
+      }
+    }
+
+    for (let i = 0; i < albums.length; i++) {
+      if (albums[i].category === this.category) {
+        this.albums.push(albums[i])
+      }
+    }
   },
 }
 </script>
-
-<style lang="scss" scoped>
-.albums {
-  display: flex;
-  flex-direction: column;
-}
-</style>

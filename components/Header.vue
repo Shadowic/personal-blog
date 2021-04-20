@@ -9,33 +9,73 @@
         @mouseleave="removeClassHovered"
       >
         <span class="burger-stripe" />
-        <svg-dotted-circle :svgCircleClass="svgCircleAddedClass" />
+        <svg-dotted-circle :svg-circle-class="svgCircleAddedClass" />
       </div>
       <div class="fixed-area__bottom">Blog</div>
     </div>
     <div class="sliding-area">
       <div class="sliding-area__top">
         <div class="title">Shadowic</div>
-        <div class="subtitle">personal blog</div>
+        <div class="subtitle">{{ $t('personal blog') }}</div>
       </div>
       <div class="navbar">
-        <nuxt-link to="/albums" class="nav__item" @click.native="closeNav"
-          >travel</nuxt-link
+        <nuxt-link to="/" class="nav__item" @click.native="closeNav">{{
+          $t('main page')
+        }}</nuxt-link>
+        <nuxt-link
+          to="/albums/travel"
+          class="nav__item"
+          @click.native="closeNav"
+          >{{ $t('travel') }}</nuxt-link
         >
-        <nuxt-link to="/albums" class="nav__item" @click.native="closeNav"
-          >ceramic</nuxt-link
+        <nuxt-link
+          to="/albums/ceramic"
+          class="nav__item"
+          @click.native="closeNav"
+          >{{ $t('ceramic') }}</nuxt-link
         >
-        <nuxt-link to="/" class="nav__item" @click.native="closeNav"
-          >flowers</nuxt-link
+        <nuxt-link
+          to="/albums/flowers"
+          class="nav__item"
+          @click.native="closeNav"
+          >{{ $t('flowers') }}</nuxt-link
         >
+        <nuxt-link to="/about" class="nav__item" @click.native="closeNav">{{
+          $t('about me')
+        }}</nuxt-link>
       </div>
       <div class="sliding-area__bottom">
-        <div>Copyright und so weiter</div>
-        <div>made with proud</div>
+        <div>{{ $t('Copyright und so weiter') }}</div>
+        <div>{{ $t('made with proud') }}</div>
       </div>
     </div>
   </div>
 </template>
+
+<i18n>
+{
+  "ru": {
+    "personal blog": "личный блог",
+    "main page": "главная",
+    "travel": "путешествия",
+    "ceramic": "керамика",
+    "flowers": "цветы",
+    "about me": "обо мне",
+    "Copyright und so weiter": "копирайты и тэдэ",
+    "made with proud": "сделано с лубовью"
+  },
+  "en": {
+    "personal blog": "personal blog",
+    "main page": "main page",
+    "travel": "travel",
+    "ceramic": "ceramic",
+    "flowers": "flowers",
+    "about me": "about me",
+    "Copyright und so weiter": "Copyright und so weiter",
+    "made with proud": "made with proud"
+  }
+}
+</i18n>
 
 <script>
 export default {
@@ -178,6 +218,9 @@ export default {
   &:nth-child(4) {
     transition-delay: 0.5s;
   }
+  &:nth-child(5) {
+    transition-delay: 0.6s;
+  }
   .open & {
     opacity: 1;
     transform: translateY(0);
@@ -250,7 +293,7 @@ export default {
   }
 }
 .sliding-area {
-  background-image: url('assets/background-left-open-menu.jpg');
+  background-image: url('assets/photo-1.jpg');
   background-color: #fafafa;
   background-size: cover;
   left: -405px;

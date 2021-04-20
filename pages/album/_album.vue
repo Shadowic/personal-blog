@@ -103,12 +103,9 @@ export default {
 
 <style lang="scss" scoped>
 .album {
-  width: 1200px;
-  margin: 100px auto 0;
-}
-.open + .album {
-  transform: scale(0.92);
-  transition: transform 0.2s 0.36s ease-out;
+  max-width: 1200px;
+  padding-left: 80px;
+  margin: 80px auto 0;
 }
 .grid-container {
   display: grid;
@@ -120,19 +117,27 @@ export default {
   min-height: 2.5em;
   position: relative;
 }
-.grid-item img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  min-height: 100px;
-  transition: all 0.2s ease-in-out;
+.grid-item {
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    min-height: 100px;
+    clip-path: inset(0 0 0 0);
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+  }
   &:hover {
-    filter: contrast(110%) brightness(103%);
+    cursor: pointer;
+    img {
+      filter: contrast(110%) brightness(103%);
+      clip-path: inset(5% 5% 5% 5%);
+    }
   }
 }
+
 .block__type-1,
 .block__type-4,
 .block__type-5 {

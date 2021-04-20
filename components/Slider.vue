@@ -29,6 +29,7 @@ export default {
   props: {
     images: {
       required: true,
+      type: Array,
     },
   },
   data() {
@@ -63,8 +64,8 @@ export default {
   position: fixed;
   top: 0;
   bottom: 0;
-  left: 80px;
-  width: 508px;
+  left: 0;
+  width: 100%;
   opacity: 0.8;
   line-height: 1;
   &__caption {

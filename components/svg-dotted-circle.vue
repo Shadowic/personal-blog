@@ -8,6 +8,7 @@ export default {
   props: {
     svgCircleClass: {
       default: '',
+      type: String,
     },
   },
 }

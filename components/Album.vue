@@ -11,7 +11,8 @@
         @mouseleave="removeClassHovered"
         v-html="album.description"
       />
-      <div
+      <nuxt-link
+        :to="`/album/${album.id}`"
         class="btn"
         @mouseover="addClassHovered"
         @mouseleave="removeClassHovered"
@@ -22,7 +23,7 @@
             <line x1="0" y1="50%" x2="100%" y2="50%" />
           </svg>
         </span>
-      </div>
+      </nuxt-link>
     </div>
     <div
       class="album__cover"
@@ -30,7 +31,7 @@
       @mouseleave="removeClassHovered"
     >
       <nuxt-link
-        :to="`album/${album.id}`"
+        :to="`/album/${album.id}`"
         class="album__image-cover"
         :style="{ backgroundImage: `url(${album.cover})` }"
       />
@@ -43,12 +44,15 @@ export default {
   props: {
     album: {
       required: true,
+      type: Object,
     },
     albumType: {
       default: '',
+      type: String,
     },
   },
   data() {
+    console.log('II', this.$i18n)
     return {
       blockClass: '',
     }
@@ -80,7 +84,7 @@ export default {
   flex-direction: row-reverse;
 }
 .album__outline {
-  background-color: #fff;
+  background-color: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -100,6 +104,7 @@ export default {
   .btn {
     margin-top: 50px;
     transition: color 0.2s ease-out;
+    text-decoration: none;
     span {
       position: relative;
       &::after {
@@ -206,6 +211,7 @@ export default {
   display: block;
   transform: scale(1.04);
   transition: 1s cubic-bezier(0.17, 0.59, 0.05, 0.96);
+  clip-path: inset(0 0 0 0);
   .hovered &,
   .album__cover:hover & {
     transform: scale(1);

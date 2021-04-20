@@ -2,8 +2,10 @@
 @import 'variables';
 
 body,
-html {
-  font-family: $base-font, sans-serif;
+html,
+button {
+  font-family: $base-font;
+  font-weight: 400;
   box-sizing: border-box;
 }
 
