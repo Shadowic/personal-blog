@@ -7,61 +7,44 @@
         <div class="name">Shadowic</div>
         <div class="caption">{{ $t('undertitle') }}</div>
         <div class="description">
-          <p>
-            Lorem ipsum dolor sit amet, nec admodum intellegat tteu, ad vim
-            solum percipitur, duo in ullum pertinax it nihil ceteros consequat
-            pro, sed in debetpersequeris. Mei an dico vide, modus homero
-            tacimates ex has lorem ispum sit dolor text
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet, lacus eu erat integer bibendum rutrum,
-            sed arcu molestie, in quis ornare, rhoncus sceleris nam feugiat nibh
-            leo. Ac suspendisse turpis posuere, cursus fames eu eget dolorem
-            sapien. Eget cras urna nam, ultricies proin interdum facilisis arcu,
-            eget sed enim nam, sit tpede nonummy viverra dolor
-          </p>
+          <p>{{ $t('text1') }}</p>
+          <p>{{ $t('text2') }}</p>
         </div>
         <div class="bottom">
           <div class="bottom__block">
-            <div class="titles">Destination:</div>
+            <div class="titles">{{ $t('destination') }}</div>
             <div class="texts">
-              Lorem ipsum dolor sit amet, nec admodum intellegat eu, ad vim
-              solum percipitu...
+              {{ $t('destination') }}
             </div>
           </div>
           <div class="bottom__block">
-            <div class="titles">Country:</div>
+            <div class="titles">{{ $t('country') }}</div>
             <div class="texts">
-              Lorem ipsum dolor sit amet, nec admodum intellegat eu, ad vim
-              solum percipitu...
+              {{ $t('country') }}
             </div>
           </div>
           <div class="bottom__block">
-            <div class="titles">Author to read:</div>
+            <div class="titles">{{ $t('favourite movie') }}</div>
             <div class="texts">
-              Lorem ipsum dolor sit amet, nec admodum intellegat eu, ad vim
-              solum percipitu...
+              {{ $t('favourite movie') }}
             </div>
           </div>
           <div class="bottom__block">
-            <div class="titles">Favourite book:</div>
+            <div class="titles">{{ $t('favourite book') }}</div>
             <div class="texts">
-              Lorem ipsum dolor sit amet, nec admodum intellegat eu, ad vim
-              solum percipitu...
+              {{ $t('favourite book') }}
             </div>
           </div>
           <div class="bottom__block">
-            <div class="titles">Music inspiration:</div>
+            <div class="titles">{{ $t('music inspiration') }}</div>
             <div class="texts">
-              Lorem ipsum dolor sit amet, nec admodum intellegat eu, ad vim
-              solum percipitu...
+              {{ $t('music inspiration') }}
             </div>
           </div>
           <div class="bottom__block">
-            <div class="titles">Quote:</div>
+            <div class="titles">{{ $t('quote') }}</div>
             <div class="texts">
-              Lorem ipsum dolor sit amet, nec admodum intellegat eu, ad vim
-              solum percipitu...
+              {{ $t('quote') }}
             </div>
           </div>
         </div>
@@ -73,12 +56,28 @@
 <i18n>
 {
   "ru": {
-    "about me": "Обо мне",
-    "undertitle": "энтузиаст"
+    "about me":"Обо мне",
+    "undertitle":"энтузиаст",
+    "text1":"Идейные соображения высшего порядка, а также реализация намеченных плановых заданий позволяет оценить значение новых предложений. Повседневная практика показывает, что новая модель организационной деятельности обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! консультация с широким активом представляет собой интересный эксперимент проверки позиций, занимаемых участниками в отношении поставленных задач. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности требуют определения и уточнения соответствующий условий активизации. Таким образом консультация с широким активом требуют от нас анализа направлений прогрессивного развития.",
+    "text2":"Таким образом постоянное информационно-пропагандистское обеспечение нашей деятельности обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития. Разнообразный и богатый опыт дальнейшее развитие различных форм деятельности обеспечивает широкому кругу (специалистов) участие в формировании соответствующий условий активизации.",
+    "destination":"цель",
+    "country":"страна",
+    "favourite movie":"фэйворит муви",
+    "favourite book":"фэйворит бук",
+    "music inspiration":"музыка, которая вдохновляет",
+    "quote":"цитатка"
   },
   "en": {
-    "about me": "About me",
-    "undertitle": "enthusiast"
+    "about me":"About me",
+    "undertitle":"enthusiast",
+    "text1":"Lorem ipsum dolor sit amet, lacus eu erat integer bibendum rutrum, sed arcu molestie, in quis ornare, rhoncus sceleris nam feugiat nibhleo. Ac suspendisse turpis posuere, cursus fames eu eget dolorem sapien. Eget cras urna nam, ultricies proin interdum facilisis arcu, eget sed enim nam, sit tpede nonummy viverra dolor",
+    "text2":"Lorem ipsum dolor sit amet, lacus eu erat integer bibendum rutrum, sed arcu molestie, in quis ornare, rhoncus sceleris nam feugiat nibhleo. Ac suspendisse turpis posuere, cursus fames eu eget dolorem sapien. Eget cras urna nam, ultricies proin interdum facilisis arcu, eget sed enim nam, sit tpede nonummy viverra dolor",
+    "destination":"destination",
+    "country":"country",
+    "favourite movie":"favourite movie",
+    "favourite book":"favourite book",
+    "music inspiration":"music inspiration",
+    "quote":"quote"
   }
 }
 </i18n>

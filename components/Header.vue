@@ -11,7 +11,11 @@
         <span class="burger-stripe" />
         <svg-dotted-circle :svg-circle-class="svgCircleAddedClass" />
       </div>
-      <div class="fixed-area__bottom">Blog</div>
+      <div class="fixed-area__bottom">
+        <span @click="$i18n.setLocale('ru')">ру</span>
+        /
+        <span @click="$i18n.setLocale('en')">en</span>
+      </div>
     </div>
     <div class="sliding-area">
       <div class="sliding-area__top">
@@ -170,9 +174,6 @@ export default {
     .open & {
       animation: fade-out 0.25s linear both;
     }
-    &:hover {
-      color: #1c2522;
-    }
     &::before {
       height: 2px;
       width: 48px;
@@ -186,6 +187,10 @@ export default {
         transparent 2px,
         transparent 4px
       );
+    }
+    span:hover {
+      color: #1c2522;
+      cursor: pointer;
     }
   }
 }

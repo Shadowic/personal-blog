@@ -17,10 +17,9 @@
           </svg>
         </div>
         <div class="content__subtitle">{{ $t('welcome') }}</div>
-        <h1 class="content__title">Travels <span>Worth</span> Retelling</h1>
+        <h1 class="content__title" v-html="$t('title')" />
         <p class="content__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus
-          tristique augue, rhoncus aliquam ipsum. Donec id dolor a neque.
+          {{ $t('description') }}
         </p>
       </div>
       <div class="content__body">
@@ -31,11 +30,9 @@
       <div class="content__bottom">
         <div class="content__bottom__wrapper">
           <div class="content__bottom__title">Shadowic</div>
-          <div class="content__bottom__undertitle">Личный блог</div>
+          <div class="content__bottom__undertitle">{{ $t('undertitle') }}</div>
           <div class="content__bottom__p">
-            This is Shadowic's personal blog created with love and proud for my
-            resume as html-coder where you can read some travel stories and
-            experiences, or looking for some ceramic stuff.
+            {{ $t('bottomDescription') }}
             <svg class="svg-dotted-line">
               <line x1="0" y1="50%" x2="100%" y2="50%" />
             </svg>
@@ -56,14 +53,22 @@
 <i18n>
 {
   "ru": {
+    "welcome": "добро пожаловать",
+    "title": "Путешествия <span>заслуживают</span> быть представленными",
+    "description": "Процесс творчества характерен тем, что творец самой своей работой и ее результатами производит огромное влияние на тех, кто находится рядом с ним. (В.А. Сухомлинский)",
     "latest": "Последнее",
     "featured": "Последние Альбомы",
-    "welcome": "добро пожаловать"
+    "undertitle": "Личный блог",
+    "bottomDescription": "Добро пожаловать в мой личный блог, созданный с целью представить мои навыки в качестве верстальщика, а также показать вам несколько удивительных мест нашей планеты и мои творения в керамическом деле"
   },
   "en": {
+    "welcome": "welcome to",
+    "title": "Travels <span>Worth</span> Retelling",
+    "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here'",
     "latest": "Latest",
     "featured": "Latest Albums",
-    "welcome": "welcome to"
+    "undertitle": "Personal blog",
+    "bottomDescription": "This is Shadowic's personal blog created with love and proud for my resume as html-coder where you can read some travel stories and experiences, or looking for some ceramic stuff."
   }
 }
 </i18n>
@@ -79,10 +84,26 @@ export default {
     const response = await fetch(
       process.env.baseUrl + `/data/sliderContent.json`
     )
+
     if (response.status !== 200) {
       this.error = 'Не удалось получить картинки'
     }
     this.images = await response.json()
+
+    // -----------
+    /*
+    fetch(process.env.baseUrl + `/data/sliderContent.json`)
+      .then(function (response) {
+        if (response.status !== 200) {
+          this.error = 'Не удалось получить картинки'
+        }
+
+        return response.json()
+          .then(function(json) {
+            this.images = json
+          })
+      })
+     */
   },
 }
 </script>
@@ -91,21 +112,26 @@ export default {
   margin: 0 auto;
   display: flex;
   justify-content: flex-end;
+
   .index__slider {
     left: 80px;
     width: 40%;
   }
+
   /deep/ .index__albums {
     display: flex;
     flex-wrap: wrap;
+
     .album {
       width: 50%;
       flex-direction: column;
       padding: 0 20px;
-      margin: 0 0 40px;
+      margin: 0 0 120px;
+
       &:nth-child(2n) {
         margin-top: -95px;
       }
+
       &__outline {
         position: absolute;
         background-color: #fff;
@@ -113,26 +139,33 @@ export default {
         bottom: -10%;
         width: calc(100% - 80px);
         z-index: 1;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+
         &-top {
           display: none;
         }
       }
+
       &__description {
         font-size: 21px;
       }
+
       &__cover {
         width: 100%;
       }
+
       .btn {
         display: none;
       }
     }
   }
 }
+
 .content {
   padding-left: calc(40% + 80px);
+
   &__top {
-    background: url('assets/content-background.jpg');
+    background: url('static/imgs/IMG_1964.JPG') center / cover;
     padding: 5% 2% 200px 2%;
     display: flex;
     flex-direction: column;
@@ -140,10 +173,12 @@ export default {
     align-items: center;
     text-align: center;
   }
+
   &__icon {
     width: 60px;
     height: 99px;
     margin-bottom: 10px;
+
     svg {
       transform: rotate(45deg);
       width: 100%;
@@ -151,6 +186,7 @@ export default {
       fill: #79a2ac;
     }
   }
+
   &__subtitle {
     margin-top: 37px;
     color: #3b4d55;
@@ -160,8 +196,9 @@ export default {
     line-height: 1em;
     text-transform: uppercase;
   }
+
   &__title {
-    background: url('~assets/content-title-background.jpg') center/cover;
+    background: url('static/imgs/IMG_9936.JPG') center/cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'PlayfairDisplay Semi-bold', serif;
@@ -170,10 +207,12 @@ export default {
     line-height: 1.133em;
     margin: 25px 0;
     word-wrap: break-word;
-    span {
+
+    /deep/ span {
       font-style: italic;
     }
   }
+
   &__description {
     font-family: 'Dosis', sans-serif;
     font-size: 19px;
@@ -181,8 +220,10 @@ export default {
     color: #1c2522;
     margin: 17px 0 0;
   }
+
   &__body {
     position: relative;
+
     &__title {
       display: block;
       font-family: 'PlayfairDisplay Semi-bold', serif;
@@ -190,17 +231,19 @@ export default {
       color: #1c2522;
       font-size: 33px;
       line-height: 1.212em;
-      margin: 50px 0 30px;
-      padding: 0 20px;
+      margin: 70px 0 30px;
+      padding: 0 55px;
       width: min-content;
     }
   }
+
   &__bottom {
     width: 100%;
     color: #919a99;
     text-align: center;
     line-height: 1.67em;
     margin-top: 70px;
+
     &__wrapper {
       display: flex;
       flex-direction: column;
@@ -211,15 +254,18 @@ export default {
       margin: 50px 0;
       padding: 0% 21%;
     }
+
     &__title {
       font-family: 'PlayfairDisplay Semi-bold', serif;
       color: #1c2522;
       font-size: 30px;
       margin-bottom: 20px;
     }
+
     &__undertitle {
       margin-bottom: 20px;
     }
+
     &__p {
       position: relative;
       margin-bottom: 20px;
@@ -227,6 +273,7 @@ export default {
     }
   }
 }
+
 .svg-dotted-line {
   position: absolute;
   bottom: 0;
@@ -239,31 +286,39 @@ export default {
   stroke-dasharray: 0.4px, 5px;
   stroke-dashoffset: -2;
 }
+
 .social {
   display: flex;
+
   & > div {
     position: relative;
     width: 20px;
     height: 20px;
     margin-right: 20px;
     cursor: pointer;
+
     &::after {
       font-family: Eleganticons, serif;
       position: absolute;
     }
   }
+
   .fb::after {
     content: '\e093';
   }
+
   .tw::after {
     content: '\e094';
   }
+
   .inst::after {
     content: '\e09a';
   }
+
   .pin::after {
     content: '\e095';
   }
+
   .smthng::after {
     content: '\e0dc';
   }

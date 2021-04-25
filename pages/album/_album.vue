@@ -1,6 +1,8 @@
 <template>
   <div class="album">
     <div v-if="error" class="error">{{ error }}</div>
+    <div class="album__title">{{ this.$route.params.album }}</div>
+    <background-word :title="this.$route.params.album" />
     <div
       v-for="(blockTypes, index) in blocks"
       :key="index"
@@ -106,6 +108,17 @@ export default {
   max-width: 1200px;
   padding-left: 80px;
   margin: 80px auto 0;
+  position: relative;
+  &__title {
+    font-family: 'PlayfairDisplay Semi-bold', serif;
+    font-weight: 600;
+    color: #1c2522;
+    font-size: 33px;
+    line-height: 1.212em;
+    padding-top: 15px;
+    padding-left: 20px;
+    margin-bottom: 50px;
+  }
 }
 .grid-container {
   display: grid;

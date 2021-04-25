@@ -10,7 +10,15 @@
       <div class="arrows arrows__left" @click.prevent="prevImage">
         <div class="arrow arrow__left" />
       </div>
-      <div class="modal-content"><img :src="image" alt="img 1" /></div>
+      <div class="modal-content">
+        <img
+          :src="image"
+          alt="img 1"
+          :class="{ imgLoaded: isImgLoaded }"
+          @load="onImgLoad"
+        />
+        <span v-if="!isImgLoaded" class="loader" />
+      </div>
       <div class="arrows arrows__right" @click.prevent="nextImage">
         <div class="arrow arrow__right" />
       </div>
@@ -55,6 +63,7 @@ export default {
     return {
       isPrevClicked: false,
       isNextClicked: false,
+      isImgLoaded: false,
     }
   },
   watch: {
@@ -76,6 +85,9 @@ export default {
     })
   },
   methods: {
+    onImgLoad() {
+      this.isImgLoaded = true
+    },
     closeImage() {
       this.$emit('close', !this.openedImage)
     },
@@ -181,6 +193,26 @@ export default {
   img {
     width: 100%;
     vertical-align: middle;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  .imgLoaded {
+    opacity: 1;
+    visibility: visible;
+  }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 100px);
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: block;
+    margin: 15px auto;
+    color: #fff;
+    box-sizing: border-box;
+    animation: shadowRolling 2s linear infinite;
   }
 }
 .modal-content::before {
@@ -192,6 +224,43 @@ export default {
   top: 50%;
   right: 250px;
   transform: rotate(135deg);
+}
+@keyframes shadowRolling {
+  0% {
+    box-shadow: 0 0 rgba(255, 255, 255, 0), 0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0), 0 0 rgba(255, 255, 255, 0);
+  }
+  12% {
+    box-shadow: 100px 0 white, 0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0), 0 0 rgba(255, 255, 255, 0);
+  }
+  25% {
+    box-shadow: 110px 0 white, 100px 0 white, 0 0 rgba(255, 255, 255, 0),
+      0 0 rgba(255, 255, 255, 0);
+  }
+  36% {
+    box-shadow: 120px 0 white, 110px 0 white, 100px 0 white,
+      0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    box-shadow: 130px 0 white, 120px 0 white, 110px 0 white, 100px 0 white;
+  }
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 white, 120px 0 white,
+      110px 0 white;
+  }
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      130px 0 white, 120px 0 white;
+  }
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 130px 0 white;
+  }
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0),
+      200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
 }
 .arrow {
   width: 25px;

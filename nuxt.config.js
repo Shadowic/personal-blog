@@ -36,6 +36,7 @@ export default {
   i18n: {
     locales: ['ru', 'en'],
     defaultLocale: 'ru',
+    strategy: 'no_prefix',
     detectBrowserLanguage: false,
     vueI18nLoader: true,
     vueI18n: {

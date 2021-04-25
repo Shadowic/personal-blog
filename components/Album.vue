@@ -5,11 +5,14 @@
         <div class="album__date">{{ album.date }}</div>
         <div class="album__title">{{ album.title }}</div>
       </div>
-      <div
+      <nuxt-link
+        :to="`/album/${album.id}`"
         class="album__description"
         @mouseover="addClassHovered"
         @mouseleave="removeClassHovered"
-        v-html="album.description"
+        v-html="
+          getCurrentLocale() === 'ru' ? album.description : album.descriptionEn
+        "
       />
       <nuxt-link
         :to="`/album/${album.id}`"
@@ -52,12 +55,14 @@ export default {
     },
   },
   data() {
-    console.log('II', this.$i18n)
     return {
       blockClass: '',
     }
   },
   methods: {
+    getCurrentLocale() {
+      return this.$i18n.localeProperties.code
+    },
     addClassHovered() {
       this.blockClass = 'hovered'
     },
@@ -195,6 +200,7 @@ export default {
   font-size: 33px;
   line-height: 1.212em;
   word-wrap: break-word;
+  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
