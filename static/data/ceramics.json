@@ -2,86 +2,169 @@
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222125437_IMG_4602.JPG",
-    "blockType": "1"
+    "blockType": "1",
+    "sidebar": {
+      "title": {
+        "ru": "Кружка",
+        "en": "Ceramic mug"
+      },
+      "description": {
+        "ru": "Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке соответствующий условий активизации.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat."
+      },
+      "price": "2500р"
+    }
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222125205_IMG_4597.JPG",
-    "blockType": "1"
+    "blockType": "1",
+    "sidebar": {
+      "title": {
+        "ru": "Кружка",
+        "en": "Ceramic mug"
+      },
+      "description": {
+        "ru": "Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке соответствующий условий активизации.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat."
+      },
+      "price": "2500р"
+    }
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222130335_IMG_4632.JPG",
-    "blockType": "1"
+    "blockType": "1",
+    "sidebar": {
+      "title": {
+        "ru": "Кружка",
+        "en": "Ceramic mug"
+      },
+      "description": {
+        "ru": "Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке соответствующий условий активизации.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat."
+      },
+      "price": "2500р"
+    }
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210207162602_IMG_4274.JPG",
-    "blockType": "1"
+    "blockType": "1",
+    "sidebar": {
+      "title": {
+        "ru": "Кружка",
+        "en": "Ceramic mug"
+      },
+      "description": {
+        "ru": "Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке соответствующий условий активизации.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat."
+      },
+      "price": "2500р"
+    }
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222160024_IMG_4659.JPG",
-    "blockType": "1"
+    "blockType": "1",
+    "titleRu": "Ceramic cup",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "1500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222161902_IMG_4719.JPG",
-    "blockType": "2"
+    "blockType": "2",
+    "titleRu": "Ceramic planter",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "3500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222162916_IMG_4756.JPG",
-    "blockType": "2"
+    "blockType": "2",
+    "titleRu": "Ceramic life",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "12500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222125437_IMG_4602.JPG",
-    "blockType": "3"
+    "blockType": "3",
+    "titleRu": "Ceramic cup",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222125205_IMG_4597.JPG",
-    "blockType": "3"
+    "blockType": "3",
+    "titleRu": "Ceramic plate",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "1000р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222130335_IMG_4632.JPG",
-    "blockType": "4"
+    "blockType": "4",
+    "titleRu": "Ceramic cup",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210207162602_IMG_4274.JPG",
-    "blockType": "4"
+    "blockType": "4",
+    "titleRu": "Ceramic planter",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "200р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222160024_IMG_4659.JPG",
-    "blockType": "4"
+    "blockType": "4",
+    "titleRu": "Ceramic nighter",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "2000р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222161902_IMG_4719.JPG",
-    "blockType": "4"
+    "blockType": "4",
+    "titleRu": "Ceramic pretty planter",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "21500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222162916_IMG_4756.JPG",
-    "blockType": "5"
+    "blockType": "5",
+    "titleRu": "Ceramic cup",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222125437_IMG_4602.JPG",
-    "blockType": "5"
+    "blockType": "5",
+    "titleRu": "Ceramic mug",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "2100р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222125205_IMG_4597.JPG",
-    "blockType": "5"
+    "blockType": "5",
+    "titleRu": "Ceramic plate",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "500р"
   },
   {
     "thumbnail": "~url",
     "image": "/imgs/20210222130335_IMG_4632.JPG",
-    "blockType": "5"
+    "blockType": "5",
+    "titleRu": "Ceramic mug",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat.",
+    "price": "200р"
   }
 ]

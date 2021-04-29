@@ -1,51 +1,49 @@
 <template>
   <div class="about">
-    <div class="container">
-      <div class="profile-img" />
-      <div class="info">
-        <BackgroundWord :title="$t('about me')" />
-        <div class="name">Shadowic</div>
-        <div class="caption">{{ $t('undertitle') }}</div>
-        <div class="description">
-          <p>{{ $t('text1') }}</p>
-          <p>{{ $t('text2') }}</p>
+    <div class="profile-img" />
+    <div class="info">
+      <BackgroundWord :title="$t('about me')" />
+      <div class="name">Shadowic</div>
+      <div class="caption">{{ $t('undertitle') }}</div>
+      <div class="description">
+        <p>{{ $t('text1') }}</p>
+        <p>{{ $t('text2') }}</p>
+      </div>
+      <div class="bottom">
+        <div class="bottom__block">
+          <div class="titles">{{ $t('destination') }}</div>
+          <div class="texts">
+            {{ $t('destination') }}
+          </div>
         </div>
-        <div class="bottom">
-          <div class="bottom__block">
-            <div class="titles">{{ $t('destination') }}</div>
-            <div class="texts">
-              {{ $t('destination') }}
-            </div>
+        <div class="bottom__block">
+          <div class="titles">{{ $t('country') }}</div>
+          <div class="texts">
+            {{ $t('country') }}
           </div>
-          <div class="bottom__block">
-            <div class="titles">{{ $t('country') }}</div>
-            <div class="texts">
-              {{ $t('country') }}
-            </div>
+        </div>
+        <div class="bottom__block">
+          <div class="titles">{{ $t('favourite movie') }}</div>
+          <div class="texts">
+            {{ $t('favourite movie') }}
           </div>
-          <div class="bottom__block">
-            <div class="titles">{{ $t('favourite movie') }}</div>
-            <div class="texts">
-              {{ $t('favourite movie') }}
-            </div>
+        </div>
+        <div class="bottom__block">
+          <div class="titles">{{ $t('favourite book') }}</div>
+          <div class="texts">
+            {{ $t('favourite book') }}
           </div>
-          <div class="bottom__block">
-            <div class="titles">{{ $t('favourite book') }}</div>
-            <div class="texts">
-              {{ $t('favourite book') }}
-            </div>
+        </div>
+        <div class="bottom__block">
+          <div class="titles">{{ $t('music inspiration') }}</div>
+          <div class="texts">
+            {{ $t('music inspiration') }}
           </div>
-          <div class="bottom__block">
-            <div class="titles">{{ $t('music inspiration') }}</div>
-            <div class="texts">
-              {{ $t('music inspiration') }}
-            </div>
-          </div>
-          <div class="bottom__block">
-            <div class="titles">{{ $t('quote') }}</div>
-            <div class="texts">
-              {{ $t('quote') }}
-            </div>
+        </div>
+        <div class="bottom__block">
+          <div class="titles">{{ $t('quote') }}</div>
+          <div class="texts">
+            {{ $t('quote') }}
           </div>
         </div>
       </div>
@@ -82,30 +80,53 @@
 }
 </i18n>
 
+<script>
+export default {
+  layout: 'index',
+}
+</script>
+
 <style lang="scss" scoped>
 .about {
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding-top: 150px;
-}
-.container {
-  display: flex;
+  align-items: flex-start;
   max-width: 1300px;
   margin: 0 auto;
-  padding-left: 80px;
+  padding: 100px 110px 0;
   line-height: 1.647em;
   color: #6f8c96;
+  @include sm- {
+    padding: 60px;
+    flex-direction: column;
+    align-items: center;
+  }
+  /deep/.background {
+    position: absolute;
+    top: -75px;
+    @include sm- {
+      top: 53px;
+      right: 0;
+      text-align: right;
+    }
+  }
 }
 .profile-img {
-  height: 500px;
   border-radius: 50%;
   background: url('~static/imgs/235924633_3616.jpg') center/cover;
   background-color: #79a2ac;
-  margin-top: 30px;
-  margin-right: 60px;
+  margin: 90px 60px 0 0;
   flex: 1 1 0;
+  &::before {
+    content: '';
+    display: block;
+    padding-top: 100%;
+  }
+  @include sm- {
+    width: 100%;
+    max-width: 350px;
+    margin: 30px 0 0;
+  }
 }
 .info {
   flex: 1.3 1 0;
@@ -116,7 +137,7 @@
   color: #1c2522;
   font-size: 33px;
   line-height: 1.212em;
-  margin: 25px 0 5px;
+  margin: 25px 0 15px;
   letter-spacing: 0.1em;
 }
 .caption {
@@ -125,6 +146,7 @@
   letter-spacing: 0.2em;
   line-height: 1em;
   text-transform: uppercase;
+  margin-bottom: 25px;
 }
 .description {
   margin-bottom: 60px;

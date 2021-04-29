@@ -83,10 +83,18 @@ export default {
   width: 100%;
   height: 350px;
   position: relative;
+  @include sm- {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 }
 .album:nth-child(2n) {
   display: flex;
   flex-direction: row-reverse;
+  @include sm- {
+    flex-direction: column-reverse;
+    height: auto;
+  }
 }
 .album__outline {
   background-color: transparent;
@@ -109,7 +117,6 @@ export default {
   .btn {
     margin-top: 50px;
     transition: color 0.2s ease-out;
-    text-decoration: none;
     span {
       position: relative;
       &::after {
@@ -133,6 +140,9 @@ export default {
         transform: translateX(2px);
       }
     }
+  }
+  @include sm- {
+    width: 100%;
   }
 }
 @keyframes animate-svg-line {
@@ -200,7 +210,6 @@ export default {
   font-size: 33px;
   line-height: 1.212em;
   word-wrap: break-word;
-  text-decoration: none;
   &:hover {
     cursor: pointer;
   }
@@ -209,6 +218,10 @@ export default {
   width: 50%;
   height: 100%;
   overflow: hidden;
+  @include sm- {
+    width: 100%;
+    height: 300px;
+  }
 }
 .album__image-cover {
   width: 100%;

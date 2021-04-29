@@ -1,42 +1,54 @@
 <template>
   <div v-if="image" class="modal">
-    <div class="modal-close" @click.prevent="closeImage" />
-    <div class="modal-counter">
-      <div>{{ openedImgIndex + 1 }}</div>
-      &nbsp;/&nbsp;
-      <div>{{ countImgs }}</div>
-    </div>
     <div class="modal-centered">
-      <div class="arrows arrows__left" @click.prevent="prevImage">
-        <div class="arrow arrow__left" />
+      <div class="top">
+        <div class="modal-counter">
+          <div>{{ openedImgIndex + 1 }}</div>
+          &nbsp;/&nbsp;
+          <div>{{ countImgs }}</div>
+        </div>
+        <div class="modal-close" @click.prevent="closeImage" />
       </div>
       <div class="modal-content">
-        <img
-          :src="image"
-          alt="img 1"
-          :class="{ imgLoaded: isImgLoaded }"
-          @load="onImgLoad"
-        />
-        <span v-if="!isImgLoaded" class="loader" />
-      </div>
-      <div class="arrows arrows__right" @click.prevent="nextImage">
-        <div class="arrow arrow__right" />
-      </div>
-      <div
-        class="pagination-wrapper"
-        :class="{
-          transition_prev: isPrevClicked,
-          transition_next: isNextClicked,
-        }"
-      >
-        <div class="pagination-container">
-          <div class="little-dot little-dot__first" />
-          <div class="little-dot">
-            <div class="big-dot-container">
-              <div class="big-dot" />
+        <div class="content" :class="{ imgLoaded: isImgLoaded }">
+          <img :src="image.image" alt="img 1" @load="onImgLoad" />
+          <div v-if="image.sidebar" class="sidebar">
+            <div v-if="image.sidebar.title" class="item-title">
+              {{ getSidebarContent('title') }}
+            </div>
+            <div v-if="image.sidebar.description" class="item-description">
+              {{ getSidebarContent('description') }}
+            </div>
+            <div v-if="image.sidebar.price" class="item-price">
+              {{ image.sidebar.price }}
             </div>
           </div>
-          <div class="little-dot little-dot__last" />
+        </div>
+        <span v-if="!isImgLoaded" class="loader" />
+      </div>
+      <div class="bottom">
+        <div class="arrows arrows__left" @click.prevent="prevImage">
+          <div class="arrow arrow__left" />
+        </div>
+        <div
+          class="pagination-wrapper"
+          :class="{
+            transition_prev: isPrevClicked,
+            transition_next: isNextClicked,
+          }"
+        >
+          <div class="pagination-container">
+            <div class="little-dot little-dot__first" />
+            <div class="little-dot">
+              <div class="big-dot-container">
+                <div class="big-dot" />
+              </div>
+            </div>
+            <div class="little-dot little-dot__last" />
+          </div>
+        </div>
+        <div class="arrows arrows__right" @click.prevent="nextImage">
+          <div class="arrow arrow__right" />
         </div>
       </div>
     </div>
@@ -47,8 +59,8 @@
 export default {
   props: {
     image: {
-      type: String,
-      default: '',
+      type: Object,
+      default: null,
     },
     openedImgIndex: {
       type: Number,
@@ -67,7 +79,7 @@ export default {
     }
   },
   watch: {
-    opened(newVal) {
+    image(newVal) {
       document.querySelector('body').style.overflow = newVal ? 'hidden' : 'auto'
     },
   },
@@ -101,6 +113,14 @@ export default {
       this.isNextClicked = true
       setTimeout(() => (this.isNextClicked = false), 500)
     },
+    getCurrentLocale() {
+      return this.$i18n.localeProperties.code
+    },
+    getSidebarContent(key) {
+      return this.getCurrentLocale() === 'ru'
+        ? this.image.sidebar[key].ru
+        : this.image.sidebar[key].en
+    },
   },
 }
 </script>
@@ -113,14 +133,15 @@ export default {
   bottom: 0;
   left: 0;
   outline: 0;
-  z-index: 100;
+  z-index: 10000;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.8);
+  @include sm- {
+    background: rgba(0, 0, 0, 0.95);
+  }
 }
 .modal-close {
-  position: absolute;
-  right: 150px;
-  top: 100px;
+  position: relative;
   width: 32px;
   height: 32px;
   cursor: pointer;
@@ -133,7 +154,7 @@ export default {
   top: -5px;
   content: '';
   height: 42px;
-  width: 4px;
+  width: 3px;
   border-radius: 5px;
   background-color: #fff;
 }
@@ -172,9 +193,6 @@ export default {
   animation: 0.4s linear scissors-after forwards;
 }
 .modal-counter {
-  position: absolute;
-  left: 150px;
-  top: 100px;
   display: flex;
   color: #fff;
   font-size: 26px;
@@ -182,24 +200,48 @@ export default {
 .modal-centered {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  max-width: 750px;
+  justify-content: space-evenly;
+  max-width: 75vw;
   min-height: 100vh;
   margin: 0 auto;
   position: relative;
+  .top,
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include sm- {
+      display: none;
+    }
+  }
+  @include sm- {
+    max-width: 95vw;
+  }
 }
 .modal-content {
   text-align: center;
-  img {
+  .content {
     width: 100%;
-    vertical-align: middle;
+    height: 100%;
+    display: flex;
+    justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
+    @include sm- {
+      flex-direction: column;
+    }
   }
   .imgLoaded {
     opacity: 1;
     visibility: visible;
+  }
+  img {
+    width: 70%;
+    vertical-align: middle;
+    @include sm- {
+      width: 100%;
+    }
   }
   .loader {
     position: absolute;
@@ -213,6 +255,41 @@ export default {
     color: #fff;
     box-sizing: border-box;
     animation: shadowRolling 2s linear infinite;
+  }
+  .sidebar {
+    width: 30%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 15px 35px;
+    .item-title {
+      font-family: 'PlayfairDisplay Semi-bold', serif;
+      line-height: 1.212em;
+      color: #1c2522;
+      font-weight: 600;
+      font-size: 33px;
+      padding-top: 20px;
+      margin-bottom: 30px;
+      &::after {
+        display: inline-block;
+        content: '-----';
+        width: 100%;
+        color: #79a2ac;
+      }
+    }
+    .item-description {
+      font-family: 'Montserrat Semi-bold', sans-serif;
+      font-size: 16px;
+      line-height: 1.75;
+      font-weight: 300;
+    }
+    .item-price {
+      font-size: 20px;
+    }
+    @include sm- {
+      width: 100%;
+    }
   }
 }
 .modal-content::before {
@@ -263,8 +340,8 @@ export default {
   }
 }
 .arrow {
-  width: 25px;
-  height: 25px;
+  width: 20px;
+  height: 20px;
   border-top: 3px solid rgba(255, 255, 255, 0.75);
   border-left: 3px solid rgba(255, 255, 255, 0.75);
   &__left {
@@ -281,11 +358,13 @@ export default {
     content: '';
     left: -20px;
     top: -20px;
-    border-top: 4px solid #fff;
-    border-left: 4px solid #fff;
+    border-top: 4px solid rgba(255, 255, 255, 0.9);
+    border-left: 4px solid rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease-in-out;
   }
   &::after {
+    width: 15px;
+    height: 15px;
     left: 15px;
     top: 15px;
     border-top: 2px solid rgba(255, 255, 255, 0.5);
@@ -296,33 +375,20 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  width: 70px;
+  width: 63px;
   height: 42px;
   cursor: pointer;
-  &__left {
-    left: -150px;
-  }
-  &__right {
-    right: -150px;
-  }
   &:hover {
     .arrow::before,
     .arrow::after {
       left: -3px;
       top: -3px;
     }
+    .arrow::before {
+      opacity: 0;
+    }
   }
 }
-.pagination-wrapper {
-  font-size: 0;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translateY(150px);
-  text-align: center;
-}
-
 @keyframes pagination-container--animation-prev {
   0% {
     transform: translateX(0);

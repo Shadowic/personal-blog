@@ -39,15 +39,16 @@ export default {
 
 <style lang="scss" scoped>
 .background {
-  position: absolute;
   color: rgb(249, 250, 247);
   font-size: 135px;
   z-index: -1;
   font-family: 'PlayfairDisplay Semi-bold', serif;
   font-weight: 700;
-  line-height: 0.9em;
-  top: -45px;
-  left: 20px;
+  line-height: 1.4em;
+  position: absolute;
+  top: -88px;
+  left: -70px;
+  padding: 2% 1%;
   &__letter {
     display: inline-block;
     visibility: hidden;
@@ -59,6 +60,13 @@ export default {
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
+  }
+  @include sm- {
+    position: relative;
+    top: 0;
+    left: 0;
+    font-size: 14vw;
+    line-height: 1em;
   }
 }
 </style>

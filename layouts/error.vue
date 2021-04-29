@@ -67,7 +67,6 @@
   font-size: 10px;
   line-height: 2em;
   font-weight: 500;
-  text-decoration: none;
   border-radius: 0;
   outline: 0;
   box-sizing: border-box;
@@ -84,7 +83,6 @@
   }
   span {
     position: relative;
-    text-decoration: none;
     color: inherit;
     &::after {
       color: currentColor;

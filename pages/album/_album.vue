@@ -1,8 +1,8 @@
 <template>
   <div class="album">
     <div v-if="error" class="error">{{ error }}</div>
-    <div class="album__title">{{ this.$route.params.album }}</div>
     <background-word :title="this.$route.params.album" />
+    <div class="album__title">{{ this.$route.params.album }}</div>
     <div
       v-for="(blockTypes, index) in blocks"
       :key="index"
@@ -24,7 +24,7 @@
     <!--    block__type-4 4-->
     <!--    block__type-5 4-->
     <Modal
-      :image="getCurrentImgSrc()"
+      :image="getCurrentImg()"
       :opened-img-index="openedImgIndex"
       :count-imgs="countImgs"
       @close="closeImage"
@@ -63,13 +63,13 @@ export default {
     },
   },
   methods: {
-    getCurrentImgSrc() {
+    getCurrentImg() {
       if (this.openedImgIndex > -1) {
         const foundImage = this.findImageByIndex(this.openedImgIndex)
 
-        return foundImage.image
+        return foundImage
       }
-      return ''
+      return null
     },
     openImage(image) {
       this.openedImgIndex = image.index
@@ -106,8 +106,7 @@ export default {
 <style lang="scss" scoped>
 .album {
   max-width: 1200px;
-  padding-left: 80px;
-  margin: 80px auto 0;
+  margin: 60px auto;
   position: relative;
   &__title {
     font-family: 'PlayfairDisplay Semi-bold', serif;
@@ -118,6 +117,15 @@ export default {
     padding-top: 15px;
     padding-left: 20px;
     margin-bottom: 50px;
+    @include sm- {
+      position: absolute;
+      top: 0;
+      padding: 3%;
+    }
+  }
+  @include sm- {
+    width: 90vw;
+    margin: 60px auto;
   }
 }
 .grid-container {
@@ -125,6 +133,9 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   margin-bottom: 20px;
+  @include sm- {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 [class^='grid-item'] {
   min-height: 2.5em;
@@ -156,59 +167,119 @@ export default {
 .block__type-5 {
   min-height: 500px;
 }
+.block__type-5 {
+  @include sm- {
+    min-height: 320px;
+  }
+}
 .block__type-2,
 .block__type-3 {
   min-height: 250px;
+  @include sm- {
+    min-height: 150px;
+  }
 }
+
 .block__type-1 .grid-item:nth-child(1) {
   grid-area: 1/1/2/2;
+  @include sm- {
+    grid-area: 1/1/2/2;
+  }
 }
 .block__type-1 .grid-item:nth-child(2) {
   grid-area: 1/2/3/3;
+  @include sm- {
+    grid-area: 1/2/2/3;
+  }
 }
 .block__type-1 .grid-item:nth-child(3) {
   grid-area: 1/3/2/4;
+  @include sm- {
+    grid-area: 2/1/3/3;
+  }
 }
 .block__type-1 .grid-item:nth-child(4) {
   grid-area: 2/1/3/2;
+  @include sm- {
+    grid-area: 3/1/4/2;
+  }
 }
 .block__type-1 .grid-item:nth-child(5) {
   grid-area: 2/3/3/4;
+  @include sm- {
+    grid-area: 3/2/4/3;
+  }
 }
 .block__type-2 .grid-item:nth-child(1) {
   grid-area: 1/1/2/3;
+  @include sm- {
+    grid-area: 1/1/2/2;
+  }
 }
 .block__type-2 .grid-item:nth-child(2) {
   grid-area: 1/3/2/4;
+  @include sm- {
+    grid-area: 1/2/2/3;
+  }
 }
 .block__type-3 .grid-item:nth-child(1) {
   grid-area: 1/1/2/2;
+  @include sm- {
+    grid-area: 1/1/2/2;
+  }
 }
 .block__type-3 .grid-item:nth-child(2) {
   grid-area: 1/2/2/4;
+  @include sm- {
+    grid-area: 1/2/2/3;
+  }
 }
 .block__type-4 .grid-item:nth-child(1) {
   grid-area: 1/1/3/2;
+  @include sm- {
+    grid-area: 1/1/2/3;
+  }
 }
 .block__type-4 .grid-item:nth-child(2) {
   grid-area: 1/2/2/4;
+  @include sm- {
+    grid-area: 2/1/3/2;
+  }
 }
 .block__type-4 .grid-item:nth-child(3) {
   grid-area: 2/2/3/3;
+  @include sm- {
+    grid-area: 2/2/3/3;
+  }
 }
 .block__type-4 .grid-item:nth-child(4) {
   grid-area: 2/3/3/4;
+  @include sm- {
+    grid-area: 3/1/4/3;
+  }
 }
 .block__type-5 .grid-item:nth-child(1) {
   grid-area: 1/1/2/2;
+  @include sm- {
+    grid-area: 1/1/2/2;
+  }
 }
 .block__type-5 .grid-item:nth-child(2) {
   grid-area: 1/2/2/3;
+  @include sm- {
+    grid-area: 1/2/2/3;
+  }
 }
 .block__type-5 .grid-item:nth-child(3) {
   grid-area: 1/3/3/4;
+  @include sm- {
+    grid-area: 2/1/3/2;
+  }
 }
 .block__type-5 .grid-item:nth-child(4) {
   grid-area: 2/1/3/3;
+  @include sm- {
+    grid-area: 2/2/3/3;
+  }
 }
 </style>
