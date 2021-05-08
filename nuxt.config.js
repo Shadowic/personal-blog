@@ -1,4 +1,7 @@
 export default {
+  server: {
+    port: process.env.SHADOWIC_PORT || 3000,
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'shadowic',
@@ -73,6 +76,6 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.SHADOWIC_BASE_URL || 'http://localhost:3000',
   },
 }
