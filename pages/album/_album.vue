@@ -107,6 +107,7 @@ export default {
 .album {
   max-width: 1200px;
   margin: 60px auto;
+  padding: 0 20px;
   position: relative;
   &__title {
     font-family: 'PlayfairDisplay Semi-bold', serif;

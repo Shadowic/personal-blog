@@ -104,7 +104,7 @@ export default {
   }
 }
 .sliding-area {
-  background-image: url('assets/photo-1.jpg');
+  background-image: url('../assets/imgs/header-sliding.jpg');
   background-color: #fafafa;
   background-size: cover;
   background-position: bottom;
@@ -134,15 +134,24 @@ export default {
   }
   &__bottom {
     color: #fff;
+    font-size: 13px;
   }
 }
 .title {
-  font-size: 40px;
+  font-family: 'PlayfairDisplay Semi-bold', serif;
+  font-size: 48px;
+  @include xs- {
+    font-size: 40px;
+  }
 }
 .subtitle {
   color: #79a2ac;
   letter-spacing: 0.34em;
   text-indent: 0.17em;
+  font-size: 16px;
+  @include xs- {
+    font-size: 14px;
+  }
 }
 /deep/ .circle-svg {
   display: none;

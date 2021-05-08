@@ -6,11 +6,19 @@
   </div>
 </template>
 <style lang="scss" scoped>
-span {
-  cursor: pointer;
-  &:hover {
-    color: #6f8c96;
-    font-weight: 600;
+.lang-tumbler {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1em;
+  @include sm- {
+    font-size: 14px;
   }
+}
+span {
+  display: inline-block;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  transform: translateY(-1px);
 }
 </style>

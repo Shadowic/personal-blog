@@ -11,7 +11,16 @@
       </div>
       <div class="modal-content">
         <div class="content" :class="{ imgLoaded: isImgLoaded }">
-          <img :src="image.image" alt="img 1" @load="onImgLoad" />
+          <div class="content__img">
+            <img :src="image.image" alt="img 1" @load="onImgLoad" />
+            <div class="arrows__mobile">
+              <div
+                class="arrow__mobile arrow__mobile__left"
+                @click.prevent="prevImage"
+              />
+              <div class="arrow__mobile" @click.prevent="nextImage" />
+            </div>
+          </div>
           <div v-if="image.sidebar" class="sidebar">
             <div v-if="image.sidebar.title" class="item-title">
               {{ getSidebarContent('title') }}
@@ -134,7 +143,8 @@ export default {
   left: 0;
   outline: 0;
   z-index: 10000;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
   background: rgba(0, 0, 0, 0.8);
   @include sm- {
     background: rgba(0, 0, 0, 0.95);
@@ -142,21 +152,30 @@ export default {
 }
 .modal-close {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  @include sm- {
+    width: 22px;
+    height: 22px;
+    opacity: 0.75;
+  }
 }
 .modal-close::before,
 .modal-close::after {
   position: absolute;
-  left: 14px;
-  top: -5px;
+  left: 11px;
+  top: -4px;
   content: '';
-  height: 42px;
+  height: 32px;
   width: 3px;
   border-radius: 5px;
   background-color: #fff;
+  @include sm- {
+    height: 29px;
+    left: 8px;
+  }
 }
 .modal-close::before {
   transform: rotate(45deg);
@@ -195,7 +214,10 @@ export default {
 .modal-counter {
   display: flex;
   color: #fff;
-  font-size: 26px;
+  font-size: 24px;
+  @include sm- {
+    display: none;
+  }
 }
 .modal-centered {
   display: flex;
@@ -204,22 +226,39 @@ export default {
   max-width: 75vw;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 70px 0;
   position: relative;
   .top,
   .bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .top {
+    @include sm- {
+      justify-content: flex-end;
+      width: 95%;
+      position: absolute;
+      top: 30px;
+    }
+  }
+  .bottom {
     @include sm- {
       display: none;
     }
   }
   @include sm- {
-    max-width: 95vw;
+    max-width: 95%;
   }
 }
 .modal-content {
   text-align: center;
+  margin: 20px 0;
+  @include sm- {
+    margin: 0;
+  }
   .content {
     width: 100%;
     height: 100%;
@@ -228,6 +267,13 @@ export default {
     opacity: 0;
     visibility: hidden;
     transition: all 0.5s ease-in-out;
+    &__img {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1 1 0;
+    }
     @include sm- {
       flex-direction: column;
     }
@@ -237,7 +283,9 @@ export default {
     visibility: visible;
   }
   img {
-    width: 70%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     vertical-align: middle;
     @include sm- {
       width: 100%;
@@ -340,42 +388,65 @@ export default {
   }
 }
 .arrow {
-  width: 20px;
-  height: 20px;
+  width: 16px;
+  height: 16px;
   border-top: 3px solid rgba(255, 255, 255, 0.75);
   border-left: 3px solid rgba(255, 255, 255, 0.75);
   &__left {
-    transform: rotate(-45deg) skew(-12deg, -12deg);
+    transform: translate(6px) rotate(-45deg) skew(-12deg, -12deg);
   }
   &__right {
-    transform: rotate(135deg) skew(-12deg, -12deg);
+    transform: translate(-6px) rotate(135deg) skew(-12deg, -12deg);
   }
   &::before,
   &::after {
     position: absolute;
-    width: 25px;
-    height: 25px;
+    width: 21px;
+    height: 21px;
     content: '';
-    left: -20px;
-    top: -20px;
+    left: -22px;
+    top: -22px;
     border-top: 4px solid rgba(255, 255, 255, 0.9);
     border-left: 4px solid rgba(255, 255, 255, 0.9);
     transition: all 0.3s ease-in-out;
   }
   &::after {
-    width: 15px;
-    height: 15px;
+    width: 11px;
+    height: 11px;
     left: 15px;
     top: 15px;
     border-top: 2px solid rgba(255, 255, 255, 0.5);
     border-left: 2px solid rgba(255, 255, 255, 0.5);
+  }
+  &__mobile {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &::after {
+      display: block;
+      content: '';
+      width: 35%;
+      height: 35%;
+      transform: rotate(45deg) translate(-15%, 15%);
+      border-top: 2px solid rgba(255, 255, 255, 0.6);
+      border-right: 2px solid rgba(255, 255, 255, 0.6);
+    }
+    &__left {
+      &::after {
+        transform: rotate(-135deg) translate(-15%, 15%);
+      }
+    }
   }
 }
 .arrows {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 63px;
+  width: 58px;
   height: 42px;
   cursor: pointer;
   &:hover {
@@ -383,9 +454,17 @@ export default {
     .arrow::after {
       left: -3px;
       top: -3px;
-    }
-    .arrow::before {
       opacity: 0;
+    }
+  }
+  &__mobile {
+    display: none;
+    @include sm- {
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 50%;
+      width: 95%;
     }
   }
 }

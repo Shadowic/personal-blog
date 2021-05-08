@@ -1,8 +1,13 @@
 <template>
   <div class="slider">
-    <div v-for="(image, index) in images" :key="index">
+    <div
+      v-for="(image, index) in images"
+      :key="index"
+      class="slider__container"
+    >
       <img
         :src="image.cover"
+        class="slider__image"
         :class="index === currentImageIndex ? 'currentImage' : ''"
       />
       <div
@@ -18,8 +23,12 @@
       </div>
     </div>
     <div class="arrows">
-      <div class="arrow arrow__left" @click.prevent="prevImage" />
-      <div class="arrow arrow__right" @click.prevent="nextImage" />
+      <div class="arrow arrow__left" @click.prevent="prevImage">
+        <arrow />
+      </div>
+      <div class="arrow arrow__right" @click.prevent="nextImage">
+        <arrow />
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +77,11 @@ export default {
   width: 100%;
   opacity: 0.8;
   line-height: 1;
+  &__container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
   &__caption {
     opacity: 0;
     position: absolute;
@@ -89,6 +103,12 @@ export default {
     letter-spacing: 0.25em;
     position: relative;
     margin-right: 22px;
+    @include md {
+      font-size: 10px;
+    }
+    @include md- {
+      font-size: 8px;
+    }
   }
   &__date::after {
     height: 95%;
@@ -112,13 +132,24 @@ export default {
     margin-bottom: 20px;
     opacity: 0;
     transform: translateX(-40px);
+    @include md {
+      font-size: 48px;
+    }
+    @include sm {
+      font-size: 36px;
+    }
   }
   &__description {
-    font-family: 'Dosis', serif;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 1.5em;
     opacity: 0;
     transform: translateX(-40px);
+    @include md {
+      font-size: 14px;
+    }
+    @include sm {
+      font-size: 12px;
+    }
   }
   .currentCaption {
     opacity: 1;
@@ -138,13 +169,13 @@ export default {
       transition-delay: 0.55s;
     }
   }
-  img {
+  .slider__image {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     z-index: 10;
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
-    position: absolute;
   }
   .currentImage {
     opacity: 1;
@@ -169,18 +200,9 @@ export default {
   width: 30px;
   height: 30px;
   margin: 0 5px;
-  &::before {
-    font-family: Eleganticons, serif;
-    content: '\24';
-    font-size: 1em;
-    position: absolute;
-    left: 0.4em;
-    top: calc(50% - 0.5em);
-    color: #fff;
-  }
-  &__left::before {
-    transform: rotate(180deg);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
   &::after {
     position: absolute;
     content: '';
@@ -189,15 +211,22 @@ export default {
     border: 2px dotted #fff;
     border-radius: 50%;
   }
-  &__left:hover {
-    &::after {
-      animation: circled 4s linear infinite reverse;
+  &__left {
+    transform: rotate(180deg);
+    &:hover {
+      &::after {
+        animation: circled 4s linear infinite reverse;
+      }
     }
   }
   &__right:hover {
     &::after {
       animation: circled 4s linear infinite;
     }
+  }
+  /deep/ .arrow {
+    fill: #fff;
+    width: 14px;
   }
 }
 </style>

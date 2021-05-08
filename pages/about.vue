@@ -80,12 +80,6 @@
 }
 </i18n>
 
-<script>
-export default {
-  layout: 'index',
-}
-</script>
-
 <style lang="scss" scoped>
 .about {
   display: flex;
@@ -113,7 +107,7 @@ export default {
 }
 .profile-img {
   border-radius: 50%;
-  background: url('~static/imgs/235924633_3616.jpg') center/cover;
+  background: url('static/imgs/IMG_0773.JPG') center/cover;
   background-color: #79a2ac;
   margin: 90px 60px 0 0;
   flex: 1 1 0;

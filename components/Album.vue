@@ -22,6 +22,7 @@
       >
         <span
           >discover
+          <arrow />
           <svg class="svg-dotted-line">
             <line x1="0" y1="50%" x2="100%" y2="50%" />
           </svg>
@@ -119,17 +120,11 @@ export default {
     transition: color 0.2s ease-out;
     span {
       position: relative;
-      &::after {
-        font-family: Eleganticons, serif;
-        content: '\24';
-        font-size: 1.3em;
-        height: 1em;
-        line-height: 1.3em;
-        position: absolute;
-        right: -1.3em;
-        top: calc(50% - 0.5em);
-        transition: transform 0.2s;
-        width: 1em;
+      /deep/ .arrow {
+        fill: #79a2ac;
+        width: 10px;
+        transform: translateY(4px);
+        transition: all 0.2s ease-out;
       }
     }
     .hovered &,
@@ -138,6 +133,10 @@ export default {
       cursor: pointer;
       & span::after {
         transform: translateX(2px);
+      }
+      /deep/ .arrow {
+        fill: #1c2522;
+        transform: translate(4px, 4px);
       }
     }
   }
@@ -166,6 +165,7 @@ export default {
   .btn:hover & {
     stroke: #1c2522;
     animation: animate-svg-line 40s linear infinite;
+    width: 105%;
   }
 }
 .album__date {

@@ -14,15 +14,25 @@
           href="https://www.instagram.com/shadowic_ceramic/"
           target="_blank"
           class="inst"
-        />
+        >
+          <img src="~assets/svgs/instagram.svg" />
+        </a>
         <a
           href="https://www.pinterest.de/Shadowic03/"
           target="_blank"
           class="pin"
-        />
-        <a href="https://github.com/Shadowic" target="_blank" class="github" />
-        <a href="https://gitlab.com/Shadowic" target="_blank" class="gitlab" />
-        <a href="" class="smthng" />
+        >
+          <img src="~assets/svgs/pinterest.svg" />
+        </a>
+        <a href="https://github.com/Shadowic" target="_blank" class="github">
+          <img src="~assets/svgs/github.svg" />
+        </a>
+        <a href="https://t.me/shadowic" target="_blank" class="smthng">
+          <img src="~assets/svgs/telegram.svg" />
+        </a>
+        <a href="" class="smthng">
+          <img src="~assets/svgs/coffee-cup.svg" />
+        </a>
       </div>
     </div>
   </div>
@@ -47,32 +57,46 @@
   color: #919a99;
   text-align: center;
   line-height: 1.67em;
+  font-size: 14px;
+  @include sm {
+    font-size: 11px;
+  }
+  @include xs- {
+    font-size: 12px;
+  }
 
   &__wrapper {
     display: flex;
+    background: url('../assets/imgs/1111.jpg') left/cover;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: background 0.3s, border 0.3s, border-radius 0.3s,
       box-shadow 0.3s;
-    margin: 50px 0;
-    padding: 0% 21%;
+    padding: 50px 21%;
   }
 
   &__title {
     font-family: 'PlayfairDisplay Semi-bold', serif;
     color: #1c2522;
-    font-size: 30px;
+    font-size: 26px;
     margin-bottom: 20px;
+    @include sm {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+    @include xs- {
+      font-size: 22px;
+    }
   }
 
   &__undertitle {
-    margin-bottom: 20px;
+    margin-bottom: 25px;
   }
 
   &__p {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     padding-bottom: 40px;
   }
 }
@@ -99,32 +123,6 @@
     margin-right: 20px;
     cursor: pointer;
     line-height: 1.2em;
-
-    &::after {
-      font-family: Eleganticons, serif;
-      position: absolute;
-      left: 1px;
-    }
-  }
-
-  .inst::after {
-    content: '\e09a';
-  }
-
-  .pin::after {
-    content: '\e095';
-  }
-
-  .github::after {
-    content: '\e091';
-  }
-
-  .gitlab::after {
-    content: '\e092';
-  }
-
-  .smthng::after {
-    content: '\e0dc';
   }
 }
 </style>

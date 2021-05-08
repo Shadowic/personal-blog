@@ -1,6 +1,7 @@
 <template>
   <div class="default-header">
     <Navbar class="open" />
+    <LangTumbler />
   </div>
 </template>
 
@@ -22,6 +23,22 @@
     margin: 0 37px;
     &:first-child {
       display: none;
+    }
+  }
+  /deep/ .lang-tumbler {
+    position: absolute;
+    right: 50px;
+    span {
+      &:hover,
+      &:focus,
+      &:active {
+        color: #79a2ac;
+      }
+    }
+    @include sm {
+      position: relative;
+      width: 65px;
+      right: 10px;
     }
   }
 }

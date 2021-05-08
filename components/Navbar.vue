@@ -65,7 +65,7 @@
   color: #1c2522;
   margin: 17px 0;
   opacity: 0;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.2em;
   line-height: 1em;
@@ -100,11 +100,18 @@
     color: #79a2ac;
     transition: color 0.2s ease-out;
   }
+  @include xs {
+    font-size: 16px;
+    margin: 20px 0;
+  }
+  @include xs- {
+    font-size: 12px;
+  }
 }
 .symbol {
   width: 80px;
   height: 80px;
-  background: url('assets/logo.png') center/cover;
+  background: url('../assets/imgs/logo.png') center/cover;
   margin: 0 10px;
 }
 </style>

@@ -96,7 +96,7 @@ export default {
     .logo {
       width: 60px;
       height: 60px;
-      background: url('assets/logo.png') center/cover;
+      background: url('../assets/imgs/logo.png') center/cover;
       &::after {
         height: 2px;
         width: 48px;
@@ -146,14 +146,20 @@ export default {
       color: #1c2522;
       cursor: pointer;
     }
+    /deep/ .lang-tumbler span {
+      &:hover,
+      &:focus,
+      &:active {
+        color: dimgray;
+      }
+    }
   }
 }
 .sliding-area {
-  background-image: url('assets/photo-1.jpg');
+  background: url('../assets/imgs/header-sliding2.jpg') bottom/cover;
   background-color: #fafafa;
-  background-size: cover;
   left: -405px;
-  padding: 68px 65px 40px 65px;
+  padding: 72px 65px 40px 65px;
   position: fixed;
   top: 0;
   transition: 0.8s cubic-bezier(0.5, 0.09, 0, 0.97);
@@ -177,15 +183,19 @@ export default {
     align-items: center;
   }
   &__bottom {
-    color: #919a99;
+    color: #fff;
+    opacity: 0.9;
+    font-size: 10px;
   }
 }
 .title {
   font-size: 40px;
+  font-family: 'PlayfairDisplay Semi-bold', serif;
 }
 .subtitle {
   color: #79a2ac;
   letter-spacing: 0.34em;
   text-indent: 0.17em;
+  font-size: 12px;
 }
 </style>
