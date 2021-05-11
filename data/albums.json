@@ -1,0 +1,57 @@
+[
+  {
+    "id": "ceramics",
+    "title": "Кeрамика",
+    "date": "08.03.1990",
+    "description": "Кружки, большое, нет <em>огромное</em> количество кружек",
+    "cover": "/imgs/20210222125437_IMG_4602.JPG",
+    "category": "ceramic",
+    "shownOnIndexPage": true
+  },
+  {
+    "id": "ceramic-set",
+    "title": "Кeрамика",
+    "date": "fur immer",
+    "description": "Тарелки, огромное, нет <em>просто невероятное</em> количество тарелок",
+    "cover": "/imgs/20210222165119_IMG_4819.JPG",
+    "category": "ceramic",
+    "shownOnIndexPage": false
+  },
+  {
+    "id": "flowers",
+    "title": "Цветочки",
+    "date": "вне времени",
+    "description": "Хожу, фотографирую <em>разные</em> цветы",
+    "cover": "/imgs/IMG_2113.JPG",
+    "category": "flowers",
+    "shownOnIndexPage": false
+  },
+  {
+    "id": "cochem",
+    "title": "Cochem",
+    "date": "февраль 2020",
+    "description": "Чудесный <em>немецкий</em> маленький городок со множеством виноградников и высоко стоящим замком",
+    "descriptionEn": "Wonderful German small town",
+    "cover": "/imgs/IMG_1992.JPG",
+    "category": "travel",
+    "shownOnIndexPage": true
+  },
+  {
+    "id": "venezia",
+    "title": "Venezia",
+    "date": "август 2016",
+    "description": "То ли итальянский, то ли нет город <em>на воде</em>, периодически под водой",
+    "cover": "/imgs/DSCN1742.JPG",
+    "category": "travel",
+    "shownOnIndexPage": true
+  },
+  {
+    "id": "oslo",
+    "title": "Oslo",
+    "date": "февраль 2017",
+    "description": "Дешево войти, <em>очень дорого дохать,</em> и невероятно дорого прожить",
+    "cover": "/imgs/IMG_0036.JPG",
+    "category": "travel",
+    "shownOnIndexPage": true
+  }
+]
