@@ -24,7 +24,7 @@
     "description": "Тарелки, огромное, нет <em>просто невероятное</em> количество тарелок",
     "cover": "/imgs/IMG_6863.JPG",
     "category": "ceramic",
-    "shownOnIndexPage": false
+    "shownOnIndexPage": true
   },
   {
     "id": "vases",

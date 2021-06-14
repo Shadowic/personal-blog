@@ -1,0 +1,18 @@
+[
+  {
+    "thumbnail": "~url",
+    "image": "/imgs/20210222125437_IMG_4602.JPG",
+    "blockType": "1",
+    "sidebar": {
+      "title": {
+        "ru": "Кружка",
+        "en": "Ceramic mug"
+      },
+      "description": {
+        "ru": "Не следует, однако забывать, что реализация намеченных плановых заданий позволяет выполнять важные задания по разработке соответствующий условий активизации.",
+        "en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin sed convallis lorem. Praesent nec felis vitae dui auctor pellentesque eget vel mi. Maecenas venenatis sodales velit, in convallis odio sollicitudin at. Curabitur sed nunc non sem iaculis placerat ut a ex. Suspendisse tincidunt condimentum ipsum eu placerat."
+      },
+      "price": "2500р"
+    }
+  }
+]
