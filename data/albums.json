@@ -4,7 +4,7 @@
     "title": "Кружки",
     "date": "08.03.1990",
     "description": "Кружки, большое, нет <em>огромное</em> количество кружек",
-    "cover": "/imgs/IMG_6927.JPG",
+    "cover": "/imgs/IMG_6927.jpg",
     "category": "ceramic",
     "shownOnIndexPage": true
   },
@@ -13,7 +13,7 @@
     "title": "Кашпо",
     "date": "fur immer",
     "description": "Кашпо, огромное, нет <em>просто невероятное</em> количество кашпо",
-    "cover": "/imgs/IMG_6688.JPG",
+    "cover": "/imgs/IMG_6688.jpg",
     "category": "ceramic",
     "shownOnIndexPage": false
   },
@@ -22,7 +22,7 @@
     "title": "Тарелки",
     "date": "fur immer",
     "description": "Тарелки, огромное, нет <em>просто невероятное</em> количество тарелок",
-    "cover": "/imgs/IMG_6863.JPG",
+    "cover": "/imgs/IMG_6863.jpg",
     "category": "ceramic",
     "shownOnIndexPage": true
   },
@@ -31,7 +31,7 @@
     "title": "Вазочки",
     "date": "fur immer",
     "description": "Вазы, огромное, нет <em>просто невероятное</em> количество ваз",
-    "cover": "/imgs/IMG_6649.JPG",
+    "cover": "/imgs/IMG_6649.jpg",
     "category": "ceramic",
     "shownOnIndexPage": false
   },
