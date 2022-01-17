@@ -51,8 +51,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
 
-  proxy: process.env.API_URL && {
-    '/uploads': process.env.API_URL,
+  proxy: process.env.BROWSER_BASE_URL && {
+    '/uploads': process.env.BROWSER_BASE_URL,
   },
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -71,8 +71,13 @@ export default {
   modules: ['nuxt-i18n', '@nuxtjs/sentry', '@nuxtjs/proxy', '@nuxtjs/strapi'],
 
   strapi: {
-    entities: ['', ''],
-    url: process.env.API_URL || '/',
+    url: process.env.BROWSER_BASE_URL || '/',
+  },
+
+  privateRuntimeConfig: {
+    strapi: {
+      url: process.env.API_URL,
+    },
   },
 
   i18n: {

@@ -52,8 +52,13 @@ export default {
         albums,
         footer,
       }
-    } catch (e) {
-      return {}
+    } catch (error) {
+      return {
+        index: {},
+        slider: [],
+        albums: [],
+        footer: {},
+      }
     }
   },
 }
