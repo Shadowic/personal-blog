@@ -176,7 +176,7 @@ export default {
   padding-left: calc(40% + 80px);
 
   &__top {
-    padding: 13% 2%;
+    padding: 10vh 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
