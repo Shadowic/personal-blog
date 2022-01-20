@@ -52,7 +52,7 @@ export default {
   margin: 0 auto;
   padding: 80px 110px 0;
   line-height: 1.647em;
-  color: $ocean;
+  color: $dark-cyan;
   @include md {
     padding: 30px 50px 0;
   }
@@ -66,6 +66,8 @@ export default {
   }
   /deep/.background {
     position: absolute;
+    color: $ziggurat;
+    opacity: 0.1;
     top: -75px;
     @include md {
       top: -10px;
@@ -88,6 +90,8 @@ export default {
   background-color: $ziggurat;
   margin: 90px 60px 0 0;
   flex: 1 1 0;
+  //position: relative;
+  //z-index: 1;
   &::before {
     content: '';
     display: block;
@@ -102,19 +106,21 @@ export default {
 .info {
   flex: 1.3 1 0;
   position: relative;
+  //z-index: 1;
 }
 .name {
   font-family: 'Caveat', cursive;
-  font-weight: 600;
-  color: $green-dark;
-  font-size: 40px;
+  font-weight: 900;
+  color: $bokara;
+  opacity: 0.85;
+  font-size: 50px;
   line-height: 1.212em;
   margin: 25px 0 5px;
   letter-spacing: 0.1em;
 }
 .caption {
   font-size: 10px;
-  color: $ziggurat;
+  color: $ocean;
   letter-spacing: 0.2em;
   line-height: 1em;
   text-transform: uppercase;

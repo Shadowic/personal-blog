@@ -8,6 +8,8 @@
     </div>
     <Nuxt class="content" />
     <Footer v-if="footer" class="footer" :footer="footer" />
+    <div class="background-fill background-fill__blue"></div>
+    <div class="background-fill background-fill__pink"></div>
   </div>
 </template>
 
@@ -44,12 +46,17 @@ export default {
 .wrapper {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .content {
   flex: 1 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .footer {
   flex: 0 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .header {
   flex: 0 0 auto;
@@ -64,6 +71,21 @@ export default {
     @include sm- {
       display: none;
     }
+  }
+}
+.background-fill {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  bottom: 0;
+  z-index: 0;
+  &__blue {
+    clip-path: polygon(0 64%, 100% 50%, 100% 100%, 0% 100%);
+    background-color: #f2f6f7;
+  }
+  &__pink {
+    clip-path: polygon(0 40%, 100% 62%, 100% 100%, 0% 100%);
+    background-color: #fdf8ef;
   }
 }
 </style>

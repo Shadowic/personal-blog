@@ -21,6 +21,9 @@ export default {
       this.navbar = result.data.attributes
     } catch (e) {}
   },
+  watch: {
+    '$route.query': '$fetch',
+  },
 }
 </script>
 
