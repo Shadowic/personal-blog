@@ -14,16 +14,13 @@
         class="slider__caption"
         :class="index === currentImageIndex ? 'currentCaption' : ''"
       >
-        <div class="slider__caption-top">
-          <div class="slider__date">Date</div>
-          <div class="slider__title">{{ image.attributes.title }}</div>
-        </div>
         <div class="slider__name" v-html="image.attributes.title" />
         <div
           class="slider__description"
           v-html="image.attributes.description"
         />
       </div>
+      <div class="back" />
     </div>
     <div class="arrows">
       <div class="arrow arrow__left" @click.prevent="prevImage">
@@ -72,6 +69,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.back {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  background: linear-gradient(#0f0b0800, #0f0b0850, #0f0b0870, #0f0b0870);
+}
 .slider {
   position: fixed;
   top: 0;
@@ -89,45 +94,9 @@ export default {
     opacity: 0;
     position: absolute;
     bottom: 80px;
-    z-index: 20;
+    z-index: 30;
     color: #fff;
     padding: 45px;
-    &-top {
-      display: flex;
-      margin-bottom: 5px;
-      opacity: 0;
-      transform: translateX(-40px);
-    }
-  }
-  &__date,
-  &__title {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 0.25em;
-    position: relative;
-    margin-right: 22px;
-    @include md {
-      font-size: 10px;
-    }
-    @include md- {
-      font-size: 8px;
-    }
-  }
-  &__date::after {
-    height: 95%;
-    width: 2px;
-    content: '';
-    display: block;
-    position: absolute;
-    right: -10px;
-    background: repeating-linear-gradient(
-      0deg,
-      #fff,
-      #fff 2px,
-      transparent 2px,
-      transparent 4px
-    );
-    top: -1px;
   }
   &__name {
     font-family: 'Caveat', cursive;
