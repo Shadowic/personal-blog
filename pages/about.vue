@@ -35,7 +35,7 @@ export default {
 <style lang="scss">
 .description {
   p {
-    font-size: 17px;
+    font-size: 15px;
     & + p {
       margin-top: 20px;
     }

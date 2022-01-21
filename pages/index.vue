@@ -4,12 +4,13 @@
     <div class="content">
       <div class="content__top">
         <div
+          ref="icon"
           class="content__icon"
           :style="{ backgroundImage: `url(${index.logo.data.attributes.url})` }"
         />
-        <div class="content__subtitle">{{ index.welcome }}</div>
-        <h1 class="content__title" v-html="index.title" />
-        <p class="content__description">
+        <div ref="subtitle" class="content__subtitle">{{ index.welcome }}</div>
+        <h1 ref="title" class="content__title" v-html="index.title" />
+        <p ref="description" class="content__description">
           {{ index.description }}
         </p>
         <ScrollDownIcon />
@@ -61,8 +62,50 @@ export default {
       }
     }
   },
+  mounted() {
+    this.addAnimationClass()
+  },
+  methods: {
+    addAnimationClass() {
+      this.$refs.icon.classList.add('animated')
+      this.$refs.subtitle.classList.add('animated', 'delay05')
+      this.$refs.title.classList.add('animated', 'delay10')
+      this.$refs.description.classList.add('animated', 'delay15')
+    },
+  },
 }
 </script>
+
+<style lang="scss">
+@keyframes backInRight {
+  0% {
+    transform: translateX(2000px) scale(0.7);
+    opacity: 0.7;
+  }
+
+  80% {
+    transform: translateX(0) scale(0.7);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.animated {
+  animation: 1s ease-in both backInRight;
+}
+.delay05 {
+  animation-delay: 0.2s;
+}
+.delay10 {
+  animation-delay: 0.4s;
+}
+.delay15 {
+  animation-delay: 0.9s;
+}
+</style>
 
 <style lang="scss" scoped>
 .container {
@@ -112,28 +155,25 @@ export default {
         width: calc(100% - 80px);
         z-index: 1;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-
-        &-top {
-          display: none;
-        }
+        cursor: pointer;
 
         @include sm {
           bottom: -50%;
         }
       }
 
+      &__date,
       &__description {
-        font-size: 1.8vw;
+        display: none;
+      }
+
+      &__title {
+        font-family: 'Caveat', cursive;
+        color: $bokara;
+        font-size: 2vw;
         font-weight: 600;
-        @include sm {
-          font-size: 14px;
-        }
-        @include xs {
-          font-size: 22px;
-        }
-        @include xs- {
-          font-size: 16px;
-        }
+        transition: all 0.25s ease-in-out;
+        text-transform: lowercase;
       }
 
       &__cover {
@@ -183,6 +223,7 @@ export default {
     align-items: center;
     text-align: center;
     height: 100vh;
+    overflow-x: hidden;
     @include sm- {
       padding: calc(60px + 10%) 2% 60px;
     }

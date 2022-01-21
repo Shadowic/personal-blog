@@ -23,7 +23,7 @@ export default {
   mounted() {
     setTimeout(() => {
       this.animateMouse = true
-    }, 1000)
+    }, 1100)
   },
 }
 </script>

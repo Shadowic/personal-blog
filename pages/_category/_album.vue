@@ -122,7 +122,7 @@ export default {
 .album {
   width: 100%;
   max-width: 1200px;
-  margin: 30px auto;
+  margin: 60px auto 30px;
   padding: 0 20px;
   position: relative;
   &__title {

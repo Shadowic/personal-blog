@@ -51,7 +51,7 @@ export default {
 .content {
   flex: 1 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 101;
 }
 .footer {
   flex: 0 0 auto;
@@ -60,6 +60,7 @@ export default {
 }
 .header {
   flex: 0 0 auto;
+  z-index: 100;
   &__mobile {
     display: none;
     @include sm- {
