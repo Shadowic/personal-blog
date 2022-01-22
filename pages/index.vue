@@ -68,41 +68,33 @@ export default {
   methods: {
     addAnimationClass() {
       this.$refs.icon.classList.add('animated')
-      this.$refs.subtitle.classList.add('animated', 'delay05')
-      this.$refs.title.classList.add('animated', 'delay10')
-      this.$refs.description.classList.add('animated', 'delay15')
+      this.$refs.subtitle.classList.add('animated', 'delay1')
+      this.$refs.title.classList.add('animated', 'delay2')
+      this.$refs.description.classList.add('animated', 'delay3')
     },
   },
 }
 </script>
 
 <style lang="scss">
-@keyframes backInRight {
-  0% {
-    transform: translateX(2000px) scale(0.7);
-    opacity: 0.7;
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
   }
-
-  80% {
-    transform: translateX(0) scale(0.7);
-    opacity: 0.7;
-  }
-
-  100% {
-    transform: scale(1);
+  to {
     opacity: 1;
   }
 }
 .animated {
-  animation: 1s ease-in both backInRight;
+  animation: 1s ease-in both fadeInDown;
 }
-.delay05 {
+.delay1 {
   animation-delay: 0.2s;
 }
-.delay10 {
+.delay2 {
   animation-delay: 0.4s;
 }
-.delay15 {
+.delay3 {
   animation-delay: 0.9s;
 }
 </style>
@@ -258,7 +250,7 @@ export default {
   }
 
   &__title {
-    background: url('static/imgs/IMG_0773.JPG') center/cover;
+    background: url('static/imgs/IMG_0773.jpg') center/cover;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Caveat', cursive;

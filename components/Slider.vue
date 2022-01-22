@@ -4,16 +4,13 @@
       v-for="(image, index) in slider"
       :key="index"
       class="slider__container"
+      :class="index === currentImageIndex ? 'active' : ''"
     >
       <img
         :src="`${image.attributes.cover.data.attributes.url}`"
         class="slider__image"
-        :class="index === currentImageIndex ? 'currentImage' : ''"
       />
-      <div
-        class="slider__caption"
-        :class="index === currentImageIndex ? 'currentCaption' : ''"
-      >
+      <div class="slider__caption">
         <div class="slider__name" v-html="image.attributes.title" />
         <div
           class="slider__description"
@@ -88,7 +85,7 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
-    opacity: 0.8;
+    // opacity: 0.8;
   }
   &__caption {
     opacity: 0;
@@ -100,7 +97,7 @@ export default {
   }
   &__name {
     font-family: 'Caveat', cursive;
-    font-size: 60px;
+    font-size: 75px;
     margin-bottom: 20px;
     opacity: 0;
     transform: translateX(-40px);
@@ -112,8 +109,9 @@ export default {
     }
   }
   &__description {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5em;
+    font-weight: 800;
     opacity: 0;
     transform: translateX(-40px);
     @include md {
@@ -121,24 +119,6 @@ export default {
     }
     @include sm {
       font-size: 12px;
-    }
-  }
-  .currentCaption {
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
-    .slider__caption-top,
-    .slider__name,
-    .slider__description {
-      opacity: 1;
-      transform: translateX(0);
-      transition: all 1s ease-in-out;
-      transition-delay: 0.3s;
-    }
-    .slider__name {
-      transition-delay: 0.2s;
-    }
-    .slider__description {
-      transition-delay: 0.55s;
     }
   }
   .slider__image {
@@ -149,9 +129,29 @@ export default {
     opacity: 0;
     transition: opacity 1.5s ease-in-out;
   }
-  .currentImage {
-    opacity: 1;
-    transition: opacity 1.5s ease-in-out;
+  &__container.active {
+    .slider__image {
+      opacity: 0.75;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .slider__caption {
+      opacity: 1;
+      transition: opacity 1.5s ease-in-out;
+      .slider__caption-top,
+      .slider__name,
+      .slider__description {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 1s ease-in-out;
+        transition-delay: 0.3s;
+      }
+      .slider__name {
+        transition-delay: 0.2s;
+      }
+      .slider__description {
+        transition-delay: 0.55s;
+      }
+    }
   }
 }
 .arrows {
