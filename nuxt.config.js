@@ -91,7 +91,11 @@ export default {
     },
   },
   styleResources: {
-    scss: ['./assets/scss/variables.scss', './assets/scss/breakpoints.scss'],
+    scss: [
+      './assets/scss/variables.scss',
+      './assets/scss/breakpoints.scss',
+      './assets/scss/animations.scss',
+    ],
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},

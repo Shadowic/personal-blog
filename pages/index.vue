@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Slider :slider="slider.data" class="index__slider" />
+    <Slider ref="slider" :slider="slider.data" class="index__slider" />
     <div class="content">
       <div class="content__top">
         <div
@@ -15,7 +15,7 @@
         </p>
         <ScrollDownIcon />
       </div>
-      <div class="content__body">
+      <div ref="content" class="content__body">
         <BackgroundWord :title="index.feed_title" />
         <div class="content__body__title">{{ index.feed_subtitle }}</div>
         <div class="index__albums">
@@ -27,7 +27,7 @@
           />
         </div>
       </div>
-      <Footer v-if="footer" :footer="footer" />
+      <Footer v-if="footer" ref="footer" :footer="footer" />
     </div>
   </div>
 </template>
@@ -67,37 +67,17 @@ export default {
   },
   methods: {
     addAnimationClass() {
-      this.$refs.icon.classList.add('animated')
-      this.$refs.subtitle.classList.add('animated', 'delay1')
-      this.$refs.title.classList.add('animated', 'delay2')
-      this.$refs.description.classList.add('animated', 'delay3')
+      this.$refs.icon.classList.add('animated__fadeInDown')
+      this.$refs.subtitle.classList.add('animated__fadeInDown', 'delay1')
+      this.$refs.title.classList.add('animated__fadeInDown', 'delay2')
+      this.$refs.description.classList.add('animated__fadeInDown', 'delay3')
+      this.$refs.content.classList.add('animated__fadeInDown', 'delay3')
+      this.$refs.slider.$el.classList.add('animated__fadeInDown', 'delay3')
+      this.$refs.footer.$el.classList.add('animated__fadeInDown', 'delay3')
     },
   },
 }
 </script>
-
-<style lang="scss">
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.animated {
-  animation: 1s ease-in both fadeInDown;
-}
-.delay1 {
-  animation-delay: 0.2s;
-}
-.delay2 {
-  animation-delay: 0.4s;
-}
-.delay3 {
-  animation-delay: 0.9s;
-}
-</style>
 
 <style lang="scss" scoped>
 .container {
