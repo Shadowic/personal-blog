@@ -11697,6 +11697,11 @@ vue-i18n@^8.25.0:
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.26.7.tgz#adfd48373449fe31438c48e3b3bd43044dc3a681"
   integrity sha512-7apa5PvRg1YCLoraE3lOgpCG8hJGupLCtywQWedWsgBbvF0TOgFvhitqK9xRH0PBGG1G8aiJz9oklyNDFfDxLg==
 
+vue-kinesis@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/vue-kinesis/-/vue-kinesis-1.3.3.tgz#39c61e3c5b2f0fef7894fec4eec8b6266e99858c"
+  integrity sha512-tahIm1+OU2EVUx6b23GV4WNZCuK55Zroiw6Ijl32JxMHrImXLlhAXEDjZx26FXGBy1N3TM7bOaO3YQfAPxG2pw==
+
 vue-loader@^15.9.7:
   version "15.9.8"
   resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.9.8.tgz#4b0f602afaf66a996be1e534fb9609dc4ab10e61"

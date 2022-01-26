@@ -1,21 +1,23 @@
 <template>
   <div class="container">
-    <Slider ref="slider" :slider="slider.data" class="index__slider" />
+    <Slider :slider="slider.data" class="index__slider" />
     <div class="content">
       <div class="content__top">
         <div
-          ref="icon"
+          :class="animations"
           class="content__icon"
           :style="{ backgroundImage: `url(${index.logo.data.attributes.url})` }"
         />
-        <div ref="subtitle" class="content__subtitle">{{ index.welcome }}</div>
-        <h1 ref="title" class="content__title" v-html="index.title" />
-        <p ref="description" class="content__description">
+        <div :class="animations1" class="content__subtitle">
+          {{ index.welcome }}
+        </div>
+        <h1 :class="animations2" class="content__title" v-html="index.title" />
+        <p :class="animations3" class="content__description">
           {{ index.description }}
         </p>
         <ScrollDownIcon />
       </div>
-      <div ref="content" class="content__body">
+      <div :class="animations3" class="content__body">
         <BackgroundWord :title="index.feed_title" />
         <div class="content__body__title">{{ index.feed_subtitle }}</div>
         <div class="index__albums">
@@ -27,7 +29,7 @@
           />
         </div>
       </div>
-      <Footer v-if="footer" ref="footer" :footer="footer" />
+      <Footer v-if="footer" :footer="footer" />
     </div>
   </div>
 </template>
@@ -62,18 +64,23 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      animations: '',
+      animations1: '',
+      animations2: '',
+      animations3: '',
+    }
+  },
   mounted() {
     this.addAnimationClass()
   },
   methods: {
     addAnimationClass() {
-      this.$refs.icon.classList.add('animated__fadeInDown')
-      this.$refs.subtitle.classList.add('animated__fadeInDown', 'delay1')
-      this.$refs.title.classList.add('animated__fadeInDown', 'delay2')
-      this.$refs.description.classList.add('animated__fadeInDown', 'delay3')
-      this.$refs.content.classList.add('animated__fadeInDown', 'delay3')
-      this.$refs.slider.$el.classList.add('animated__fadeInDown', 'delay3')
-      this.$refs.footer.$el.classList.add('animated__fadeInDown', 'delay3')
+      this.animations = 'animated__fadeInDown'
+      this.animations1 = 'animated__fadeInDown delay1'
+      this.animations2 = 'animated__fadeInDown delay2'
+      this.animations3 = 'animated__fadeInDown delay3'
     },
   },
 }
@@ -88,6 +95,7 @@ export default {
   .index__slider {
     left: 80px;
     width: 40%;
+    opacity: 0;
     @include sm- {
       position: relative;
       left: 0;
@@ -206,6 +214,7 @@ export default {
     height: 95px;
     background: center/cover;
     transform: translateY(15px);
+    opacity: 0;
     @include sm {
       width: 60px;
       height: 60px;
@@ -224,6 +233,7 @@ export default {
     letter-spacing: 0.2em;
     line-height: 1em;
     text-transform: uppercase;
+    opacity: 0;
     @include sm- {
       font-size: 10px;
     }
@@ -240,6 +250,7 @@ export default {
     margin: 25px 0;
     word-wrap: break-word;
     padding-bottom: 30px;
+    opacity: 0;
 
     /deep/ span {
       font-style: italic;
@@ -262,6 +273,7 @@ export default {
     color: $green-dark;
     margin-top: 7%;
     line-height: 1.63em;
+    opacity: 0;
     @include md {
       font-size: 16px;
     }
@@ -275,6 +287,7 @@ export default {
 
   &__body {
     position: relative;
+    opacity: 0;
 
     &__title {
       display: block;

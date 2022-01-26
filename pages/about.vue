@@ -15,6 +15,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'change-route',
+    mode: 'out-in',
+  },
   async asyncData({ $strapi, i18n }) {
     try {
       const result = await $strapi.$http.$get(
@@ -87,7 +91,7 @@ export default {
 .profile-img {
   border-radius: 50%;
   background: center/cover;
-  background-color: $ziggurat;
+  background-color: #79a2ac50;
   margin: 90px 60px 0 0;
   flex: 1 1 0;
   //position: relative;

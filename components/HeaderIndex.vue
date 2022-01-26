@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{ open: showNavbar }">
+  <div ref="indexHeader" class="header" :class="{ open: showNavbar }">
     <div class="fixed-area">
       <nuxt-link :to="localePath(navbar.Menu[0].url)" class="fixed-area__top"
         ><div
@@ -42,9 +42,15 @@ export default {
       showNavbar: false,
     }
   },
+  mounted() {
+    this.addAnimationClass()
+  },
   methods: {
     closeNav() {
       this.showNavbar = false
+    },
+    addAnimationClass() {
+      this.$refs.indexHeader.classList.add('animated__fadeInDown', 'delay2')
     },
   },
 }

@@ -1,17 +1,7 @@
 <template>
   <div>
-    <HeaderMobile
-      v-if="navbar"
-      ref="header"
-      :navbar="navbar"
-      class="header__mobile"
-    />
-    <HeaderIndex
-      v-if="navbar"
-      ref="header"
-      :navbar="navbar"
-      class="header__desktop"
-    />
+    <HeaderMobile v-if="navbar" :navbar="navbar" class="header__mobile" />
+    <HeaderIndex v-if="navbar" :navbar="navbar" class="header__desktop" />
     <Nuxt />
   </div>
 </template>
@@ -33,14 +23,6 @@ export default {
   },
   watch: {
     '$route.query': '$fetch',
-  },
-  mounted() {
-    this.addAnimationClass()
-  },
-  methods: {
-    addAnimationClass() {
-      this.$refs.header.$el.classList.add('animated__fadeInDown', 'delay5')
-    },
   },
 }
 </script>

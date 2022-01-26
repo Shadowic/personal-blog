@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <kinesis-container class="wrapper">
     <HeaderMobile v-if="navbar" :navbar="navbar" class="header__mobile" />
     <div class="header header__desktop">
       <headroom :speed="450" easing="cubic-bezier(0.17, 0.59, 0.05, 0.96)">
@@ -7,10 +7,16 @@
       </headroom>
     </div>
     <Nuxt class="content" />
-    <Footer v-if="footer" class="footer" :footer="footer" />
-    <div class="background-fill background-fill__blue"></div>
-    <div class="background-fill background-fill__pink"></div>
-  </div>
+    <div class="bottom-container">
+      <kinesis-element class="kinesis-element" type="translate" :strength="-20">
+        <div class="background-fill background-fill__blue" />
+      </kinesis-element>
+      <kinesis-element class="kinesis-element" type="scale" :strength="1">
+        <div class="background-fill background-fill__pink" />
+      </kinesis-element>
+      <Footer v-if="footer" class="footer" :footer="footer" />
+    </div>
+  </kinesis-container>
 </template>
 
 <script>
@@ -19,6 +25,10 @@ import { headroom } from 'vue-headroom'
 export default {
   components: {
     headroom,
+  },
+  layoutTransition: {
+    name: 'layout',
+    mode: 'out-in',
   },
   data() {
     return {
@@ -36,9 +46,6 @@ export default {
       this.navbar = navbar.data.attributes
     } catch (e) {}
   },
-  watch: {
-    '$route.query': '$fetch',
-  },
 }
 </script>
 
@@ -47,16 +54,21 @@ export default {
   display: flex;
   flex-direction: column;
   position: relative;
+  overflow: hidden;
 }
 .content {
   flex: 1 0 auto;
   position: relative;
   z-index: 101;
 }
-.footer {
+.bottom-container {
   flex: 0 0 auto;
   position: relative;
-  z-index: 1;
+  height: 40vh;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
 }
 .header {
   flex: 0 0 auto;
@@ -74,18 +86,21 @@ export default {
     }
   }
 }
-.background-fill {
+.kinesis-element {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: absolute;
   bottom: 0;
-  z-index: 0;
+}
+.background-fill {
+  width: 100%;
+  height: 100%;
   &__blue {
-    clip-path: polygon(0 64%, 100% 50%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 24%, 100% 10%, 100% 100%, 0% 100%);
     background-color: #f2f6f7;
   }
   &__pink {
-    clip-path: polygon(0 40%, 100% 62%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0%, 100% 28%, 100% 100%, 0% 100%);
     background-color: #fdf8ef;
   }
 }

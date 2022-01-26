@@ -1,5 +1,5 @@
 <template>
-  <div class="slider">
+  <div :class="animations3" class="slider">
     <div
       v-for="(image, index) in slider"
       :key="index"
@@ -41,9 +41,11 @@ export default {
   data() {
     return {
       currentImageIndex: 0,
+      animations3: '',
     }
   },
   mounted() {
+    this.addAnimationClass()
     setInterval(() => this.nextImage(), 5000)
   },
   methods: {
@@ -60,6 +62,9 @@ export default {
       } else {
         this.currentImageIndex = 0
       }
+    },
+    addAnimationClass() {
+      this.animations3 = 'animated__fadeInDown delay3'
     },
   },
 }
@@ -81,6 +86,7 @@ export default {
   left: 0;
   width: 100%;
   line-height: 1;
+  opacity: 0;
   &__container {
     width: 100%;
     height: 100%;

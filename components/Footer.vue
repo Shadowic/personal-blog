@@ -46,7 +46,6 @@ export default {
   text-align: center;
   line-height: 1.6em;
   font-size: 12px;
-
   &__wrapper {
     display: flex;
     flex-direction: column;

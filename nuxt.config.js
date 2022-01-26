@@ -49,7 +49,12 @@ export default {
   css: ['./assets/scss/global.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: [
+    {
+      src: 'plugins/kinesis.js',
+      mode: 'client',
+    },
+  ],
 
   proxy: process.env.BROWSER_BASE_URL && {
     '/uploads': process.env.BROWSER_BASE_URL,

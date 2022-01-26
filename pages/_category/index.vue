@@ -12,6 +12,10 @@
 
 <script>
 export default {
+  transition: {
+    name: 'change-route',
+    mode: 'out-in',
+  },
   async asyncData({ $strapi, i18n, params, error }) {
     try {
       const result = await $strapi.$http.$get(

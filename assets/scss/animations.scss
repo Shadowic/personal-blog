@@ -24,3 +24,34 @@
 .delay5 {
   animation-delay: 1.5s;
 }
+
+.content {
+  transition: all 0.5s ease-in;
+}
+.change-route-enter {
+  opacity: 0;
+}
+.change-route-enter-active {
+  opacity: 0;
+}
+.change-route-enter-to {
+  opacity: 1;
+}
+.change-route-leave {
+  opacity: 0;
+}
+.change-route-leave-active {
+  opacity: 0;
+}
+.change-route-leave-to {
+  opacity: 0;
+}
+
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity 0.5s;
+}
+.layout-enter,
+.layout-leave-active {
+  opacity: 0;
+}
