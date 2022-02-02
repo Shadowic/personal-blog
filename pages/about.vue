@@ -2,7 +2,9 @@
   <div class="about">
     <div
       class="profile-img"
-      :style="{ backgroundImage: `url(${about.cover.data.attributes.url})` }"
+      :style="{
+        backgroundImage: `url(${about.cover.data.attributes.formats.medium.url})`,
+      }"
     />
     <div class="info">
       <BackgroundWord :title="about.page_title" />

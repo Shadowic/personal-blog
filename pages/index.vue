@@ -21,7 +21,7 @@
         <BackgroundWord :title="index.feed_title" />
         <div class="content__body__title">{{ index.feed_subtitle }}</div>
         <div class="index__albums">
-          <Album
+          <AlbumIndex
             v-for="(album, index) in albums.data"
             :key="index"
             :album="album"
@@ -110,69 +110,6 @@ export default {
     }
   }
 
-  /deep/ .index__albums {
-    display: flex;
-    flex-wrap: wrap;
-
-    .album {
-      width: 50%;
-      flex-direction: column;
-      padding: 0 20px;
-      margin: 0 0 160px;
-
-      &:nth-child(2n) {
-        margin-top: -95px;
-        @include sm- {
-          margin-top: 0;
-        }
-      }
-
-      &__outline {
-        position: absolute;
-        background-color: #fff;
-        padding: 20px;
-        bottom: -10%;
-        width: calc(100% - 80px);
-        z-index: 1;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
-        cursor: pointer;
-
-        @include sm {
-          bottom: -50%;
-        }
-      }
-
-      &__date,
-      &__description {
-        display: none;
-      }
-
-      &__title {
-        font-family: 'Caveat', cursive;
-        color: $bokara;
-        font-size: 2vw;
-        font-weight: 600;
-        transition: all 0.25s ease-in-out;
-        text-transform: lowercase;
-      }
-
-      &__cover {
-        width: 100%;
-      }
-
-      .btn {
-        display: none;
-      }
-      @include sm {
-        height: 200px;
-      }
-      @include sm- {
-        height: 300px;
-        width: 100%;
-        margin: 0 0 80px;
-      }
-    }
-  }
   @include sm- {
     flex-direction: column;
   }

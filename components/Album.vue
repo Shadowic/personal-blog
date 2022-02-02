@@ -160,6 +160,7 @@ export default {
   .btn {
     margin-top: 50px;
     transition: color 0.2s ease-out;
+    width: fit-content;
     span {
       position: relative;
       /deep/ .arrow {
@@ -249,6 +250,7 @@ export default {
   line-height: 1.212em;
   word-wrap: break-word;
   transition: all 0.25s ease-in-out;
+  width: fit-content;
   &:hover {
     cursor: pointer;
   }
