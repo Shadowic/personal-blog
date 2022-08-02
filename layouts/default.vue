@@ -1,22 +1,28 @@
 <template>
-  <kinesis-container class="wrapper">
+  <div class="wrapper">
     <HeaderMobile v-if="navbar" :navbar="navbar" class="header__mobile" />
     <div class="header header__desktop">
       <headroom :speed="450" easing="cubic-bezier(0.17, 0.59, 0.05, 0.96)">
         <HeaderDefault v-if="navbar" :navbar="navbar" />
       </headroom>
     </div>
-    <Nuxt class="content" />
-    <div class="bottom-container">
-      <kinesis-element class="kinesis-element" type="translate" :strength="-20">
-        <div class="background-fill background-fill__blue" />
-      </kinesis-element>
-      <kinesis-element class="kinesis-element" type="scale" :strength="1">
-        <div class="background-fill background-fill__pink" />
-      </kinesis-element>
-      <Footer v-if="footer" class="footer" :footer="footer" />
-    </div>
-  </kinesis-container>
+    <kinesis-container>
+      <Nuxt class="content" />
+      <div class="bottom-container">
+        <kinesis-element
+          class="kinesis-element"
+          type="translate"
+          :strength="-20"
+        >
+          <div class="background-fill background-fill__blue" />
+        </kinesis-element>
+        <kinesis-element class="kinesis-element" type="scale" :strength="1">
+          <div class="background-fill background-fill__pink" />
+        </kinesis-element>
+        <Footer v-if="footer" class="footer" :footer="footer" />
+      </div>
+    </kinesis-container>
+  </div>
 </template>
 
 <script>
