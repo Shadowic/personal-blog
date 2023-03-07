@@ -31,7 +31,7 @@ export default {
   text-align: center;
   width: 100%;
   height: 100%;
-  background: url('~assets/imgs/error3.png') center/cover;
+  background: url('~assets/imgs/error2.jpg') center/cover;
 }
 .message {
   color: #fff;

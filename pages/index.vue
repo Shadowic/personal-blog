@@ -26,6 +26,7 @@
             :key="index"
             :album="album"
             :code="album.attributes.category.data.attributes.code"
+            class="animation-target"
           />
         </div>
       </div>
@@ -74,6 +75,7 @@ export default {
   },
   mounted() {
     this.addAnimationClass()
+    this.isAnimated()
   },
   methods: {
     addAnimationClass() {
@@ -82,11 +84,39 @@ export default {
       this.animations2 = 'animated__fadeInDown delay2'
       this.animations3 = 'animated__fadeInDown delay3'
     },
+    isAnimated() {
+      window.onload = () => {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 0.75,
+        }
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const animationTarget = entry.target
+              animationTarget.style.opacity = '1'
+              observer.unobserve(animationTarget)
+            }
+          })
+        }, options)
+
+        const arr = document.querySelectorAll('.animation-target')
+        arr.forEach((i) => {
+          observer.observe(i)
+        })
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+.animation-target {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 .container {
   margin: 0 auto;
   display: flex;

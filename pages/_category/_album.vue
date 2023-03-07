@@ -6,7 +6,7 @@
       <div
         v-for="(image, imageIndex) in images"
         :key="imageIndex"
-        class="grid-item"
+        class="grid-item animation-target"
         @click="openImage(imageIndex)"
       >
         <img :src="getImageUrl(image, 'medium')" :alt="image.id" />
@@ -69,7 +69,34 @@ export default {
       return this.photos.length > 0
     },
   },
+  mounted() {
+    this.isAnimated()
+  },
   methods: {
+    isAnimated() {
+      window.onload = () => {
+        const options = {
+          root: null,
+          rootMargin: '0px',
+          threshold: 1.0,
+        }
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const animationTarget = entry.target
+              animationTarget.style.opacity = '1'
+              observer.unobserve(animationTarget)
+            }
+          })
+        }, options)
+
+        const arr = document.querySelectorAll('.animation-target')
+        arr.forEach((i) => {
+          observer.observe(i)
+        })
+      }
+    },
     getCurrentImg() {
       if (this.openedImgIndex > -1) {
         const foundImage = this.findImageByIndex(this.openedImgIndex)
@@ -119,6 +146,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.animation-target {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
 .album {
   width: 100%;
   max-width: 1200px;
