@@ -82,34 +82,34 @@ export default {
         feed_title: 'Maecenas sit',
         feed_subtitle: 'Amet semper tortor',
       },
-      // albums: {
-      //   data: {
-      //     attributes: {
-      //       title: 'Noname album',
-      //       code: '1',
-      //       blockClass: '1',
-      //       albumType: '1',
-      //       category: {
-      //         data: {
-      //           attributes: {
-      //             code: 'cakes',
-      //           },
-      //         },
-      //       },
-      //       cover: {
-      //         data: {
-      //           attributes: {
-      //             formats: {
-      //               medium: {
-      //                 url: '/imgs/IMG_9408.jpg',
-      //               },
-      //             },
-      //           },
-      //         },
-      //       },
-      //     },
-      //   },
-      // },
+      albums: {
+        data: {
+          attributes: {
+            title: 'Cakes',
+            code: 'cakes',
+            // blockClass: '1',
+            // albumType: '1',
+            category: {
+              data: {
+                attributes: {
+                  code: 'cakes',
+                },
+              },
+            },
+            cover: {
+              data: {
+                attributes: {
+                  formats: {
+                    medium: {
+                      url: '/imgs/IMG_9408.jpg',
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
       slider: {
         data: [
           {

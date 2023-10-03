@@ -38,20 +38,127 @@ export default {
   },
   data() {
     return {
-      footer: null,
-      navbar: null,
+      // footer: null,
+      // navbar: null,
+      navbar: {
+        Menu: [
+          {
+            url: '/cakes',
+            title: 'cakes',
+          },
+          {
+            url: '/about',
+            title: 'about',
+          },
+          {
+            url: '/cakes',
+            title: 'cakes',
+          },
+          {
+            url: '/',
+            title: 'four',
+          },
+          {
+            url: '/',
+            title: 'five',
+          },
+        ],
+        logo: {
+          data: {
+            attributes: {
+              url: '/imgs/IMG_9408.jpg',
+            },
+          },
+        },
+        subtitle: 'Welcome!',
+        caption: 'visit',
+        caption2: 'please',
+      },
+      footer: {
+        title: 'Nunc ut volutpat purus',
+        subtitle: 'Pellentesque ac commodo tellus',
+        description:
+          'uspendisse dolor ligula, semper in diam vitae, interdum sagittis tortor. Mauris id gravida enim. Pellentesque eget turpis placerat risus consequat varius malesuada a nulla.',
+        links: [
+          {
+            is_shown: true,
+            id: 0,
+            url: '/',
+            title: 'coffee',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/coffee-cup.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: true,
+            id: 1,
+            url: '/',
+            title: 'github',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/github.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: false,
+            id: 2,
+            url: '/',
+            title: 'loupe',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/loupe.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: true,
+            id: 3,
+            url: '/',
+            title: 'insta',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/pinterest.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: true,
+            id: 4,
+            url: '/',
+            title: 'insta',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/telegram.svg',
+                },
+              },
+            },
+          },
+        ],
+      },
     }
   },
-  async fetch() {
-    try {
-      const [footer, navbar] = await Promise.all([
-        this.$strapi.$http.$get(`/api/footer?locale=${this.$i18n.locale}`),
-        this.$strapi.$http.$get(`/api/navbar?locale=${this.$i18n.locale}`),
-      ])
-      this.footer = footer.data.attributes
-      this.navbar = navbar.data.attributes
-    } catch (e) {}
-  },
+  // async fetch() {
+  //   try {
+  //     const [footer, navbar] = await Promise.all([
+  //       this.$strapi.$http.$get(`/api/footer?locale=${this.$i18n.locale}`),
+  //       this.$strapi.$http.$get(`/api/navbar?locale=${this.$i18n.locale}`),
+  //     ])
+  //     this.footer = footer.data.attributes
+  //     this.navbar = navbar.data.attributes
+  //   } catch (e) {}
+  // },
 }
 </script>
 

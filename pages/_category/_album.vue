@@ -16,18 +16,18 @@
         />
       </div>
     </div>
-    <Modal
-      :image="getCurrentImg()"
-      :opened-img-index="openedImgIndex"
-      :count-imgs="countImgs"
-      :show-sidebar="isPhotoWithSidebar"
-      :title="getCurrentImageProperty('title')"
-      :description="getCurrentImageProperty('description')"
-      :price="getCurrentImageProperty('price')"
-      @close="closeImage"
-      @prevImg="prevImage"
-      @nextImg="nextImage"
-    />
+    <!--    <Modal-->
+    <!--      :image="getCurrentImg()"-->
+    <!--      :opened-img-index="openedImgIndex"-->
+    <!--      :count-imgs="countImgs"-->
+    <!--      :show-sidebar="isPhotoWithSidebar"-->
+    <!--      :title="getCurrentImageProperty('title')"-->
+    <!--      :description="getCurrentImageProperty('description')"-->
+    <!--      :price="getCurrentImageProperty('price')"-->
+    <!--      @close="closeImage"-->
+    <!--      @prevImg="prevImage"-->
+    <!--      @nextImg="nextImage"-->
+    <!--    />-->
   </div>
 </template>
 
@@ -54,6 +54,9 @@ export default {
   data() {
     return {
       openedImgIndex: -1,
+      description: {
+        title: 'album title',
+      },
     }
   },
   computed: {

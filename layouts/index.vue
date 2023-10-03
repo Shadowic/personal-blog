@@ -10,17 +10,51 @@
 export default {
   data() {
     return {
-      navbar: null,
+      // navbar: null,
+      navbar: {
+        Menu: [
+          {
+            url: '/cakes',
+            title: 'cakes',
+          },
+          {
+            url: '/about',
+            title: 'about',
+          },
+          {
+            url: '/cakes',
+            title: 'cakes',
+          },
+          {
+            url: '/',
+            title: 'four',
+          },
+          {
+            url: '/',
+            title: 'five',
+          },
+        ],
+        logo: {
+          data: {
+            attributes: {
+              url: '/imgs/IMG_9408.jpg',
+            },
+          },
+        },
+        subtitle: 'Welcome!',
+        caption: 'visit',
+        caption2: 'please',
+      },
     }
   },
-  async fetch() {
-    try {
-      const result = await this.$strapi.$http.$get(
-        `/api/navbar?locale=${this.$i18n.locale}`
-      )
-      this.navbar = result.data.attributes
-    } catch (e) {}
-  },
+  // async fetch() {
+  //   try {
+  //     const result = await this.$strapi.$http.$get(
+  //       `/api/navbar?locale=${this.$i18n.locale}`
+  //     )
+  //     this.navbar = result.data.attributes
+  //   } catch (e) {}
+  // },
   watch: {
     '$route.query': '$fetch',
   },
