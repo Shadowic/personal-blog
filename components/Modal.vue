@@ -12,7 +12,12 @@
       <div class="modal-content">
         <div class="content" :class="{ imgLoaded: isImgLoaded }">
           <div class="content__img">
-            <img :src="image" :alt="image.id" @load="onImgLoad" />
+            <img
+              :src="image"
+              :alt="image.id"
+              draggable="false"
+              @load="onImgLoad"
+            />
             <div class="arrows__mobile">
               <div
                 class="arrow__mobile arrow__mobile__left"

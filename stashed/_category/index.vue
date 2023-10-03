@@ -16,25 +16,25 @@ export default {
     name: 'change-route',
     mode: 'out-in',
   },
-  async asyncData({ $strapi, i18n, params, error }) {
-    try {
-      const result = await $strapi.$http.$get(
-        `/api/categories?filters[code]=${params.category}&locale=${i18n.locale}`
-      )
-      const categories = result.data
-
-      if (categories.length === 1) {
-        return {
-          category: categories[0],
-        }
-      }
-
-      error({ statusCode: 404, message: 'Category not found' })
-    } catch (e) {
-      console.log(e)
-      return {}
-    }
-  },
+  // async asyncData({ $strapi, i18n, params, error }) {
+  //   try {
+  //     const result = await $strapi.$http.$get(
+  //       `/api/categories?filters[code]=${params.category}&locale=${i18n.locale}`
+  //     )
+  //     const categories = result.data
+  //
+  //     if (categories.length === 1) {
+  //       return {
+  //         category: categories[0],
+  //       }
+  //     }
+  //
+  //     error({ statusCode: 404, message: 'Category not found' })
+  //   } catch (e) {
+  //     console.log(e)
+  //     return {}
+  //   }
+  // },
   data() {
     return {}
   },

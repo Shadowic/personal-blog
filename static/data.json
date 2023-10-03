@@ -1,0 +1,22 @@
+[
+  {
+    "blockType": 1,
+    "thumbnail": "~/assets/imgs/IMG_9408.jpg",
+    "image": "~/assets/imgs/IMG_9408.jpg"
+  },
+  {
+    "blockType": 1,
+    "thumbnail": "~/assets/imgs/IMG_9484.jpg",
+    "image": "~/assets/imgs/IMG_9484.jpg"
+  },
+  {
+    "blockType": 2,
+    "thumbnail": "~/assets/imgs/IMG_9542.jpg",
+    "image": "~/assets/imgs/IMG_9542.jpg"
+  },
+  {
+    "blockType": 2,
+    "thumbnail": "~/assets/imgs/IMG_9547.jpg",
+    "image": "~/assets/imgs/IMG_9547.jpg"
+  }
+]

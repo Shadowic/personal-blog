@@ -9,7 +9,11 @@
         class="grid-item animation-target"
         @click="openImage(imageIndex)"
       >
-        <img :src="getImageUrl(image, 'medium')" :alt="image.id" />
+        <img
+          :src="getImageUrl(image, 'medium')"
+          :alt="image.id"
+          draggable="false"
+        />
       </div>
     </div>
     <Modal
@@ -29,24 +33,24 @@
 
 <script>
 export default {
-  async asyncData({ $strapi, i18n, params, error }) {
-    try {
-      const result = await $strapi.$http.$get(
-        `/api/albums/slug/${params.album}?locale=${i18n.locale}`
-      )
-      const album = result.data.attributes.photos.data
-      const photos = result.data.attributes.photo_items.data
-      const description = result.data.attributes
-      return {
-        album,
-        photos,
-        description,
-      }
-    } catch (e) {
-      console.log(e)
-      return {}
-    }
-  },
+  // async asyncData({ $strapi, i18n, params, error }) {
+  //   try {
+  //     const result = await $strapi.$http.$get(
+  //       `/api/albums/slug/${params.album}?locale=${i18n.locale}`
+  //     )
+  //     const album = result.data.attributes.photos.data
+  //     const photos = result.data.attributes.photo_items.data
+  //     const description = result.data.attributes
+  //     return {
+  //       album,
+  //       photos,
+  //       description,
+  //     }
+  //   } catch (e) {
+  //     console.log(e)
+  //     return {}
+  //   }
+  // },
   data() {
     return {
       openedImgIndex: -1,

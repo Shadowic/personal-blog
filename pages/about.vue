@@ -21,20 +21,45 @@ export default {
     name: 'change-route',
     mode: 'out-in',
   },
-  async asyncData({ $strapi, i18n }) {
-    try {
-      const result = await $strapi.$http.$get(
-        `/api/about-page?locale=${i18n.locale}`
-      )
-      const about = result.data.attributes
-      return {
-        about,
-      }
-    } catch (e) {
-      console.log(e)
-      return {}
+  data() {
+    return {
+      about: {
+        page_title: "It's me, Stan",
+        title: 'Lorem Ipsum',
+        subtitle:
+          'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
+        description:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam. Mauris sollicitudin nunc imperdiet, viverra augue non, molestie elit. Proin maximus pulvinar mauris, vel vestibulum nulla. Donec neque turpis, congue eget mi quis, gravida porttitor dui. Sed feugiat scelerisque facilisis. Vestibulum bibendum nibh vitae magna pretium, sed consectetur mauris volutpat.\n' +
+          '\n' +
+          'Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus. Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac. Praesent at sagittis urna. Morbi vel dignissim erat. Mauris ullamcorper sed nisi sed porttitor. Mauris nulla felis, tincidunt vel tristique at, euismod vel sapien. Quisque vitae tristique dui.',
+        cover: {
+          data: {
+            attributes: {
+              formats: {
+                medium: {
+                  url: '/imgs/IMG_0773.jpg',
+                },
+              },
+            },
+          },
+        },
+      },
     }
   },
+  // async asyncData({ $strapi, i18n }) {
+  //   try {
+  //     const result = await $strapi.$http.$get(
+  //       `/api/about-page?locale=${i18n.locale}`
+  //     )
+  //     const about = result.data.attributes
+  //     return {
+  //       about,
+  //     }
+  //   } catch (e) {
+  //     console.log(e)
+  //     return {}
+  //   }
+  // },
 }
 </script>
 

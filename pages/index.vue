@@ -21,13 +21,13 @@
         <BackgroundWord :title="index.feed_title" />
         <div class="content__body__title">{{ index.feed_subtitle }}</div>
         <div class="index__albums">
-          <AlbumIndex
-            v-for="(album, index) in albums.data"
-            :key="index"
-            :album="album"
-            :code="album.attributes.category.data.attributes.code"
-            class="animation-target"
-          />
+          <!--          <AlbumIndex-->
+          <!--            v-for="(album, index) in albums.data"-->
+          <!--            :key="index"-->
+          <!--            :album="album"-->
+          <!--            :code="album.attributes.category.data.attributes.code"-->
+          <!--            class="animation-target"-->
+          <!--          />-->
         </div>
       </div>
       <Footer v-if="footer" :footer="footer" />
@@ -38,35 +38,197 @@
 <script>
 export default {
   layout: 'index',
-  async asyncData({ $strapi, i18n, params, error }) {
-    try {
-      const [indexdata, slider, albums, footerdata] = await Promise.all([
-        $strapi.$http.$get(`/api/index-page?locale=${i18n.locale}`),
-        $strapi.$http.$get(`/api/index-sliders?locale=${i18n.locale}`),
-        $strapi.$http.$get(
-          `/api/albums?filters[is_on_index_shown]=true&locale=${i18n.locale}`
-        ),
-        $strapi.$http.$get(`/api/footer?locale=${i18n.locale}`),
-      ])
-      const index = indexdata.data.attributes
-      const footer = footerdata.data.attributes
-      return {
-        index,
-        slider,
-        albums,
-        footer,
-      }
-    } catch (error) {
-      return {
-        index: {},
-        slider: [],
-        albums: [],
-        footer: {},
-      }
-    }
-  },
+  // async asyncData({ $strapi, i18n, params, error }) {
+  //   try {
+  //     const [indexdata, slider, albums, footerdata] = await Promise.all([
+  //       $strapi.$http.$get(`/api/index-page?locale=${i18n.locale}`),
+  //       $strapi.$http.$get(`/api/index-sliders?locale=${i18n.locale}`),
+  //       $strapi.$http.$get(
+  //         `/api/albums?filters[is_on_index_shown]=true&locale=${i18n.locale}`
+  //       ),
+  //       $strapi.$http.$get(`/api/footer?locale=${i18n.locale}`),
+  //     ])
+  //     const index = indexdata.data.attributes
+  //     const footer = footerdata.data.attributes
+  //     return {
+  //       index,
+  //       slider,
+  //       albums,
+  //       footer,
+  //     }
+  //   } catch (error) {
+  //     return {
+  //       index: {},
+  //       slider: [],
+  //       albums: [],
+  //       footer: {},
+  //     }
+  //   }
+  // },
   data() {
     return {
+      index: {
+        logo: {
+          data: {
+            attributes: {
+              url: '/imgs/IMG_9408.jpg',
+            },
+          },
+        },
+        welcome: 'Ut fringilla,',
+        title: 'Morbi eget magna ipsum.',
+        description:
+          'Morbi finibus vulputate lorem, ut iaculis tortor egestas sed. Etiam volutpat vitae ligula dignissim mattis. Etiam sed quam in turpis maximus venenatis id eget lectus. Suspendisse potenti.',
+        feed_title: 'Maecenas sit',
+        feed_subtitle: 'Amet semper tortor',
+      },
+      // albums: {
+      //   data: {
+      //     attributes: {
+      //       title: 'Noname album',
+      //       code: '1',
+      //       blockClass: '1',
+      //       albumType: '1',
+      //       category: {
+      //         data: {
+      //           attributes: {
+      //             code: 'cakes',
+      //           },
+      //         },
+      //       },
+      //       cover: {
+      //         data: {
+      //           attributes: {
+      //             formats: {
+      //               medium: {
+      //                 url: '/imgs/IMG_9408.jpg',
+      //               },
+      //             },
+      //           },
+      //         },
+      //       },
+      //     },
+      //   },
+      // },
+      slider: {
+        data: [
+          {
+            attributes: {
+              title: 'eat',
+              description:
+                'Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus.',
+              cover: {
+                data: {
+                  attributes: {
+                    url: '/imgs/IMG_9408.jpg',
+                  },
+                },
+              },
+            },
+          },
+          {
+            attributes: {
+              title: 'pray',
+              description:
+                'Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. ',
+              cover: {
+                data: {
+                  attributes: {
+                    url: '/imgs/IMG_9484.jpg',
+                  },
+                },
+              },
+            },
+          },
+          {
+            attributes: {
+              title: 'live',
+              description:
+                'Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac.',
+              cover: {
+                data: {
+                  attributes: {
+                    url: '/imgs/IMG_9542.jpg',
+                  },
+                },
+              },
+            },
+          },
+        ],
+      },
+      footer: {
+        title: 'Nunc ut volutpat purus',
+        subtitle: 'Pellentesque ac commodo tellus',
+        description:
+          'uspendisse dolor ligula, semper in diam vitae, interdum sagittis tortor. Mauris id gravida enim. Pellentesque eget turpis placerat risus consequat varius malesuada a nulla.',
+        links: [
+          {
+            is_shown: true,
+            id: 0,
+            url: '/',
+            title: 'coffee',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/coffee-cup.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: true,
+            id: 1,
+            url: '/',
+            title: 'github',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/github.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: false,
+            id: 2,
+            url: '/',
+            title: 'loupe',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/loupe.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: true,
+            id: 3,
+            url: '/',
+            title: 'insta',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/pinterest.svg',
+                },
+              },
+            },
+          },
+          {
+            is_shown: true,
+            id: 4,
+            url: '/',
+            title: 'insta',
+            icon: {
+              data: {
+                attributes: {
+                  url: '/svgs/telegram.svg',
+                },
+              },
+            },
+          },
+        ],
+      },
       animations: '',
       animations1: '',
       animations2: '',

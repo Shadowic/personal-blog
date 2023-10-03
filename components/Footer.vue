@@ -17,7 +17,7 @@
           target="_blank"
           :class="link.title"
         >
-          <img :src="link.icon.data.attributes.url" />
+          <img :src="link.icon.data.attributes.url" draggable="false" />
         </a>
       </div>
     </div>
