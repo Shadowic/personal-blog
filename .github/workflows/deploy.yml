@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     env:
-      SHADOWIC_BASE_URL: https://shadowic.com
+      SHADOWIC_BASE_URL: https://shadowic.space
       SHADOWIC_PORT: 3333
     steps:
       -
