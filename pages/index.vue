@@ -21,13 +21,13 @@
         <BackgroundWord :title="index.feed_title" />
         <div class="content__body__title">{{ index.feed_subtitle }}</div>
         <div class="index__albums">
-          <!--          <AlbumIndex-->
-          <!--            v-for="(album, index) in albums.data"-->
-          <!--            :key="index"-->
-          <!--            :album="album"-->
-          <!--            :code="album.attributes.category.data.attributes.code"-->
-          <!--            class="animation-target"-->
-          <!--          />-->
+          <AlbumIndex
+            v-for="(album, index) in albums.data"
+            :key="index"
+            :album="album"
+            :code="album.attributes.category.data.attributes.code"
+            class="animation-target"
+          />
         </div>
       </div>
       <Footer v-if="footer" :footer="footer" />
@@ -83,32 +83,80 @@ export default {
         feed_subtitle: 'Amet semper tortor',
       },
       albums: {
-        data: {
-          attributes: {
-            title: 'Cakes',
-            code: 'cakes',
-            // blockClass: '1',
-            // albumType: '1',
-            category: {
-              data: {
-                attributes: {
-                  code: 'cakes',
+        data: [
+          {
+            attributes: {
+              title: 'Cakes',
+              code: 'cakes',
+              category: {
+                data: {
+                  attributes: {
+                    code: 'cakes',
+                  },
                 },
               },
-            },
-            cover: {
-              data: {
-                attributes: {
-                  formats: {
-                    medium: {
-                      url: '/imgs/IMG_9408.jpg',
+              cover: {
+                data: {
+                  attributes: {
+                    formats: {
+                      medium: {
+                        url: '/imgs/IMG_9408.jpg',
+                      },
                     },
                   },
                 },
               },
             },
           },
-        },
+          {
+            attributes: {
+              title: 'Cupcakes',
+              code: 'cupcakes',
+              category: {
+                data: {
+                  attributes: {
+                    code: 'cupcakes',
+                  },
+                },
+              },
+              cover: {
+                data: {
+                  attributes: {
+                    formats: {
+                      medium: {
+                        url: '/imgs/IMG_9484.jpg',
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+          {
+            attributes: {
+              title: 'PanCakes',
+              code: 'pancakes',
+              category: {
+                data: {
+                  attributes: {
+                    code: 'pancakes',
+                  },
+                },
+              },
+              cover: {
+                data: {
+                  attributes: {
+                    formats: {
+                      medium: {
+                        url: '/imgs/IMG_9542.jpg',
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        ],
       },
       slider: {
         data: [

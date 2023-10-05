@@ -34,6 +34,10 @@ export default {
       default: '',
       type: String,
     },
+    backgroundImage: {
+      default: '',
+      type: String,
+    },
   },
   data() {
     return {

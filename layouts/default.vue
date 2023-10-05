@@ -6,7 +6,7 @@
         <HeaderDefault v-if="navbar" :navbar="navbar" />
       </headroom>
     </div>
-    <kinesis-container>
+    <kinesis-container class="kinesis-wrap">
       <Nuxt class="content" />
       <div class="bottom-container">
         <kinesis-element
@@ -168,6 +168,11 @@ export default {
   flex-direction: column;
   position: relative;
   overflow: hidden;
+}
+.kinesis-wrap {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
 }
 .content {
   flex: 1 0 auto;
