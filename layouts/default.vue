@@ -43,24 +43,24 @@ export default {
       navbar: {
         Menu: [
           {
+            url: '/',
+            title: 'main page',
+          },
+          {
             url: '/cakes',
             title: 'cakes',
+          },
+          {
+            url: '/test1',
+            title: 'test1',
+          },
+          {
+            url: '/test2',
+            title: 'test2',
           },
           {
             url: '/about',
             title: 'about',
-          },
-          {
-            url: '/cakes',
-            title: 'cakes',
-          },
-          {
-            url: '/',
-            title: 'four',
-          },
-          {
-            url: '/',
-            title: 'five',
           },
         ],
         logo: {
