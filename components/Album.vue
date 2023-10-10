@@ -135,6 +135,7 @@ export default {
   height: 350px;
   position: relative;
   justify-content: space-between;
+  gap: 30px;
   @include sm- {
     flex-direction: column-reverse;
     height: auto;
@@ -143,7 +144,10 @@ export default {
     margin-bottom: 80px;
   }
   &:first-child {
-    margin-top: 20px;
+    margin-top: 40px;
+    @include sm- {
+      margin-top: 20px;
+    }
   }
   &:nth-child(2n) {
     display: flex;
@@ -271,6 +275,8 @@ export default {
     width: calc(50% - 10px);
     height: 100%;
     overflow: hidden;
+    position: relative;
+    z-index: 5;
     @include sm- {
       width: 100%;
       height: 300px;
