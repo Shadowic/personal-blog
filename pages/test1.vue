@@ -304,6 +304,12 @@ img {
     @include xs- {
       padding: 35px 20px;
     }
+    .main__item:nth-child(odd) & {
+      border-radius: 60px 120px 60px 120px;
+    }
+    .main__item:nth-child(even) & {
+      border-radius: 60px 120px 60px 120px;
+    }
   }
   &__item {
     display: flex;
@@ -328,6 +334,7 @@ img {
     background-color: #f7e0bc;
     position: relative;
     z-index: 0;
+    overflow: hidden;
     @include lg- {
       width: 400px;
       height: 400px;
@@ -338,6 +345,12 @@ img {
     }
     @include xs- {
       height: 300px;
+    }
+    .main__item:nth-child(odd) & {
+      border-radius: 120px 60px 120px 60px;
+    }
+    .main__item:nth-child(even) & {
+      border-radius: 60px 120px 60px 120px;
     }
   }
   &__item-title {
@@ -500,6 +513,8 @@ img {
     width: 600px;
     height: 600px;
     flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 140px 30px 140px 30px;
     @include lg- {
       width: 500px;
       height: 500px;
@@ -525,6 +540,8 @@ img {
     margin-left: -50px;
     max-width: 500px;
     gap: 25px;
+    overflow: hidden;
+    border-radius: 60px 30px 40px 30px;
     @include md- {
       padding: 40px 30px 30px;
       max-width: 400px;

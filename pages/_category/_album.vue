@@ -166,7 +166,7 @@ export default {
   &__title {
     font-family: 'Caveat', cursive;
     font-weight: 600;
-    color: $green-dark;
+    color: #332d23;
     font-size: 33px;
     line-height: 1.212em;
     padding-top: 15px;

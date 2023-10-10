@@ -40,7 +40,7 @@ export default {
 <style lang="scss" scoped>
 .background {
   display: flex;
-  color: rgba(111, 140, 150, 0.1);
+  color: rgba(171, 152, 119, 0.1);
   font-size: 120px;
   z-index: 0;
   font-family: 'Caveat', cursive;

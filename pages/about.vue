@@ -2,20 +2,40 @@
   <div class="about">
     <div
       class="profile-img"
+      data-aos="zoom-out-up"
+      data-aos-duration="1000"
+      data-aos-delay="150"
       :style="{
         backgroundImage: `url(${about.cover.data.attributes.formats.medium.url})`,
       }"
     />
     <div class="info">
       <BackgroundWord :title="about.page_title" />
-      <div class="name">{{ about.title }}</div>
-      <div class="caption">{{ about.subtitle }}</div>
-      <div class="description" v-html="about.description" />
+      <div data-aos="zoom-out-up" data-aos-duration="1000" class="name">
+        {{ about.title }}
+      </div>
+      <div
+        data-aos="zoom-out-up"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        class="caption"
+      >
+        {{ about.subtitle }}
+      </div>
+      <div
+        data-aos="zoom-out-up"
+        data-aos-duration="1000"
+        data-aos-delay="110"
+        class="description"
+        v-html="about.description"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 export default {
   transition: {
     name: 'change-route',
@@ -45,6 +65,9 @@ export default {
         },
       },
     }
+  },
+  mounted() {
+    AOS.init()
   },
   // async asyncData({ $strapi, i18n }) {
   //   try {
@@ -118,11 +141,8 @@ export default {
 .profile-img {
   border-radius: 50%;
   background: center/cover;
-  background-color: #79a2ac50;
   margin: 90px 60px 0 0;
   flex: 1 1 0;
-  //position: relative;
-  //z-index: 1;
   &::before {
     content: '';
     display: block;
@@ -137,7 +157,6 @@ export default {
 .info {
   flex: 1.3 1 0;
   position: relative;
-  //z-index: 1;
 }
 .name {
   font-family: 'Caveat', cursive;

@@ -219,7 +219,7 @@ export default {
   }
   &__pink {
     clip-path: polygon(0 0%, 100% 28%, 100% 100%, 0% 100%);
-    background-color: #fdf8ef;
+    background-color: #e5e0d6;
   }
 }
 </style>

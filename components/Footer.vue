@@ -1,9 +1,9 @@
 <template>
-  <div class="content__bottom">
-    <div class="content__bottom__wrapper">
-      <div class="content__bottom__title">{{ footer.title }}</div>
-      <div class="content__bottom__undertitle">{{ footer.subtitle }}</div>
-      <div class="content__bottom__p">
+  <div class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__title">{{ footer.title }}</div>
+      <div class="footer__subtitle">{{ footer.subtitle }}</div>
+      <div class="footer__text">
         {{ footer.description }}
         <svg class="svg-dotted-line">
           <line x1="0" y1="50%" x2="100%" y2="50%" />
@@ -40,9 +40,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.content__bottom {
+.footer {
   width: 100%;
-  color: #919a99;
+  color: #625744;
   text-align: center;
   line-height: 1.6em;
   font-size: 12px;
@@ -58,7 +58,7 @@ export default {
 
   &__title {
     font-family: 'Caveat', cursive;
-    color: $bokara;
+    color: #443c2f;
     font-size: 30px;
     font-weight: 500;
     letter-spacing: 0.1em;
@@ -72,12 +72,11 @@ export default {
     }
   }
 
-  &__undertitle {
+  &__subtitle {
     margin-bottom: 25px;
-    color: $ziggurat;
   }
 
-  &__p {
+  &__text {
     position: relative;
     margin-bottom: 25px;
     padding-bottom: 40px;
@@ -91,7 +90,7 @@ export default {
   width: 100%;
   padding: 0 25%;
   height: 4px;
-  stroke: $ziggurat;
+  stroke: #443c2f;
   stroke-width: 2px;
   stroke-linecap: round;
   stroke-dasharray: 0.4px, 5px;
