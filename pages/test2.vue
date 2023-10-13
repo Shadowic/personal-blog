@@ -4,15 +4,17 @@
     <div class="circles">
       <div
         class="circles__item"
-        @click="movingCircle()"
-        @mouseover="clickedCircleId = '1'"
+        @mouseover="setHoveredCircleId('c1')"
+        @mouseleave="resetHoveredCircleId()"
+        @click="setIdMoveToCenter('c1')"
       >
         <div ref="c1" class="circle circle-one" />
       </div>
       <div
         class="circles__item"
-        @click="movingCircle()"
-        @mouseover="clickedCircleId = '2'"
+        @mouseover="setHoveredCircleId('c2')"
+        @mouseleave="resetHoveredCircleId()"
+        @click="setIdMoveToCenter('c2')"
       >
         <div ref="c2" class="circle circle-two" />
       </div>
@@ -25,23 +27,25 @@ export default {
   name: 'Test2',
   data() {
     return {
-      isCircleHovered: false,
       clickedCircleId: '',
     }
   },
   methods: {
-    movingCircle() {
-      this.isCircleHovered = true
-      console.log('clickedCircleId', this.clickedCircleId)
-      this.$refs.c1.style.right = 'calc(-50% + 35px)'
-      this.$refs.c1.style.width = '200px'
-      this.$refs.c1.style.height = '200px'
-      this.$refs.c1.style.animation = 'unset'
-      this.$refs.c2.style.right = 'calc(50% + 87px)'
-      this.$refs.c2.style.width = '200px'
-      this.$refs.c2.style.height = '200px'
-      this.$refs.c2.style.animation = 'unset'
+    setHoveredCircleId(id) {
+      if (this.clickedCircleId === '') {
+        this.clickedCircleId = id
+        this.$refs.c1.classList.add('circle--increased')
+      }
     },
+    resetHoveredCircleId() {
+      this.clickedCircleId = ''
+      this.$refs.c1.classList.remove('circle--increased')
+    },
+    // if (this.clickedCircleId === 'с1') {
+    //   this.$refs.c1.style.right = 'calc(-50% + 35px)'
+    // }
+    // if (this.clickedCircleId === 'с2') {
+    // }
   },
 }
 </script>
@@ -89,21 +93,27 @@ export default {
   right: calc(50% - 50px);
   transform: translateY(-50%);
   cursor: pointer;
-  transition: right 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out,
-    height 1s ease-in-out;
-  &.circle-hovered {
+  transition: right 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+  animation: 4s infinite ease-in-out reverse flowing;
+  &.circle--unanimated {
     animation: unset;
     top: 50%;
+  }
+  &.circle--increased {
     width: 200px;
     height: 200px;
   }
+  &.circle--from-left-centered {
+    right: calc(-50% + 35px);
+  }
+  &.circle--from-right-centered {
+    right: calc(50% + 87px);
+  }
   &-one {
     background-color: #d8aa90;
-    animation: 4s infinite ease-in-out reverse flowing;
   }
   &-two {
     background-color: #5f7374;
-    animation: 4s infinite ease-in-out reverse flowing;
   }
 }
 </style>
