@@ -2,21 +2,23 @@
   <div class="test2">
     <h1>Something new is coming soon</h1>
     <div class="circles">
-      <div
-        class="circles__item"
-        @mouseover="setHoveredCircleId('c1')"
-        @mouseleave="resetHoveredCircleId()"
-        @click="setIdMoveToCenter('c1')"
-      >
-        <div ref="c1" class="circle circle-one" />
+      <div class="circles__item">
+        <div
+          ref="c1"
+          class="circle circle-one"
+          @mouseover="setHoveredCircleId('c1')"
+          @mouseleave="resetHoveredCircleId()"
+          @click="moving('c1')"
+        />
       </div>
-      <div
-        class="circles__item"
-        @mouseover="setHoveredCircleId('c2')"
-        @mouseleave="resetHoveredCircleId()"
-        @click="setIdMoveToCenter('c2')"
-      >
-        <div ref="c2" class="circle circle-two" />
+      <div class="circles__item">
+        <div
+          ref="c2"
+          class="circle circle-two"
+          @mouseover="setHoveredCircleId('c2')"
+          @mouseleave="resetHoveredCircleId()"
+          @click="moving('c2')"
+        />
       </div>
     </div>
   </div>
@@ -27,39 +29,61 @@ export default {
   name: 'Test2',
   data() {
     return {
+      hoveredCircleId: '',
       clickedCircleId: '',
     }
   },
   methods: {
     setHoveredCircleId(id) {
-      if (this.clickedCircleId === '') {
-        this.clickedCircleId = id
-        this.$refs.c1.classList.add('circle--increased')
+      if (this.hoveredCircleId === '') {
+        this.hoveredCircleId = id
+        if (this.hoveredCircleId === 'c1') {
+          this.$refs.c1.classList.add('circle--increased')
+          this.$refs.c2.classList.add('circle--decreased')
+        } else if (this.hoveredCircleId === 'c2') {
+          this.$refs.c2.classList.add('circle--increased')
+          this.$refs.c1.classList.add('circle--decreased')
+        }
       }
     },
     resetHoveredCircleId() {
-      this.clickedCircleId = ''
-      this.$refs.c1.classList.remove('circle--increased')
+      this.hoveredCircleId = ''
+      this.$refs.c1.classList.remove('circle--increased', 'circle--decreased')
+      this.$refs.c2.classList.remove('circle--increased', 'circle--decreased')
     },
-    // if (this.clickedCircleId === 'с1') {
-    //   this.$refs.c1.style.right = 'calc(-50% + 35px)'
-    // }
-    // if (this.clickedCircleId === 'с2') {
-    // }
+    moving(id) {
+      this.clickedCircleId = id
+      if (this.clickedCircleId === 'c1') {
+        this.$refs.c1.classList.add(
+          'circle--increased',
+          'circle--left-centered'
+        )
+        this.$refs.c1.style.right = 'calc(-50% + 83px)'
+      } else if (this.clickedCircleId === 'c2') {
+        this.$refs.c2.classList.add(
+          'circle--increased',
+          'circle--right-centered'
+        )
+        this.$refs.c2.style.left = 'calc(-50% + 81px)'
+      }
+    },
   },
 }
 </script>
 
 <style lang="scss" scoped>
+$width: 100px;
+$height: 100px;
+
 @keyframes flowing {
   0% {
-    top: 60%;
-  }
-  50% {
     top: 40%;
   }
-  100% {
+  50% {
     top: 60%;
+  }
+  100% {
+    top: 40%;
   }
 }
 .test2 {
@@ -82,32 +106,38 @@ export default {
     width: 25vw;
     height: 25vw;
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 .circle {
-  width: 100px;
-  height: 100px;
+  width: $width;
+  height: $height;
   border-radius: 50%;
   position: absolute;
-  top: 50%;
-  right: calc(50% - 50px);
   transform: translateY(-50%);
   cursor: pointer;
-  transition: right 1s ease-in-out, width 1s ease-in-out, height 1s ease-in-out;
+  transition: right 0.5s ease-in-out, top 1s ease-in-out, width 0.5s ease-in-out,
+    height 0.5s ease-in-out;
   animation: 4s infinite ease-in-out reverse flowing;
   &.circle--unanimated {
     animation: unset;
     top: 50%;
   }
   &.circle--increased {
-    width: 200px;
-    height: 200px;
+    width: $height * 1.5;
+    height: $height * 1.5;
   }
-  &.circle--from-left-centered {
-    right: calc(-50% + 35px);
+  &.circle--decreased {
+    width: $height * 0.75;
+    height: $height * 0.75;
   }
-  &.circle--from-right-centered {
-    right: calc(50% + 87px);
+  &.circle--left-centered {
+    right: calc(-50% + 25px);
+  }
+  &.circle--right-centered {
+    left: calc(-50% + 25px);
   }
   &-one {
     background-color: #d8aa90;
