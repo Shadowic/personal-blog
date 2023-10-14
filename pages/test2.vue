@@ -6,6 +6,21 @@
         <div
           ref="c1"
           class="circle circle-one"
+          :class="[
+            {
+              'circle--increased':
+                hoveredCircleId === 'c1' || clickedCircleId === 'c1',
+            },
+            {
+              'circle--decreased':
+                hoveredCircleId === 'c2' || clickedCircleId === 'c2',
+            },
+            { 'circle--unanimated': clickedCircleId !== '' },
+            { 'circle--left-centered': clickedCircleId !== '' },
+          ]"
+          :style="{
+            zIndex: clickedCircleId === 'c1' ? zIndexCircle + 1 : zIndexCircle,
+          }"
           @mouseover="setHoveredCircleId('c1')"
           @mouseleave="resetHoveredCircleId()"
           @click="moving('c1')"
@@ -15,6 +30,21 @@
         <div
           ref="c2"
           class="circle circle-two"
+          :class="[
+            {
+              'circle--increased':
+                hoveredCircleId === 'c2' || clickedCircleId === 'c2',
+            },
+            {
+              'circle--decreased':
+                hoveredCircleId === 'c1' || clickedCircleId === 'c1',
+            },
+            { 'circle--unanimated': clickedCircleId !== '' },
+            { 'circle--right-centered': clickedCircleId !== '' },
+          ]"
+          :style="{
+            zIndex: clickedCircleId === 'c2' ? zIndexCircle + 1 : zIndexCircle,
+          }"
           @mouseover="setHoveredCircleId('c2')"
           @mouseleave="resetHoveredCircleId()"
           @click="moving('c2')"
@@ -31,41 +61,20 @@ export default {
     return {
       hoveredCircleId: '',
       clickedCircleId: '',
+      zIndexCircle: 5,
     }
   },
   methods: {
     setHoveredCircleId(id) {
       if (this.hoveredCircleId === '') {
         this.hoveredCircleId = id
-        if (this.hoveredCircleId === 'c1') {
-          this.$refs.c1.classList.add('circle--increased')
-          this.$refs.c2.classList.add('circle--decreased')
-        } else if (this.hoveredCircleId === 'c2') {
-          this.$refs.c2.classList.add('circle--increased')
-          this.$refs.c1.classList.add('circle--decreased')
-        }
       }
     },
     resetHoveredCircleId() {
       this.hoveredCircleId = ''
-      this.$refs.c1.classList.remove('circle--increased', 'circle--decreased')
-      this.$refs.c2.classList.remove('circle--increased', 'circle--decreased')
     },
     moving(id) {
       this.clickedCircleId = id
-      if (this.clickedCircleId === 'c1') {
-        this.$refs.c1.classList.add(
-          'circle--increased',
-          'circle--left-centered'
-        )
-        this.$refs.c1.style.right = 'calc(-50% + 83px)'
-      } else if (this.clickedCircleId === 'c2') {
-        this.$refs.c2.classList.add(
-          'circle--increased',
-          'circle--right-centered'
-        )
-        this.$refs.c2.style.left = 'calc(-50% + 81px)'
-      }
     },
   },
 }
@@ -118,8 +127,8 @@ $height: 100px;
   position: absolute;
   transform: translateY(-50%);
   cursor: pointer;
-  transition: right 0.5s ease-in-out, top 1s ease-in-out, width 0.5s ease-in-out,
-    height 0.5s ease-in-out;
+  transition: left 2s ease-in-out, right 2s ease-in-out, top 1s ease-in-out,
+    width 0.5s ease-in-out, height 0.5s ease-in-out;
   animation: 4s infinite ease-in-out reverse flowing;
   &.circle--unanimated {
     animation: unset;
@@ -134,10 +143,10 @@ $height: 100px;
     height: $height * 0.75;
   }
   &.circle--left-centered {
-    right: calc(-50% + 25px);
+    right: -31.5%;
   }
   &.circle--right-centered {
-    left: calc(-50% + 25px);
+    left: -32.5%;
   }
   &-one {
     background-color: #d8aa90;
