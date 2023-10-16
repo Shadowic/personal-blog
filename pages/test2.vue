@@ -200,7 +200,7 @@ $height: 100px;
       background-color: #79a2ac;
       position: absolute;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out, left 0.75s ease-in-out,
+      transition: opacity 0.5s 0.25s ease-in-out, left 0.75s ease-in-out,
         right 0.75s ease-in-out, top 0.75s ease-in-out, bottom 0.75s ease-in-out;
       top: 0;
       right: 0;
@@ -214,8 +214,8 @@ $height: 100px;
       position: absolute;
       opacity: 0;
       width: 300px;
-      transition: opacity 0.5s 0.5s ease-in-out, left 1s ease-in-out,
-        right 1s ease-in-out;
+      transition: opacity 0.5s 0.25s ease-in-out, left 0.75s ease-in-out,
+        right 0.75s ease-in-out;
       left: -150px;
       right: -150px;
     }
@@ -309,9 +309,12 @@ $height: 100px;
   position: absolute;
   transform: translateY(-50%);
   cursor: pointer;
-  transition: left 2s ease-in-out, right 2s ease-in-out, top 1s ease-in-out,
+  transition: left 2s ease-in-out, right 2s ease-in-out, top 2s ease-in-out,
     width 0.5s ease-in-out, height 0.5s ease-in-out;
   animation: 4s infinite ease-in-out reverse flowing;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
   &.circle--unanimated {
     animation: unset;
     top: 50%;
@@ -327,10 +330,12 @@ $height: 100px;
   &.circle--left-centered {
     cursor: unset;
     right: -31.5%;
+    left: unset;
   }
   &.circle--right-centered {
     cursor: unset;
     left: -32.5%;
+    right: unset;
   }
   &-one {
     background-color: #d8aa90;
