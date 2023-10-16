@@ -26,7 +26,13 @@
           @click="moving('c1')"
         />
       </div>
-      <div class="circles__center">
+      <div
+        class="circles__center"
+        :class="[
+          { 'type-one': clickedCircleId === 'c1' },
+          { 'type-two': clickedCircleId === 'c2' },
+        ]"
+      >
         <div
           class="circles__center-item"
           :class="{ 'item-outed': clickedCircleId !== '' }"
@@ -48,7 +54,7 @@
           :class="{ 'item-outed': clickedCircleId !== '' }"
         />
         <div
-          class="circles__center-text"
+          class="circles__center-caption"
           :class="{ 'item-outed': clickedCircleId !== '' }"
         >
           <h2 class="circles__center-title">
@@ -59,7 +65,7 @@
               {{ data.rightCircleData.title }}
             </span>
           </h2>
-          <p class="circles__center-caption">
+          <p class="circles__center-text">
             <span v-if="clickedCircleId === 'c1'">
               {{ data.leftCircleData.text }}
             </span>
@@ -93,6 +99,9 @@
           @click="moving('c2')"
         />
       </div>
+    </div>
+    <div class="reset-button">
+      <button @click="resetState()">reset</button>
     </div>
   </div>
 </template>
@@ -128,6 +137,9 @@ export default {
     },
     moving(id) {
       this.clickedCircleId = id
+    },
+    resetState() {
+      this.clickedCircleId = ''
     },
   },
 }
@@ -188,46 +200,105 @@ $height: 100px;
       background-color: #79a2ac;
       position: absolute;
       opacity: 0;
-      transition: opacity 0.5s ease-in-out, left 1s ease-in-out,
-        right 1s ease-in-out, top 1s ease-in-out, bottom 1s ease-in-out;
-      &.item-outed {
-        opacity: 1;
-        &:nth-child(1) {
-          top: -150px;
-        }
-        &:nth-child(2) {
-          top: -115px;
-          left: -115px;
-        }
-        &:nth-child(3) {
-          left: -150px;
-        }
-        &:nth-child(4) {
-          left: -115px;
-          bottom: -115px;
-        }
-        &:nth-child(5) {
-          bottom: -150px;
-        }
-      }
+      transition: opacity 0.5s ease-in-out, left 0.75s ease-in-out,
+        right 0.75s ease-in-out, top 0.75s ease-in-out, bottom 0.75s ease-in-out;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
     }
-    &-text {
+    &-caption {
       display: flex;
       flex-direction: column;
       gap: 20px;
       position: absolute;
       opacity: 0;
       width: 300px;
-      &.item-outed {
-        opacity: 1;
-        right: -420px;
-      }
+      transition: opacity 0.5s 0.5s ease-in-out, left 1s ease-in-out,
+        right 1s ease-in-out;
+      left: -150px;
+      right: -150px;
     }
     &-title {
       font-size: 24px;
     }
-    &-caption {
+    &-text {
       font-size: 16px;
+    }
+    &.type-two {
+      .circles__center-item.item-outed {
+        opacity: 1;
+      }
+      .circles__center-item:nth-child(1) {
+        top: -150px;
+        left: unset;
+        right: unset;
+      }
+      .circles__center-item:nth-child(2) {
+        top: -115px;
+        left: -115px;
+        right: unset;
+      }
+      .circles__center-item:nth-child(3) {
+        top: unset;
+        left: -150px;
+        right: unset;
+        bottom: unset;
+      }
+      .circles__center-item:nth-child(4) {
+        top: unset;
+        left: -115px;
+        bottom: -115px;
+      }
+      .circles__center-item:nth-child(5) {
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: -150px;
+      }
+      .circles__center-caption.item-outed {
+        opacity: 1;
+        left: unset;
+        right: -420px;
+      }
+    }
+    &.type-one {
+      .circles__center-item.item-outed {
+        opacity: 1;
+      }
+      .circles__center-item:nth-child(1) {
+        top: -150px;
+        left: unset;
+        right: unset;
+      }
+      .circles__center-item:nth-child(2) {
+        top: -115px;
+        left: unset;
+        right: -115px;
+      }
+      .circles__center-item:nth-child(3) {
+        top: unset;
+        left: unset;
+        right: -150px;
+        bottom: unset;
+      }
+      .circles__center-item:nth-child(4) {
+        top: unset;
+        left: unset;
+        right: -115px;
+        bottom: -115px;
+      }
+      .circles__center-item:nth-child(5) {
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: -150px;
+      }
+      .circles__center-caption.item-outed {
+        opacity: 1;
+        left: -420px;
+        right: unset;
+      }
     }
   }
 }
@@ -254,9 +325,11 @@ $height: 100px;
     height: $height * 0.75;
   }
   &.circle--left-centered {
+    cursor: unset;
     right: -31.5%;
   }
   &.circle--right-centered {
+    cursor: unset;
     left: -32.5%;
   }
   &-one {
@@ -264,6 +337,16 @@ $height: 100px;
   }
   &-two {
     background-color: #5f7374;
+  }
+}
+.reset-button {
+  margin-top: 50px;
+  button {
+    border: 1px solid rgba(100, 139, 140, 0.35);
+    outline: none;
+    background: none;
+    padding: 8px 30px;
+    border-radius: 12px;
   }
 }
 </style>
