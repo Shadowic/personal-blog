@@ -26,6 +26,49 @@
           @click="moving('c1')"
         />
       </div>
+      <div class="circles__center">
+        <div
+          class="circles__center-item"
+          :class="{ 'item-outed': clickedCircleId !== '' }"
+        />
+        <div
+          class="circles__center-item"
+          :class="{ 'item-outed': clickedCircleId !== '' }"
+        />
+        <div
+          class="circles__center-item"
+          :class="{ 'item-outed': clickedCircleId !== '' }"
+        />
+        <div
+          class="circles__center-item"
+          :class="{ 'item-outed': clickedCircleId !== '' }"
+        />
+        <div
+          class="circles__center-item"
+          :class="{ 'item-outed': clickedCircleId !== '' }"
+        />
+        <div
+          class="circles__center-text"
+          :class="{ 'item-outed': clickedCircleId !== '' }"
+        >
+          <h2 class="circles__center-title">
+            <span v-if="clickedCircleId === 'c1'">
+              {{ data.leftCircleData.title }}
+            </span>
+            <span v-if="clickedCircleId === 'c2'">
+              {{ data.rightCircleData.title }}
+            </span>
+          </h2>
+          <p class="circles__center-caption">
+            <span v-if="clickedCircleId === 'c1'">
+              {{ data.leftCircleData.text }}
+            </span>
+            <span v-if="clickedCircleId === 'c2'">
+              {{ data.rightCircleData.text }}
+            </span>
+          </p>
+        </div>
+      </div>
       <div class="circles__item">
         <div
           ref="c2"
@@ -62,6 +105,16 @@ export default {
       hoveredCircleId: '',
       clickedCircleId: '',
       zIndexCircle: 5,
+      data: {
+        leftCircleData: {
+          title: 'Left circle is clicked',
+          text: 'Sed sed lacinia lorem. Vivamus ultricies mi lectus, a accumsan justo imperdiet gravida. Maecenas dictum placerat dolor. Aliquam erat volutpat. Donec pulvinar vitae massa iaculis rhoncus.',
+        },
+        rightCircleData: {
+          title: 'Right circle is clicked',
+          text: 'Nam fringilla, nisi sed dignissim laoreet, sapien erat euismod tortor, et feugiat est magna non tortor. Duis tempus id massa vitae placerat. Pellentesque pretium interdum elit sed ullamcorper. Nam sit amet pellentesque quam.',
+        },
+      },
     }
   },
   methods: {
@@ -108,7 +161,9 @@ $height: 100px;
 }
 .circles {
   display: flex;
-  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
   margin-top: 50px;
   &__item {
     border: 1px solid rgba(100, 139, 140, 0.35);
@@ -118,6 +173,62 @@ $height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  &__center {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1px;
+    height: 1px;
+    &-item {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background-color: #79a2ac;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out, left 1s ease-in-out,
+        right 1s ease-in-out, top 1s ease-in-out, bottom 1s ease-in-out;
+      &.item-outed {
+        opacity: 1;
+        &:nth-child(1) {
+          top: -150px;
+        }
+        &:nth-child(2) {
+          top: -115px;
+          left: -115px;
+        }
+        &:nth-child(3) {
+          left: -150px;
+        }
+        &:nth-child(4) {
+          left: -115px;
+          bottom: -115px;
+        }
+        &:nth-child(5) {
+          bottom: -150px;
+        }
+      }
+    }
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      position: absolute;
+      opacity: 0;
+      width: 300px;
+      &.item-outed {
+        opacity: 1;
+        right: -420px;
+      }
+    }
+    &-title {
+      font-size: 24px;
+    }
+    &-caption {
+      font-size: 16px;
+    }
   }
 }
 .circle {
