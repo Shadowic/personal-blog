@@ -20,6 +20,7 @@
           ]"
           :style="{
             zIndex: clickedCircleId === 'c1' ? zIndexCircle + 1 : zIndexCircle,
+            right: `${c1RightCirclePosition}`,
           }"
           @mouseover="setHoveredCircleId('c1')"
           @mouseleave="resetHoveredCircleId()"
@@ -93,6 +94,7 @@
           ]"
           :style="{
             zIndex: clickedCircleId === 'c2' ? zIndexCircle + 1 : zIndexCircle,
+            left: `${c2LeftCirclePosition}`,
           }"
           @mouseover="setHoveredCircleId('c2')"
           @mouseleave="resetHoveredCircleId()"
@@ -114,6 +116,8 @@ export default {
       hoveredCircleId: '',
       clickedCircleId: '',
       zIndexCircle: 5,
+      c1RightCirclePosition: '',
+      c2LeftCirclePosition: '',
       data: {
         leftCircleData: {
           title: 'Left circle is clicked',
@@ -125,6 +129,12 @@ export default {
         },
       },
     }
+  },
+  mounted() {
+    const rposition = this.$refs.c1.offsetLeft + 'px'
+    this.c1RightCirclePosition = rposition
+    const lposition = this.$refs.c2.offsetLeft + 'px'
+    this.c2LeftCirclePosition = lposition
   },
   methods: {
     setHoveredCircleId(id) {
@@ -309,12 +319,9 @@ $height: 100px;
   position: absolute;
   transform: translateY(-50%);
   cursor: pointer;
-  transition: left 2s ease-in-out, right 2s ease-in-out, top 2s ease-in-out,
-    width 0.5s ease-in-out, height 0.5s ease-in-out;
+  transition: left 0.5s ease-in-out, right 0.5s ease-in-out,
+    top 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
   animation: 4s infinite ease-in-out reverse flowing;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   &.circle--unanimated {
     animation: unset;
     top: 50%;
@@ -329,13 +336,11 @@ $height: 100px;
   }
   &.circle--left-centered {
     cursor: unset;
-    right: -31.5%;
-    left: unset;
+    right: -31.5% !important;
   }
   &.circle--right-centered {
     cursor: unset;
-    left: -32.5%;
-    right: unset;
+    left: -32.5% !important;
   }
   &-one {
     background-color: #d8aa90;
