@@ -325,7 +325,6 @@ $height: 100px;
   transition: left 0.5s ease-in-out, right 0.5s ease-in-out,
     top 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out,
     opacity 0.5s ease-in-out;
-  animation: 4s infinite ease-in-out reverse flowing;
   &.circle--unanimated {
     animation: unset;
     top: 50%;
@@ -351,9 +350,11 @@ $height: 100px;
   }
   &-one {
     background-color: #d8aa90;
+    animation: 4s infinite ease-in-out reverse flowing;
   }
   &-two {
     background-color: #5f7374;
+    animation: 4s infinite -1.5s ease-in-out reverse flowing;
   }
 }
 .reset-button {
