@@ -17,6 +17,7 @@
             },
             { 'circle--unanimated': clickedCircleId !== '' },
             { 'circle--left-centered': clickedCircleId !== '' },
+            { 'circle--transparented': clickedCircleId === 'c2' },
           ]"
           :style="{
             zIndex: lastClickedId === 'c1' ? zIndexCircle + 1 : zIndexCircle,
@@ -91,6 +92,7 @@
             },
             { 'circle--unanimated': clickedCircleId !== '' },
             { 'circle--right-centered': clickedCircleId !== '' },
+            { 'circle--transparented': clickedCircleId === 'c1' },
           ]"
           :style="{
             zIndex: lastClickedId === 'c2' ? zIndexCircle + 1 : zIndexCircle,
@@ -174,6 +176,32 @@ $height: 100px;
     top: 40%;
   }
 }
+@keyframes moving-to-left {
+  0% {
+    opacity: 0;
+    left: -150px;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    left: -420px;
+  }
+}
+@keyframes moving-to-right {
+  0% {
+    opacity: 0;
+    right: -150px;
+  }
+  25% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    right: -420px;
+  }
+}
 .test2 {
   display: flex;
   flex-direction: column;
@@ -226,55 +254,13 @@ $height: 100px;
       flex-direction: column;
       gap: 20px;
       position: absolute;
-      opacity: 0;
       width: 300px;
-      transition: opacity 0.5s 0.25s ease-in-out, left 0.75s ease-in-out,
-        right 0.75s ease-in-out;
-      left: -150px;
-      right: -150px;
     }
     &-title {
       font-size: 24px;
     }
     &-text {
       font-size: 16px;
-    }
-    &.type-two {
-      .circles__center-item.item-outed {
-        opacity: 1;
-      }
-      .circles__center-item:nth-child(1) {
-        top: -150px;
-        left: unset;
-        right: unset;
-      }
-      .circles__center-item:nth-child(2) {
-        top: -115px;
-        left: -115px;
-        right: unset;
-      }
-      .circles__center-item:nth-child(3) {
-        top: unset;
-        left: -150px;
-        right: unset;
-        bottom: unset;
-      }
-      .circles__center-item:nth-child(4) {
-        top: unset;
-        left: -115px;
-        bottom: -115px;
-      }
-      .circles__center-item:nth-child(5) {
-        top: unset;
-        left: unset;
-        right: unset;
-        bottom: -150px;
-      }
-      .circles__center-caption.item-outed {
-        opacity: 1;
-        left: unset;
-        right: -420px;
-      }
     }
     &.type-one {
       .circles__center-item.item-outed {
@@ -309,9 +295,42 @@ $height: 100px;
         bottom: -150px;
       }
       .circles__center-caption.item-outed {
+        animation: ease-in-out 0.75s forwards moving-to-left;
+      }
+    }
+    &.type-two {
+      .circles__center-item.item-outed {
         opacity: 1;
-        left: -420px;
+      }
+      .circles__center-item:nth-child(1) {
+        top: -150px;
+        left: unset;
         right: unset;
+      }
+      .circles__center-item:nth-child(2) {
+        top: -115px;
+        left: -115px;
+        right: unset;
+      }
+      .circles__center-item:nth-child(3) {
+        top: unset;
+        left: -150px;
+        right: unset;
+        bottom: unset;
+      }
+      .circles__center-item:nth-child(4) {
+        top: unset;
+        left: -115px;
+        bottom: -115px;
+      }
+      .circles__center-item:nth-child(5) {
+        top: unset;
+        left: unset;
+        right: unset;
+        bottom: -150px;
+      }
+      .circles__center-caption.item-outed {
+        animation: ease-in-out 0.75s forwards moving-to-right;
       }
     }
   }
@@ -324,7 +343,8 @@ $height: 100px;
   transform: translateY(-50%);
   cursor: pointer;
   transition: left 0.5s ease-in-out, right 0.5s ease-in-out,
-    top 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out;
+    top 0.5s ease-in-out, width 0.5s ease-in-out, height 0.5s ease-in-out,
+    opacity 0.5s ease-in-out;
   animation: 4s infinite ease-in-out reverse flowing;
   &.circle--unanimated {
     animation: unset;
@@ -345,6 +365,9 @@ $height: 100px;
   &.circle--right-centered {
     cursor: unset;
     left: -32.5% !important;
+  }
+  &.circle--transparented {
+    opacity: 0;
   }
   &-one {
     background-color: #d8aa90;
