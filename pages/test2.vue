@@ -19,12 +19,12 @@
             { 'circle--left-centered': clickedCircleId !== '' },
           ]"
           :style="{
-            zIndex: clickedCircleId === 'c1' ? zIndexCircle + 1 : zIndexCircle,
+            zIndex: lastClickedId === 'c1' ? zIndexCircle + 1 : zIndexCircle,
             right: `${c1RightCirclePosition}`,
           }"
           @mouseover="setHoveredCircleId('c1')"
           @mouseleave="resetHoveredCircleId()"
-          @click="moving('c1')"
+          @click="moving('c1'), setClickedId('c1')"
         />
       </div>
       <div
@@ -93,12 +93,12 @@
             { 'circle--right-centered': clickedCircleId !== '' },
           ]"
           :style="{
-            zIndex: clickedCircleId === 'c2' ? zIndexCircle + 1 : zIndexCircle,
+            zIndex: lastClickedId === 'c2' ? zIndexCircle + 1 : zIndexCircle,
             left: `${c2LeftCirclePosition}`,
           }"
           @mouseover="setHoveredCircleId('c2')"
           @mouseleave="resetHoveredCircleId()"
-          @click="moving('c2')"
+          @click="moving('c2'), setClickedId('c2')"
         />
       </div>
     </div>
@@ -116,6 +116,7 @@ export default {
       hoveredCircleId: '',
       clickedCircleId: '',
       zIndexCircle: 5,
+      lastClickedId: '',
       c1RightCirclePosition: '',
       c2LeftCirclePosition: '',
       data: {
@@ -147,6 +148,9 @@ export default {
     },
     moving(id) {
       this.clickedCircleId = id
+    },
+    setClickedId(id) {
+      this.lastClickedId = id
     },
     resetState() {
       this.clickedCircleId = ''
