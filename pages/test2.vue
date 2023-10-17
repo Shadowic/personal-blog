@@ -35,30 +35,9 @@
           { 'type-two': clickedCircleId === 'c2' },
         ]"
       >
-        <div
-          class="circles__center-item"
-          :class="{ 'item-outed': clickedCircleId !== '' }"
-        />
-        <div
-          class="circles__center-item"
-          :class="{ 'item-outed': clickedCircleId !== '' }"
-        />
-        <div
-          class="circles__center-item"
-          :class="{ 'item-outed': clickedCircleId !== '' }"
-        />
-        <div
-          class="circles__center-item"
-          :class="{ 'item-outed': clickedCircleId !== '' }"
-        />
-        <div
-          class="circles__center-item"
-          :class="{ 'item-outed': clickedCircleId !== '' }"
-        />
-        <div
-          class="circles__center-caption"
-          :class="{ 'item-outed': clickedCircleId !== '' }"
-        >
+        <div v-for="i in 5" :key="i" class="circles__center-item" />
+        <div class="circles__center-caption">
+          <!--          :class="{ 'item-outed': clickedCircleId !== '' }"-->
           <h2 class="circles__center-title">
             <span v-if="clickedCircleId === 'c1'">
               {{ data.leftCircleData.title }}
@@ -221,9 +200,9 @@ $height: 100px;
   gap: 25px;
   margin-top: 50px;
   &__item {
-    border: 1px solid rgba(100, 139, 140, 0.35);
-    width: 25vw;
-    height: 25vw;
+    //border: 1px solid rgba(100, 139, 140, 0.35);
+    width: 300px;
+    height: 300px;
     position: relative;
     display: flex;
     justify-content: center;
@@ -249,6 +228,10 @@ $height: 100px;
       right: 0;
       bottom: 0;
       left: 0;
+      .type-one &,
+      .type-two & {
+        animation: ease-in-out 1s forwards fade-in;
+      }
     }
     &-caption {
       display: flex;
@@ -256,6 +239,14 @@ $height: 100px;
       gap: 20px;
       position: absolute;
       width: 300px;
+      .type-one & {
+        animation: ease-in-out 0.75s forwards moving-to-left,
+          ease-in-out 0.75s forwards fade-in;
+      }
+      .type-two & {
+        animation: ease-in-out 0.75s forwards moving-to-right,
+          ease-in-out 0.75s forwards fade-in;
+      }
     }
     &-title {
       font-size: 24px;
@@ -264,9 +255,6 @@ $height: 100px;
       font-size: 16px;
     }
     &.type-one {
-      .circles__center-item.item-outed {
-        animation: ease-in-out 1s forwards fade-in;
-      }
       .circles__center-item:nth-child(1) {
         top: -150px;
         left: unset;
@@ -295,15 +283,8 @@ $height: 100px;
         right: unset;
         bottom: -150px;
       }
-      .circles__center-caption.item-outed {
-        animation: ease-in-out 0.75s forwards moving-to-left,
-          ease-in-out 0.75s forwards fade-in;
-      }
     }
     &.type-two {
-      .circles__center-item.item-outed {
-        animation: ease-in-out 1s forwards fade-in;
-      }
       .circles__center-item:nth-child(1) {
         top: -150px;
         left: unset;
@@ -330,10 +311,6 @@ $height: 100px;
         left: unset;
         right: unset;
         bottom: -150px;
-      }
-      .circles__center-caption.item-outed {
-        animation: ease-in-out 0.75s forwards moving-to-right,
-          ease-in-out 0.75s forwards fade-in;
       }
     }
   }
