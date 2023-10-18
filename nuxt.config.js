@@ -105,7 +105,7 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
   env: {
-    baseUrl: process.env.SHADOWIC_BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.SHADOWIC_BASE_URL || 'http://0.0.0.0:3000',
   },
   sentry: {
     dsn: 'https://9f1275d1ad694717a2f87e6ae890be3c@o630743.ingest.sentry.io/5755309', // Enter your project's DSN here
