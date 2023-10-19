@@ -2,16 +2,16 @@
   <div class="test2">
     <h1>Something new is coming soon</h1>
     <FlyingCircles />
-    <Curtain />
+    <ImageComparisonSlider />
   </div>
 </template>
 
 <script>
 import FlyingCircles from '@/components/test/FlyingCircles'
-import Curtain from '@/components/test/Curtain'
+import ImageComparisonSlider from '@/components/test/ImageComparisonSlider'
 export default {
   name: 'Test2',
-  components: { Curtain, FlyingCircles },
+  components: { ImageComparisonSlider, FlyingCircles },
 }
 </script>
 
@@ -21,6 +21,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 70px;
   h1 {
     font-size: 60px;
     color: #221e17;
