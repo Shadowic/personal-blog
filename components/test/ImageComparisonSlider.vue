@@ -4,13 +4,13 @@
     <div ref="container" class="image-container">
       <img src="imgs/IMG_9408.jpg" alt="Original Image" draggable="false" />
       <div ref="topImage" class="resize-image">
-        <img src="imgs/IMG_9542.jpg" alt="Modified Image" draggable="false" />
+        <!--        <img src="imgs/IMG_9542.jpg" alt="Modified Image" draggable="false" />-->
       </div>
       <div
         ref="handle"
         class="handle"
-        @mousedown="startDrag()"
-        @touchstart="startDrag()"
+        @mousedown="startDrag(e)"
+        @touchstart="startDrag(e)"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -35,29 +35,49 @@ export default {
   },
   methods: {
     startDrag(e) {
-      // const handle = this.$refs.handle
-      // const container = this.$refs.container
-      // const topImage = this.$refs.topImage
+      const handle = this.$refs.handle
+      const topImage = this.$refs.topImage
+      const container = this.$refs.container
 
-      this.$refs.handle.classList.add('draggable')
-      this.$refs.topImage.classList.add('resizable')
+      handle.classList.add('draggable')
+      topImage.classList.add('resizable')
 
-      const dragWidth = this.$refs.handle.offsetWidth
-      // const xPosition =
-      //   this.$refs.handle.getBoundingClientRect().left + dragWidth
-      console.log('dragWidth', dragWidth)
-      console.log('xPosition', this.$refs.handle.getBoundingClientRect().left)
-      // const containerOffset = container.getBoundingClientRect().left
-      // const containerWidth = container.offsetWidth
-      // const minLeft = containerOffset + 10
-      // const maxLeft = containerOffset + containerWidth - dragWidth - 10
+      const handleWidth = handle.offsetWidth
+      const handleXPosition =
+        handle.getBoundingClientRect().left + handleWidth / 2
+      const containerLeftPosition = container.getBoundingClientRect().left
+      const containerRightPosition = container.getBoundingClientRect().right
+      const containerWidth = container.offsetWidth
 
-      document.addEventListener('mouseup', this.stopDrag)
-      document.addEventListener('touchend', this.stopDrag)
-    },
-    stopDrag() {
-      this.$refs.handle.classList.remove('draggable')
-      this.$refs.topImage.classList.remove('resizable')
+      const minLeft = containerLeftPosition + 10
+      const maxLeft = containerRightPosition - 10
+
+      handle.addEventListener('mousemove', drag)
+      handle.addEventListener('touchmove', drag)
+      handle.addEventListener('mouseup', stopDrag)
+      handle.addEventListener('touchend', stopDrag)
+
+      function drag(e) {
+        let leftValue = handleXPosition - handleWidth / 2
+
+        if (leftValue < minLeft) {
+          leftValue = minLeft
+        } else if (leftValue > maxLeft) {
+          leftValue = maxLeft
+        }
+
+        const widthValue =
+          ((leftValue + handleWidth / 2 - containerLeftPosition) * 100) /
+            containerWidth +
+          '%'
+
+        handle.style.left = widthValue
+        topImage.style.width = widthValue
+      }
+      function stopDrag() {
+        handle.classList.remove('draggable')
+        topImage.classList.remove('resizable')
+      }
     },
   },
 }
@@ -78,7 +98,6 @@ export default {
   width: 100%;
   margin-top: 70px;
   position: relative;
-  border: 1px solid crimson;
 }
 img {
   display: block;
@@ -113,11 +132,8 @@ img {
   margin-top: -22px;
   cursor: move;
   opacity: 0;
-  transform: translate3d(0, 0, 0) scale(0);
   &.is-visible {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-    transition: transform 0.3s 0.7s, opacity 0s 0.7s;
+    animation: ease-in-out 0.75s forwards fade-in;
   }
 }
 @keyframes bounce-in {
@@ -129,6 +145,19 @@ img {
   }
   100% {
     width: 50%;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 </style>
