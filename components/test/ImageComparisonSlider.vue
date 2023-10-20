@@ -1,6 +1,6 @@
 <template>
   <section class="comparison">
-    <h2>here will be image comparison slider soon</h2>
+    <!--    <h2>image comparison slider</h2>-->
     <div ref="container" class="image-container">
       <img src="imgs/IMG_9408.jpg" alt="Original Image" draggable="false" />
       <div ref="topImage" class="resize-image">
@@ -29,55 +29,49 @@
 <script>
 export default {
   name: 'ImageComparisonSlider',
-  // mounted() {
-  //   this.$refs.topImage.classList.add('is-visible')
-  //   this.$refs.handle.classList.add('is-visible')
-  // },
+  mounted() {
+    this.$refs.topImage.classList.add('is-visible')
+    this.$refs.handle.classList.add('is-visible')
+  },
   methods: {
     startDrag(e) {
       const handle = this.$refs.handle
       const topImage = this.$refs.topImage
-      const container = this.$refs.container
+      // const container = this.$refs.container
 
-      // handle.classList.add('draggable')
-      // topImage.classList.add('resizable')
-
-      const handleWidth = handle.offsetWidth
-      const handleXPosition =
-        handle.getBoundingClientRect().left + handleWidth / 2
-      const containerLeftPosition = container.getBoundingClientRect().left
-      const containerRightPosition = container.getBoundingClientRect().right
-      const containerWidth = container.offsetWidth
-
-      const minLeft = containerLeftPosition + handleWidth / 2 + 10
-      const maxLeft = containerRightPosition - handleWidth / 2 - 10
+      // const containerLeftPosition = container.getBoundingClientRect().left
+      // const containerRightPosition = container.getBoundingClientRect().right
 
       handle.addEventListener('mousemove', drag)
       handle.addEventListener('touchmove', drag)
       handle.addEventListener('mouseup', stopDrag)
       handle.addEventListener('touchend', stopDrag)
 
+      const handleCenterPoint = handle.offsetLeft + handle.offsetWidth / 2
+
+      console.log('drag', handleCenterPoint)
+      console.log('aaa', e.pageX)
+
+      // function getCursorPos(e) {
+      //   if (e.type === 'touchstart' || e.type === 'touchmove') {
+      //     return e.touches[0].pageX
+      //   } else {
+      //     return e.pageX
+      //   }
+      // }
+      // console.log('aaa', getCursorPos())
+
       function drag(e) {
+        console.log('drag')
         e.preventDefault()
-        let leftValue = handleXPosition - handleWidth / 2
 
-        if (leftValue < minLeft) {
-          leftValue = minLeft
-        } else if (leftValue > maxLeft) {
-          leftValue = maxLeft
-        }
+        const newValue = 45 + '%'
 
-        const widthValue =
-          ((leftValue + handleWidth / 2 - containerLeftPosition) * 100) /
-            containerWidth +
-          '%'
-
-        handle.style.left = widthValue
-        topImage.style.width = widthValue
+        handle.style.left = newValue
+        topImage.style.width = newValue
       }
       function stopDrag() {
-        handle.classList.remove('draggable')
-        topImage.classList.remove('resizable')
+        console.log('stopDrag')
       }
     },
   },
@@ -113,10 +107,10 @@ img {
   overflow: hidden;
   background: top left no-repeat url('/imgs/IMG_9542.jpg');
   background-size: auto 100%;
-  //&.is-visible {
-  //  width: 50%;
-  //  animation: bounce-in 0.75s;
-  //}
+  &.is-visible {
+    width: 50%;
+    animation: bounce-in 0.75s;
+  }
 }
 .handle {
   display: flex;
@@ -133,32 +127,32 @@ img {
   margin-top: -22px;
   cursor: move;
   opacity: 1;
-  //&.is-visible {
-  //  animation: ease-in-out 0.75s forwards fade-in;
-  //}
+  &.is-visible {
+    animation: ease-in-out 0.75s forwards fade-in;
+  }
 }
-//@keyframes bounce-in {
-//  0% {
-//    width: 0;
-//  }
-//  60% {
-//    width: 55%;
-//  }
-//  100% {
-//    width: 50%;
-//  }
-//}
-//@keyframes fade-in {
-//  0% {
-//    opacity: 0;
-//  }
-//  50% {
-//    opacity: 0;
-//    transform: translate3d(0, 0, 0) scale(0);
-//  }
-//  100% {
-//    opacity: 1;
-//    transform: translate3d(0, 0, 0) scale(1);
-//  }
-//}
+@keyframes bounce-in {
+  0% {
+    width: 0;
+  }
+  60% {
+    width: 55%;
+  }
+  100% {
+    width: 50%;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
 </style>
