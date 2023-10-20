@@ -29,18 +29,18 @@
 <script>
 export default {
   name: 'ImageComparisonSlider',
-  mounted() {
-    this.$refs.topImage.classList.add('is-visible')
-    this.$refs.handle.classList.add('is-visible')
-  },
+  // mounted() {
+  //   this.$refs.topImage.classList.add('is-visible')
+  //   this.$refs.handle.classList.add('is-visible')
+  // },
   methods: {
     startDrag(e) {
       const handle = this.$refs.handle
       const topImage = this.$refs.topImage
       const container = this.$refs.container
 
-      handle.classList.add('draggable')
-      topImage.classList.add('resizable')
+      // handle.classList.add('draggable')
+      // topImage.classList.add('resizable')
 
       const handleWidth = handle.offsetWidth
       const handleXPosition =
@@ -49,8 +49,8 @@ export default {
       const containerRightPosition = container.getBoundingClientRect().right
       const containerWidth = container.offsetWidth
 
-      const minLeft = containerLeftPosition + 10
-      const maxLeft = containerRightPosition - 10
+      const minLeft = containerLeftPosition + handleWidth / 2 + 10
+      const maxLeft = containerRightPosition - handleWidth / 2 - 10
 
       handle.addEventListener('mousemove', drag)
       handle.addEventListener('touchmove', drag)
@@ -58,6 +58,7 @@ export default {
       handle.addEventListener('touchend', stopDrag)
 
       function drag(e) {
+        e.preventDefault()
         let leftValue = handleXPosition - handleWidth / 2
 
         if (leftValue < minLeft) {
@@ -112,10 +113,10 @@ img {
   overflow: hidden;
   background: top left no-repeat url('/imgs/IMG_9542.jpg');
   background-size: auto 100%;
-  &.is-visible {
-    width: 50%;
-    animation: bounce-in 0.75s;
-  }
+  //&.is-visible {
+  //  width: 50%;
+  //  animation: bounce-in 0.75s;
+  //}
 }
 .handle {
   display: flex;
@@ -131,33 +132,33 @@ img {
   margin-left: -22px;
   margin-top: -22px;
   cursor: move;
-  opacity: 0;
-  &.is-visible {
-    animation: ease-in-out 0.75s forwards fade-in;
-  }
+  opacity: 1;
+  //&.is-visible {
+  //  animation: ease-in-out 0.75s forwards fade-in;
+  //}
 }
-@keyframes bounce-in {
-  0% {
-    width: 0;
-  }
-  60% {
-    width: 55%;
-  }
-  100% {
-    width: 50%;
-  }
-}
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-    transform: translate3d(0, 0, 0) scale(0);
-  }
-  100% {
-    opacity: 1;
-    transform: translate3d(0, 0, 0) scale(1);
-  }
-}
+//@keyframes bounce-in {
+//  0% {
+//    width: 0;
+//  }
+//  60% {
+//    width: 55%;
+//  }
+//  100% {
+//    width: 50%;
+//  }
+//}
+//@keyframes fade-in {
+//  0% {
+//    opacity: 0;
+//  }
+//  50% {
+//    opacity: 0;
+//    transform: translate3d(0, 0, 0) scale(0);
+//  }
+//  100% {
+//    opacity: 1;
+//    transform: translate3d(0, 0, 0) scale(1);
+//  }
+//}
 </style>
