@@ -1,11 +1,9 @@
 <template>
   <section class="comparison">
-    <!--    <h2>image comparison slider</h2>-->
+    <h2>image comparison slider</h2>
     <div ref="container" class="image-container">
       <img src="imgs/IMG_9408.jpg" alt="Original Image" draggable="false" />
-      <div ref="topImage" class="resize-image">
-        <!--        <img src="imgs/IMG_9542.jpg" alt="Modified Image" draggable="false" />-->
-      </div>
+      <div ref="topImage" class="resize-image" />
       <div
         ref="handle"
         class="handle"
@@ -37,41 +35,43 @@ export default {
     startDrag(e) {
       const handle = this.$refs.handle
       const topImage = this.$refs.topImage
-      // const container = this.$refs.container
+      const container = this.$refs.container
 
-      // const containerLeftPosition = container.getBoundingClientRect().left
-      // const containerRightPosition = container.getBoundingClientRect().right
+      const containerLeftPosition = container.getBoundingClientRect().left
+      const containerWidth = container.offsetWidth
+      const minVal = handle.offsetWidth / 2 + 10
+      const maxVal = containerWidth - handle.offsetWidth / 2 - 10
 
-      handle.addEventListener('mousemove', drag)
-      handle.addEventListener('touchmove', drag)
-      handle.addEventListener('mouseup', stopDrag)
-      handle.addEventListener('touchend', stopDrag)
-
-      const handleCenterPoint = handle.offsetLeft + handle.offsetWidth / 2
-
-      console.log('drag', handleCenterPoint)
-      console.log('aaa', e.pageX)
-
-      // function getCursorPos(e) {
-      //   if (e.type === 'touchstart' || e.type === 'touchmove') {
-      //     return e.touches[0].pageX
-      //   } else {
-      //     return e.pageX
-      //   }
-      // }
-      // console.log('aaa', getCursorPos())
+      container.addEventListener('mousemove', drag)
+      container.addEventListener('touchmove', drag)
+      container.addEventListener('mouseup', stopDrag)
+      container.addEventListener('touchend', stopDrag)
 
       function drag(e) {
-        console.log('drag')
         e.preventDefault()
+        const cursorPos = getCursorPos(e)
 
-        const newValue = 45 + '%'
+        let newValue = cursorPos - containerLeftPosition
 
-        handle.style.left = newValue
-        topImage.style.width = newValue
+        if (newValue < minVal) {
+          newValue = minVal
+        } else if (newValue > maxVal) {
+          newValue = maxVal
+        }
+
+        handle.style.left = newValue + 'px'
+        topImage.style.width = newValue + 'px'
+      }
+      function getCursorPos(e) {
+        if (e.type === 'touchstart' || e.type === 'touchmove') {
+          return e.touches[0].pageX
+        } else {
+          return e.pageX
+        }
       }
       function stopDrag() {
-        console.log('stopDrag')
+        container.removeEventListener('mousemove', drag)
+        container.removeEventListener('touchmove', drag)
       }
     },
   },

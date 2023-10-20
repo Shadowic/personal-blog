@@ -1,14 +1,10 @@
 <template>
-  <div class="test3">
-    <ImageComparisonSlider />
-  </div>
+  <div class="test3"></div>
 </template>
 
 <script>
-import ImageComparisonSlider from '@/components/test/ImageComparisonSlider'
 export default {
   name: 'Test3',
-  components: { ImageComparisonSlider },
   layout: 'empty-page',
 }
 </script>
