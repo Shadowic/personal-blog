@@ -60,7 +60,7 @@ export default {
   color: $green-dark;
   margin: 17px 0;
   opacity: 0;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.2em;
   line-height: 1em;

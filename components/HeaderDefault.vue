@@ -18,7 +18,7 @@ export default {
 
 <style lang="scss" scoped>
 .default-header {
-  background: #ddd5c899;
+  background: #cfbeac95;
   backdrop-filter: blur(15px);
   width: 100%;
   height: 80px;

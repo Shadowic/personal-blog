@@ -27,6 +27,13 @@ export default {
   methods: {
     setHoveredItemId(id, e) {
       const el = e.currentTarget
+
+      const computedStyle = getComputedStyle(el).clipPath
+      console.log('el comp', computedStyle)
+      el.style.setProperty('--clip-path-size', 100 + 'px')
+      el.style.setProperty('--x', 10 + '%')
+      el.style.setProperty('--y', 10 + '%')
+
       el.classList.remove('animBack')
       el.classList.add('animated')
       el.style.zIndex = '10'
@@ -35,7 +42,7 @@ export default {
 
       function listener(el) {
         if (el.type === 'animationend') {
-          console.log('animationend')
+          // console.log('animationend')
         }
       }
     },
@@ -51,7 +58,7 @@ export default {
 <style lang="scss" scoped>
 @keyframes increasing {
   0% {
-    clip-path: circle(100px at 50% 30%);
+    clip-path: circle(var(--clip-path-size) at var(--x) var(--y));
   }
   15% {
     clip-path: circle(100px at 60% 25%);
@@ -77,7 +84,7 @@ export default {
     clip-path: circle(100px at 50% 50%);
   }
   100% {
-    clip-path: circle(100px at 50% 30%);
+    clip-path: circle(var(--clip-path-size) at var(--x) var(--y));
   }
 }
 .increasing {

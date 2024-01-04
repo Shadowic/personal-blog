@@ -40,15 +40,15 @@ export default {
 <style lang="scss" scoped>
 .background {
   display: flex;
-  color: rgba(171, 152, 119, 0.1);
+  color: rgba(221, 209, 196, 0.3);
   font-size: 120px;
   z-index: 0;
   font-family: 'Caveat', cursive;
   font-weight: 700;
   line-height: 1.4em;
   position: absolute;
-  top: -88px;
-  left: 0;
+  top: -60px;
+  left: -10px;
   padding: 2% 1%;
   &__letter {
     display: inline-block;
@@ -64,6 +64,8 @@ export default {
   }
   @include md {
     font-size: 90px;
+    top: -65px;
+    left: -5px;
   }
   @include sm {
     font-size: 60px;

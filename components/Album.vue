@@ -132,22 +132,13 @@ export default {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 350px;
+  height: 400px;
   position: relative;
   justify-content: space-between;
-  gap: 30px;
+  gap: 60px;
   @include sm- {
     flex-direction: column-reverse;
     height: auto;
-  }
-  &:not(:last-child) {
-    margin-bottom: 80px;
-  }
-  &:first-child {
-    margin-top: 40px;
-    @include sm- {
-      margin-top: 20px;
-    }
   }
   &:nth-child(2n) {
     display: flex;
@@ -164,22 +155,22 @@ export default {
     justify-content: center;
     width: 50%;
     padding: 25px 5%;
-    border: 2px solid #ab9877;
+    border: 2px solid #ccbfae;
     height: 100%;
     .album:nth-child(5n - 4) & {
-      border-radius: 80px 80px 0 80px;
+      border-radius: 40px 40px 0 40px;
     }
     .album:nth-child(5n - 3) & {
-      border-radius: 0 80px 0 80px;
+      border-radius: 0 40px 0 40px;
     }
     .album:nth-child(5n - 2) & {
-      border-radius: 80px 0 80px 0;
+      border-radius: 40px 0 40px 0;
     }
     .album:nth-child(5n - 1) & {
-      border-radius: 0 80px 80px 0;
+      border-radius: 0 40px 40px 0;
     }
     .album:nth-child(5n) & {
-      border-radius: 80px 0 80px 80px;
+      border-radius: 40px 0 40px 40px;
     }
     &-top,
     .btn {
@@ -279,22 +270,22 @@ export default {
     z-index: 5;
     @include sm- {
       width: 100%;
-      height: 300px;
+      height: 400px;
     }
     .album:nth-child(5n - 4) & {
-      border-radius: 120px 80px 120px 80px;
+      border-radius: 60px 40px 60px 40px;
     }
     .album:nth-child(5n - 3) & {
-      border-radius: 80px 60px 140px 80px;
+      border-radius: 40px 30px 70px 40px;
     }
     .album:nth-child(5n - 2) & {
-      border-radius: 80px 120px 140px 80px;
+      border-radius: 40px 60px 70px 40px;
     }
     .album:nth-child(5n - 1) & {
-      border-radius: 60px 120px 80px 120px;
+      border-radius: 30px 60px 40px 60px;
     }
     .album:nth-child(5n) & {
-      border-radius: 100px 60px 60px 120px;
+      border-radius: 50px 30px 30px 60px;
     }
   }
   &__image-cover {

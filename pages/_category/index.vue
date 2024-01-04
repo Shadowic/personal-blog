@@ -132,8 +132,8 @@ export default {
 .container {
   width: 100%;
   max-width: 1360px;
-  margin: 60px auto;
-  padding: 0 20px;
+  margin: 60px auto 180px;
+  padding: 0 40px;
   position: relative;
   /deep/ .album:not(:last-child) {
     @include sm- {
@@ -168,6 +168,19 @@ export default {
     padding: 3%;
     font-size: 8vw;
     font-family: 'Caveat', cursive;
+  }
+}
+.albums-list {
+  display: flex;
+  flex-direction: column;
+  gap: 120px;
+  margin-top: 80px;
+  @include md {
+    margin-top: 40px;
+  }
+  @include sm- {
+    gap: 60px;
+    margin-top: 60px;
   }
 }
 </style>

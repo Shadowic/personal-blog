@@ -5,9 +5,9 @@
       <div class="footer__subtitle">{{ footer.subtitle }}</div>
       <div class="footer__text">
         {{ footer.description }}
-        <svg class="svg-dotted-line">
-          <line x1="0" y1="50%" x2="100%" y2="50%" />
-        </svg>
+      </div>
+      <div class="footer__breakline">
+        <div v-for="(item, i) in 30" :key="i" class="footer__breakline-item" />
       </div>
       <div class="social">
         <a
@@ -42,27 +42,30 @@ export default {
 <style lang="scss" scoped>
 .footer {
   width: 100%;
+  height: 100%;
   color: #625744;
   text-align: center;
   line-height: 1.6em;
-  font-size: 12px;
   &__wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 10;
     align-items: center;
     transition: background 0.3s, border 0.3s, border-radius 0.3s,
       box-shadow 0.3s;
-    padding: 30px 21% 50px;
+    padding: 90px 21% 30px;
   }
 
   &__title {
     font-family: 'Caveat', cursive;
     color: #443c2f;
-    font-size: 30px;
+    font-size: 42px;
     font-weight: 500;
-    letter-spacing: 0.1em;
-    margin-bottom: 5px;
+    letter-spacing: 0.001em;
+    margin-bottom: 15px;
     @include sm {
       font-size: 22px;
       margin-bottom: 10px;
@@ -74,46 +77,42 @@ export default {
 
   &__subtitle {
     margin-bottom: 25px;
+    font-size: 14px;
   }
 
   &__text {
     position: relative;
-    margin-bottom: 25px;
-    padding-bottom: 40px;
-    max-width: 1100px;
+    margin-bottom: 40px;
+    max-width: 768px;
+    font-size: 16px;
+  }
+
+  &__breakline {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 40px;
+    &-item {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background-color: #2a2725;
+    }
   }
 }
-.svg-dotted-line {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 0 25%;
-  height: 4px;
-  stroke: #443c2f;
-  stroke-width: 2px;
-  stroke-linecap: round;
-  stroke-dasharray: 0.4px, 5px;
-  stroke-dashoffset: -2;
-}
-
 .social {
   display: flex;
+  gap: 32px;
 
   & > a {
     position: relative;
-    width: 20px;
-    height: 20px;
-    margin-right: 20px;
+    width: 26px;
+    height: 26px;
     cursor: pointer;
-    line-height: 1.2em;
-    path {
-      transition: all 0.25s ease-in-out;
-    }
+    line-height: 1;
+    transition: filter 0.2s ease-in-out;
     &:hover {
-      path {
-        fill: $ziggurat;
-      }
+      filter: invert(66%) sepia(36%) saturate(239%) hue-rotate(144deg)
+        brightness(85%) contrast(97%);
     }
   }
 }

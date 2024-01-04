@@ -9,7 +9,7 @@
 </template>
 <style lang="scss" scoped>
 .lang-tumbler {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1em;

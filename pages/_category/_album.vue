@@ -206,6 +206,10 @@ export default {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 120px;
   }
+  @include xs- {
+    grid-gap: 16px;
+    grid-auto-rows: 40px;
+  }
 }
 [class^='grid-item'] {
   position: relative;
@@ -233,82 +237,146 @@ export default {
   &:nth-child(20n + 1) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 2) {
     grid-column: auto / span 1;
     grid-row: auto / span 2;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 3) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 4) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 5) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 6) {
     grid-column: auto / span 2;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-column: auto / span 1;
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 7) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 8) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 9) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 10) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 11) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 12) {
     grid-column: auto / span 2;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-column: auto / span 1;
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 13) {
     grid-column: auto / span 1;
     grid-row: auto / span 2;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 14) {
     grid-column: auto / span 2;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-column: auto / span 1;
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 15) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 16) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 17) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 18) {
     grid-column: auto / span 1;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-row: auto / span 2;
+    }
   }
   &:nth-child(20n + 19) {
     grid-column: auto / span 1;
     grid-row: auto / span 2;
+    @include sm- {
+      grid-row: auto / span 3;
+    }
   }
   &:nth-child(20n + 20) {
     grid-column: auto / span 2;
     grid-row: auto / span 1;
+    @include sm- {
+      grid-column: auto / span 1;
+      grid-row: auto / span 2;
+    }
   }
 }
 </style>

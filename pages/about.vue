@@ -120,8 +120,8 @@ export default {
   }
   /deep/.background {
     position: absolute;
-    color: $ziggurat;
-    opacity: 0.1;
+    color: $herbal;
+    opacity: 0.15;
     top: -75px;
     @include md {
       top: -10px;

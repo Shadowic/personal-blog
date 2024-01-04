@@ -18,16 +18,16 @@ export default {
             title: 'cakes',
           },
           {
+            url: '/common-album',
+            title: 'common album',
+          },
+          {
             url: '/test1',
             title: 'test1',
           },
           {
             url: 'test2',
             title: 'test2',
-          },
-          {
-            url: '/',
-            title: 'nothing yet',
           },
           {
             url: '/about',

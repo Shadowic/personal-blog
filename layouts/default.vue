@@ -19,7 +19,7 @@
         <kinesis-element class="kinesis-element" type="scale" :strength="1">
           <div class="background-fill background-fill__pink" />
         </kinesis-element>
-        <Footer v-if="footer" class="footer" :footer="footer" />
+        <Footer v-if="footer" :footer="footer" />
       </div>
     </kinesis-container>
   </div>
@@ -49,6 +49,10 @@ export default {
           {
             url: '/cakes',
             title: 'cakes',
+          },
+          {
+            url: '/common-album',
+            title: 'common album',
           },
           {
             url: '/test1',
@@ -182,11 +186,13 @@ export default {
 .bottom-container {
   flex: 0 0 auto;
   position: relative;
-  height: 40vh;
-}
-.footer {
-  position: absolute;
-  bottom: 0;
+  height: 450px;
+  @include sm- {
+    height: 400px;
+  }
+  @include xs- {
+    height: 450px;
+  }
 }
 .header {
   flex: 0 0 auto;
@@ -215,11 +221,11 @@ export default {
   height: 100%;
   &__blue {
     clip-path: polygon(0 24%, 100% 10%, 100% 100%, 0% 100%);
-    background-color: #f2f6f7;
+    background-color: $herbal;
   }
   &__pink {
     clip-path: polygon(0 0%, 100% 28%, 100% 100%, 0% 100%);
-    background-color: #e5e0d6;
+    background-color: #ccbfae;
   }
 }
 </style>
