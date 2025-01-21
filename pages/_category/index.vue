@@ -135,22 +135,22 @@ export default {
   margin: 60px auto 180px;
   padding: 0 40px;
   position: relative;
-  /deep/ .album:not(:last-child) {
+  .album:not(:last-child) {
     @include sm- {
       margin-bottom: 25px;
     }
   }
-  /deep/ .album__cover {
+  .album__cover {
     @include xs- {
       height: 200px;
     }
   }
-  /deep/ .album__description {
+  .album__description {
     @include xs- {
       font-size: 22px;
     }
   }
-  /deep/ .album__outline .btn {
+  .album__outline .btn {
     @include sm- {
       display: none;
     }
@@ -167,7 +167,7 @@ export default {
     top: 10px;
     padding: 3%;
     font-size: 8vw;
-    font-family: 'Caveat', cursive;
+    font-family: $accent-font;
   }
 }
 .albums-list {

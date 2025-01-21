@@ -21,10 +21,10 @@
         <div class="subtitle">{{ navbar.subtitle }}</div>
       </div>
       <Navbar :navbar="navbar" @onLinkClick="closeNav" />
-      <div class="sliding-area__bottom">
-        <div>{{ navbar.caption }}</div>
-        <div>{{ navbar.caption2 }}</div>
-      </div>
+      <small class="sliding-area__bottom">
+        <span>{{ navbar.caption }}</span>
+        <span>{{ navbar.caption2 }}</span>
+      </small>
     </div>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
   left: 0;
   width: 80px;
   z-index: 100;
-  /deep/ .symbol {
+  .symbol {
     display: none;
   }
 }
@@ -123,7 +123,7 @@ export default {
     .logo {
       width: 60px;
       height: 60px;
-      background: center/cover;
+      background: center/contain no-repeat;
       &::after {
         height: 2px;
         width: 48px;
@@ -203,7 +203,7 @@ export default {
 }
 .title {
   font-size: 55px;
-  font-family: 'Caveat', cursive;
+  font-family: $accent-font;
   color: $bokara;
 }
 .subtitle {

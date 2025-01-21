@@ -3,23 +3,45 @@
     <Slider :slider="slider.data" class="index__slider" />
     <div class="content">
       <div class="content__top">
+        <img
+          src="imgs/leaves_lg.svg"
+          draggable="false"
+          width="600"
+          height="490"
+          class="content__bg-leaves bg-leaves__lg"
+          :class="animations3"
+        />
         <div
           :class="animations"
           class="content__icon"
           :style="{ backgroundImage: `url(${index.logo.data.attributes.url})` }"
         />
-        <div :class="animations1" class="content__subtitle">
-          {{ index.welcome }}
-        </div>
+        <p
+          :class="animations1"
+          class="content__subtitle"
+          v-html="index.welcome"
+        />
         <h1 :class="animations2" class="content__title" v-html="index.title" />
-        <p :class="animations3" class="content__description">
-          {{ index.description }}
-        </p>
+        <div class="content__descr-block">
+          <p
+            :class="animations3"
+            class="content__description"
+            v-html="index.description"
+          />
+          <img
+            src="imgs/leaves_sm.svg"
+            draggable="false"
+            width="257"
+            height="174"
+            class="content__bg-leaves bg-leaves__sm"
+            :class="animations3"
+          />
+        </div>
         <ScrollDownIcon />
       </div>
       <div :class="animations3" class="content__body">
         <BackgroundWord :title="index.feed_title" />
-        <div class="content__body__title">{{ index.feed_subtitle }}</div>
+        <p class="content__body__title" v-html="index.feed_subtitle" />
         <div class="index__albums">
           <AlbumIndex
             v-for="(album, index) in albums.data"
@@ -71,14 +93,14 @@ export default {
         logo: {
           data: {
             attributes: {
-              url: '/imgs/IMG_9408.jpg',
+              url: '/imgs/logo.png',
             },
           },
         },
-        welcome: 'Ut fringilla,',
-        title: 'Morbi eget magna ipsum.',
+        welcome: 'Personal blog',
+        title: 'Путешествия, о&nbsp;которых хочется рассказать',
         description:
-          'Morbi finibus vulputate lorem, ut iaculis tortor egestas sed. Etiam volutpat vitae ligula dignissim mattis. Etiam sed quam in turpis maximus venenatis id eget lectus. Suspendisse potenti.',
+          'Добро пожаловать! Welcome! ¡Bienvenidos! Herzlich&nbsp;willkommen! Bienvenue! Benvenuti! Bem-vindos!',
         feed_title: 'Maecenas sit',
         feed_subtitle: 'Amet semper tortor',
       },
@@ -342,8 +364,8 @@ export default {
       width: 100%;
       height: 100vh;
     }
-    /deep/.arrows,
-    /deep/.slider__caption {
+    .arrows,
+    .slider__caption {
       @include sm- {
         display: none;
       }
@@ -353,7 +375,7 @@ export default {
   @include sm- {
     flex-direction: column;
   }
-  /deep/.background {
+  .background {
     position: absolute;
     top: -110px;
     left: 10px;
@@ -372,25 +394,46 @@ export default {
 .content {
   padding-left: calc(40% + 80px);
 
+  &__bg-leaves {
+    display: none;
+    @include -sm {
+      display: inline-block;
+      position: absolute;
+      height: auto;
+      &.bg-leaves__lg {
+        width: 30vw;
+        top: 0;
+        right: 0;
+      }
+      &.bg-leaves__sm {
+        width: 16vw;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
   &__top {
-    padding: 10vh 2%;
+    padding: 10vh 1vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow-x: hidden;
+    position: relative;
     @include sm- {
       padding: calc(60px + 10%) 2% 60px;
     }
   }
 
   &__icon {
-    width: 95px;
-    height: 95px;
-    background: center/cover;
-    transform: translateY(15px);
+    flex: 0 0 auto;
+    display: block;
+    width: 5vw;
+    padding-top: 5vw;
+    background: center/contain;
     opacity: 0;
     @include sm {
       width: 60px;
@@ -403,8 +446,8 @@ export default {
   }
 
   &__subtitle {
-    margin-top: 22px;
-    color: $ocean;
+    margin-top: 12px;
+    color: $green-dark;
     font-size: 0.77vw;
     font-weight: 600;
     letter-spacing: 0.2em;
@@ -418,18 +461,19 @@ export default {
 
   &__title {
     background: url('static/imgs/IMG_0773.jpg') center/cover;
+    background-color: $herbal;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-family: 'Caveat', cursive;
+    font-family: $accent-font;
     color: $green-dark;
-    font-size: 8.4vw;
+    font-size: 6vw;
     line-height: 0.8em;
     margin: 25px 0;
     word-wrap: break-word;
     padding-bottom: 30px;
     opacity: 0;
 
-    /deep/ span {
+    span {
       font-style: italic;
     }
     @include xs {
@@ -443,12 +487,16 @@ export default {
     }
   }
 
+  &__descr-block {
+    margin-top: 7vh;
+    position: relative;
+  }
+
   &__description {
-    font-family: 'Caveat', cursive;
+    font-family: $accent-font;
     font-size: 1.5vw;
     padding: 0 13%;
     color: $green-dark;
-    margin-top: 7%;
     line-height: 1.63em;
     opacity: 0;
     @include md {
@@ -468,7 +516,7 @@ export default {
 
     &__title {
       display: block;
-      font-family: 'Caveat', cursive;
+      font-family: $accent-font;
       font-weight: 700;
       color: $green-dark;
       font-size: 2.4vw;

@@ -35,7 +35,7 @@ export default {
 }
 .message {
   color: #fff;
-  font-family: 'Caveat', cursive;
+  font-family: $accent-font;
   font-size: 40px;
   line-height: 1.212em;
   margin-top: 200px;

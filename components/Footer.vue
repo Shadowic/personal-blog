@@ -9,7 +9,7 @@
       <div class="footer__breakline">
         <div v-for="(item, i) in 30" :key="i" class="footer__breakline-item" />
       </div>
-      <div class="social">
+      <address class="social">
         <a
           v-for="link in getShownLinks()"
           :key="link.id"
@@ -19,7 +19,7 @@
         >
           <img :src="link.icon.data.attributes.url" draggable="false" />
         </a>
-      </div>
+      </address>
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@ export default {
   }
 
   &__title {
-    font-family: 'Caveat', cursive;
+    font-family: $accent-font;
     color: #443c2f;
     font-size: 42px;
     font-weight: 500;

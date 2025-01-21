@@ -43,7 +43,7 @@ export default {
   color: rgba(221, 209, 196, 0.3);
   font-size: 120px;
   z-index: 0;
-  font-family: 'Caveat', cursive;
+  font-family: $accent-font;
   font-weight: 700;
   line-height: 1.4em;
   position: absolute;

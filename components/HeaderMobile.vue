@@ -52,7 +52,7 @@ export default {
   left: 0;
   width: 100%;
   z-index: 100;
-  /deep/ .symbol {
+  .symbol {
     display: none;
   }
 }
@@ -133,7 +133,7 @@ export default {
   }
 }
 .title {
-  font-family: 'Caveat', cursive;
+  font-family: $accent-font;
   font-size: 48px;
   @include xs- {
     font-size: 40px;
@@ -148,10 +148,10 @@ export default {
     font-size: 14px;
   }
 }
-/deep/ .circle-svg {
+.circle-svg {
   display: none;
 }
-/deep/ .navbar {
+.navbar {
   .nav__item {
     transform: translateY(-40px);
   }

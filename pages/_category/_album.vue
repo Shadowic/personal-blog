@@ -164,7 +164,7 @@ export default {
   padding: 0 20px;
   position: relative;
   &__title {
-    font-family: 'Caveat', cursive;
+    font-family: $accent-font;
     font-weight: 600;
     color: #332d23;
     font-size: 33px;
@@ -187,7 +187,7 @@ export default {
     width: 90vw;
     margin: 60px auto;
   }
-  /deep/.background {
+  .background {
     @include md {
       top: -44px;
     }

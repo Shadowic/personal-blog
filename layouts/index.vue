@@ -37,7 +37,7 @@ export default {
         logo: {
           data: {
             attributes: {
-              url: '/imgs/IMG_9408.jpg',
+              url: '/imgs/logo.png',
             },
           },
         },

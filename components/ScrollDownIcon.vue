@@ -30,7 +30,7 @@ export default {
 
 <style lang="scss">
 .main-scroll-icon {
-  margin-top: auto;
+  margin-top: 10vh;
 }
 .scroll-down-icon {
   display: block;

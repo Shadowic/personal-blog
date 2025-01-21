@@ -331,7 +331,7 @@ export default {
     overflow-y: auto;
     margin-left: 30px;
     .item-title {
-      font-family: 'Caveat', cursive;
+      font-family: $accent-font;
       line-height: 1.212em;
       color: $green-dark;
       font-weight: 600;

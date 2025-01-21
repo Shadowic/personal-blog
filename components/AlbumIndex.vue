@@ -126,7 +126,7 @@ export default {
 .album__title {
   margin-right: 0;
   padding-right: 0;
-  font-family: 'Caveat', cursive;
+  font-family: $accent-font;
   color: $bokara;
   font-size: 2vw;
   font-weight: 600;

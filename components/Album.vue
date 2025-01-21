@@ -190,7 +190,7 @@ export default {
       width: fit-content;
       span {
         position: relative;
-        /deep/ .arrow {
+        .arrow {
           fill: #625744;
           width: 10px;
           transform: translateY(4px);
@@ -203,7 +203,7 @@ export default {
         & span::after {
           transform: translateX(2px);
         }
-        /deep/ .arrow {
+        .arrow {
           transform: translate(4px, 4px);
         }
       }
@@ -247,7 +247,7 @@ export default {
     }
   }
   &__description {
-    font-family: 'Caveat', cursive;
+    font-family: $accent-font;
     color: #494133;
     font-size: 44px;
     font-weight: 600;

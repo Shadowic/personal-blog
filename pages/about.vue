@@ -118,7 +118,7 @@ export default {
     flex-direction: column;
     align-items: center;
   }
-  /deep/.background {
+  .background {
     position: absolute;
     color: $herbal;
     opacity: 0.15;
@@ -159,7 +159,7 @@ export default {
   position: relative;
 }
 .name {
-  font-family: 'Caveat', cursive;
+  font-family: $accent-font;
   font-weight: 900;
   color: $bokara;
   opacity: 0.85;

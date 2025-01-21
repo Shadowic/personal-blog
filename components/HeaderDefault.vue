@@ -29,13 +29,13 @@ export default {
   .navbar {
     flex-direction: row;
   }
-  /deep/ .nav__item {
+  .nav__item {
     margin: 0 37px;
     &:first-child {
       display: none;
     }
   }
-  /deep/ .lang-tumbler {
+  .lang-tumbler {
     position: absolute;
     right: 50px;
     @include sm {
