@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
+  <div class="index-page">
+    <HeaderMobile v-if="navbar" :navbar="navbar" class="header__mobile" />
+    <HeaderIndex v-if="navbar" :navbar="navbar" class="header__desktop" />
     <Slider :slider="slider.data" class="index__slider" />
-    <div class="content">
+    <div class="index__content">
       <div class="content__top">
         <img
           src="imgs/leaves_lg.svg"
@@ -41,7 +43,7 @@
       </div>
       <div :class="animations3" class="content__body">
         <BackgroundWord :title="index.feed_title" />
-        <p class="content__body__title" v-html="index.feed_subtitle" />
+        <p class="content__body-title" v-html="index.feed_subtitle" />
         <div class="index__albums">
           <AlbumIndex
             v-for="(album, index) in albums.data"
@@ -89,6 +91,40 @@ export default {
   // },
   data() {
     return {
+      navbar: {
+        Menu: [
+          {
+            url: '/cakes',
+            title: 'cakes',
+          },
+          {
+            url: '/common-album',
+            title: 'common album',
+          },
+          {
+            url: '/test1',
+            title: 'test1',
+          },
+          {
+            url: 'test2',
+            title: 'test2',
+          },
+          {
+            url: '/about',
+            title: 'about',
+          },
+        ],
+        logo: {
+          data: {
+            attributes: {
+              url: '/imgs/logo.png',
+            },
+          },
+        },
+        subtitle: 'Welcome!',
+        caption: 'visit',
+        caption2: 'please',
+      },
       index: {
         logo: {
           data: {
@@ -108,12 +144,13 @@ export default {
         data: [
           {
             attributes: {
-              title: 'Cakes',
-              code: 'cakes',
+              title: 'Керамика, созданная с душой',
+              code: 'ceramicon',
+              date: 'may 2020',
               category: {
                 data: {
                   attributes: {
-                    code: 'cakes',
+                    code: 'ceramicon',
                   },
                 },
               },
@@ -132,12 +169,13 @@ export default {
           },
           {
             attributes: {
-              title: 'Cupcakes',
-              code: 'cupcakes',
+              title: 'Натюрморты, пока домашние всё не сожрали',
+              code: 'cakes',
+              date: 'feb 2017',
               category: {
                 data: {
                   attributes: {
-                    code: 'cupcakes',
+                    code: 'cakes',
                   },
                 },
               },
@@ -156,12 +194,13 @@ export default {
           },
           {
             attributes: {
-              title: 'PanCakes',
-              code: 'pancakes',
+              title: 'Фото еды, которые типа как в Пинтерест',
+              code: 'foooood',
+              date: 'june 2024',
               category: {
                 data: {
                   attributes: {
-                    code: 'pancakes',
+                    code: 'foooood',
                   },
                 },
               },
@@ -305,6 +344,17 @@ export default {
       animations3: '',
     }
   },
+  // async fetch() {
+  //   try {
+  //     const result = await this.$strapi.$http.$get(
+  //       `/api/navbar?locale=${this.$i18n.locale}`
+  //     )
+  //     this.navbar = result.data.attributes
+  //   } catch (e) {}
+  // },
+  watch: {
+    '$route.query': '$fetch',
+  },
   mounted() {
     this.addAnimationClass()
     this.isAnimated()
@@ -349,51 +399,73 @@ export default {
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
-.container {
-  margin: 0 auto;
-  display: flex;
-  justify-content: flex-end;
-
-  .index__slider {
-    left: 80px;
-    width: 40%;
-    opacity: 0;
+.header {
+  &__mobile {
+    display: none;
     @include sm- {
-      position: relative;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-    }
-    .arrows,
-    .slider__caption {
-      @include sm- {
-        display: none;
-      }
+      display: block;
     }
   }
+  &__desktop {
+    display: block;
+    flex-shrink: 0;
+    @include sm- {
+      display: none;
+    }
+  }
+}
+.index-page {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
 
   @include sm- {
+    position: relative;
     flex-direction: column;
   }
-  .background {
-    position: absolute;
-    top: -110px;
-    left: 10px;
-    @include md {
-      top: -65px;
-    }
-    @include md- {
-      top: -45px;
-    }
-    @include xs- {
-      top: -35px;
+}
+
+.index__slider {
+  opacity: 0;
+  flex: 0 1 38.542%;
+  @include sm- {
+    position: relative;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .arrows,
+  .slider__caption {
+    @include sm- {
+      display: none;
     }
   }
 }
 
-.content {
-  padding-left: calc(40% + 80px);
+.background {
+  position: absolute;
+  top: -110px;
+  left: 10px;
+  @include md {
+    top: -65px;
+  }
+  @include md- {
+    top: -45px;
+  }
+  @include xs- {
+    top: -35px;
+  }
+}
 
+.index__content {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.content {
   &__bg-leaves {
     display: none;
     @include -sm {
@@ -514,16 +586,17 @@ export default {
     position: relative;
     opacity: 0;
 
-    &__title {
+    &-title {
       display: block;
       font-family: $accent-font;
       font-weight: 700;
       color: $green-dark;
       font-size: 2.4vw;
-      line-height: 1.212em;
+      line-height: 1.2;
       margin: 60px 0 40px;
       padding: 0 60px;
-      width: min-content;
+      position: relative;
+      z-index: 1;
       @include md {
         margin: 40px 0 30px;
       }

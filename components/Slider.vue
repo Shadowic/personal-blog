@@ -77,13 +77,7 @@ export default {
   background: linear-gradient(#0f0b0800, #0f0b0850, #0f0b0870, #0f0b0870);
 }
 .slider {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  line-height: 1;
-  opacity: 0;
+  position: relative;
   &__container {
     width: 100%;
     height: 100%;
@@ -94,6 +88,8 @@ export default {
     opacity: 0;
     position: absolute;
     bottom: 5vw;
+    left: 0;
+    right: 0;
     z-index: 30;
     color: $champagne;
     padding: 2.1vw;
@@ -172,8 +168,8 @@ export default {
 .arrow {
   cursor: pointer;
   position: relative;
-  width: 2.5vw;
-  height: 2.5vw;
+  width: 2.25vw;
+  height: 2.25vw;
   display: flex;
   justify-content: center;
   align-items: center;

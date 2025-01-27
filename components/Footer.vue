@@ -42,7 +42,6 @@ export default {
 <style lang="scss" scoped>
 .footer {
   width: 100%;
-  height: 100%;
   color: #625744;
   text-align: center;
   line-height: 1.6em;

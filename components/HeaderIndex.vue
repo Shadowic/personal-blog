@@ -59,10 +59,10 @@ export default {
 <style lang="scss" scoped>
 .header {
   background: #fbfbfb;
-  position: fixed;
-  height: 100%;
-  top: 0;
-  left: 0;
+  //position: fixed;
+  //top: 0;
+  //bottom: 0;
+  //left: 0;
   width: 80px;
   z-index: 100;
   .symbol {
