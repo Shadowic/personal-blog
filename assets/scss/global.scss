@@ -22,12 +22,17 @@ html {
 }
 
 button {
-  font-family: $base-font;
-  font-weight: inherit;
+  -webkit-appearance: none;
   box-sizing: border-box;
-  cursor: pointer;
-  margin: 0;
+  font-family: $base-font;
+  border-radius: 0;
+  text-align: inherit;
+  background: none;
+  box-shadow: none;
   padding: 0;
+  cursor: pointer;
+  border: none;
+  color: inherit;
 }
 
 a {

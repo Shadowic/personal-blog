@@ -6,7 +6,21 @@
         {{ album.attributes.category.data.attributes.code }}
       </div>
       <div class="album__title">{{ album.attributes.title }}</div>
-      <button class="button button__open">открыть</button>
+      <button class="button button__open">
+        <span>открыть</span>
+        <svg
+          width="18"
+          height="8"
+          viewBox="0 0 18 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M17.3536 4.41239C17.5488 4.21713 17.5488 3.90055 17.3536 3.70528L14.1716 0.523304C13.9763 0.328042 13.6597 0.328042 13.4645 0.523304C13.2692 0.718566 13.2692 1.03515 13.4645 1.23041L16.2929 4.05884L13.4645 6.88726C13.2692 7.08253 13.2692 7.39911 13.4645 7.59437C13.6597 7.78963 13.9763 7.78963 14.1716 7.59437L17.3536 4.41239ZM0 4.55884H17V3.55884H0V4.55884Z"
+            fill="#858585"
+          />
+        </svg>
+      </button>
     </div>
     <div
       class="album__image-container"
@@ -71,12 +85,16 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 350px;
+  min-height: 350px;
+  position: relative;
+  //overflow: hidden;
   &__description {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    flex: 1;
+    flex: 0 1 50%;
+    position: relative;
+    z-index: 10;
   }
   &__title {
     margin-right: 0;
@@ -92,22 +110,33 @@ export default {
     }
   }
   &__image-container {
-    flex: 1;
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
     overflow: hidden;
     @include sm- {
       height: 300px;
     }
   }
+  &:nth-child(3n + 1) {
+    .album__image-container {
+      left: 50%;
+    }
+  }
+  &:nth-child(3n + 2) {
+    flex-direction: row-reverse;
+    .album__image-container {
+      right: 50%;
+    }
+  }
   &__image {
     display: flex;
-    width: 100%;
     height: 100%;
     img {
       width: 100%;
       height: 100%;
-      background: center/cover;
+      object-fit: cover;
+      object-position: center;
       transform: scale(1.02);
       transition: 1s cubic-bezier(0.17, 0.59, 0.05, 0.96);
       .hovered & {
@@ -115,6 +144,10 @@ export default {
         filter: saturate(1.15);
       }
     }
+  }
+  .button__open span {
+    text-decoration: underline dotted;
+    text-underline-offset: 4px;
   }
 }
 </style>
