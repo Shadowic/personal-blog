@@ -1,39 +1,12 @@
 <template>
   <div class="navbar">
     <nuxt-link
-      :to="localePath(navbar.Menu[0].url)"
+      v-for="(navitem, index) in navbar.Menu"
+      :key="index"
+      :to="localePath(navitem.url)"
       class="nav__item"
       @click.native="$emit('onLinkClick')"
-      >{{ navbar.Menu[0].title }}</nuxt-link
-    >
-    <nuxt-link
-      :to="localePath(navbar.Menu[1].url)"
-      class="nav__item"
-      @click.native="$emit('onLinkClick')"
-      >{{ navbar.Menu[1].title }}</nuxt-link
-    >
-    <nuxt-link
-      :to="localePath(navbar.Menu[2].url)"
-      class="nav__item"
-      @click.native="$emit('onLinkClick')"
-      >{{ navbar.Menu[2].title }}</nuxt-link
-    >
-    <nuxt-link
-      :to="localePath(navbar.Menu[0].url)"
-      @click.native="$emit('onLinkClick')"
-      ><div class="symbol"
-    /></nuxt-link>
-    <nuxt-link
-      :to="localePath(navbar.Menu[3].url)"
-      class="nav__item"
-      @click.native="$emit('onLinkClick')"
-      >{{ navbar.Menu[3].title }}</nuxt-link
-    >
-    <nuxt-link
-      :to="localePath(navbar.Menu[4].url)"
-      class="nav__item"
-      @click.native="$emit('onLinkClick')"
-      >{{ navbar.Menu[4].title }}</nuxt-link
+      >{{ navitem.title }}</nuxt-link
     >
   </div>
 </template>

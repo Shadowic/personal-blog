@@ -121,9 +121,9 @@ export default {
             },
           },
         },
-        subtitle: 'Welcome!',
-        caption: 'visit',
-        caption2: 'please',
+        subtitle: 'Personal blog',
+        caption: 'made',
+        caption2: 'with 404',
       },
       index: {
         logo: {

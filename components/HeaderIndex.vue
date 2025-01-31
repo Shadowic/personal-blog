@@ -15,10 +15,16 @@
     </div>
     <div class="sliding-area">
       <div class="sliding-area__top">
-        <nuxt-link :to="localePath(navbar.Menu[0].url)" class="title">{{
-          navbar.title
-        }}</nuxt-link>
-        <div class="subtitle">{{ navbar.subtitle }}</div>
+        <nuxt-link :to="localePath(navbar.Menu[0].url)">
+          <img
+            :src="navbar.logo.data.attributes.url"
+            alt="logo"
+            width="96"
+            height="96"
+            class="sliding-area__top-logo"
+          />
+        </nuxt-link>
+        <p v-html="navbar.subtitle" />
       </div>
       <Navbar :navbar="navbar" @onLinkClick="closeNav" />
       <small class="sliding-area__bottom">
@@ -192,24 +198,21 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-family: $base-font;
+    font-weight: 600;
+  }
+  &__top {
+    color: $ziggurat;
+    letter-spacing: 0.12em;
+    font-size: 0.8vw;
   }
   &__bottom {
-    color: #fff;
-    opacity: 0.9;
-    font-size: 10px;
-    min-height: 50px;
-    justify-content: flex-end;
+    color: $white;
+    font-size: 1vw;
   }
-}
-.title {
-  font-size: 55px;
-  font-family: $accent-font;
-  color: $bokara;
-}
-.subtitle {
-  color: $ziggurat;
-  letter-spacing: 0.32em;
-  text-indent: 0.17em;
-  font-size: 12px;
+  &__top-logo {
+    width: 76px;
+    height: auto;
+  }
 }
 </style>

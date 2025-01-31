@@ -1,11 +1,15 @@
 <template>
   <div class="album" :class="getAlbumClass()">
     <div class="album__description">
-      <div class="album__date">{{ album.attributes.date }}</div>
-      <div class="album__tag">
-        {{ album.attributes.category.data.attributes.code }}
+      <div class="album__top">
+        <p class="album__date">
+          <time datetime="2001-05-01">{{ album.attributes.date }}</time>
+        </p>
+        <p class="album__tag">
+          {{ album.attributes.category.data.attributes.code }}
+        </p>
       </div>
-      <div class="album__title">{{ album.attributes.title }}</div>
+      <p class="album__title">{{ album.attributes.title }}</p>
       <button class="button button__open">
         <span>открыть</span>
         <svg
@@ -87,7 +91,16 @@ export default {
   width: 100%;
   min-height: 350px;
   position: relative;
-  //overflow: hidden;
+  &__top {
+    display: flex;
+    gap: 12px;
+  }
+  //&__date {
+  //}
+  &__tag {
+    border-left: 1px dotted $bokara;
+    padding-left: 12px;
+  }
   &__description {
     display: flex;
     flex-direction: column;
@@ -95,16 +108,16 @@ export default {
     flex: 0 1 50%;
     position: relative;
     z-index: 10;
+    padding: 2vw 4vw;
+    color: $bokara;
   }
   &__title {
-    margin-right: 0;
-    padding-right: 0;
     font-family: $accent-font;
-    color: $bokara;
     font-size: 2vw;
     font-weight: 600;
     transition: all 0.25s ease-in-out;
     text-transform: lowercase;
+    margin-top: 0.5vw;
     .hovered & {
       color: $ocean;
     }
@@ -129,6 +142,14 @@ export default {
       right: 50%;
     }
   }
+  &:nth-child(3) {
+    .album__description {
+      color: $white;
+    }
+    .album__tag {
+      border-color: $white;
+    }
+  }
   &__image {
     display: flex;
     height: 100%;
@@ -145,9 +166,12 @@ export default {
       }
     }
   }
-  .button__open span {
-    text-decoration: underline dotted;
-    text-underline-offset: 4px;
+  .button__open {
+    margin-top: 1vw;
+    span {
+      text-decoration: underline dotted;
+      text-underline-offset: 4px;
+    }
   }
 }
 </style>
