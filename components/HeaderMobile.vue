@@ -135,18 +135,12 @@ export default {
 .title {
   font-family: $accent-font;
   font-size: 48px;
-  @include xs- {
-    font-size: 40px;
-  }
 }
 .subtitle {
   color: $ziggurat;
   letter-spacing: 0.34em;
   text-indent: 0.17em;
   font-size: 16px;
-  @include xs- {
-    font-size: 14px;
-  }
 }
 .circle-svg {
   display: none;

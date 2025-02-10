@@ -163,9 +163,6 @@ img {
   width: 100%;
   height: 75vh;
   position: relative;
-  @include sm- {
-    height: 90vh;
-  }
   &__background {
     width: 100%;
     height: 100%;
@@ -220,43 +217,17 @@ img {
     gap: 50px;
     padding: 30px 20px;
     color: #fdf8ef;
-    @include sm- {
-      flex-direction: column;
-      gap: 25px;
-    }
-    @include xs- {
-      gap: 20px;
-    }
   }
   &__title {
     font-size: 64px;
     flex: 1 0 auto;
     z-index: 10;
-    @include lg- {
-      font-size: 56px;
-    }
-    @include md- {
-      font-size: 36px;
-    }
-    @include xs- {
-      font-size: 28px;
-    }
   }
   &__text {
     font-size: 20px;
     line-height: 1.35;
     max-width: 45%;
     z-index: 10;
-    @include md- {
-      font-size: 18px;
-    }
-    @include sm- {
-      max-width: unset;
-      text-align: center;
-    }
-    @include xs- {
-      font-size: 16px;
-    }
   }
   &__blur {
     width: 100%;
@@ -276,15 +247,6 @@ img {
   gap: 120px;
   margin-top: 120px;
   padding-bottom: 60px;
-  @include md- {
-    gap: 80px;
-    margin-top: 80px;
-    padding-bottom: 30px;
-  }
-  @include xs- {
-    gap: 40px;
-    margin-top: 40px;
-  }
   &__item-caption {
     background-color: #fdf8ef;
     position: relative;
@@ -293,17 +255,6 @@ img {
     z-index: 5;
     padding: 50px 40px;
     border-radius: 16px;
-    @include md- {
-      padding: 40px 30px;
-    }
-    @include sm- {
-      max-width: 350px;
-      margin-left: 0;
-      margin-top: -50px;
-    }
-    @include xs- {
-      padding: 35px 20px;
-    }
     .main__item:nth-child(odd) & {
       border-radius: 60px 120px 60px 120px;
     }
@@ -315,18 +266,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    @include -sm {
-      &:nth-child(even) {
-        flex-direction: row-reverse;
-        .main__item-caption {
-          margin-left: 0;
-          margin-right: -50px;
-        }
-      }
-    }
-    @include sm- {
-      flex-direction: column;
-    }
   }
   &__item-cover {
     width: 500px;
@@ -335,17 +274,6 @@ img {
     position: relative;
     z-index: 0;
     overflow: hidden;
-    @include lg- {
-      width: 400px;
-      height: 400px;
-    }
-    @include sm- {
-      width: 100%;
-      max-width: 400px;
-    }
-    @include xs- {
-      height: 300px;
-    }
     .main__item:nth-child(odd) & {
       border-radius: 120px 60px 120px 60px;
     }
@@ -357,24 +285,11 @@ img {
     font-size: 28px;
     line-height: 1;
     text-transform: uppercase;
-    @include md- {
-      font-size: 24px;
-    }
-    @include xs- {
-      font-size: 20px;
-    }
   }
   &__item-text {
     font-size: 18px;
     line-height: 1.8;
     margin-top: 20px;
-    @include md- {
-      font-size: 16px;
-      margin-top: 16px;
-    }
-    @include xs- {
-      font-size: 14px;
-    }
   }
 }
 .line-break {
@@ -382,16 +297,10 @@ img {
   height: 2px;
   background-color: #2a2725;
   margin: 60px auto 0;
-  @include xs- {
-    margin: 30px auto 0;
-  }
 }
 .citate {
   text-align: center;
   margin-top: 60px;
-  @include xs- {
-    margin-top: 30px;
-  }
   &__text {
     font-size: 20px;
     line-height: 1;
@@ -411,75 +320,39 @@ img {
   gap: 10px;
   margin-top: 120px;
   padding-bottom: 30px;
-  @include xs- {
-    margin-top: 60px;
-    gap: 5px;
-  }
   &-item {
     min-height: 50px;
     &:nth-child(1) {
       grid-column: span 15;
       grid-row: span 2;
-      @include sm- {
-        grid-column: span 26;
-        grid-row: span 1;
-      }
     }
     &:nth-child(2) {
       grid-column: span 5;
       grid-row: span 2;
-      @include sm- {
-        grid-column: span 8;
-        grid-row: span 1;
-      }
     }
     &:nth-child(3) {
       grid-column: span 9;
       grid-row: span 4;
-      @include sm- {
-        grid-column: span 24;
-        grid-row: span 1;
-      }
     }
     &:nth-child(4) {
       grid-column: span 5;
       grid-row: span 1;
-      @include sm- {
-        grid-column: span 10;
-        grid-row: span 1;
-      }
     }
     &:nth-child(5) {
       grid-column: span 12;
       grid-row: span 2;
-      @include sm- {
-        grid-column: span 14;
-        grid-row: span 1;
-      }
     }
     &:nth-child(6) {
       grid-column: span 8;
       grid-row: span 2;
-      @include sm- {
-        grid-column: span 20;
-        grid-row: span 3;
-      }
     }
     &:nth-child(7) {
       grid-column: span 5;
       grid-row: span 2;
-      @include sm- {
-        grid-column: span 14;
-        grid-row: span 1;
-      }
     }
     &:nth-child(8) {
       grid-column: span 5;
       grid-row: span 1;
-      @include sm- {
-        grid-column: span 14;
-        grid-row: span 1;
-      }
     }
   }
 }
@@ -495,19 +368,6 @@ img {
     justify-content: center;
     margin-top: -400px;
     padding: 0 20px;
-    @include lg- {
-      margin-top: -300px;
-    }
-    @include md- {
-      margin-top: -200px;
-    }
-    @include sm- {
-      margin-top: -100px;
-    }
-    @include xs- {
-      flex-direction: column-reverse;
-      padding: 0;
-    }
   }
   &__cover {
     width: 600px;
@@ -515,22 +375,6 @@ img {
     flex-shrink: 0;
     overflow: hidden;
     border-radius: 140px 30px 140px 30px;
-    @include lg- {
-      width: 500px;
-      height: 500px;
-    }
-    @include md- {
-      width: 350px;
-      height: 350px;
-    }
-    @include sm- {
-      width: 280px;
-      height: 280px;
-    }
-    @include xs- {
-      width: 100%;
-      height: 300px;
-    }
   }
   &__caption {
     display: flex;
@@ -542,44 +386,17 @@ img {
     gap: 25px;
     overflow: hidden;
     border-radius: 60px 30px 40px 30px;
-    @include md- {
-      padding: 40px 30px 30px;
-      max-width: 400px;
-      gap: 16px;
-    }
-    @include sm- {
-      padding: 30px 20px 20px;
-      gap: 10px;
-    }
-    @include xs- {
-      margin: 0;
-    }
     &-subtitle {
       font-size: 16px;
       line-height: 1;
-      @include md- {
-        font-size: 14px;
-      }
     }
     &-title {
       font-size: 24px;
       line-height: 1;
-      @include md- {
-        font-size: 20px;
-      }
-      @include sm- {
-        font-size: 18px;
-      }
     }
     &-text {
       font-size: 20px;
       line-height: 1.45;
-      @include md- {
-        font-size: 16px;
-      }
-      @include sm- {
-        font-size: 14px;
-      }
     }
   }
 }

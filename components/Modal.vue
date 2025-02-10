@@ -1,20 +1,21 @@
 <template>
   <div v-if="image" class="modal">
-    <div class="modal-centered">
-      <div class="top">
-        <div class="modal-counter">
-          <div>{{ openedImgIndex + 1 }}</div>
+    <div class="modal__bg" @click.prevent="closeImage"></div>
+    <div class="modal__content">
+      <div class="modal__top">
+        <div class="image-counter">
+          <span class="image-counter__current">{{ openedImgIndex + 1 }}</span>
           &nbsp;/&nbsp;
-          <div>{{ countImgs }}</div>
+          <span class="image-counter__total">{{ countImgs }}</span>
         </div>
         <div class="modal-close" @click.prevent="closeImage" />
       </div>
-      <div class="modal-content">
+      <div class="modal__main">
         <div class="content" :class="{ imgLoaded: isImgLoaded }">
           <div class="content__img">
             <img
               :src="image"
-              :alt="image.id"
+              alt="image of album"
               draggable="false"
               @load="onImgLoad"
             />
@@ -39,7 +40,7 @@
         </div>
         <span v-if="!isImgLoaded" class="loader" />
       </div>
-      <div class="bottom">
+      <div class="modal__bottom">
         <div class="arrows arrows__left" @click.prevent="prevImage">
           <div class="arrow arrow__left" />
         </div>
@@ -157,15 +158,26 @@ export default {
 <style lang="scss" scoped>
 .modal {
   position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  outline: 0;
-  z-index: 10000;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: rgba(0, 0, 0, 0.95);
+  z-index: 999;
+  inset: 0;
+}
+.modal__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.modal__content {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 30px 20px;
+  border: unset;
+  height: 100svh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include lg {
+    padding: 40px 60px;
+  }
 }
 .modal-close {
   position: relative;
@@ -173,30 +185,17 @@ export default {
   height: 26px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  @include sm- {
-    width: 30px;
-    height: 30px;
-    opacity: 0.75;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    z-index: 100;
-  }
 }
 .modal-close::before,
 .modal-close::after {
-  position: absolute;
-  left: 11px;
-  top: -4px;
   content: '';
-  height: 32px;
-  width: 3px;
-  border-radius: 5px;
-  background-color: #d4c8b2;
-  @include sm- {
-    height: 24px;
-    left: 13px;
-    top: 2px;
-  }
+  position: absolute;
+  left: 50%;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  border-radius: 2px;
+  background-color: $white;
 }
 .modal-close::before {
   transform: rotate(45deg);
@@ -206,76 +205,45 @@ export default {
 }
 @keyframes scissors-before {
   0%,
-  100% {
+  75% {
     transform: rotate(45deg);
   }
-  50% {
+  10% {
     transform: rotate(90deg);
-    height: 30px;
-    top: -2px;
   }
 }
 @keyframes scissors-after {
   0%,
-  100% {
+  75% {
     transform: rotate(-45deg);
   }
-  50% {
+  10% {
     transform: rotate(-90deg);
-    height: 30px;
-    top: -2px;
   }
 }
 .modal-close:hover::before {
-  animation: 0.4s linear scissors-before forwards;
+  animation: 0.4s ease-out scissors-before forwards;
 }
 .modal-close:hover::after {
-  animation: 0.4s linear scissors-after forwards;
+  animation: 0.4s ease-out scissors-after forwards;
 }
-.modal-counter {
+.image-counter {
   display: flex;
-  color: #fdf8ef;
-  font-size: 24px;
-  @include sm- {
-    display: none;
+  color: $champagne;
+  font-size: 18px;
+  &__current {
+    color: $sunflower;
   }
 }
-.modal-centered {
+.modal__top,
+.modal__bottom {
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  max-width: 75vw;
-  min-height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   margin: 0 auto;
-  padding: 1% 0;
-  position: relative;
-  .top,
-  .bottom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-  .top {
-    @include sm- {
-      justify-content: flex-end;
-      width: 95%;
-      margin: 20px 2.5% 0;
-      position: absolute;
-      top: 10px;
-    }
-  }
-  .bottom {
-    @include sm- {
-      display: none;
-    }
-  }
-  @include sm- {
-    max-width: 95%;
-  }
 }
-.modal-content {
+.modal__main {
   text-align: center;
   margin: 20px 0;
   .content {
@@ -291,9 +259,6 @@ export default {
       position: relative;
       flex: 1 1 0;
     }
-    @include sm- {
-      flex-direction: column;
-    }
   }
   .imgLoaded {
     opacity: 1;
@@ -304,9 +269,6 @@ export default {
     height: 100%;
     object-fit: contain;
     vertical-align: middle;
-    @include sm- {
-      width: 100%;
-    }
   }
   .loader {
     position: absolute;
@@ -317,13 +279,13 @@ export default {
     border-radius: 50%;
     display: block;
     margin: 15px auto;
-    color: #fdf8ef;
+    color: $white;
     box-sizing: border-box;
     animation: shadowRolling 2s linear infinite;
   }
   .sidebar {
     width: 30%;
-    background-color: #fdf8ef;
+    background-color: $white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -355,20 +317,14 @@ export default {
         margin-left: 20px;
       }
     }
-    @include sm- {
-      width: 100%;
-      margin-left: 0;
-      margin-top: 20px;
-      overflow: unset;
-    }
   }
 }
-.modal-content::before {
+.modal__main::before {
   top: 50%;
   left: 250px;
   transform: rotate(-45deg);
 }
-.modal-content::after {
+.modal__main::after {
   top: 50%;
   right: 250px;
   transform: rotate(135deg);
@@ -408,10 +364,11 @@ export default {
   }
 }
 .arrow {
-  width: 16px;
-  height: 16px;
-  border-top: 3px solid #fdf8ef75;
-  border-left: 3px solid #fdf8ef75;
+  width: 12px;
+  height: 12px;
+  border-top: 2px solid $white;
+  border-left: 2px solid $white;
+  opacity: 0.75;
   &__left {
     transform: translate(6px) rotate(-45deg) skew(-12deg, -12deg);
   }
@@ -421,28 +378,31 @@ export default {
   &::before,
   &::after {
     position: absolute;
-    width: 21px;
-    height: 21px;
+    width: 17px;
+    height: 17px;
     content: '';
-    left: -22px;
-    top: -22px;
-    border-top: 4px solid #fdf8ef90;
-    border-left: 4px solid #fdf8ef90;
-    transition: all 0.3s ease-in-out;
+    left: -20px;
+    top: -20px;
+    border-top: 1px solid $white;
+    border-left: 3px solid $white;
+    transition: all 0.25s ease-out;
+    opacity: 0.9;
   }
   &::after {
-    width: 11px;
-    height: 11px;
+    width: 7px;
+    height: 7px;
     left: 15px;
     top: 15px;
-    border-top: 2px solid #fdf8ef50;
-    border-left: 2px solid #fdf8ef50;
+    border-top: 2.5px solid $white;
+    border-left: 1px solid $white;
+    opacity: 0.5;
   }
   &__mobile {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #fdf8ef40;
+    background-color: $white;
+    opacity: 0.4;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -452,8 +412,9 @@ export default {
       width: 35%;
       height: 35%;
       transform: rotate(45deg) translate(-15%, 15%);
-      border-top: 2px solid #fdf8ef60;
-      border-right: 2px solid #fdf8ef60;
+      border-top: 2px solid $white;
+      border-right: 2px solid $white;
+      opacity: 0.6;
     }
     &__left {
       &::after {
@@ -479,16 +440,9 @@ export default {
   }
   &__mobile {
     display: none;
-    @include sm- {
-      display: flex;
-      justify-content: space-between;
-      position: absolute;
-      width: 95%;
-      top: 50%;
-      left: 2.5%;
-    }
   }
 }
+
 @keyframes pagination-container--animation-prev {
   0% {
     transform: translateX(0);
@@ -508,28 +462,28 @@ export default {
 }
 
 .transition_prev .pagination-container {
-  animation: pagination-container--animation-prev 0.3s forwards;
+  animation: pagination-container--animation-prev ease-in-out 0.3s forwards;
 }
 
 .transition_next .pagination-container {
-  animation: pagination-container--animation-next 0.3s forwards;
+  animation: pagination-container--animation-next ease-in-out 0.3s forwards;
 }
 
 .little-dot {
-  width: 6px;
-  height: 6px;
-  background: #d4c8b2;
-  border-radius: 100%;
+  width: 4px;
+  height: 4px;
+  background: $champagne;
+  border-radius: 50%;
   display: inline-block;
   vertical-align: middle;
-  margin: 0 6px;
+  margin: 0 5px;
   position: relative;
-  z-index: 10;
+  z-index: 2;
 }
 
 .little-dot__first,
 .little-dot__last {
-  z-index: 5;
+  z-index: 1;
 }
 
 @keyframes slideLeft {
@@ -610,9 +564,9 @@ export default {
   border-radius: 100%;
   position: absolute;
   top: 50%;
-  right: 3px;
-  transform: translateY(-50%);
-  z-index: 10;
+  //right: 3px;
+  transform: translate(-100%, -50%);
+  z-index: 2;
 }
 
 @keyframes big-dot-container--animation-prev {
@@ -639,7 +593,7 @@ export default {
 
 .transition_next .big-dot-container {
   animation: big-dot-container--animation-next 0.3s forwards;
-  right: auto;
-  left: 3px;
+  //right: auto;
+  //left: 3px;
 }
 </style>

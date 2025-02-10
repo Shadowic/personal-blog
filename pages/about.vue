@@ -37,6 +37,7 @@
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 export default {
+  layout: 'page',
   transition: {
     name: 'change-route',
     mode: 'out-in',
@@ -113,11 +114,6 @@ export default {
   @include sm {
     padding: 10px 50px 0;
   }
-  @include sm- {
-    padding: 60px;
-    flex-direction: column;
-    align-items: center;
-  }
   .background {
     position: absolute;
     color: $herbal;
@@ -131,11 +127,6 @@ export default {
       top: 20px;
       left: 20px;
     }
-    @include sm- {
-      top: 0;
-      right: 0;
-      text-align: right;
-    }
   }
 }
 .profile-img {
@@ -147,11 +138,6 @@ export default {
     content: '';
     display: block;
     padding-top: 100%;
-  }
-  @include sm- {
-    width: 100%;
-    max-width: 350px;
-    margin: 30px 0 0;
   }
 }
 .info {

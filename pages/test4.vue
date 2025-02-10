@@ -9,7 +9,6 @@ import ClipPathEffects from '@/components/test/ClipPathEffects'
 export default {
   name: 'Test4',
   components: { ClipPathEffects },
-  layout: 'empty-page',
 }
 </script>
 

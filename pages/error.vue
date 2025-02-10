@@ -1,37 +1,26 @@
 <template>
   <div class="error-page">
-    <div class="container">
-      <div class="message">I think, you've lost</div>
-      <nuxt-link :to="localePath('/')">
-        <div class="btn">
-          <span>back to the right way</span>
-        </div>
-      </nuxt-link>
-    </div>
+    <div class="message">I think, you've lost</div>
+    <nuxt-link :to="localePath('/')">
+      <div class="btn">
+        <span>back to the right way</span>
+      </div>
+    </nuxt-link>
   </div>
 </template>
 
-<script>
-export default {
-  layout: 'empty-page',
-}
-</script>
-
 <style lang="scss" scoped>
 .error-page {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-}
-.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 100%;
+  height: 100svh;
+  height: 100vh;
   background: url('~assets/imgs/error2.jpg') center/cover;
+  overflow: hidden;
 }
 .message {
   color: #fff;

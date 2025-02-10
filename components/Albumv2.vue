@@ -6,15 +6,7 @@
     <div class="album__description">
       <div class="album__description-content">
         <p class="album__title" v-html="title"></p>
-        <p class="album__caption" v-html="caption"></p>
         <p class="album__text" v-html="description"></p>
-        <nuxt-link
-          :to="localePath(`/${albumCode}/${albumCode}`)"
-          if="has-button"
-          class="btn album__btn"
-        >
-          <span v-html="buttonText"></span>
-        </nuxt-link>
       </div>
     </div>
     <div class="album__preview">
@@ -50,26 +42,7 @@ export default {
       default: '',
       type: String,
     },
-    caption: {
-      required: false,
-      default: '',
-      type: String,
-    },
     description: {
-      required: false,
-      default: '',
-      type: String,
-    },
-    hasButton: {
-      required: false,
-      type: Boolean,
-    },
-    buttonText: {
-      required: false,
-      default: '',
-      type: String,
-    },
-    code: {
       required: false,
       default: '',
       type: String,
@@ -123,13 +96,17 @@ export default {
   grid-template-columns: 1fr;
   grid-template-areas: 'cover' 'previews' 'description';
   gap: 24px;
+  @include md {
+    grid-auto-rows: minmax(280px, auto) auto;
+    gap: 15px;
+  }
   &__cover {
     width: 100%;
     height: 100%;
     border-radius: 10px;
     overflow: hidden;
     grid-area: cover;
-    @include lg {
+    @include md {
       border-radius: 24px;
     }
     img {
@@ -140,11 +117,14 @@ export default {
   }
   &__description {
     grid-area: description;
+    @include md {
+      display: grid;
+      align-items: center;
+    }
     @include lg {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
       gap: 30px;
-      align-items: center;
       &-content {
         grid-column: 2 / -1;
       }
@@ -154,7 +134,7 @@ export default {
     font-size: 24px;
     line-height: 1.4;
     letter-spacing: 0.04em;
-    @include md- {
+    @include xs {
       text-align: center;
     }
     @include lg {
@@ -198,7 +178,7 @@ export default {
     font-size: 14px;
     line-height: 1.42;
     text-transform: uppercase;
-    @include md- {
+    @include xs {
       margin-inline: auto;
     }
     @include lg {
@@ -211,13 +191,19 @@ export default {
   }
   &__preview {
     display: grid;
-    grid-template-columns: repeat(14, 1fr);
+    //alarm
+    grid-template-columns: repeat(100, 1fr);
     gap: 8px;
     grid-area: previews;
-    width: fit-content;
+    width: 100%;
     overflow-x: hidden;
+    @include md {
+      grid-template-columns: repeat(9, 1fr);
+      gap: 15px;
+    }
     @include lg {
-      width: 100%;
+      grid-template-columns: repeat(14, 1fr);
+      grid-auto-rows: 394px;
       gap: 30px;
     }
     &-item {
@@ -225,7 +211,7 @@ export default {
       width: 136px;
       height: 130px;
       border-radius: 10px;
-      @include lg {
+      @include md {
         width: 100%;
         height: 100%;
         border-radius: 24px;
@@ -239,14 +225,11 @@ export default {
   }
   @include md {
     grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: minmax(280px, auto) auto;
     grid-template-areas:
       'cover description'
       'previews previews';
   }
-  @include lg {
-    grid-auto-rows: minmax(690px, auto) 394px;
-    gap: 30px;
+  @include md-lg {
     &:nth-child(2n) {
       grid-template-areas:
         'description cover'
@@ -255,7 +238,131 @@ export default {
         grid-column: 1 / -2;
       }
     }
-    &:nth-child(3n + 1) {
+    &:nth-child(4n + 1) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 3;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: 6 / span 2;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: span 2;
+      }
+      .album__preview-item:nth-child(4) {
+        display: none;
+      }
+      .album__preview-item:nth-child(5) {
+        display: none;
+      }
+      .album__preview-item:nth-child(6) {
+        display: none;
+      }
+    }
+    &:nth-child(4n + 2) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 2;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: 5 / span 3;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: span 2;
+      }
+      .album__preview-item:nth-child(4) {
+        display: none;
+      }
+    }
+    &:nth-child(4n + 3) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 2;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: span 2;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: 7 / span 3;
+      }
+      .album__preview-item:nth-child(4) {
+        display: none;
+      }
+      .album__preview-item:nth-child(5) {
+        display: none;
+      }
+    }
+    &:nth-child(4n + 4) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 2;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: span 3;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: 8 / span 2;
+      }
+      .album__preview-item:nth-child(4) {
+        display: none;
+      }
+      .album__preview-item:nth-child(5) {
+        display: none;
+      }
+    }
+  }
+  @include lg {
+    grid-auto-rows: minmax(690px, auto) auto;
+    gap: 30px;
+    &:nth-child(4n + 1) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 4;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: 9 / span 3;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: span 3;
+      }
+      .album__preview-item:nth-child(4) {
+        grid-column: span 4;
+      }
+      .album__preview-item:nth-child(5) {
+        grid-column: span 4;
+      }
+      .album__preview-item:nth-child(6) {
+        grid-column: span 6;
+      }
+    }
+    &:nth-child(4n + 2) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 4;
+        grid-row: span 2;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: span 7;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: span 4;
+      }
+      .album__preview-item:nth-child(4) {
+        grid-column: 12 / span 3;
+      }
+    }
+    &:nth-child(4n + 3) {
+      .album__preview-item:nth-child(1) {
+        grid-column: span 4;
+      }
+      .album__preview-item:nth-child(2) {
+        grid-column: 8 / span 4;
+      }
+      .album__preview-item:nth-child(3) {
+        grid-column: span 3;
+      }
+      .album__preview-item:nth-child(4) {
+        grid-column: 5 / span 3;
+      }
+      .album__preview-item:nth-child(5) {
+        grid-column: span 7;
+      }
+    }
+    &:nth-child(4n + 4) {
       .album__preview-item:nth-child(1) {
         grid-column: span 3;
       }
@@ -263,28 +370,12 @@ export default {
         grid-column: span 4;
       }
       .album__preview-item:nth-child(3) {
+        grid-column: 11 / span 4;
+      }
+      .album__preview-item:nth-child(4) {
         grid-column: span 7;
       }
-    }
-    &:nth-child(3n + 2) {
-      .album__preview-item:nth-child(1) {
-        grid-column: span 7;
-      }
-      .album__preview-item:nth-child(2) {
-        grid-column: span 3;
-      }
-      .album__preview-item:nth-child(3) {
-        grid-column: span 4;
-      }
-    }
-    &:nth-child(3n + 3) {
-      .album__preview-item:nth-child(1) {
-        grid-column: span 3;
-      }
-      .album__preview-item:nth-child(2) {
-        grid-column: span 8;
-      }
-      .album__preview-item:nth-child(3) {
+      .album__preview-item:nth-child(5) {
         grid-column: span 3;
       }
     }

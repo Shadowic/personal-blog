@@ -69,9 +69,6 @@ export default {
       font-size: 22px;
       margin-bottom: 10px;
     }
-    @include xs- {
-      font-size: 22px;
-    }
   }
 
   &__subtitle {

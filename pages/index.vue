@@ -13,11 +13,14 @@
           class="content__bg-leaves bg-leaves__lg"
           :class="animations3"
         />
-        <div
-          :class="animations"
-          class="content__icon"
-          :style="{ backgroundImage: `url(${index.logo.data.attributes.url})` }"
-        />
+        <div :class="animations" class="content__icon">
+          <img
+            :src="index.logo.data.attributes.url"
+            draggable="false"
+            width="100"
+            height="100"
+          />
+        </div>
         <p
           :class="animations1"
           class="content__subtitle"
@@ -61,7 +64,6 @@
 
 <script>
 export default {
-  layout: 'index',
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
   //     const [indexdata, slider, albums, footerdata] = await Promise.all([
@@ -98,8 +100,8 @@ export default {
             title: 'cakes',
           },
           {
-            url: '/common-album',
-            title: 'common album',
+            url: '/ceramic-album',
+            title: 'ceramic album',
           },
           {
             url: '/test1',
@@ -402,16 +404,10 @@ export default {
 .header {
   &__mobile {
     display: none;
-    @include sm- {
-      display: block;
-    }
   }
   &__desktop {
     display: block;
     flex-shrink: 0;
-    @include sm- {
-      display: none;
-    }
   }
 }
 .index-page {
@@ -421,28 +417,11 @@ export default {
   bottom: 0;
   left: 0;
   display: flex;
-
-  @include sm- {
-    position: relative;
-    flex-direction: column;
-  }
 }
 
 .index__slider {
   opacity: 0;
   flex: 0 1 38.542%;
-  @include sm- {
-    position: relative;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-  }
-  .arrows,
-  .slider__caption {
-    @include sm- {
-      display: none;
-    }
-  }
 }
 
 .background {
@@ -451,12 +430,6 @@ export default {
   left: 10px;
   @include md {
     top: -65px;
-  }
-  @include md- {
-    top: -45px;
-  }
-  @include xs- {
-    top: -35px;
   }
 }
 
@@ -468,21 +441,6 @@ export default {
 .content {
   &__bg-leaves {
     display: none;
-    @include -sm {
-      display: inline-block;
-      position: absolute;
-      height: auto;
-      &.bg-leaves__lg {
-        width: 30vw;
-        top: 0;
-        right: 0;
-      }
-      &.bg-leaves__sm {
-        width: 16vw;
-        top: 0;
-        left: 0;
-      }
-    }
   }
 
   &__top {
@@ -495,25 +453,15 @@ export default {
     min-height: 100vh;
     overflow-x: hidden;
     position: relative;
-    @include sm- {
-      padding: calc(60px + 10%) 2% 60px;
-    }
   }
 
   &__icon {
-    flex: 0 0 auto;
-    display: block;
     width: 5vw;
-    padding-top: 5vw;
-    background: center/contain;
     opacity: 0;
-    @include sm {
-      width: 60px;
-      height: 60px;
-    }
-    @include xs- {
-      width: 60px;
-      height: 60px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 
@@ -526,9 +474,6 @@ export default {
     line-height: 1em;
     text-transform: uppercase;
     opacity: 0;
-    @include sm- {
-      font-size: 10px;
-    }
   }
 
   &__title {
@@ -547,15 +492,6 @@ export default {
 
     span {
       font-style: italic;
-    }
-    @include xs {
-      font-size: 9vw;
-      line-height: 1.2;
-      margin: 20px 0;
-    }
-    @include xs- {
-      font-size: 18vw;
-      background-color: #fdf8ef;
     }
   }
 
@@ -576,9 +512,6 @@ export default {
     }
     @include sm {
       font-size: 14px;
-    }
-    @include sm- {
-      font-size: 16px;
     }
   }
 
@@ -605,26 +538,11 @@ export default {
         margin: 30px 0;
         padding: 0 40px;
       }
-      @include sm- {
-        margin: 60px 0 30px;
-        padding: 0 30px;
-        width: max-content;
-        font-size: 32px;
-      }
-      @include xs- {
-        font-size: 22px;
-      }
     }
 
     @include sm {
       margin-top: -10px;
     }
-  }
-  @include sm- {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    padding: 0;
   }
 }
 </style>

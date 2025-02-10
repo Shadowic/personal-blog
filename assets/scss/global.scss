@@ -43,3 +43,10 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-weight: inherit;
 }
+
+.container {
+  width: 100%;
+  max-width: 1690px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}

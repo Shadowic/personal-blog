@@ -7,7 +7,6 @@ import IncreasingImages from '@/components/test/IncreasingImages'
 export default {
   name: 'Test3',
   components: { IncreasingImages },
-  layout: 'empty-page',
 }
 </script>
 

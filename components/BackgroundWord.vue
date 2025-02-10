@@ -70,11 +70,5 @@ export default {
   @include sm {
     font-size: 60px;
   }
-  @include sm- {
-    position: relative;
-    top: 0;
-    font-size: 14vw;
-    line-height: 1em;
-  }
 }
 </style>

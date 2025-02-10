@@ -1,7 +1,12 @@
 <template>
-  <div class="default-header">
-    <Navbar :navbar="navbar" class="open" />
-    <LangTumbler />
+  <div class="header-default">
+    <div class="container">
+      <div class="header__content">
+        <nuxt-link to="/">Shadowic</nuxt-link>
+        <Navbar :navbar="navbar" class="open header__navbar" />
+        <LangTumbler />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -16,23 +21,21 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.default-header {
-  background: #cfbeac95;
+<style lang="scss">
+.header-default {
+  background: #cfbeac55;
   backdrop-filter: blur(15px);
-  width: 100%;
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 60px 0;
-  .navbar {
-    flex-direction: row;
+  .header__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 80px;
+    padding: 10px 0;
   }
-  .nav__item {
-    margin: 0 37px;
-    &:first-child {
-      display: none;
+  .header__navbar {
+    flex-direction: row;
+    .nav__item {
+      margin-inline: 20px;
     }
   }
   .lang-tumbler {

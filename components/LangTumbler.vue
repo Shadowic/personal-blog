@@ -14,9 +14,6 @@
   letter-spacing: 0.1em;
   line-height: 1em;
   color: #919a99;
-  @include sm- {
-    font-size: 14px;
-  }
 }
 span {
   display: inline-block;

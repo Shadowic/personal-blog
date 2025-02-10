@@ -7,5 +7,6 @@ module.exports = {
     'at-rule-no-unknown': null,
     'scss/at-rule-no-unknown': true,
     'declaration-colon-space-after': 'always-single-line',
+    'unit-no-unknown': [true, { ignoreUnits: ['svh'] }],
   },
 }

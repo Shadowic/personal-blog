@@ -127,9 +127,6 @@ export default {
     inset: 0;
     z-index: 0;
     overflow: hidden;
-    @include sm- {
-      height: 300px;
-    }
   }
   &:nth-child(3n + 1) {
     .album__image-container {

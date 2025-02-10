@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .navbar {
   display: flex;
   flex-direction: column;
@@ -68,18 +68,5 @@ export default {
     color: $ziggurat;
     transition: color 0.2s ease-out;
   }
-  @include xs {
-    font-size: 16px;
-    margin: 20px 0;
-  }
-  @include xs- {
-    font-size: 12px;
-  }
-}
-.symbol {
-  width: 80px;
-  height: 80px;
-  background: url('../assets/imgs/logo.png') center/cover;
-  margin: 0 10px;
 }
 </style>

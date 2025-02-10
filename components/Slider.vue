@@ -200,9 +200,5 @@ export default {
     width: 40%;
     height: auto;
   }
-  @include lg- {
-    width: 30px;
-    height: 30px;
-  }
 }
 </style>
