@@ -1,28 +1,34 @@
 <template>
-  <div class="about">
-    <div
-      class="profile-img"
-      data-aos="zoom-out-up"
-      data-aos-duration="1000"
-      data-aos-delay="150"
-      :style="{
-        backgroundImage: `url(${about.cover.data.attributes.formats.medium.url})`,
-      }"
-    />
-    <div class="info">
-      <BackgroundWord :title="about.page_title" />
-      <div data-aos="zoom-out-up" data-aos-duration="1000" class="name">
-        {{ about.title }}
-      </div>
+  <div class="container">
+    <div class="about">
       <div
+        class="about__cover"
         data-aos="zoom-out-up"
         data-aos-duration="1000"
-        data-aos-delay="100"
-        class="caption"
+        data-aos-delay="150"
       >
-        {{ about.subtitle }}
+        <img
+          :src="about.cover.data.attributes.formats.medium.url"
+          alt="photo"
+          width="360"
+          height="240"
+        />
       </div>
-      <div
+      <div class="about__title">
+        <p data-aos="zoom-out-up" data-aos-duration="1000" class="title">
+          {{ about.title }}
+        </p>
+        <BackgroundWord :title="about.page_title" class="background-word" />
+        <p
+          data-aos="zoom-out-up"
+          data-aos-duration="1000"
+          data-aos-delay="100"
+          class="subtitle"
+        >
+          {{ about.subtitle }}
+        </p>
+      </div>
+      <p
         data-aos="zoom-out-up"
         data-aos-duration="1000"
         data-aos-delay="110"
@@ -87,82 +93,64 @@ export default {
 }
 </script>
 
-<style lang="scss">
-.description {
-  p {
-    font-size: 15px;
-    & + p {
-      margin-top: 20px;
-    }
-  }
-}
-</style>
-
 <style lang="scss" scoped>
 .about {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  max-width: 1300px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  grid-template-areas:
+    'photo header'
+    'photo description';
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 80px 110px 0;
-  line-height: 1.647em;
-  color: $dark-cyan;
-  @include md {
-    padding: 30px 50px 0;
-  }
-  @include sm {
-    padding: 10px 50px 0;
-  }
-  .background {
+  .background-word {
     position: absolute;
     color: $herbal;
-    opacity: 0.15;
-    top: -75px;
-    @include md {
-      top: -10px;
-      left: 40px;
-    }
-    @include sm {
-      top: 20px;
-      left: 20px;
-    }
+    opacity: 0.08;
+    top: -15px;
+    left: 5px;
   }
 }
-.profile-img {
+.about__cover {
+  grid-area: photo;
   border-radius: 50%;
-  background: center/cover;
-  margin: 90px 60px 0 0;
-  flex: 1 1 0;
-  &::before {
-    content: '';
-    display: block;
-    padding-top: 100%;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  max-width: 32vw;
+  justify-self: center;
+  margin-top: 3.5vw;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
-.info {
-  flex: 1.3 1 0;
+.about__title {
+  grid-area: header;
   position: relative;
 }
-.name {
+.title {
   font-family: $accent-font;
   font-weight: 900;
   color: $bokara;
   opacity: 0.85;
   font-size: 50px;
   line-height: 1.212em;
-  margin: 25px 0 5px;
   letter-spacing: 0.1em;
 }
-.caption {
-  font-size: 10px;
+.subtitle {
+  grid-area: header;
+  font-size: 0.75vw;
   color: $ocean;
   letter-spacing: 0.2em;
-  line-height: 1em;
+  line-height: 1.4em;
   text-transform: uppercase;
-  margin-bottom: 45px;
+  margin-top: 4px;
+  max-width: 28vw;
 }
 .description {
-  margin-bottom: 60px;
+  grid-area: description;
+  line-height: 1.4;
+  text-indent: 2vw;
 }
 </style>

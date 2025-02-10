@@ -117,7 +117,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 68px 0 40px;
+  padding-block: 40px;
   transition: 0.8s cubic-bezier(0.5, 0.09, 0, 0.97);
   animation: gradient-in 0.25s linear both;
   .open & {

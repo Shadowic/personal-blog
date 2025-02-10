@@ -16,10 +16,10 @@
           type="translate"
           :strength="-20"
         >
-          <div class="background-fill background-fill__blue" />
+          <div class="background-fill background-fill__back" />
         </kinesis-element>
         <kinesis-element class="kinesis-element" type="scale" :strength="1">
-          <div class="background-fill background-fill__pink" />
+          <div class="background-fill background-fill__forward" />
         </kinesis-element>
         <Footer v-if="footer" :footer="footer" />
       </div>
@@ -180,7 +180,7 @@ export default {
 .page-content {
   display: flex;
   flex: 1 0 auto;
-  margin-top: 64px;
+  margin-block: 64px;
 }
 .kinesis-wrap {
   display: flex;
@@ -189,7 +189,10 @@ export default {
 .bottom-container {
   flex: 0 0 auto;
   position: relative;
-  height: 450px;
+  min-height: 450px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .header {
   flex: 0 0 auto;
@@ -210,13 +213,13 @@ export default {
 .background-fill {
   width: 100%;
   height: 100%;
-  &__blue {
+  &__back {
     clip-path: polygon(0 24%, 100% 10%, 100% 100%, 0% 100%);
     background-color: $herbal;
   }
-  &__pink {
+  &__forward {
     clip-path: polygon(0 0%, 100% 28%, 100% 100%, 0% 100%);
-    background-color: #ccbfae;
+    background-color: $champagne;
   }
 }
 </style>

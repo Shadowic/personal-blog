@@ -23,14 +23,15 @@ export default {
 
 <style lang="scss">
 .header-default {
-  background: #cfbeac55;
-  backdrop-filter: blur(15px);
+  transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
   .header__content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     min-height: 80px;
     padding: 10px 0;
+    border-bottom: 1px solid $herbal;
+    transition: border-color 0.3s ease-in-out;
   }
   .header__navbar {
     flex-direction: row;
@@ -46,6 +47,17 @@ export default {
       width: 65px;
       right: 10px;
     }
+  }
+}
+
+.headroom--not-top,
+.headroom--top .headroom--not-bottom {
+  .header-default {
+    background: #cfbeac45;
+    backdrop-filter: blur(25px);
+  }
+  .header__content {
+    border-color: transparent;
   }
 }
 </style>
