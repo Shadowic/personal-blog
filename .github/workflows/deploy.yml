@@ -39,3 +39,8 @@ jobs:
           ##password: ${{ secrets.REMOTE_PASSWORD }}
           key: ${{ secrets.PRIVATE_KEY }}
           script: cd ${{ secrets.WORK_DIR }} && docker compose pull front && docker compose up -d front
+      - name: Debug SSH connection
+        run: |
+          echo "${{ secrets.PRIVATE_KEY }}" > private_key
+          chmod 600 private_key
+          ssh -i private_key -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "echo 'SSH connection successful'"
