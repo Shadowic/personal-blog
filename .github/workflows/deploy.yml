@@ -39,8 +39,8 @@ jobs:
           ##password: ${{ secrets.REMOTE_PASSWORD }}
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-            verbose: true
-            script: |
-              whoami
-              pwd
-          script: cd ${{ secrets.WORK_DIR }} && docker compose pull front && docker compose up -d front
+          verbose: true
+          script: |
+            whoami
+            pwd
+            cd ${{ secrets.WORK_DIR }} && docker compose pull front && docker compose up -d front
