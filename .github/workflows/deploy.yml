@@ -39,7 +39,6 @@ jobs:
           ##password: ${{ secrets.REMOTE_PASSWORD }}
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-          protocol: ssh
           script: |
             whoami
             pwd
