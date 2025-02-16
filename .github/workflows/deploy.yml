@@ -1,5 +1,4 @@
 name: deploy
-
 on:
   push:
     branches:
@@ -39,7 +38,9 @@ jobs:
           ##password: ${{ secrets.REMOTE_PASSWORD }}
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
+          request_pty: true # Требуется для некоторых скриптов
           script: |
+            set -x
             whoami
             pwd
             cd ${{ secrets.WORK_DIR }} && docker compose pull front && docker compose up -d front
