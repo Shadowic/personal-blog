@@ -38,7 +38,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           ##password: ${{ secrets.REMOTE_PASSWORD }}
           key: ${{ secrets.PRIVATE_KEY }}
-          port: 80
+          port: 22
           script: |
             whoami
             pwd
