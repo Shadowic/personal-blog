@@ -11,20 +11,14 @@ jobs:
       SHADOWIC_PORT: 3333
     steps:
       - name: Debug private key length
-        run: |
-          PRIVATE_KEY="${{ secrets.PRIVATE_KEY }}"
-          if [[ "$PRIVATE_KEY" == *"-----BEGIN RSA PRIVATE KEY-----"* && "$PRIVATE_KEY" == *"-----END RSA PRIVATE KEY-----"* ]]; then
-            echo "Key format is correct"
-          else
-            echo "Key format is incorrect"
-            exit 1
-          fi
+        run: echo "Private key length: ${#PRIVATE_KEY}"
         env:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 
       - name: Debug private key format
         run: |
-          if [[ "${{ secrets.PRIVATE_KEY }}" == -----BEGIN\ RSA\ PRIVATE\ KEY-----* && "${{ secrets.PRIVATE_KEY }}" == *-----END\ RSA\ PRIVATE\ KEY----- ]]; then
+          PRIVATE_KEY="${{ secrets.PRIVATE_KEY }}"
+          if [[ "$PRIVATE_KEY" == *"-----BEGIN RSA PRIVATE KEY-----"* && "$PRIVATE_KEY" == *"-----END RSA PRIVATE KEY-----"* ]]; then
             echo "Key format is correct"
           else
             echo "Key format is incorrect"
@@ -57,8 +51,6 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-          request_pty: true
-          use_insecure_cipher: true
           debug: true
           script: |
             set -x
