@@ -11,8 +11,21 @@ jobs:
       SHADOWIC_BASE_URL: https://shadowic.space
       SHADOWIC_PORT: 3333
     steps:
-      - name: Debug private key
-        run: echo "${{ secrets.PRIVATE_KEY }}"
+      - name: Debug private key length
+        run:
+          echo "Private key length: ${#PRIVATE_KEY}"
+        env:
+          PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
+
+      - name: Debug private key format
+        run: |
+          if [[ "${PRIVATE_KEY}" == -----BEGIN\ RSA\ PRIVATE\ KEY-----* && "${PRIVATE_KEY}" == *-----END\ RSA\ PRIVATE\ KEY----- ]]; then
+            echo "Key format is correct"
+          else
+            echo "Key format is incorrect"
+            exit 1
+          fi
+
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
