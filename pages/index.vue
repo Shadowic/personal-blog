@@ -403,39 +403,56 @@ export default {
 }
 .header {
   &__mobile {
-    display: none;
+    display: block;
+    @include md {
+      display: none;
+    }
   }
   &__desktop {
-    display: block;
+    display: none;
     flex-shrink: 0;
+    @include md {
+      display: block;
+    }
   }
 }
 .index-page {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
   display: flex;
+  flex-direction: column;
+  position: relative;
+  @include md {
+    flex-direction: row;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 
 .index__slider {
+  height: 100svh;
+  height: 100vh;
   opacity: 0;
-  flex: 0 1 38.542%;
+  @include md {
+    height: 100%;
+    flex: 0 1 38.542%;
+  }
 }
 
 .background {
   position: absolute;
-  top: -110px;
-  left: 10px;
-  @include md {
-    top: -65px;
-  }
+  top: 0.005vw;
+  left: 4.5vw;
 }
 
 .index__content {
   flex: 1;
   overflow-y: auto;
+  display: contents;
+  @include md {
+    display: block;
+  }
 }
 
 .content {
@@ -452,28 +469,40 @@ export default {
     text-align: center;
     min-height: 100vh;
     overflow-x: hidden;
-    position: relative;
+    position: absolute;
+    inset: 0 0 auto;
+    @include md {
+      position: relative;
+    }
   }
 
   &__icon {
-    width: 5vw;
+    width: 64px;
+    height: 80px;
     opacity: 0;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
+    @include md {
+      width: 5vw;
+    }
   }
 
   &__subtitle {
-    margin-top: 12px;
     color: $green-dark;
-    font-size: 0.77vw;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 0.2em;
     line-height: 1em;
     text-transform: uppercase;
     opacity: 0;
+    margin-top: 5px;
+    @include md {
+      font-size: 0.77vw;
+      margin-top: 12px;
+    }
   }
 
   &__title {
@@ -483,35 +512,35 @@ export default {
     -webkit-text-fill-color: transparent;
     font-family: $accent-font;
     color: $green-dark;
-    font-size: 6vw;
     line-height: 0.8em;
-    margin: 25px 0;
     word-wrap: break-word;
-    padding-bottom: 30px;
+    font-size: 32px;
+    margin-top: 24px;
     opacity: 0;
-
-    span {
-      font-style: italic;
+    @include md {
+      font-size: 6vw;
+      margin: 24px 0;
     }
   }
 
   &__descr-block {
-    margin-top: 7vh;
+    margin-top: 18px;
     position: relative;
+    @include md {
+      margin-top: 7vh;
+    }
   }
 
   &__description {
     font-family: $accent-font;
-    font-size: 1.5vw;
+    font-size: 12px;
     padding: 0 13%;
-    color: $green-dark;
+    color: $champagne;
     line-height: 1.63em;
     opacity: 0;
     @include md {
-      font-size: 16px;
-    }
-    @include sm {
-      font-size: 14px;
+      font-size: 1.25vw;
+      color: $green-dark;
     }
   }
 
@@ -526,18 +555,10 @@ export default {
       color: $green-dark;
       font-size: 2.4vw;
       line-height: 1.2;
-      margin: 60px 0 40px;
+      margin: 0 0 40px;
       padding: 0 60px;
       position: relative;
       z-index: 1;
-      @include md {
-        margin: 40px 0 30px;
-      }
-      @include sm {
-        font-size: 26px;
-        margin: 30px 0;
-        padding: 0 40px;
-      }
     }
 
     @include sm {

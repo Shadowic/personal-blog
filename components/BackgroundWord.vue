@@ -41,15 +41,12 @@ export default {
 .background {
   display: flex;
   color: rgba(221, 209, 196, 0.3);
-  font-size: 120px;
+  font-size: 3.5vw;
   z-index: 0;
   font-family: $accent-font;
   font-weight: 700;
   line-height: 1.4em;
   position: absolute;
-  top: -60px;
-  left: -10px;
-  padding: 2% 1%;
   &__letter {
     display: inline-block;
     visibility: hidden;
@@ -61,14 +58,6 @@ export default {
     visibility: visible;
     opacity: 1;
     transform: translateX(0);
-  }
-  @include md {
-    font-size: 90px;
-    top: -65px;
-    left: -5px;
-  }
-  @include sm {
-    font-size: 60px;
   }
 }
 </style>

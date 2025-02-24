@@ -86,20 +86,25 @@ export default {
 <style lang="scss" scoped>
 .album {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
   width: 100%;
-  min-height: 350px;
   position: relative;
+  @include md {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 350px;
+  }
   &__top {
     display: flex;
-    gap: 12px;
+    gap: 0.5vw;
+    font-size: 0.5vw;
   }
   //&__date {
   //}
   &__tag {
     border-left: 1px dotted $bokara;
-    padding-left: 12px;
+    padding-left: 0.5vw;
   }
   &__description {
     display: flex;
@@ -108,7 +113,7 @@ export default {
     flex: 0 1 50%;
     position: relative;
     z-index: 10;
-    padding: 2vw 4vw;
+    padding: 4vw;
     color: $bokara;
   }
   &__title {
@@ -123,28 +128,32 @@ export default {
     }
   }
   &__image-container {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
     overflow: hidden;
-  }
-  &:nth-child(3n + 1) {
-    .album__image-container {
-      left: 50%;
+    @include md {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
     }
   }
-  &:nth-child(3n + 2) {
-    flex-direction: row-reverse;
-    .album__image-container {
-      right: 50%;
+  @include md {
+    &:nth-child(3n + 1) {
+      .album__image-container {
+        left: 50%;
+      }
     }
-  }
-  &:nth-child(3) {
-    .album__description {
-      color: $white;
+    &:nth-child(3n + 2) {
+      flex-direction: row-reverse;
+      .album__image-container {
+        right: 50%;
+      }
     }
-    .album__tag {
-      border-color: $white;
+    &:nth-child(3) {
+      .album__description {
+        color: $white;
+      }
+      .album__tag {
+        border-color: $white;
+      }
     }
   }
   &__image {
@@ -155,19 +164,25 @@ export default {
       height: 100%;
       object-fit: cover;
       object-position: center;
-      transform: scale(1.02);
       transition: 1s cubic-bezier(0.17, 0.59, 0.05, 0.96);
-      .hovered & {
-        transform: scale(1);
-        filter: saturate(1.15);
+      @include md {
+        transform: scale(1.02);
+        .hovered & {
+          transform: scale(1);
+          filter: saturate(1.15);
+        }
       }
     }
   }
   .button__open {
+    display: flex;
+    align-items: center;
+    gap: 0.25vw;
     margin-top: 1vw;
+    font-size: 0.5vw;
     span {
       text-decoration: underline dotted;
-      text-underline-offset: 4px;
+      text-underline-offset: 0.2vw;
     }
   }
 }

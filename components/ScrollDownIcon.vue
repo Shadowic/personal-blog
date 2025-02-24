@@ -30,15 +30,17 @@ export default {
 
 <style lang="scss">
 .main-scroll-icon {
-  margin-top: 10vh;
+  margin-top: 96px;
+  @include md {
+    margin-top: 10vh;
+  }
 }
 .scroll-down-icon {
   display: block;
-  width: 64px;
-  height: 64px;
   opacity: 0;
   margin: 0 auto;
   transform: translateY(60px);
+  position: relative;
   span {
     display: block;
     width: 20px;

@@ -14,7 +14,7 @@
         <h2 class="slider__title" v-html="image.attributes.title" />
         <p class="slider__description" v-html="image.attributes.description" />
       </div>
-      <div class="back" />
+      <div class="background-gradient" />
     </div>
     <div class="arrows">
       <div class="arrow arrow__left" @click.prevent="prevImage">
@@ -68,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.back {
+.background-gradient {
   width: 100%;
   height: 50vh;
   position: absolute;
@@ -85,6 +85,7 @@ export default {
     // opacity: 0.8;
   }
   &__caption {
+    display: none;
     opacity: 0;
     position: absolute;
     bottom: 5vw;
@@ -93,6 +94,9 @@ export default {
     z-index: 30;
     color: $champagne;
     padding: 2.1vw;
+    @include md {
+      display: block;
+    }
   }
   &__title {
     font-family: $accent-font;
@@ -100,12 +104,6 @@ export default {
     margin-bottom: 1vw;
     opacity: 0;
     transform: translateX(-40px);
-    @include md {
-      font-size: 48px;
-    }
-    @include sm {
-      font-size: 36px;
-    }
   }
   &__description {
     font-size: 1vw;
@@ -113,12 +111,6 @@ export default {
     font-weight: 800;
     opacity: 0;
     transform: translateX(-40px);
-    @include md {
-      font-size: 14px;
-    }
-    @include sm {
-      font-size: 12px;
-    }
   }
   .slider__image {
     width: 100%;
@@ -153,12 +145,15 @@ export default {
   }
 }
 .arrows {
+  display: none;
   position: absolute;
   bottom: 2.1vw;
   left: 2.1vw;
-  display: flex;
   gap: 20px;
   z-index: 50;
+  @include md {
+    display: flex;
+  }
 }
 @keyframes circled {
   to {

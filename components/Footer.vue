@@ -47,7 +47,7 @@ export default {
   position: relative;
   z-index: 10;
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  padding: 90px 21% 30px;
+  padding: 4vw 12.5vw 2vw;
 
   &__title {
     font-family: $accent-font;
