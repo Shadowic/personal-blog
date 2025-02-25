@@ -31,10 +31,12 @@ export default {
   color: rgb(145, 154, 153);
 }
 .circle-svg__hovered {
-  color: $ziggurat;
-  circle {
-    animation: circled 4s linear infinite;
-    transform-origin: center;
+  @include md {
+    color: $ziggurat;
+    circle {
+      animation: circled 4s linear infinite;
+      transform-origin: center;
+    }
   }
 }
 </style>

@@ -1,11 +1,7 @@
 <template>
   <div class="wrapper">
-    <HeaderMobile v-if="navbar" :navbar="navbar" class="header__mobile" />
-    <div class="header header__desktop">
-      <headroom :speed="450" easing="cubic-bezier(0.17, 0.59, 0.05, 0.96)">
-        <HeaderDefault v-if="navbar" :navbar="navbar" />
-      </headroom>
-    </div>
+    <HeaderMobile v-if="navbar" :navbar="navbar" />
+    <HeaderDefault v-if="navbar" :navbar="navbar" />
     <div class="page-content">
       <Nuxt />
     </div>
@@ -28,12 +24,7 @@
 </template>
 
 <script>
-import { headroom } from 'vue-headroom'
-
 export default {
-  components: {
-    headroom,
-  },
   layoutTransition: {
     name: 'layout',
     mode: 'out-in',
@@ -193,16 +184,6 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.header {
-  flex: 0 0 auto;
-  z-index: 100;
-  &__mobile {
-    display: none;
-  }
-  &__desktop {
-    display: block;
-  }
 }
 .kinesis-element {
   width: 100%;

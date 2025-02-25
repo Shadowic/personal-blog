@@ -17,7 +17,13 @@
         class="social__item"
         :class="link.title"
       >
-        <img :src="link.icon.data.attributes.url" draggable="false" />
+        <img
+          :src="link.icon.data.attributes.url"
+          width="24"
+          height="24"
+          draggable="false"
+          alt="social link icon"
+        />
       </a>
     </address>
   </div>
@@ -47,51 +53,84 @@ export default {
   position: relative;
   z-index: 10;
   transition: background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;
-  padding: 4vw 12.5vw 2vw;
-
+  padding: 20px;
+  @include md {
+    padding: 4vw 12.5vw 2vw;
+  }
   &__title {
     font-family: $accent-font;
     color: $herbal;
-    font-size: 2vw;
+    font-size: 14px;
     letter-spacing: 0.03em;
+    @include md {
+      font-size: 2vw;
+    }
   }
-
   &__subtitle {
-    margin-top: 2vw;
-    font-size: 0.9vw;
+    font-size: 10px;
+    margin-top: 6px;
+    @include md {
+      font-size: 0.9vw;
+      margin-top: 2vw;
+    }
   }
-
   &__text {
-    margin-top: 2vw;
-    max-width: 48vw;
-    font-size: 0.9vw;
+    font-size: 8px;
+    margin-top: 14px;
+    max-width: 240px;
     text-align: center;
+    @include md {
+      font-size: 0.9vw;
+      max-width: 48vw;
+      margin-top: 2vw;
+    }
   }
-
   &__breakline {
     display: flex;
-    gap: 0.75vw;
-    margin-top: 4vw;
+    gap: 4px;
+    margin-top: 16px;
+    @include md {
+      gap: 0.75vw;
+      margin-top: 4vw;
+    }
     &-item {
-      width: 2px;
-      height: 2px;
+      width: 1.5px;
+      height: 1.5px;
       border-radius: 50%;
       background-color: $herbal;
+      @include md {
+        width: 2px;
+        height: 2px;
+      }
     }
   }
 }
 .social {
   display: flex;
-  gap: 2.5vw;
-  margin-top: 1.5vw;
+  gap: 12px;
+  margin-top: 16px;
+  @include md {
+    gap: 2.5vw;
+    margin-top: 1.5vw;
+  }
   &__item {
-    width: 1.5vw;
-    height: 1.5vw;
+    display: flex;
+    width: 12px;
+    height: 12px;
     cursor: pointer;
     transition: filter 0.3s ease-in-out;
+    @include md {
+      width: 1.5vw;
+      height: 1.5vw;
+    }
     &:hover {
       filter: invert(66%) sepia(36%) saturate(209%) hue-rotate(144deg)
         brightness(65%) contrast(67%);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
 }

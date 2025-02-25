@@ -1,13 +1,15 @@
 <template>
-  <div ref="indexHeader" class="header" :class="{ open: showNavbar }">
+  <div ref="indexHeader" class="header-index" :class="{ open: showNavbar }">
     <div class="fixed-area">
-      <nuxt-link :to="localePath(navbar.Menu[0].url)" class="fixed-area__top"
-        ><div
-          :style="{
-            backgroundImage: `url(${navbar.logo.data.attributes.url})`,
-          }"
-          class="logo"
-      /></nuxt-link>
+      <div class="fixed-area__top">
+        <img
+          :src="navbar.logo.data.attributes.url"
+          alt="logo"
+          width="96"
+          height="96"
+          class="fixed-area__top-logo"
+        />
+      </div>
       <Burger :opened="showNavbar" @onClickBurger="showNavbar = !showNavbar" />
       <div class="fixed-area__bottom">
         <LangTumbler />
@@ -15,15 +17,13 @@
     </div>
     <div class="sliding-area">
       <div class="sliding-area__top">
-        <nuxt-link :to="localePath(navbar.Menu[0].url)">
-          <img
-            :src="navbar.logo.data.attributes.url"
-            alt="logo"
-            width="96"
-            height="96"
-            class="sliding-area__top-logo"
-          />
-        </nuxt-link>
+        <img
+          :src="navbar.logo.data.attributes.url"
+          alt="logo"
+          width="96"
+          height="96"
+          class="sliding-area__top-logo"
+        />
         <p v-html="navbar.subtitle" />
       </div>
       <Navbar :navbar="navbar" @onLinkClick="closeNav" />
@@ -63,16 +63,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
+.header-index {
+  display: none;
   background: #fbfbfb;
-  //position: fixed;
-  //top: 0;
-  //bottom: 0;
-  //left: 0;
   width: 80px;
   z-index: 100;
-  .symbol {
-    display: none;
+  @include md {
+    display: block;
   }
 }
 @keyframes fade-in {
@@ -117,7 +114,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-block: 40px;
+  padding-block: 72px 40px;
   transition: 0.8s cubic-bezier(0.5, 0.09, 0, 0.97);
   animation: gradient-in 0.25s linear both;
   .open & {
@@ -125,26 +122,27 @@ export default {
     animation-delay: 0.1s;
   }
   &__top {
-    animation: fade-in 0.25s 0.35s linear both;
-    .logo {
-      width: 60px;
-      height: 60px;
-      background: center/contain no-repeat;
-      &::after {
-        height: 2px;
-        width: 48px;
-        content: '';
-        display: block;
-        transform: translateY(70px);
-        margin: 0 auto;
-        background: repeating-linear-gradient(
-          90deg,
-          #919a99,
-          #919a99 2px,
-          transparent 2px,
-          transparent 4px
-        );
-      }
+    animation: fade-in 0.25s 0.15s linear both;
+    &-logo {
+      width: 72px;
+      height: auto;
+      max-height: 72px;
+      object-fit: contain;
+    }
+    &::after {
+      height: 2px;
+      width: 48px;
+      content: '';
+      display: block;
+      transform: translateY(6px);
+      margin: 0 auto;
+      background: repeating-linear-gradient(
+        90deg,
+        #919a99,
+        #919a99 2px,
+        transparent 2px,
+        transparent 4px
+      );
     }
     .open & {
       animation: fade-out 0.25s linear both;
@@ -211,8 +209,10 @@ export default {
     font-size: 1vw;
   }
   &__top-logo {
-    width: 76px;
+    width: 72px;
     height: auto;
+    max-height: 72px;
+    object-fit: contain;
   }
 }
 </style>

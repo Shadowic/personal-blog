@@ -69,12 +69,16 @@ export default {
 
 <style lang="scss" scoped>
 .background-gradient {
-  width: 100%;
-  height: 50vh;
   position: absolute;
+  left: 0;
+  right: 0;
   bottom: 0;
+  height: 75%;
   z-index: 10;
   background: linear-gradient(#0f0b0800, #0f0b0850, #0f0b0870, #0f0b0870);
+  @include md {
+    height: 50%;
+  }
 }
 .slider {
   position: relative;

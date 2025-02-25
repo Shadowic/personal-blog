@@ -30,9 +30,29 @@ export default {
 
 <style lang="scss">
 .main-scroll-icon {
-  margin-top: 96px;
+  margin-top: auto;
   @include md {
     margin-top: 10vh;
+  }
+}
+@keyframes scroll-down-icon-move {
+  0% {
+    transform: translateY(0);
+  }
+  55% {
+    transform: translateY(0);
+  }
+  60% {
+    transform: translateY(40%);
+  }
+  62% {
+    transform: translateY(25%);
+  }
+  68% {
+    transform: translateY(40%);
+  }
+  75% {
+    transform: translateY(0);
   }
 }
 .scroll-down-icon {
@@ -43,61 +63,86 @@ export default {
   position: relative;
   span {
     display: block;
-    width: 20px;
-    height: 34px;
-    border-radius: 10px;
+    width: 14px;
+    height: 23px;
+    border-radius: 7px;
     box-sizing: border-box;
-    border: 2px solid #919a9955;
+    border: 1px solid #919a9965;
     margin: 0 auto 8px;
+    @include md {
+      width: 20px;
+      height: 34px;
+      border-radius: 10px;
+      border: 2px solid #919a9965;
+    }
     &::before {
       content: '';
       display: block;
-      width: 2px;
+      width: 1px;
       height: 0;
-      background: #919a9955;
+      background: #919a9965;
       margin: 6px auto;
+      @include md {
+        width: 2px;
+        margin: 4px auto;
+      }
     }
   }
   b {
     display: block;
-    width: 2px;
-    height: 20px;
-    margin: 8px auto 0;
+    width: 1px;
+    height: 12px;
+    margin: 0 auto;
     position: relative;
     transition: transform 0.45s cubic-bezier(0.32, 0, 0.24, 1) 0.15s;
     opacity: 0;
+    animation: 6s ease 3s infinite scroll-down-icon-move;
+    @include md {
+      width: 2px;
+      height: 20px;
+      margin: 8px auto 0;
+    }
     &::before {
       content: '';
       display: block;
-      width: 2px;
+      width: 1px;
       height: 0;
       position: absolute;
       bottom: -1px;
       transform: rotate(-135deg);
       -webkit-transform-origin: 50% 99%;
       transform-origin: 50% 99%;
-      background: #919a9955;
+      background: #919a9965;
       opacity: 0;
+      @include md {
+        width: 2px;
+      }
     }
     &::after {
       content: '';
       display: block;
-      width: 2px;
+      width: 1px;
       height: 0;
       position: absolute;
       bottom: -1px;
       -webkit-transform-origin: 50% 99%;
       transform-origin: 50% 99%;
       transform: rotate(135deg);
-      background: #919a9955;
+      background: #919a9965;
       opacity: 0;
+      @include md {
+        width: 2px;
+      }
     }
     i {
       display: block;
-      width: 2px;
+      width: 1px;
       height: 0;
       transform-origin: 50% 0;
-      background: #919a9955;
+      background: #919a9965;
+      @include md {
+        width: 2px;
+      }
     }
   }
   &.ready {
@@ -107,7 +152,10 @@ export default {
     span {
       &::before {
         transition: height 0.3s ease 0.3s;
-        height: 7px;
+        height: 5px;
+        @include md {
+          height: 7px;
+        }
       }
     }
     b {
@@ -118,19 +166,25 @@ export default {
       }
       &::before {
         opacity: 1;
-        height: 11px;
+        height: 7px;
         transition: height 0.45s cubic-bezier(0.26, 0, 0.87, 0.32) 0.4s,
           transform 0.35s cubic-bezier(0.36, 0, 0.26, 1) 0.7s,
           opacity 0s ease 0.6s;
         transform: rotate(-45deg);
+        @include md {
+          height: 11px;
+        }
       }
       &::after {
         opacity: 1;
-        height: 11px;
+        height: 7px;
         transition: height 0.45s cubic-bezier(0.26, 0, 0.87, 0.32) 0.4s,
           transform 0.35s cubic-bezier(0.36, 0, 0.26, 1) 0.7s,
           opacity 0s ease 0.6s;
         transform: rotate(45deg);
+        @include md {
+          height: 11px;
+        }
       }
     }
   }

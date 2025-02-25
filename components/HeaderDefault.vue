@@ -1,17 +1,24 @@
 <template>
-  <div class="header-default">
-    <div class="container">
-      <div class="header__content">
-        <nuxt-link to="/">Shadowic</nuxt-link>
-        <Navbar :navbar="navbar" class="open header__navbar" />
-        <LangTumbler />
+  <headroom :speed="450" easing="cubic-bezier(0.17, 0.59, 0.05, 0.96)">
+    <div class="header-default">
+      <div class="container">
+        <div class="header__content">
+          <nuxt-link to="/">Shadowic</nuxt-link>
+          <Navbar :navbar="navbar" class="open header__navbar" />
+          <LangTumbler />
+        </div>
       </div>
     </div>
-  </div>
+  </headroom>
 </template>
 
 <script>
+import { headroom } from 'vue-headroom'
+
 export default {
+  components: {
+    headroom,
+  },
   props: {
     navbar: {
       type: Object,

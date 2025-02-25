@@ -1,7 +1,7 @@
 <template>
   <div class="index-page">
-    <HeaderMobile v-if="navbar" :navbar="navbar" class="header__mobile" />
-    <HeaderIndex v-if="navbar" :navbar="navbar" class="header__desktop" />
+    <HeaderMobile v-if="navbar" :navbar="navbar" />
+    <HeaderIndex v-if="navbar" :navbar="navbar" />
     <Slider :slider="slider.data" class="index__slider" />
     <div class="index__content">
       <div class="content__top">
@@ -402,12 +402,6 @@ export default {
   transition: opacity 1s ease-in-out;
 }
 .header {
-  &__mobile {
-    display: block;
-    @include md {
-      display: none;
-    }
-  }
   &__desktop {
     display: none;
     flex-shrink: 0;
@@ -440,12 +434,6 @@ export default {
   }
 }
 
-.background {
-  position: absolute;
-  top: 0.005vw;
-  left: 4.5vw;
-}
-
 .index__content {
   flex: 1;
   overflow-y: auto;
@@ -461,7 +449,7 @@ export default {
   }
 
   &__top {
-    padding: 10vh 1vw;
+    padding: 48px 20px 24px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -473,6 +461,7 @@ export default {
     inset: 0 0 auto;
     @include md {
       position: relative;
+      padding: 10vh 1vw;
     }
   }
 
@@ -480,19 +469,21 @@ export default {
     width: 64px;
     height: 80px;
     opacity: 0;
+    margin-top: 24px;
     img {
       width: 100%;
       height: 100%;
       object-fit: contain;
     }
     @include md {
+      margin-top: 0;
       width: 5vw;
     }
   }
 
   &__subtitle {
     color: $green-dark;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 600;
     letter-spacing: 0.2em;
     line-height: 1em;
@@ -514,7 +505,7 @@ export default {
     color: $green-dark;
     line-height: 0.8em;
     word-wrap: break-word;
-    font-size: 32px;
+    font-size: 36px;
     margin-top: 24px;
     opacity: 0;
     @include md {

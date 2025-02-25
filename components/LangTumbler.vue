@@ -9,11 +9,14 @@
 </template>
 <style lang="scss" scoped>
 .lang-tumbler {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1em;
   color: #919a99;
+  @include md {
+    font-size: 14px;
+  }
 }
 span {
   display: inline-block;

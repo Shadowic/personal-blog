@@ -1,5 +1,5 @@
 <template>
-  <div class="header" :class="{ open: showNavbar }">
+  <div class="header-mobile" :class="{ open: showNavbar }">
     <div class="fixed-area">
       <Burger :opened="showNavbar" @onClickBurger="showNavbar = !showNavbar" />
       <div class="fixed-area__bottom">
@@ -44,15 +44,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.header {
+.header-mobile {
+  display: block;
   background: #fdf8ef;
   position: fixed;
-  height: 60px;
+  height: 48px;
   top: 0;
   left: 0;
-  width: 100%;
+  right: 0;
   z-index: 100;
-  .symbol {
+  @include md {
     display: none;
   }
 }
