@@ -68,7 +68,7 @@ export default {
   background: #fbfbfb;
   width: 80px;
   z-index: 100;
-  @include md {
+  @include lg {
     display: block;
   }
 }
@@ -114,7 +114,7 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding-block: 72px 40px;
+  padding-block: 78px 40px;
   transition: 0.8s cubic-bezier(0.5, 0.09, 0, 0.97);
   animation: gradient-in 0.25s linear both;
   .open & {
@@ -124,7 +124,7 @@ export default {
   &__top {
     animation: fade-in 0.25s 0.15s linear both;
     &-logo {
-      width: 72px;
+      width: 56px;
       height: auto;
       max-height: 72px;
       object-fit: contain;

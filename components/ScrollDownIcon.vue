@@ -30,8 +30,9 @@ export default {
 
 <style lang="scss">
 .main-scroll-icon {
-  margin-top: auto;
-  @include md {
+  position: absolute;
+  bottom: 24px;
+  @include lg {
     margin-top: 10vh;
   }
 }
@@ -69,7 +70,7 @@ export default {
     box-sizing: border-box;
     border: 1px solid #919a9965;
     margin: 0 auto 8px;
-    @include md {
+    @include lg {
       width: 20px;
       height: 34px;
       border-radius: 10px;
@@ -82,7 +83,7 @@ export default {
       height: 0;
       background: #919a9965;
       margin: 6px auto;
-      @include md {
+      @include lg {
         width: 2px;
         margin: 4px auto;
       }
@@ -97,7 +98,7 @@ export default {
     transition: transform 0.45s cubic-bezier(0.32, 0, 0.24, 1) 0.15s;
     opacity: 0;
     animation: 6s ease 3s infinite scroll-down-icon-move;
-    @include md {
+    @include lg {
       width: 2px;
       height: 20px;
       margin: 8px auto 0;
@@ -114,7 +115,7 @@ export default {
       transform-origin: 50% 99%;
       background: #919a9965;
       opacity: 0;
-      @include md {
+      @include lg {
         width: 2px;
       }
     }
@@ -130,7 +131,7 @@ export default {
       transform: rotate(135deg);
       background: #919a9965;
       opacity: 0;
-      @include md {
+      @include lg {
         width: 2px;
       }
     }
@@ -140,7 +141,7 @@ export default {
       height: 0;
       transform-origin: 50% 0;
       background: #919a9965;
-      @include md {
+      @include lg {
         width: 2px;
       }
     }
@@ -153,7 +154,7 @@ export default {
       &::before {
         transition: height 0.3s ease 0.3s;
         height: 5px;
-        @include md {
+        @include lg {
           height: 7px;
         }
       }
@@ -171,7 +172,7 @@ export default {
           transform 0.35s cubic-bezier(0.36, 0, 0.26, 1) 0.7s,
           opacity 0s ease 0.6s;
         transform: rotate(-45deg);
-        @include md {
+        @include lg {
           height: 11px;
         }
       }
@@ -182,7 +183,7 @@ export default {
           transform 0.35s cubic-bezier(0.36, 0, 0.26, 1) 0.7s,
           opacity 0s ease 0.6s;
         transform: rotate(45deg);
-        @include md {
+        @include lg {
           height: 11px;
         }
       }

@@ -76,7 +76,7 @@ export default {
   height: 75%;
   z-index: 10;
   background: linear-gradient(#0f0b0800, #0f0b0850, #0f0b0870, #0f0b0870);
-  @include md {
+  @include lg {
     height: 50%;
   }
 }
@@ -86,31 +86,30 @@ export default {
     width: 100%;
     height: 100%;
     position: absolute;
-    // opacity: 0.8;
   }
   &__caption {
     display: none;
     opacity: 0;
     position: absolute;
-    bottom: 5vw;
+    bottom: 4vw;
     left: 0;
     right: 0;
     z-index: 30;
     color: $champagne;
     padding: 2.1vw;
-    @include md {
+    @include lg {
       display: block;
     }
   }
   &__title {
     font-family: $accent-font;
-    font-size: 4vw;
+    font-size: 3vw;
     margin-bottom: 1vw;
     opacity: 0;
     transform: translateX(-40px);
   }
   &__description {
-    font-size: 1vw;
+    font-size: 0.85vw;
     line-height: 1.5em;
     font-weight: 800;
     opacity: 0;
@@ -155,7 +154,7 @@ export default {
   left: 2.1vw;
   gap: 20px;
   z-index: 50;
-  @include md {
+  @include lg {
     display: flex;
   }
 }
@@ -167,8 +166,8 @@ export default {
 .arrow {
   cursor: pointer;
   position: relative;
-  width: 2.25vw;
-  height: 2.25vw;
+  width: 2vw;
+  height: 2vw;
   display: flex;
   justify-content: center;
   align-items: center;

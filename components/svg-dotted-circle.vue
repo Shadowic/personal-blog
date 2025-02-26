@@ -20,6 +20,7 @@ export default {
   }
 }
 .circle-svg {
+  display: none;
   width: 100%;
   height: 100%;
   stroke-linecap: round;
@@ -29,14 +30,15 @@ export default {
   stroke-width: 2px;
   overflow: visible;
   color: rgb(145, 154, 153);
+  @include lg {
+    display: inline-block;
+  }
 }
 .circle-svg__hovered {
-  @include md {
-    color: $ziggurat;
-    circle {
-      animation: circled 4s linear infinite;
-      transform-origin: center;
-    }
+  color: $ziggurat;
+  circle {
+    animation: circled 4s linear infinite;
+    transform-origin: center;
   }
 }
 </style>

@@ -5,6 +5,13 @@
         <p class="album__date">
           <time datetime="2001-05-01">{{ album.attributes.date }}</time>
         </p>
+        <div class="border__dots">
+          <div
+            v-for="(item, index) in 5"
+            :key="index"
+            class="border__dot"
+          ></div>
+        </div>
         <p class="album__tag">
           {{ album.attributes.category.data.attributes.code }}
         </p>
@@ -84,6 +91,20 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.border {
+  &__dots {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5px 0;
+  }
+  &__dot {
+    background-color: $herbal;
+    width: 1px;
+    height: 1px;
+    border-radius: 50%;
+  }
+}
 .album {
   display: flex;
   flex-direction: column;
@@ -97,34 +118,47 @@ export default {
   }
   &__top {
     display: flex;
-    gap: 0.5vw;
-    font-size: 0.5vw;
-  }
-  //&__date {
-  //}
-  &__tag {
-    border-left: 1px dotted $bokara;
-    padding-left: 0.5vw;
+    gap: 7px;
+    font-size: 10px;
+    @include md {
+      gap: 12px;
+      font-size: 12px;
+    }
+    @include lg {
+      gap: 0.5vw;
+      font-size: 0.8vw;
+    }
   }
   &__description {
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 0 1 50%;
-    position: relative;
-    z-index: 10;
-    padding: 4vw;
+    padding: 48px 20px;
     color: $bokara;
+    position: relative;
+    z-index: 5;
+    @include lg {
+      padding: 4vw;
+    }
   }
   &__title {
     font-family: $accent-font;
-    font-size: 2vw;
+    font-size: 22px;
     font-weight: 600;
-    transition: all 0.25s ease-in-out;
+    transition: color 0.25s ease-in-out;
     text-transform: lowercase;
-    margin-top: 0.5vw;
-    .hovered & {
-      color: $ocean;
+    margin-top: 12px;
+    @include md {
+      font-size: 28px;
+      margin-top: 18px;
+    }
+    @include lg {
+      font-size: 2vw;
+      margin-top: 0.75vw;
+      .hovered & {
+        color: $ocean;
+      }
     }
   }
   &__image-container {
@@ -177,12 +211,37 @@ export default {
   .button__open {
     display: flex;
     align-items: center;
-    gap: 0.25vw;
-    margin-top: 1vw;
-    font-size: 0.5vw;
+    font-size: 12px;
+    gap: 6px;
+    margin-top: 10px;
+    @include md {
+      font-size: 14px;
+      gap: 8px;
+      margin-top: 18px;
+    }
+    @include lg {
+      font-size: 0.75vw;
+      gap: 0.5vw;
+      margin-top: 1.5vw;
+    }
     span {
       text-decoration: underline dotted;
-      text-underline-offset: 0.2vw;
+      text-underline-offset: 2px;
+      @include md {
+        text-underline-offset: 4px;
+      }
+      @include lg {
+        text-underline-offset: 0.25vw;
+      }
+    }
+    svg {
+      width: 14px;
+      @include md {
+        width: 16px;
+      }
+      @include lg {
+        width: 0.8vw;
+      }
     }
   }
 }

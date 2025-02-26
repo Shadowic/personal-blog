@@ -1,10 +1,10 @@
 <template>
-  <div class="background">
+  <div class="background-word">
     <span
       v-for="(letter, index) in titleLetters"
       :key="index"
       :style="`transition-delay: ${index / 5}s`"
-      class="background__letter"
+      class="background-word__letter"
       :class="letterClass"
       >{{ letter }}</span
     >
@@ -38,15 +38,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.background {
-  display: flex;
-  color: rgba(221, 209, 196, 0.3);
-  font-size: 3.5vw;
-  z-index: 0;
+.background-word {
   font-family: $accent-font;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.4em;
-  position: absolute;
+  color: rgba(221, 209, 196, 0.3);
   &__letter {
     display: inline-block;
     visibility: hidden;

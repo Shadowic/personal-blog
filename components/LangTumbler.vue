@@ -13,8 +13,9 @@
   font-weight: 600;
   letter-spacing: 0.1em;
   line-height: 1em;
-  color: #919a99;
-  @include md {
+  color: $herbal;
+  @include lg {
+    color: #919a99;
     font-size: 14px;
   }
 }

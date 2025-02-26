@@ -43,29 +43,32 @@ export default {
   cursor: pointer;
   width: 36px;
   height: 36px;
-  @include md {
+  padding: 4px;
+  @include lg {
     width: 48px;
     height: 48px;
+    padding: 0;
   }
   &-stripe {
     position: absolute;
-    width: 18px;
+    width: 20px;
     height: 1.5px;
-    background-color: rgb(145, 154, 153);
+    background-color: $herbal;
     transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-    @include md {
+    @include lg {
+      background-color: rgb(145, 154, 153);
       width: 24px;
       height: 3px;
     }
     &:nth-child(1) {
       transform: translateY(-3px);
-      @include md {
+      @include lg {
         transform: translateY(-4px);
       }
     }
     &:nth-child(2) {
       transform: translateY(3px);
-      @include md {
+      @include lg {
         transform: translateY(4px);
       }
     }
@@ -76,8 +79,10 @@ export default {
       transform: translateY(0) rotate(-45deg);
     }
   }
-  &:hover &-stripe {
-    background-color: $ziggurat;
+  @include lg {
+    &:hover &-stripe {
+      background-color: $ziggurat;
+    }
   }
 }
 </style>
