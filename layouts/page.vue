@@ -63,7 +63,7 @@ export default {
         logo: {
           data: {
             attributes: {
-              url: '/imgs/IMG_9408.jpg',
+              url: '/imgs/logo.png',
             },
           },
         },
@@ -165,13 +165,13 @@ export default {
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  min-height: 100svh;
   min-height: 100vh;
+  min-height: 100svh;
 }
 .page-content {
   display: flex;
   flex: 1 0 auto;
-  margin-block: 64px;
+  margin-block: 78px;
 }
 .kinesis-wrap {
   display: flex;
@@ -180,10 +180,13 @@ export default {
 .bottom-container {
   flex: 0 0 auto;
   position: relative;
-  min-height: 450px;
+  min-height: 260px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
+  @include lg {
+    min-height: 450px;
+  }
 }
 .kinesis-element {
   width: 100%;

@@ -57,19 +57,6 @@ export default {
 </style>
 
 <style lang="scss" scoped>
-.header-mobile {
-  display: block;
-  background: #cfbeac75;
-  position: fixed;
-  height: 48px;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  @include lg {
-    display: none;
-  }
-}
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -109,6 +96,22 @@ export default {
       color: $green-dark;
       cursor: pointer;
     }
+  }
+}
+.header-mobile {
+  display: block;
+  background: #cfbeac75;
+  position: fixed;
+  height: 48px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  @include lg {
+    display: none;
+  }
+  &.open .fixed-area {
+    backdrop-filter: none;
   }
 }
 .sliding-area {

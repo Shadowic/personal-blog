@@ -31,6 +31,10 @@ export default {
 <style lang="scss">
 .header-default {
   transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
+  display: none;
+  @include lg {
+    display: flex;
+  }
   .header__content {
     display: flex;
     justify-content: space-between;

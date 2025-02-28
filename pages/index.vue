@@ -101,6 +101,10 @@ export default {
       navbar: {
         Menu: [
           {
+            url: '/',
+            title: 'main page',
+          },
+          {
             url: '/cakes',
             title: 'cakes',
           },
@@ -113,7 +117,7 @@ export default {
             title: 'test1',
           },
           {
-            url: 'test2',
+            url: '/test2',
             title: 'test2',
           },
           {
@@ -128,9 +132,9 @@ export default {
             },
           },
         },
-        subtitle: 'Personal blog',
-        caption: 'made',
-        caption2: 'with 404',
+        subtitle: 'Welcome!',
+        caption: 'visit',
+        caption2: 'please',
       },
       index: {
         logo: {

@@ -23,7 +23,7 @@ $sm: 480px;
 }
 
 @mixin md-lg {
-  @media (min-width: $md) and (max-width: $lg) {
+  @media (min-width: $md) and (max-width: $lg - 1) {
     @content;
   }
 }

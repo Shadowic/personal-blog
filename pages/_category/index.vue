@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="albums">
-      <Album
+      <AlbumCommon
         v-for="(album, index) in albums"
         :key="index"
         :title="album.title"
@@ -117,9 +117,12 @@ export default {
 .albums {
   display: flex;
   flex-direction: column;
-  gap: 86px;
-  @include xs {
-    gap: 24px;
+  gap: 40px;
+  @include md {
+    gap: 88px;
+  }
+  @include lg {
+    gap: 96px;
   }
 }
 </style>
