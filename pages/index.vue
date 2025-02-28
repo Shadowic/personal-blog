@@ -425,8 +425,8 @@ export default {
 }
 
 .index__slider {
-  height: 100svh;
   height: 100vh;
+  height: 100svh;
   opacity: 0;
   @include lg {
     height: 100%;

@@ -17,8 +17,8 @@
   align-items: center;
   text-align: center;
   width: 100%;
-  height: 100svh;
   height: 100vh;
+  height: 100svh;
   background: url('~assets/imgs/error2.jpg') center/cover;
   overflow: hidden;
 }

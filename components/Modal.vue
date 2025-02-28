@@ -170,8 +170,8 @@ export default {
   background: rgba(0, 0, 0, 0.85);
   padding: 30px 20px;
   border: unset;
-  height: 100svh;
   height: 100vh;
+  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
