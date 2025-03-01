@@ -1,6 +1,6 @@
 <template>
   <div class="error-page">
-    <div class="message">I think, you've lost</div>
+    <div class="message">Ohhh you've lost, but no panic</div>
     <nuxt-link :to="localePath('/')">
       <div class="btn">
         <span>back to the right way</span>
