@@ -468,6 +468,7 @@ export default {
     align-items: center;
     text-align: center;
     min-height: 100vh;
+    min-height: 100svh;
     overflow-x: hidden;
     position: absolute;
     inset: 0 0 auto;
@@ -481,7 +482,7 @@ export default {
     width: 48px;
     height: auto;
     opacity: 0;
-    margin-top: -24px;
+    margin-top: -48px;
     img {
       width: 100%;
       height: 100%;

@@ -1,6 +1,6 @@
 <template>
   <div v-if="image" class="modal">
-    <div class="modal__bg" @click.prevent="closeImage"></div>
+    <div class="modal__bg" @click.prevent="closeImage" />
     <div class="modal__content">
       <div class="modal__top">
         <div class="image-counter">
@@ -10,35 +10,52 @@
         </div>
         <div class="modal-close" @click.prevent="closeImage" />
       </div>
-      <div class="modal__main">
-        <div class="content" :class="{ imgLoaded: isImgLoaded }">
-          <div class="content__img">
-            <img
-              :src="image"
-              alt="image of album"
-              draggable="false"
-              @load="onImgLoad"
-            />
-            <div class="arrows__mobile">
-              <div
-                class="arrow__mobile arrow__mobile__left"
-                @click.prevent="prevImage"
-              />
-              <div class="arrow__mobile" @click.prevent="nextImage" />
-            </div>
-          </div>
-          <div v-if="showSidebar" class="sidebar">
-            <div class="item-title">{{ title }}</div>
-            <div class="item-description">
-              {{ description }}
-            </div>
-            <div class="item-price">
-              <span>цена:</span>
-              <span>{{ price }} рэ</span>
-            </div>
-          </div>
+      <button class="techclick" @click="isSidebarShown = !isSidebarShown">
+        <span>открыть сайдбар</span>
+      </button>
+      <span v-if="!isImgLoaded" class="loader" />
+      <div
+        class="modal__main"
+        :class="{ imgLoaded: isImgLoaded, 'has-sidebar': isSidebarShown }"
+      >
+        <div class="modal__img">
+          <img
+            :src="image"
+            alt="image of album"
+            draggable="false"
+            @load="onImgLoad"
+          />
         </div>
-        <span v-if="!isImgLoaded" class="loader" />
+        <div v-if="isSidebarShown" class="modal__sidebar">
+          <div class="modal__sidebar-title">Кружка-круженька {{ title }}</div>
+          <div class="modal__sidebar-price">
+            <span>цена:</span>
+            <span>{{ price }} много рэ</span>
+          </div>
+          <div class="modal__sidebar-description">
+            Бердин&nbsp;&mdash; это место, где история встречается
+            с&nbsp;природой. Здесь вы&nbsp;можете увидеть руины древних
+            крепостей, пройтись по&nbsp;лесам, полным грибов и&nbsp;ягод,
+            и&nbsp;полюбоваться красотой нетронутой природы. Бердин&nbsp;&mdash;
+            это идеальное место для тех, кто хочет отдохнуть от&nbsp;шума города
+            и&nbsp;погрузиться в&nbsp;атмосферу спокойствия и&nbsp;красоты.
+            Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность
+            сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные
+            средневековые улочки, монументальные замки и&nbsp;современные
+            архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash;
+            это увлекательное путешествие во&nbsp;времени, где каждый уголок
+            хранит свои секреты и&nbsp;легенды.Дрезден&nbsp;&mdash; это город,
+            где история сплетается с&nbsp;роскошью. Прогуляйтесь
+            по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир
+            искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы,
+            любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете,
+            почему Дрезден называют &laquo;Флоренцией на&nbsp;Эльбе&raquo;.
+            {{ description }}
+          </div>
+          <nuxt-link to="/" class="button modal__sidebar-button">
+            <span>кликнуть</span>
+          </nuxt-link>
+        </div>
       </div>
       <div class="modal__bottom">
         <div class="arrows arrows__left" @click.prevent="prevImage">
@@ -106,6 +123,7 @@ export default {
       isPrevClicked: false,
       isNextClicked: false,
       isImgLoaded: false,
+      isSidebarShown: false,
     }
   },
   watch: {
@@ -156,25 +174,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.techclick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $sunflower;
+  color: $white;
+  width: fit-content;
+  min-width: 140px;
+  min-height: 36px;
+  padding: 8px 40px;
+  border-radius: 8px;
+  font-size: 12px;
+  line-height: 1.42;
+  text-transform: uppercase;
+  position: fixed;
+  top: 140px;
+  left: 40px;
+}
 .modal {
   position: fixed;
   z-index: 999;
   inset: 0;
 }
 .modal__bg {
+  display: none;
   position: absolute;
   inset: 0;
   z-index: 0;
+  @include lg {
+    display: block;
+  }
 }
 .modal__content {
-  background: rgba(0, 0, 0, 0.85);
-  padding: 30px 20px;
-  border: unset;
-  height: 100vh;
-  height: 100svh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background: rgba(0, 0, 0, 0.85);
+  height: 100%;
+  padding: 30px 20px;
   @include lg {
     padding: 40px 60px;
   }
@@ -184,7 +222,6 @@ export default {
   width: 26px;
   height: 26px;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
 .modal-close::before,
 .modal-close::after {
@@ -196,6 +233,7 @@ export default {
   width: 1px;
   border-radius: 2px;
   background-color: $white;
+  transition: transform 0.3s ease-in-out;
 }
 .modal-close::before {
   transform: rotate(45deg);
@@ -241,93 +279,132 @@ export default {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 0 auto;
 }
 .modal__main {
-  text-align: center;
-  margin: 20px 0;
-  .content {
-    width: 100%;
-    height: 100%;
-    max-height: 75vh;
-    display: flex;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s ease-in-out;
-    &__img {
-      position: relative;
-      flex: 1 1 0;
-    }
-  }
-  .imgLoaded {
+  display: flex;
+  flex: 1;
+  max-width: 1920px;
+  max-height: 70vh;
+  max-height: 70svh;
+  overflow-y: auto;
+  margin: 20px auto;
+  scrollbar-color: $sunflower $white;
+  scrollbar-width: thin;
+  opacity: 0;
+  position: relative;
+  visibility: hidden;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  &.imgLoaded {
     opacity: 1;
     visibility: visible;
   }
+}
+.loader {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 100px);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+  margin: 15px auto;
+  color: $white;
+  box-sizing: border-box;
+  animation: shadowRolling 2s linear infinite;
+}
+.modal__sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $white;
+  padding: 24px 20px;
+  scrollbar-color: $sunflower $white;
+  scrollbar-width: thin;
+  @include md {
+    flex: 1;
+    overflow-y: auto;
+  }
+  @include lg {
+    padding: 48px 40px;
+  }
+  &-title {
+    font-family: $accent-font;
+    font-size: 24px;
+    line-height: 1.4em;
+    color: $green-dark;
+    @include lg {
+      font-size: 36px;
+    }
+  }
+  &-description {
+    font-family: $base-font;
+    font-size: 14px;
+    line-height: 1.4;
+    margin-top: 14px;
+    @include lg {
+      font-size: 18px;
+      margin-block: 18px 24px;
+    }
+  }
+  &-price {
+    display: flex;
+    gap: 8px;
+    margin-top: 6px;
+    font-family: $base-font;
+    font-size: 14px;
+    @include lg {
+      font-size: 18px;
+      margin-top: 8px;
+    }
+  }
+  &-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 0;
+    margin: 24px auto 0;
+    background-color: $sunflower;
+    color: $white;
+    width: fit-content;
+    min-width: 140px;
+    min-height: 36px;
+    padding: 8px 40px;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.42;
+    text-transform: uppercase;
+    @include lg {
+      margin-top: auto;
+      min-width: 180px;
+      padding: 22px 48px;
+      border-radius: 12px;
+      font-size: 16px;
+    }
+  }
+}
+.modal__img {
+  display: flex;
   img {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    vertical-align: middle;
-  }
-  .loader {
-    position: absolute;
-    top: 50%;
-    left: calc(50% - 100px);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    display: block;
-    margin: 15px auto;
-    color: $white;
-    box-sizing: border-box;
-    animation: shadowRolling 2s linear infinite;
-  }
-  .sidebar {
-    width: 30%;
-    background-color: $white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 35px;
-    overflow-y: auto;
-    margin-left: 30px;
-    .item-title {
-      font-family: $accent-font;
-      line-height: 1.212em;
-      color: $green-dark;
-      font-weight: 600;
-      font-size: 33px;
-      margin-bottom: 10px;
-    }
-    .item-description {
-      font-family: 'Montserrat Semi-bold', sans-serif;
-      font-size: 15px;
-      line-height: 1.75;
-      font-weight: 300;
-      margin: 10px 0;
-    }
-    .item-price {
-      font-size: 16px;
-      font-weight: 600;
-      margin-top: 10px;
-      display: flex;
-      justify-content: flex-end;
-      span + span {
-        margin-left: 20px;
-      }
-    }
   }
 }
-.modal__main::before {
-  top: 50%;
-  left: 250px;
-  transform: rotate(-45deg);
-}
-.modal__main::after {
-  top: 50%;
-  right: 250px;
-  transform: rotate(135deg);
+
+.modal__main.has-sidebar {
+  flex-direction: column;
+  @include md {
+    flex-direction: row;
+    max-height: 50vh;
+    max-height: 50svh;
+  }
+  .modal__img {
+    max-height: 320px;
+    @include md {
+      flex: 0 1 67%;
+      max-height: unset;
+    }
+  }
 }
 @keyframes shadowRolling {
   0% {
@@ -385,7 +462,8 @@ export default {
     top: -20px;
     border-top: 1px solid $white;
     border-left: 3px solid $white;
-    transition: all 0.25s ease-out;
+    transition: 0.25s ease-out;
+    transition-property: left, top, opacity;
     opacity: 0.9;
   }
   &::after {
@@ -397,31 +475,6 @@ export default {
     border-left: 1px solid $white;
     opacity: 0.5;
   }
-  &__mobile {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: $white;
-    opacity: 0.4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &::after {
-      display: block;
-      content: '';
-      width: 35%;
-      height: 35%;
-      transform: rotate(45deg) translate(-15%, 15%);
-      border-top: 2px solid $white;
-      border-right: 2px solid $white;
-      opacity: 0.6;
-    }
-    &__left {
-      &::after {
-        transform: rotate(-135deg) translate(-15%, 15%);
-      }
-    }
-  }
 }
 .arrows {
   display: flex;
@@ -430,6 +483,7 @@ export default {
   width: 58px;
   height: 42px;
   cursor: pointer;
+  z-index: 2;
   &:hover {
     .arrow::before,
     .arrow::after {
@@ -437,9 +491,6 @@ export default {
       top: -3px;
       opacity: 0;
     }
-  }
-  &__mobile {
-    display: none;
   }
 }
 

@@ -61,6 +61,7 @@ export default {
   justify-content: center;
   width: 100%;
   min-height: 100vh;
+  min-height: 100svh;
   position: relative;
   background-color: #ab274f75;
 }
