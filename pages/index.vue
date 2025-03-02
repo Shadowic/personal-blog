@@ -62,7 +62,7 @@
           />
         </div>
       </div>
-      <Footer v-if="footer" :footer="footer" />
+      <FooterIndex v-if="footer" :footer="footer" />
     </div>
   </div>
 </template>

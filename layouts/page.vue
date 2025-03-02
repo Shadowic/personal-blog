@@ -5,21 +5,7 @@
     <div class="page-content">
       <Nuxt />
     </div>
-    <kinesis-container class="kinesis-wrap">
-      <div class="bottom-container">
-        <kinesis-element
-          class="kinesis-element"
-          type="translate"
-          :strength="-20"
-        >
-          <div class="background-fill background-fill__back" />
-        </kinesis-element>
-        <kinesis-element class="kinesis-element" type="scale" :strength="1">
-          <div class="background-fill background-fill__forward" />
-        </kinesis-element>
-        <Footer v-if="footer" :footer="footer" />
-      </div>
-    </kinesis-container>
+    <Footer v-if="footer" :footer="footer" />
   </div>
 </template>
 
@@ -72,10 +58,8 @@ export default {
         caption2: 'please',
       },
       footer: {
-        title: 'Nunc ut volutpat purus',
-        subtitle: 'Pellentesque ac commodo tellus',
-        description:
-          'uspendisse dolor ligula, semper in diam vitae, interdum sagittis tortor. Mauris id gravida enim. Pellentesque eget turpis placerat risus consequat varius malesuada a nulla.',
+        title: 'Morbi finibus',
+        subtitle: '2024',
         links: [
           {
             is_shown: true,
@@ -172,38 +156,5 @@ export default {
   display: flex;
   flex: 1 0 auto;
   margin-block: 78px;
-}
-.kinesis-wrap {
-  display: flex;
-  flex-direction: column;
-}
-.bottom-container {
-  flex: 0 0 auto;
-  position: relative;
-  min-height: 260px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  @include lg {
-    min-height: 450px;
-  }
-}
-.kinesis-element {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: 0;
-}
-.background-fill {
-  width: 100%;
-  height: 100%;
-  &__back {
-    clip-path: polygon(0 24%, 100% 10%, 100% 100%, 0% 100%);
-    background-color: $herbal;
-  }
-  &__forward {
-    clip-path: polygon(0 0%, 100% 28%, 100% 100%, 0% 100%);
-    background-color: $champagne;
-  }
 }
 </style>
