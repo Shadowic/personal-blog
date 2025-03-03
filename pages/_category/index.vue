@@ -2,7 +2,7 @@
   <div class="container">
     <div class="albums">
       <AlbumCommon
-        v-for="(album, index) in albums"
+        v-for="(album, index) in limitedAlbums"
         :key="index"
         :title="album.title"
         :caption="album.caption"
@@ -46,6 +46,7 @@ export default {
   // },
   data() {
     return {
+      isDesktop: false,
       albums: [
         {
           title: 'Дрезден',
@@ -57,6 +58,9 @@ export default {
           albumCode: 'travel',
           imageMain: '/imgs/IMG_9547.jpg',
           imagesPreview: [
+            '/imgs/IMG_9408.jpg',
+            '/imgs/IMG_9484.jpg',
+            '/imgs/IMG_9542.jpg',
             '/imgs/IMG_9408.jpg',
             '/imgs/IMG_9484.jpg',
             '/imgs/IMG_9542.jpg',
@@ -75,6 +79,9 @@ export default {
             '/imgs/IMG_9408.jpg',
             '/imgs/IMG_9484.jpg',
             '/imgs/IMG_9542.jpg',
+            '/imgs/IMG_9408.jpg',
+            '/imgs/IMG_9484.jpg',
+            '/imgs/IMG_9542.jpg',
           ],
         },
         {
@@ -87,6 +94,9 @@ export default {
           albumCode: 'travel',
           imageMain: '/imgs/IMG_9547.jpg',
           imagesPreview: [
+            '/imgs/IMG_9408.jpg',
+            '/imgs/IMG_9484.jpg',
+            '/imgs/IMG_9542.jpg',
             '/imgs/IMG_9408.jpg',
             '/imgs/IMG_9484.jpg',
             '/imgs/IMG_9542.jpg',
@@ -105,10 +115,35 @@ export default {
             '/imgs/IMG_9408.jpg',
             '/imgs/IMG_9484.jpg',
             '/imgs/IMG_9542.jpg',
+            '/imgs/IMG_9408.jpg',
+            '/imgs/IMG_9484.jpg',
+            '/imgs/IMG_9542.jpg',
           ],
         },
       ],
     }
+  },
+  computed: {
+    limitedAlbums() {
+      return this.albums.map((album) => ({
+        ...album,
+        imagesPreview: this.isDesktop
+          ? album.imagesPreview.slice(0, 3)
+          : album.imagesPreview,
+      }))
+    },
+  },
+  mounted() {
+    this.checkIfDesktop()
+    window.addEventListener('resize', this.checkIfDesktop)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkIfDesktop)
+  },
+  methods: {
+    checkIfDesktop() {
+      this.isDesktop = window.innerWidth >= 992
+    },
   },
 }
 </script>

@@ -2,7 +2,7 @@
   <div class="container">
     <div class="albums">
       <AlbumCeramic
-        v-for="(album, index) in albums"
+        v-for="(album, index) in limitedAlbums"
         :key="index"
         :title="album.title"
         :caption="album.caption"
@@ -46,6 +46,7 @@ export default {
   // },
   data() {
     return {
+      isTablet: false,
       albums: [
         {
           title: 'Дрезден',
@@ -117,6 +118,28 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    limitedAlbums() {
+      return this.albums.map((album) => ({
+        ...album,
+        imagesPreview: this.isTablet
+          ? album.imagesPreview.slice(0, 3)
+          : album.imagesPreview,
+      }))
+    },
+  },
+  mounted() {
+    this.checkIfTablet()
+    window.addEventListener('resize', this.checkIfTablet)
+  },
+  beforeDestroy() {
+    window.removeEventListener('resize', this.checkIfTablet)
+  },
+  methods: {
+    checkIfTablet() {
+      this.isTablet = window.innerWidth >= 744 && window.innerWidth <= 991
+    },
   },
 }
 </script>
