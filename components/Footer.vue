@@ -60,18 +60,12 @@ export default {
     @include md {
       font-size: 18px;
     }
-    @include lg {
-      font-size: 1.25vw;
-    }
   }
   &__subtitle {
     display: none;
     @include md {
       display: inline-block;
       font-size: 18px;
-    }
-    @include lg {
-      font-size: 1.25vw;
     }
   }
 }
@@ -93,10 +87,6 @@ export default {
     @include md {
       width: 18px;
       height: 18px;
-    }
-    @include lg {
-      width: 1.25vw;
-      height: 1.25vw;
     }
     &:hover {
       filter: invert(66%) sepia(36%) saturate(209%) hue-rotate(144deg)

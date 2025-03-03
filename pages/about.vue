@@ -15,19 +15,19 @@
         />
       </div>
       <div class="about__title">
+        <BackgroundWord :title="about.page_title" class="about__title-bgword" />
         <p data-aos="zoom-out-up" data-aos-duration="1000" class="title">
           {{ about.title }}
         </p>
-        <BackgroundWord :title="about.page_title" class="background-word" />
-        <p
-          data-aos="zoom-out-up"
-          data-aos-duration="1000"
-          data-aos-delay="100"
-          class="subtitle"
-        >
-          {{ about.subtitle }}
-        </p>
       </div>
+      <p
+        data-aos="zoom-out-up"
+        data-aos-duration="1000"
+        data-aos-delay="100"
+        class="subtitle"
+      >
+        {{ about.subtitle }}
+      </p>
       <p
         data-aos="zoom-out-up"
         data-aos-duration="1000"
@@ -96,19 +96,24 @@ export default {
 <style lang="scss" scoped>
 .about {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(1, 1fr);
   grid-template-areas:
-    'photo header'
-    'photo description';
+    'photo'
+    'header'
+    'subtitle'
+    'description';
   max-width: 1280px;
   margin: 0 auto;
-  .background-word {
-    position: absolute;
-    color: $herbal;
-    opacity: 0.08;
-    top: -15px;
-    left: 5px;
+  @include md {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      '. header'
+      'photo subtitle'
+      'photo description';
+    grid-gap: 0 20px;
+  }
+  @include lg {
+    grid-gap: 0 52px;
   }
 }
 .about__cover {
@@ -116,9 +121,14 @@ export default {
   border-radius: 50%;
   overflow: hidden;
   aspect-ratio: 1/1;
-  max-width: 32vw;
   justify-self: center;
-  margin-top: 3.5vw;
+  max-width: 420px;
+  @include md {
+    max-width: 100%;
+  }
+  @include lg {
+    max-width: 540px;
+  }
   img {
     width: 100%;
     height: 100%;
@@ -128,29 +138,62 @@ export default {
 .about__title {
   grid-area: header;
   position: relative;
+  margin: 24px 0 0 12px;
+  .background-word {
+    position: absolute;
+    font-size: 28px;
+    top: -16px;
+    left: -16px;
+    z-index: 0;
+    @include md {
+      font-size: 32px;
+      top: 22px;
+      left: 18px;
+    }
+  }
 }
 .title {
   font-family: $accent-font;
-  font-weight: 900;
   color: $bokara;
   opacity: 0.85;
-  font-size: 50px;
-  line-height: 1.212em;
-  letter-spacing: 0.1em;
+  font-size: 26px;
+  line-height: 1.4em;
+  letter-spacing: 0.025em;
+  @include md {
+    font-size: 36px;
+  }
+  @include lg {
+    font-size: 48px;
+  }
 }
 .subtitle {
-  grid-area: header;
-  font-size: 0.75vw;
+  grid-area: subtitle;
   color: $ocean;
-  letter-spacing: 0.2em;
+  font-size: 12px;
+  letter-spacing: 0.025em;
   line-height: 1.4em;
   text-transform: uppercase;
-  margin-top: 4px;
-  max-width: 28vw;
+  margin-top: 8px;
+  @include md {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+  @include lg {
+    font-size: 16px;
+    max-width: 480px;
+  }
 }
 .description {
   grid-area: description;
-  line-height: 1.4;
   text-indent: 2vw;
+  line-height: 1.4;
+  font-size: 14px;
+  margin-top: 24px;
+  @include md {
+    font-size: 16px;
+  }
+  @include lg {
+    font-size: 18px;
+  }
 }
 </style>

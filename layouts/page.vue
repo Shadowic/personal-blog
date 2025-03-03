@@ -155,6 +155,6 @@ export default {
 .page-content {
   display: flex;
   flex: 1 0 auto;
-  margin-block: 78px;
+  margin-block: 78px 48px;
 }
 </style>
