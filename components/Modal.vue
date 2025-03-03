@@ -194,7 +194,7 @@ export default {
 }
 .modal {
   position: fixed;
-  z-index: 999;
+  z-index: 99999;
   inset: 0;
 }
 .modal__bg {
