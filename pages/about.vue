@@ -64,7 +64,7 @@ export default {
             attributes: {
               formats: {
                 medium: {
-                  url: '/imgs/IMG_0773.jpg',
+                  url: '/imgs/IMG_0773.webp',
                 },
               },
             },

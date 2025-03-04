@@ -10,9 +10,6 @@
         </div>
         <div class="modal-close" @click.prevent="closeImage" />
       </div>
-      <button class="techclick" @click="isSidebarShown = !isSidebarShown">
-        <span>открыть сайдбар</span>
-      </button>
       <span v-if="!isImgLoaded" class="loader" />
       <div
         class="modal__main"
@@ -27,29 +24,12 @@
           />
         </div>
         <div v-if="isSidebarShown" class="modal__sidebar">
-          <div class="modal__sidebar-title">Кружка-круженька {{ title }}</div>
+          <div class="modal__sidebar-title">{{ title }}</div>
           <div class="modal__sidebar-price">
             <span>цена:</span>
-            <span>{{ price }} много рэ</span>
+            <span>{{ price }}</span>
           </div>
           <div class="modal__sidebar-description">
-            Бердин&nbsp;&mdash; это место, где история встречается
-            с&nbsp;природой. Здесь вы&nbsp;можете увидеть руины древних
-            крепостей, пройтись по&nbsp;лесам, полным грибов и&nbsp;ягод,
-            и&nbsp;полюбоваться красотой нетронутой природы. Бердин&nbsp;&mdash;
-            это идеальное место для тех, кто хочет отдохнуть от&nbsp;шума города
-            и&nbsp;погрузиться в&nbsp;атмосферу спокойствия и&nbsp;красоты.
-            Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность
-            сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные
-            средневековые улочки, монументальные замки и&nbsp;современные
-            архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash;
-            это увлекательное путешествие во&nbsp;времени, где каждый уголок
-            хранит свои секреты и&nbsp;легенды.Дрезден&nbsp;&mdash; это город,
-            где история сплетается с&nbsp;роскошью. Прогуляйтесь
-            по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир
-            искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы,
-            любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете,
-            почему Дрезден называют &laquo;Флоренцией на&nbsp;Эльбе&raquo;.
             {{ description }}
           </div>
           <nuxt-link to="/" class="button modal__sidebar-button">
@@ -174,24 +154,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.techclick {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: $sunflower;
-  color: $white;
-  width: fit-content;
-  min-width: 140px;
-  min-height: 36px;
-  padding: 8px 40px;
-  border-radius: 8px;
-  font-size: 12px;
-  line-height: 1.42;
-  text-transform: uppercase;
-  position: fixed;
-  top: 140px;
-  left: 40px;
-}
 .modal {
   position: fixed;
   z-index: 99999;

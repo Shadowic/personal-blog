@@ -6,7 +6,6 @@
     <div class="album__description">
       <div class="album__description-content">
         <p class="album__title" v-html="title"></p>
-        <p class="album__caption" v-html="caption"></p>
         <p class="album__text" v-html="description"></p>
         <nuxt-link
           v-if="hasButton"
@@ -52,11 +51,6 @@ export default {
   props: {
     title: {
       required: true,
-      default: '',
-      type: String,
-    },
-    caption: {
-      required: false,
       default: '',
       type: String,
     },
@@ -198,14 +192,6 @@ export default {
     }
     @include lg {
       font-size: 54px;
-    }
-  }
-  &__caption {
-    display: none;
-    @include lg {
-      display: inline;
-      font-size: 32px;
-      margin-top: 8px;
     }
   }
   &__text {

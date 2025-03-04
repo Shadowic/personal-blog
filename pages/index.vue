@@ -518,7 +518,7 @@ export default {
   }
 
   &__title {
-    background: url('static/imgs/IMG_0773.jpg') center/cover;
+    background: url('static/imgs/IMG_0773.webp') center/cover;
     background-color: $herbal;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
