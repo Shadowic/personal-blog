@@ -10,6 +10,7 @@
         :has-button="album.button"
         :button-text="album.buttonText"
         :button-link="album.buttonLink"
+        :album-code="album.albumCode"
         :page-code="album.pageCode"
         :image-main="album.imageMain"
         :images-preview="album.imagesPreview"
@@ -19,7 +20,7 @@
 </template>
 
 <script>
-import albums from 'static/albums.json'
+import albums from 'static/albumsCeramic.json'
 
 export default {
   layout: 'page',

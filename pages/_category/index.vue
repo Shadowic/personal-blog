@@ -28,6 +28,20 @@ export default {
     name: 'change-route',
     mode: 'out-in',
   },
+  asyncData({ params, error }) {
+    const category = params.category
+
+    const filteredAlbums = albums.filter((album) => {
+      return album.albumCode === category
+    })
+
+    // if (filteredAlbums.length === 0) {
+    //   error({ statusCode: 404, message: 'Альбомы не найдены' })
+    //   return
+    // }
+
+    return { filteredAlbums }
+  },
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
   //     const result = await $strapi.$http.$get(
@@ -50,12 +64,11 @@ export default {
   data() {
     return {
       isDesktop: false,
-      albums,
     }
   },
   computed: {
     limitedAlbums() {
-      return this.albums.map((album) => ({
+      return this.filteredAlbums.map((album) => ({
         ...album,
         imagesPreview: this.isDesktop
           ? album.imagesPreview.slice(0, 3)

@@ -152,6 +152,7 @@ export default {
     border-radius: 10px;
     overflow: hidden;
     grid-area: cover;
+    position: relative;
     @include md {
       border-radius: 18px;
     }
@@ -159,6 +160,7 @@ export default {
       border-radius: 24px;
     }
     img {
+      position: absolute;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -232,10 +234,9 @@ export default {
     }
     @include lg {
       min-width: 375px;
-      min-height: 82px;
-      padding: 21px 114px;
+      min-height: 64px;
       border-radius: 16px;
-      font-size: 28px;
+      font-size: 24px;
     }
   }
   &__preview {

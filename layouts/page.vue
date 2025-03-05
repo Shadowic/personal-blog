@@ -15,6 +15,7 @@
 </template>
 
 <script>
+import navbar from 'static/navbar.json'
 import footer from 'static/footer.json'
 
 export default {
@@ -26,44 +27,7 @@ export default {
     return {
       // footer: null,
       // navbar: null,
-      navbar: {
-        Menu: [
-          {
-            url: '/',
-            title: 'main page',
-          },
-          {
-            url: '/travel',
-            title: 'travel',
-          },
-          {
-            url: '/ceramicon',
-            title: 'ceramic album',
-          },
-          {
-            url: '/test1',
-            title: 'test1',
-          },
-          {
-            url: '/test2',
-            title: 'test2',
-          },
-          {
-            url: '/about',
-            title: 'about',
-          },
-        ],
-        logo: {
-          data: {
-            attributes: {
-              url: '/imgs/logo.png',
-            },
-          },
-        },
-        subtitle: 'Welcome!',
-        caption: 'visit',
-        caption2: 'please',
-      },
+      navbar,
       footer,
     }
   },
