@@ -1,0 +1,75 @@
+{
+  "title": "Nunc ut volutpat purus",
+  "subtitle": "Pellentesque ac commodo tellus",
+  "titlesub": "Morbi finibus",
+  "year": "2024",
+  "description":
+  "uspendisse dolor ligula, semper in diam vitae, interdum sagittis tortor. Mauris id gravida enim. Pellentesque eget turpis placerat risus consequat varius malesuada a nulla.",
+  "links": [
+    {
+      "is_shown": true,
+      "id": 0,
+      "url": "/",
+      "title": "coffee",
+      "icon": {
+        "data": {
+          "attributes": {
+            "url": "/svgs/coffee-cup.svg"
+          }
+        }
+      }
+    },
+    {
+      "is_shown": true,
+      "id": 1,
+      "url": "/",
+      "title": "github",
+      "icon": {
+        "data": {
+          "attributes": {
+            "url": "/svgs/github.svg"
+          }
+        }
+      }
+    },
+    {
+      "is_shown": false,
+      "id": 2,
+      "url": "/",
+      "title": "loupe",
+      "icon": {
+        "data": {
+          "attributes": {
+            "url": "/svgs/loupe.svg"
+          }
+        }
+      }
+    },
+    {
+      "is_shown": true,
+      "id": 3,
+      "url": "/",
+      "title": "insta",
+      "icon": {
+        "data": {
+          "attributes": {
+            "url": "/svgs/pinterest.svg"
+          }
+        }
+      }
+    },
+    {
+      "is_shown": true,
+      "id": 4,
+      "url": "/",
+      "title": "insta",
+      "icon": {
+        "data": {
+          "attributes": {
+            "url": "/svgs/telegram.svg"
+          }
+        }
+      }
+    }
+  ]
+}

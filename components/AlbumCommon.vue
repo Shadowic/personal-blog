@@ -9,7 +9,7 @@
       <p class="album__text" v-html="description"></p>
       <nuxt-link
         v-if="hasButton"
-        :to="localePath(`/${albumCode}/${albumCode}`)"
+        :to="localePath(`/${albumCode}/${pageCode}`)"
         class="btn album__btn"
       >
         <span v-html="buttonText"></span>
@@ -72,7 +72,12 @@ export default {
       default: '',
       type: String,
     },
-    code: {
+    albumCode: {
+      required: false,
+      default: '',
+      type: String,
+    },
+    pageCode: {
       required: false,
       default: '',
       type: String,

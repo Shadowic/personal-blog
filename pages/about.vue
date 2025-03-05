@@ -12,22 +12,25 @@
           alt="photo"
           width="360"
           height="240"
+          draggable="false"
         />
       </div>
       <div class="about__title">
         <BackgroundWord :title="about.page_title" class="about__title-bgword" />
-        <p data-aos="zoom-out-up" data-aos-duration="1000" class="title">
-          {{ about.title }}
-        </p>
+        <p
+          data-aos="zoom-out-up"
+          data-aos-duration="1000"
+          class="title"
+          v-html="about.title"
+        />
       </div>
       <p
         data-aos="zoom-out-up"
         data-aos-duration="1000"
         data-aos-delay="100"
         class="subtitle"
-      >
-        {{ about.subtitle }}
-      </p>
+        v-html="about.subtitle"
+      />
       <p
         data-aos="zoom-out-up"
         data-aos-duration="1000"
@@ -40,8 +43,10 @@
 </template>
 
 <script>
+import about from 'static/about.json'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
 export default {
   layout: 'page',
   transition: {
@@ -50,27 +55,7 @@ export default {
   },
   data() {
     return {
-      about: {
-        page_title: "It's me, Stan",
-        title: 'Lorem Ipsum',
-        subtitle:
-          'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...',
-        description:
-          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam. Mauris sollicitudin nunc imperdiet, viverra augue non, molestie elit. Proin maximus pulvinar mauris, vel vestibulum nulla. Donec neque turpis, congue eget mi quis, gravida porttitor dui. Sed feugiat scelerisque facilisis. Vestibulum bibendum nibh vitae magna pretium, sed consectetur mauris volutpat.\n' +
-          '\n' +
-          'Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus. Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac. Praesent at sagittis urna. Morbi vel dignissim erat. Mauris ullamcorper sed nisi sed porttitor. Mauris nulla felis, tincidunt vel tristique at, euismod vel sapien. Quisque vitae tristique dui.',
-        cover: {
-          data: {
-            attributes: {
-              formats: {
-                medium: {
-                  url: '/imgs/IMG_0773.webp',
-                },
-              },
-            },
-          },
-        },
-      },
+      about,
     }
   },
   mounted() {

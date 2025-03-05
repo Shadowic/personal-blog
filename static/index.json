@@ -1,0 +1,15 @@
+{
+  "logo": {
+    "data": {
+      "attributes": {
+        "url": "/imgs/logo.png"
+      }
+    }
+  },
+  "welcome": "Personal blog",
+  "title": "Путешествия, о&nbsp;которых хочется рассказать",
+  "description":
+  "Добро пожаловать! Welcome! ¡Bienvenidos! Herzlich&nbsp;willkommen! Bienvenue! Benvenuti! Bem-vindos!",
+  "feed_title": "Maecenas sit",
+  "feed_subtitle": "Amet semper tortor"
+}

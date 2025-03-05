@@ -1,9 +1,9 @@
 <template>
   <div class="footer">
-    <div class="footer__title">{{ footer.title }}</div>
-    <div class="footer__subtitle">{{ footer.subtitle }}</div>
+    <div class="footer__title">{{ title }}</div>
+    <div class="footer__subtitle">{{ subtitle }}</div>
     <div class="footer__text">
-      {{ footer.description }}
+      {{ description }}
     </div>
     <div class="footer__breakline">
       <div v-for="(item, i) in 16" :key="i" class="footer__breakline-item" />
@@ -32,13 +32,30 @@
 <script>
 export default {
   props: {
-    footer: {
-      type: Object,
+    title: {
+      required: false,
+      default: '',
+      type: String,
+    },
+    subtitle: {
+      required: false,
+      default: '',
+      type: String,
+    },
+    description: {
+      required: false,
+      default: '',
+      type: String,
+    },
+    links: {
+      required: false,
+      default: () => [],
+      type: Array,
     },
   },
   methods: {
     getShownLinks() {
-      return this.footer.links.filter((e) => e.is_shown)
+      return this.links.filter((e) => e.is_shown)
     },
   },
 }

@@ -142,7 +142,7 @@ export default {
       setTimeout(() => (this.isNextClicked = false), 500)
     },
     getCurrentLocale() {
-      return this.$i18n.localeProperties.code
+      return this.$i18n.localeProperties.albumCode
     },
     getSidebarContent(key) {
       return this.getCurrentLocale() === 'ru'

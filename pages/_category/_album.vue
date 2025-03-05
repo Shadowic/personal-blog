@@ -30,6 +30,8 @@
 </template>
 
 <script>
+import rawImages from 'static/images.json'
+
 export default {
   layout: 'page',
   transition: {
@@ -57,48 +59,7 @@ export default {
   data() {
     return {
       openedImgIndex: -1,
-      rawImages: [
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-        '/imgs/IMG_9547.jpg',
-        '/imgs/IMG_9408.jpg',
-        '/imgs/IMG_9484.jpg',
-        '/imgs/IMG_9542.jpg',
-      ],
+      rawImages,
     }
   },
   computed: {

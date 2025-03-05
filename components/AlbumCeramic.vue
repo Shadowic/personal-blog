@@ -9,7 +9,7 @@
         <p class="album__text" v-html="description"></p>
         <nuxt-link
           v-if="hasButton"
-          :to="localePath(`/${albumCode}/${albumCode}`)"
+          :to="localePath(`/ceramicon/${pageCode}`)"
           class="btn album__btn"
         >
           <span v-html="buttonText"></span>
@@ -68,7 +68,7 @@ export default {
       default: '',
       type: String,
     },
-    code: {
+    pageCode: {
       required: false,
       default: '',
       type: String,

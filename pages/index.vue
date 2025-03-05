@@ -54,20 +54,35 @@
         </div>
         <div class="index__albums">
           <AlbumIndex
-            v-for="(album, index) in albums.data"
-            :key="index"
-            :album="album"
-            :code="album.attributes.category.data.attributes.code"
+            v-for="(album, indexkey) in albums.data"
+            :key="indexkey"
+            :title="album.attributes.title"
+            :album-code="album.attributes.albumCode"
+            :date="album.attributes.date"
+            :page-code="album.attributes.pageCode"
+            :cover="album.attributes.cover.data.attributes.formats.medium.url"
             class="animation-target"
           />
         </div>
       </div>
-      <FooterIndex v-if="footer" :footer="footer" />
+      <FooterIndex
+        v-if="footer"
+        :title="footer.title"
+        :subtitle="footer.subtitle"
+        :description="footer.description"
+        :links="footer.links"
+      />
     </div>
   </div>
 </template>
 
 <script>
+import index from 'static/index.json'
+import navbar from 'static/navbar.json'
+import slider from 'static/indexslider.json'
+import albums from 'static/indexalbums.json'
+import footer from 'static/footer.json'
+
 export default {
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
@@ -98,257 +113,11 @@ export default {
   // },
   data() {
     return {
-      navbar: {
-        Menu: [
-          {
-            url: '/',
-            title: 'main page',
-          },
-          {
-            url: '/cakes',
-            title: 'cakes',
-          },
-          {
-            url: '/ceramic-album',
-            title: 'ceramic album',
-          },
-          {
-            url: '/test1',
-            title: 'test1',
-          },
-          {
-            url: '/test2',
-            title: 'test2',
-          },
-          {
-            url: '/about',
-            title: 'about',
-          },
-        ],
-        logo: {
-          data: {
-            attributes: {
-              url: '/imgs/logo.png',
-            },
-          },
-        },
-        subtitle: 'Welcome!',
-        caption: 'visit',
-        caption2: 'please',
-      },
-      index: {
-        logo: {
-          data: {
-            attributes: {
-              url: '/imgs/logo.png',
-            },
-          },
-        },
-        welcome: 'Personal blog',
-        title: 'Путешествия, о&nbsp;которых хочется рассказать',
-        description:
-          'Добро пожаловать! Welcome! ¡Bienvenidos! Herzlich&nbsp;willkommen! Bienvenue! Benvenuti! Bem-vindos!',
-        feed_title: 'Maecenas sit',
-        feed_subtitle: 'Amet semper tortor',
-      },
-      albums: {
-        data: [
-          {
-            attributes: {
-              title: 'Керамика, созданная с душой',
-              code: 'ceramicon',
-              date: 'may 2020',
-              category: {
-                data: {
-                  attributes: {
-                    code: 'ceramicon',
-                  },
-                },
-              },
-              cover: {
-                data: {
-                  attributes: {
-                    formats: {
-                      medium: {
-                        url: '/imgs/IMG_9408.jpg',
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-          {
-            attributes: {
-              title: 'Натюрморты, пока домашние всё не сожрали',
-              code: 'cakes',
-              date: 'feb 2017',
-              category: {
-                data: {
-                  attributes: {
-                    code: 'cakes',
-                  },
-                },
-              },
-              cover: {
-                data: {
-                  attributes: {
-                    formats: {
-                      medium: {
-                        url: '/imgs/IMG_9484.jpg',
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-          {
-            attributes: {
-              title: 'Фото еды, которые типа как в Пинтерест',
-              code: 'foooood',
-              date: 'june 2024',
-              category: {
-                data: {
-                  attributes: {
-                    code: 'foooood',
-                  },
-                },
-              },
-              cover: {
-                data: {
-                  attributes: {
-                    formats: {
-                      medium: {
-                        url: '/imgs/IMG_9542.jpg',
-                      },
-                    },
-                  },
-                },
-              },
-            },
-          },
-        ],
-      },
-      slider: {
-        data: [
-          {
-            attributes: {
-              title: 'eat',
-              description:
-                'Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus.',
-              cover: {
-                data: {
-                  attributes: {
-                    url: '/imgs/IMG_9408.jpg',
-                  },
-                },
-              },
-            },
-          },
-          {
-            attributes: {
-              title: 'pray',
-              description:
-                'Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. ',
-              cover: {
-                data: {
-                  attributes: {
-                    url: '/imgs/IMG_9484.jpg',
-                  },
-                },
-              },
-            },
-          },
-          {
-            attributes: {
-              title: 'live',
-              description:
-                'Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac.',
-              cover: {
-                data: {
-                  attributes: {
-                    url: '/imgs/IMG_9542.jpg',
-                  },
-                },
-              },
-            },
-          },
-        ],
-      },
-      footer: {
-        title: 'Nunc ut volutpat purus',
-        subtitle: 'Pellentesque ac commodo tellus',
-        description:
-          'uspendisse dolor ligula, semper in diam vitae, interdum sagittis tortor. Mauris id gravida enim. Pellentesque eget turpis placerat risus consequat varius malesuada a nulla.',
-        links: [
-          {
-            is_shown: true,
-            id: 0,
-            url: '/',
-            title: 'coffee',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/coffee-cup.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: true,
-            id: 1,
-            url: '/',
-            title: 'github',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/github.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: false,
-            id: 2,
-            url: '/',
-            title: 'loupe',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/loupe.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: true,
-            id: 3,
-            url: '/',
-            title: 'insta',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/pinterest.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: true,
-            id: 4,
-            url: '/',
-            title: 'insta',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/telegram.svg',
-                },
-              },
-            },
-          },
-        ],
-      },
+      index,
+      navbar,
+      slider,
+      footer,
+      albums,
       animations: '',
       animations1: '',
       animations2: '',

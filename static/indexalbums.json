@@ -1,0 +1,80 @@
+{
+  "data": [
+    {
+      "attributes": {
+        "title": "Круженька, созданная с душой",
+        "albumCode": "ceramicon",
+        "date": "may 2020",
+        "pageCode": "mugs",
+        "cover": {
+          "data": {
+            "attributes": {
+              "formats": {
+                "medium": {
+                  "url": "/imgs/IMG_0004.webp"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "title": "Натюрморты, пока домашние всё не сожрали",
+        "albumCode": "foooood",
+        "date": "feb 2017",
+        "pageCode": "cakes",
+        "cover": {
+          "data": {
+            "attributes": {
+              "formats": {
+                "medium": {
+                  "url": "/imgs/IMG_9542.jpg"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "title": "Пярну, который вдохновляет",
+        "albumCode": "travel",
+        "date": "sept 2017",
+        "pageCode": "parnu",
+        "cover": {
+          "data": {
+            "attributes": {
+              "formats": {
+                "medium": {
+                  "url": "/imgs/IMG_0005.webp"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "title": "Фото еды, которые типа как в Пинтерест",
+        "albumCode": "foooood",
+        "date": "june 2024",
+        "pageCode": "cakes",
+        "cover": {
+          "data": {
+            "attributes": {
+              "formats": {
+                "medium": {
+                  "url": "/imgs/IMG_0006.webp"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -5,11 +5,18 @@
     <div class="page-content">
       <Nuxt />
     </div>
-    <Footer v-if="footer" :footer="footer" />
+    <Footer
+      v-if="footer"
+      :titlesub="footer.titlesub"
+      :year="footer.year"
+      :links="footer.links"
+    />
   </div>
 </template>
 
 <script>
+import footer from 'static/footer.json'
+
 export default {
   layoutTransition: {
     name: 'layout',
@@ -26,11 +33,11 @@ export default {
             title: 'main page',
           },
           {
-            url: '/cakes',
-            title: 'cakes',
+            url: '/travel',
+            title: 'travel',
           },
           {
-            url: '/ceramic-album',
+            url: '/ceramicon',
             title: 'ceramic album',
           },
           {
@@ -57,77 +64,7 @@ export default {
         caption: 'visit',
         caption2: 'please',
       },
-      footer: {
-        title: 'Morbi finibus',
-        subtitle: '2024',
-        links: [
-          {
-            is_shown: true,
-            id: 0,
-            url: '/',
-            title: 'coffee',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/coffee-cup.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: true,
-            id: 1,
-            url: '/',
-            title: 'github',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/github.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: false,
-            id: 2,
-            url: '/',
-            title: 'loupe',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/loupe.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: true,
-            id: 3,
-            url: '/',
-            title: 'insta',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/pinterest.svg',
-                },
-              },
-            },
-          },
-          {
-            is_shown: true,
-            id: 4,
-            url: '/',
-            title: 'insta',
-            icon: {
-              data: {
-                attributes: {
-                  url: '/svgs/telegram.svg',
-                },
-              },
-            },
-          },
-        ],
-      },
+      footer,
     }
   },
   // async fetch() {

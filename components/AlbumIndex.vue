@@ -3,7 +3,7 @@
     <div class="album__description">
       <div class="album__top">
         <p class="album__date">
-          <time datetime="2001-05-01">{{ album.attributes.date }}</time>
+          <time datetime="2001-05-01">{{ date }}</time>
         </p>
         <div class="border__dots">
           <div
@@ -13,12 +13,12 @@
           ></div>
         </div>
         <p class="album__tag">
-          {{ album.attributes.category.data.attributes.code }}
+          {{ albumCode }}
         </p>
       </div>
-      <p class="album__title">{{ album.attributes.title }}</p>
+      <p class="album__title">{{ title }}</p>
       <button class="button button__open">
-        <span>открыть</span>
+        <span>перейти к альбому</span>
         <svg
           width="18"
           height="8"
@@ -39,13 +39,10 @@
       @mouseleave="removeClassHovered"
     >
       <nuxt-link
-        :to="localePath(`/${code}/${album.attributes.code}`)"
+        :to="localePath(`/${albumCode}/${pageCode}`)"
         class="album__image"
       >
-        <img
-          :src="album.attributes.cover.data.attributes.formats.medium.url"
-          alt="album cover"
-        />
+        <img :src="cover" alt="album cover" />
       </nuxt-link>
     </div>
   </div>
@@ -54,19 +51,23 @@
 <script>
 export default {
   props: {
-    album: {
-      required: true,
-      type: Object,
-    },
-    albumType: {
+    title: {
       default: '',
       type: String,
     },
-    code: {
+    albumCode: {
       default: '',
       type: String,
     },
-    backgroundImage: {
+    date: {
+      default: '',
+      type: String,
+    },
+    pageCode: {
+      default: '',
+      type: String,
+    },
+    cover: {
       default: '',
       type: String,
     },

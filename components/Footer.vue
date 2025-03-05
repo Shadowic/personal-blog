@@ -2,7 +2,7 @@
   <div class="footer">
     <div class="container">
       <div class="footer__inner">
-        <div class="footer__title">{{ footer.title }}</div>
+        <div class="footer__title">{{ titlesub }}</div>
         <address class="social">
           <a
             v-for="link in getShownLinks()"
@@ -21,7 +21,7 @@
             />
           </a>
         </address>
-        <div class="footer__subtitle">{{ footer.subtitle }}</div>
+        <div class="footer__subtitle">{{ year }}</div>
       </div>
     </div>
   </div>
@@ -30,13 +30,25 @@
 <script>
 export default {
   props: {
-    footer: {
-      type: Object,
+    titlesub: {
+      required: false,
+      default: '',
+      type: String,
+    },
+    year: {
+      required: false,
+      default: '',
+      type: String,
+    },
+    links: {
+      required: false,
+      default: () => [],
+      type: Array,
     },
   },
   methods: {
     getShownLinks() {
-      return this.footer.links.filter((e) => e.is_shown)
+      return this.links.filter((e) => e.is_shown)
     },
   },
 }
