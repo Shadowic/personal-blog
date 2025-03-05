@@ -72,6 +72,24 @@
       ]
     },
     {
+      "title": "Тортики",
+      "caption": "",
+      "description":
+      "Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные средневековые улочки, монументальные замки и&nbsp;современные архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash; это увлекательное путешествие во&nbsp;времени, где каждый уголок хранит свои секреты и&nbsp;легенды.",
+      "button": true,
+      "buttonText": "перейти",
+      "albumCode": "foooood",
+      "pageCode": "Cakes",
+      "imageMain": "/imgs/IMG_9408.jpg",
+      "imagesPreview": [
+        "/imgs/IMG_9408.jpg",
+        "/imgs/IMG_9408.jpg",
+        "/imgs/IMG_9408.jpg",
+        "/imgs/IMG_9408.jpg",
+        "/imgs/IMG_9408.jpg"
+      ]
+    },
+    {
       "title": "Печеньки",
       "caption": "",
       "description":
@@ -82,11 +100,11 @@
       "pageCode": "Cookies",
       "imageMain": "/imgs/IMG_9542.jpg",
       "imagesPreview": [
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9484.jpg",
         "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9484.jpg",
+        "/imgs/IMG_9542.jpg",
+        "/imgs/IMG_9542.jpg",
+        "/imgs/IMG_9542.jpg",
+        "/imgs/IMG_9542.jpg",
         "/imgs/IMG_9542.jpg"
       ]
     },
@@ -101,31 +119,12 @@
       "pageCode": "Bread",
       "imageMain": "/imgs/IMG_0006.webp",
       "imagesPreview": [
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9542.jpg"
-      ]
-    },
-    {
-      "title": "Тортики",
-      "caption": "",
-      "description":
-      "Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные средневековые улочки, монументальные замки и&nbsp;современные архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash; это увлекательное путешествие во&nbsp;времени, где каждый уголок хранит свои секреты и&nbsp;легенды.",
-      "button": true,
-      "buttonText": "перейти",
-      "albumCode": "foooood",
-      "pageCode": "Cakes",
-      "imageMain": "/imgs/IMG_9408.jpg",
-      "imagesPreview": [
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9542.jpg"
+        "/imgs/IMG_0006.webp",
+        "/imgs/IMG_0006.webp",
+        "/imgs/IMG_0006.webp",
+        "/imgs/IMG_0006.webp",
+        "/imgs/IMG_0006.webp",
+        "/imgs/IMG_0006.webp"
       ]
     },
     {
@@ -139,12 +138,10 @@
       "pageCode": "Pancakes",
       "imageMain": "/imgs/IMG_9484.jpg",
       "imagesPreview": [
-        "/imgs/IMG_9408.jpg",
         "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9408.jpg",
         "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9542.jpg"
+        "/imgs/IMG_9484.jpg",
+        "/imgs/IMG_9484.jpg"
       ]
     }
 ]

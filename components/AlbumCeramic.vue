@@ -75,7 +75,7 @@ export default {
     },
     imageMain: {
       required: true,
-      default: '/imgs/IMG_9547.jpg',
+      default: '/imgs/IMG_0003.webp',
       type: String,
     },
     imagesPreview: {
