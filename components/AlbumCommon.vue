@@ -29,17 +29,6 @@
   </div>
 </template>
 
-<i18n>
-{
-  "ru": {
-    "discover": "открыть"
-  },
-  "en": {
-    "discover": "discover"
-  }
-}
-</i18n>
-
 <script>
 import AOS from 'aos'
 import 'aos/dist/aos.css'

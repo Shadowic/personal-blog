@@ -1,147 +1,139 @@
 [
-    {
-      "title": "Брюссель",
-      "caption": "февраль 2016",
-      "description":
-      "Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&laquo;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &laquo;Флоренцией на&nbsp;Эльбе&raquo;.",
-      "button": true,
-      "buttonText": "перейти",
-      "albumCode": "travel",
-      "pageCode": "Brussels",
-      "imageMain": "/imgs/IMG_0007.webp",
-      "imagesPreview": [
-        "/imgs/IMG_0013.webp",
-        "/imgs/IMG_0009.webp",
-        "/imgs/IMG_0010.webp",
-        "/imgs/IMG_0011.webp",
-        "/imgs/IMG_0012.webp",
-        "/imgs/IMG_0014.webp",
-        "/imgs/IMG_0015.webp"
-      ]
-    },
-    {
-      "title": "Стокгольм",
-      "caption": "август 2013",
-      "description":
-      "берлин&nbsp;&mdash; это место, где история встречается с&nbsp;природой. Здесь вы&nbsp;можете увидеть руины древних крепостей, пройтись по&nbsp;лесам, полным грибов и&nbsp;ягод, и&nbsp;полюбоваться красотой нетронутой природы. берлин&nbsp;&mdash; это идеальное место для тех, кто хочет отдохнуть от&nbsp;шума города и&nbsp;погрузиться в&nbsp;атмосферу спокойствия и&nbsp;красоты.",
-      "button": true,
-      "buttonText": "button",
-      "albumCode": "travel",
-      "pageCode": "Berlin",
-      "imageMain": "/imgs/IMG_0017.webp",
-      "imagesPreview": [
-        "/imgs/IMG_0018.webp",
-        "/imgs/IMG_0019.webp",
-        "/imgs/IMG_0020.webp",
-        "/imgs/IMG_0021.webp"
-      ]
-    },
-    {
-      "title": "Сибиу",
-      "caption": "август 2018",
-      "description":
-      "Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные средневековые улочки, монументальные замки и&nbsp;современные архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash; это увлекательное путешествие во&nbsp;времени, где каждый уголок хранит свои секреты и&nbsp;легенды.",
-      "button": true,
-      "buttonText": "перейти",
-      "albumCode": "travel",
-      "pageCode": "Sibiu",
-      "imageMain": "/imgs/IMG_0022.webp",
-      "imagesPreview": [
-        "/imgs/IMG_0024.webp",
-        "/imgs/IMG_0025.webp",
-        "/imgs/IMG_0026.webp",
-        "/imgs/IMG_0023.webp"
-      ]
-    },
-    {
-      "title": "Италия",
-      "caption": "июль 2017",
-      "description":
-      "берлин&nbsp;&mdash; это место, где история встречается с&nbsp;природой. Здесь вы&nbsp;можете увидеть руины древних крепостей, пройтись по&nbsp;лесам, полным грибов и&nbsp;ягод, и&nbsp;полюбоваться красотой нетронутой природы. берлин&nbsp;&mdash; это идеальное место для тех, кто хочет отдохнуть от&nbsp;шума города и&nbsp;погрузиться в&nbsp;атмосферу спокойствия и&nbsp;красоты.Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные средневековые улочки, монументальные замки и&nbsp;современные архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash; это увлекательное путешествие во&nbsp;времени, где каждый уголок хранит свои секреты и&nbsp;легенды.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &laquo;Флоренцией на&nbsp;Эльбе&raquo;.",
-      "button": true,
-      "buttonText": "button",
-      "albumCode": "travel",
-      "pageCode": "Italy",
-      "imageMain": "/imgs/IMG_0027.webp",
-      "imagesPreview": [
-        "/imgs/IMG_0028.webp",
-        "/imgs/IMG_0029.webp",
-        "/imgs/IMG_0030.webp",
-        "/imgs/IMG_0031.webp",
-        "/imgs/IMG_0032.webp"
-      ]
-    },
-    {
-      "title": "Тортики",
-      "caption": "",
-      "description":
-      "Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные средневековые улочки, монументальные замки и&nbsp;современные архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash; это увлекательное путешествие во&nbsp;времени, где каждый уголок хранит свои секреты и&nbsp;легенды.",
-      "button": true,
-      "buttonText": "перейти",
-      "albumCode": "foooood",
-      "pageCode": "Cakes",
-      "imageMain": "/imgs/IMG_9408.jpg",
-      "imagesPreview": [
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9408.jpg",
-        "/imgs/IMG_9408.jpg"
-      ]
-    },
-    {
-      "title": "Печеньки",
-      "caption": "",
-      "description":
-      "Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&quot;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &quot;Флоренцией на&nbsp;Эльбе&laquo;.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &laquo;Флоренцией на&nbsp;Эльбе&raquo;.",
-      "button": true,
-      "buttonText": "перейти",
-      "albumCode": "foooood",
-      "pageCode": "Cookies",
-      "imageMain": "/imgs/IMG_9542.jpg",
-      "imagesPreview": [
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9542.jpg",
-        "/imgs/IMG_9542.jpg"
-      ]
-    },
-    {
-      "title": "Хлебушек",
-      "caption": "",
-      "description":
-      "берлин&nbsp;&mdash; это место, где история встречается с&nbsp;природой. Здесь вы&nbsp;можете увидеть руины древних крепостей, пройтись по&nbsp;лесам, полным грибов и&nbsp;ягод, и&nbsp;полюбоваться красотой нетронутой природы. берлин&nbsp;&mdash; это идеальное место для тех, кто хочет отдохнуть от&nbsp;шума города и&nbsp;погрузиться в&nbsp;атмосферу спокойствия и&nbsp;красоты.",
-      "button": true,
-      "buttonText": "button",
-      "albumCode": "foooood",
-      "pageCode": "Bread",
-      "imageMain": "/imgs/IMG_0006.webp",
-      "imagesPreview": [
-        "/imgs/IMG_0006.webp",
-        "/imgs/IMG_0006.webp",
-        "/imgs/IMG_0006.webp",
-        "/imgs/IMG_0006.webp",
-        "/imgs/IMG_0006.webp",
-        "/imgs/IMG_0006.webp"
-      ]
-    },
-    {
-      "title": "Панкейкушки",
-      "caption": "",
-      "description":
-      "берлин&nbsp;&mdash; это место, где история встречается с&nbsp;природой. Здесь вы&nbsp;можете увидеть руины древних крепостей, пройтись по&nbsp;лесам, полным грибов и&nbsp;ягод, и&nbsp;полюбоваться красотой нетронутой природы. берлин&nbsp;&mdash; это идеальное место для тех, кто хочет отдохнуть от&nbsp;шума города и&nbsp;погрузиться в&nbsp;атмосферу спокойствия и&nbsp;красоты.Гейдельберг&nbsp;&mdash; это место, где история и&nbsp;современность сплетаются в&nbsp;единое целое. Здесь вы&nbsp;найдете очаровательные средневековые улочки, монументальные замки и&nbsp;современные архитектурные шедевры. Прогулка по&nbsp;Гейдельбергу&nbsp;&mdash; это увлекательное путешествие во&nbsp;времени, где каждый уголок хранит свои секреты и&nbsp;легенды.Дрезден&nbsp;&mdash; это город, где история сплетается с&nbsp;роскошью. Прогуляйтесь по&nbsp;Цвингеру, восхищаясь его архитектурой, окунитесь в&nbsp;мир искусства в&nbsp;Альбертинуме, пройдитесь по&nbsp;берегу Эльбы, любуясь панорамой города,&nbsp;&mdash; и&nbsp;вы&nbsp;поймете, почему Дрезден называют &laquo;Флоренцией на&nbsp;Эльбе&raquo;.",
-      "button": true,
-      "buttonText": "button",
-      "albumCode": "foooood",
-      "pageCode": "Pancakes",
-      "imageMain": "/imgs/IMG_9484.jpg",
-      "imagesPreview": [
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9484.jpg",
-        "/imgs/IMG_9484.jpg"
-      ]
-    }
+  {
+    "title": "Brussels",
+    "caption": "february",
+    "description": "BrusselsDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "travel",
+    "pageCode": "Brussels",
+    "imageMain": "/imgs/IMG_0007.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0013.webp",
+      "/imgs/IMG_0009.webp",
+      "/imgs/IMG_0010.webp",
+      "/imgs/IMG_0011.webp",
+      "/imgs/IMG_0012.webp",
+      "/imgs/IMG_0014.webp",
+      "/imgs/IMG_0015.webp"
+    ]
+  },
+  {
+    "title": "Stockholm",
+    "caption": "august",
+    "description": "StockholmDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "travel",
+    "pageCode": "Stockholm",
+    "imageMain": "/imgs/IMG_0017.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0018.webp",
+      "/imgs/IMG_0019.webp",
+      "/imgs/IMG_0020.webp",
+      "/imgs/IMG_0021.webp"
+    ]
+  },
+  {
+    "title": "Sibiu",
+    "caption": "august",
+    "description": "SibiuDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "travel",
+    "pageCode": "Sibiu",
+    "imageMain": "/imgs/IMG_0022.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0024.webp",
+      "/imgs/IMG_0025.webp",
+      "/imgs/IMG_0026.webp",
+      "/imgs/IMG_0023.webp"
+    ]
+  },
+  {
+    "title": "Italy",
+    "caption": "july",
+    "description": "ItalyDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "travel",
+    "pageCode": "Italy",
+    "imageMain": "/imgs/IMG_0027.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0028.webp",
+      "/imgs/IMG_0029.webp",
+      "/imgs/IMG_0030.webp",
+      "/imgs/IMG_0031.webp",
+      "/imgs/IMG_0032.webp"
+    ]
+  },
+  {
+    "title": "cakes",
+    "caption": "",
+    "description": "cakesDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "foooood",
+    "pageCode": "Cakes",
+    "imageMain": "/imgs/IMG_9408.jpg",
+    "imagesPreview": [
+      "/imgs/IMG_9408.jpg",
+      "/imgs/IMG_9408.jpg",
+      "/imgs/IMG_9408.jpg",
+      "/imgs/IMG_9408.jpg",
+      "/imgs/IMG_9408.jpg"
+    ]
+  },
+  {
+    "title": "cookies",
+    "caption": "",
+    "description": "cookiesDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "foooood",
+    "pageCode": "Cookies",
+    "imageMain": "/imgs/IMG_9542.jpg",
+    "imagesPreview": [
+      "/imgs/IMG_9542.jpg",
+      "/imgs/IMG_9542.jpg",
+      "/imgs/IMG_9542.jpg",
+      "/imgs/IMG_9542.jpg",
+      "/imgs/IMG_9542.jpg",
+      "/imgs/IMG_9542.jpg"
+    ]
+  },
+  {
+    "title": "bread",
+    "caption": "",
+    "description": "breadDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "foooood",
+    "pageCode": "Bread",
+    "imageMain": "/imgs/IMG_0006.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0006.webp",
+      "/imgs/IMG_0006.webp",
+      "/imgs/IMG_0006.webp",
+      "/imgs/IMG_0006.webp",
+      "/imgs/IMG_0006.webp",
+      "/imgs/IMG_0006.webp"
+    ]
+  },
+  {
+    "title": "pancakes",
+    "caption": "",
+    "description": "pancakesDesrc",
+    "button": true,
+    "buttonText": "go",
+    "albumCode": "foooood",
+    "pageCode": "Pancakes",
+    "imageMain": "/imgs/IMG_9484.jpg",
+    "imagesPreview": [
+      "/imgs/IMG_9484.jpg",
+      "/imgs/IMG_9484.jpg",
+      "/imgs/IMG_9484.jpg",
+      "/imgs/IMG_9484.jpg"
+    ]
+  }
 ]

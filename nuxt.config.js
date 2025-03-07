@@ -81,9 +81,14 @@ export default {
   },
 
   i18n: {
-    locales: ['ru', 'en'],
+    locales: [
+      { code: 'ru', iso: 'ru-RU', file: 'ru.json' },
+      { code: 'en', iso: 'en-US', file: 'en.json' },
+    ],
     defaultLocale: 'ru',
+    lazy: true,
     strategy: 'prefix_except_default',
+    langDir: 'locales/',
     detectBrowserLanguage: false,
     vueI18nLoader: true,
     vueI18n: {
