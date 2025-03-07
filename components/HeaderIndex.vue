@@ -29,7 +29,6 @@
       <Navbar :navbar="navbar" @onLinkClick="closeNav" />
       <small class="sliding-area__bottom">
         <span>{{ navbar.caption }}</span>
-        <span>{{ navbar.caption2 }}</span>
       </small>
     </div>
   </div>

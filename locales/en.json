@@ -26,6 +26,7 @@
   "december": "december",
   "travel": "travel",
   "food": "food",
+  "ceramic": "ceramic",
   "BrusselsDesrc": "Brussels is&nbsp;the charming capital of&nbsp;Belgium, harmoniously blending medieval architecture with modern life. The city is&nbsp;renowned for its exquisite waffles, delicious chocolate, and rich history. The city center, with its Grand Place&nbsp;&mdash; one of&nbsp;the most beautiful squares in&nbsp;Europe&nbsp;&mdash; is&nbsp;surrounded by&nbsp;historic buildings, guildhalls, and the Gothic Cathedral of&nbsp;St. Michael and St. Gudula. Here you can also see the famous Manneken Pis, a&nbsp;bronze statue of&nbsp;a&nbsp;boy urinating into a&nbsp;fountain.",
   "StockholmDesrc": "Stockholm is the capital of Sweden, spread across 14 islands connected by bridges, giving the city a unique charm. The Old Town (Gamla Stan), with its narrow streets, medieval buildings, and brightly colored houses, immerses visitors in the atmosphere of past centuries. Here you'll find the Royal Palace (Kungliga Slottet), Storkyrkan (St. Nicholas Church), and numerous charming cafes and shops.",
   "SibiuDesrc": "Sibiu is&nbsp;a&nbsp;charming city in&nbsp;Transylvania, Romania, harmoniously blending medieval architecture with modern life. Its well-preserved historical center, a&nbsp;UNESCO World Heritage Site, is&nbsp;filled with narrow cobblestone streets, colorful houses with tiled roofs, and majestic buildings. Here you&rsquo;ll find the main square (Piata Mare), the City Hall, the Evangelical Church, and many other landmarks that transport visitors back to&nbsp;the Middle Ages.",
@@ -37,5 +38,10 @@
   "fougeresDesrc": "The wine glass, like a&nbsp;crystal flower, opens its petals to&nbsp;reveal a&nbsp;noble wine. Made of&nbsp;thin glass, with an&nbsp;elegant stem and wide rim, it&nbsp;is&nbsp;designed to&nbsp;highlight the beauty and aroma of&nbsp;the drink. In&nbsp;its depths, playing in&nbsp;the light, the wine reveals its nuances and flavors, and the glass becomes not just tableware, but a&nbsp;true work of&nbsp;art.",
   "cupsDesrc": "This cup is&nbsp;a&nbsp;cozy haven for your favorite drinks. With its warm walls and elegant rim, it&nbsp;offers comfort and coziness, making the aroma of&nbsp;tea or&nbsp;coffee even more captivating. In&nbsp;its depths, the flavors of&nbsp;the drinks unfold, and cozy evenings become warmer and more comfortable.",
   "platesDesrc": "This plate is&nbsp;more than just an&nbsp;empty surface. It&rsquo;s a&nbsp;canvas for a&nbsp;culinary masterpiece, where each ingredient plays its part. Smooth, elegant, with a&nbsp;thin rim, it&nbsp;highlights the beauty and freshness of&nbsp;the dish, and its size is&nbsp;perfect for savoring each portion. On&nbsp;it, the festive table comes alive, and culinary masterpieces find their completion.",
-  "mugsDesrc": "This mug is&nbsp;not just a&nbsp;vessel for drinks, but a&nbsp;true friend for mornings and evenings. Made of&nbsp;sturdy ceramic, it&nbsp;keeps your drink warm and offers coziness, while the bright design on&nbsp;its surface lifts your spirits. Whether you&rsquo;re drinking coffee, tea, or&nbsp;just water, this mug will make your ritual more pleasant and comfortable."
+  "mugsDesrc": "This mug is&nbsp;not just a&nbsp;vessel for drinks, but a&nbsp;true friend for mornings and evenings. Made of&nbsp;sturdy ceramic, it&nbsp;keeps your drink warm and offers coziness, while the bright design on&nbsp;its surface lifts your spirits. Whether you&rsquo;re drinking coffee, tea, or&nbsp;just water, this mug will make your ritual more pleasant and comfortable.",
+  "mainPage": "main page",
+  "about": "about",
+  "indexSliderDescrTravel": "Don&rsquo;t be&nbsp;afraid to&nbsp;get lost, for it&nbsp;is&nbsp;then that you will find yourself",
+  "indexSliderDescrFood": "Life&rsquo;s too short to&nbsp;eat boring food",
+  "indexSliderDescrCeramic": "Every crack tells a&nbsp;story, every curve holds beauty. That&rsquo;s the magic of&nbsp;ceramics"
 }

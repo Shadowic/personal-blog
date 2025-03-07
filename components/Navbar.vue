@@ -6,7 +6,7 @@
       :to="localePath(navitem.url)"
       class="nav__item"
       @click.native="$emit('onLinkClick')"
-      >{{ navitem.title }}</nuxt-link
+      >{{ $t(navitem.title) }}</nuxt-link
     >
   </div>
 </template>

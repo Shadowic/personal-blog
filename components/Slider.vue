@@ -1,18 +1,21 @@
 <template>
   <div :class="animations3" class="slider">
     <div
-      v-for="(image, index) in slider"
+      v-for="(item, index) in slider"
       :key="index"
       class="slider__container"
       :class="index === currentImageIndex ? 'active' : ''"
     >
       <img
-        :src="`${image.attributes.cover.data.attributes.url}`"
+        :src="`${item.attributes.cover.data.attributes.url}`"
         class="slider__image"
       />
       <div class="slider__caption">
-        <h2 class="slider__title" v-html="image.attributes.title" />
-        <p class="slider__description" v-html="image.attributes.description" />
+        <h2 class="slider__title" v-html="$t(item.attributes.title)" />
+        <p
+          class="slider__description"
+          v-html="$t(item.attributes.description)"
+        />
       </div>
       <div class="background-gradient" />
     </div>

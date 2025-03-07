@@ -2,9 +2,8 @@
   "data": [
     {
       "attributes": {
-        "title": "eat",
-        "description":
-        "Nulla id enim odio. Aliquam eu dignissim tortor, semper sagittis lorem. Etiam urna enim, tristique eu neque sed, volutpat volutpat sem. Vestibulum ut mauris eu neque ultricies finibus.",
+        "title": "travel",
+        "description": "indexSliderDescrTravel",
         "cover": {
           "data": {
             "attributes": {
@@ -16,9 +15,8 @@
     },
     {
       "attributes": {
-        "title": "pray",
-        "description":
-        "Morbi tempus at metus ut pellentesque. Aenean tellus nulla, condimentum eu mollis non, dictum in arcu. In eget turpis et felis eleifend viverra vel ut lorem. In elementum libero ante, et euismod nunc porttitor eget. ",
+        "title": "food",
+        "description": "indexSliderDescrFood",
         "cover": {
           "data": {
             "attributes": {
@@ -30,9 +28,8 @@
     },
     {
       "attributes": {
-        "title": "live",
-        "description":
-        "Vivamus vitae ullamcorper sem. Aliquam diam est, dapibus in mi non, scelerisque fermentum augue. Proin volutpat purus turpis, in pretium sem commodo ac.",
+        "title": "ceramic",
+        "description": "indexSliderDescrCeramic",
         "cover": {
           "data": {
             "attributes": {

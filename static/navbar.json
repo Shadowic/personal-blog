@@ -2,7 +2,7 @@
   "Menu": [
     {
       "url": "/",
-      "title": "main page"
+      "title": "mainPage"
     },
     {
       "url": "/travel",
@@ -10,11 +10,11 @@
     },
     {
       "url": "/foooood",
-      "title": "foooood"
+      "title": "food"
     },
     {
       "url": "/ceramicon",
-      "title": "ceramic album"
+      "title": "ceramic"
     },
     {
       "url": "/test1",
@@ -37,6 +37,5 @@
     }
   },
   "subtitle": "Welcome!",
-  "caption": "visit",
-  "caption2": "please"
+  "caption": "2025"
 }
