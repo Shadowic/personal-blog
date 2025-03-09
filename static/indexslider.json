@@ -2,12 +2,12 @@
   "data": [
     {
       "attributes": {
-        "title": "travel",
-        "description": "indexSliderDescrTravel",
+        "title": "indexPage.slider.travel.title",
+        "description": "indexPage.slider.travel.description",
         "cover": {
           "data": {
             "attributes": {
-              "url": "/imgs/IMG_9408.jpg"
+              "url": "/imgs/IMG_0025.webp"
             }
           }
         }
@@ -15,25 +15,25 @@
     },
     {
       "attributes": {
-        "title": "food",
-        "description": "indexSliderDescrFood",
-        "cover": {
-          "data": {
-            "attributes": {
-              "url": "/imgs/IMG_9484.jpg"
-            }
-          }
-        }
-      }
-    },
-    {
-      "attributes": {
-        "title": "ceramic",
-        "description": "indexSliderDescrCeramic",
+        "title": "indexPage.slider.food.title",
+        "description": "indexPage.slider.food.description",
         "cover": {
           "data": {
             "attributes": {
               "url": "/imgs/IMG_9542.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "attributes": {
+        "title": "indexPage.slider.ceramic.title",
+        "description": "indexPage.slider.ceramic.description",
+        "cover": {
+          "data": {
+            "attributes": {
+              "url": "/imgs/IMG_0004.webp"
             }
           }
         }

@@ -2,9 +2,11 @@
   "data": [
     {
       "attributes": {
-        "title": "Круженька, созданная с душой",
-        "albumCode": "ceramicon",
-        "date": "may 2020",
+        "date": "indexPage.album1.date",
+        "tag": "indexPage.album1.tag",
+        "title": "indexPage.album1.title",
+        "btnText": "indexPage.album1.btnText",
+        "albumCode": "ceramic",
         "pageCode": "mugs",
         "cover": {
           "data": {
@@ -21,9 +23,11 @@
     },
     {
       "attributes": {
-        "title": "Натюрморты, пока домашние всё не сожрали",
-        "albumCode": "foooood",
-        "date": "feb 2017",
+        "date": "indexPage.album2.date",
+        "tag": "indexPage.album2.tag",
+        "title": "indexPage.album2.title",
+        "btnText": "indexPage.album2.btnText",
+        "albumCode": "food",
         "pageCode": "cakes",
         "cover": {
           "data": {
@@ -40,9 +44,11 @@
     },
     {
       "attributes": {
-        "title": "Пярну, который вдохновляет",
+        "date": "indexPage.album3.date",
+        "tag": "indexPage.album3.tag",
+        "title": "indexPage.album3.title",
+        "btnText": "indexPage.album3.btnText",
         "albumCode": "travel",
-        "date": "sept 2017",
         "pageCode": "parnu",
         "cover": {
           "data": {
@@ -59,9 +65,11 @@
     },
     {
       "attributes": {
-        "title": "Фото еды, которые типа как в Пинтерест",
-        "albumCode": "foooood",
-        "date": "june 2024",
+        "date": "indexPage.album4.date",
+        "tag": "indexPage.album4.tag",
+        "title": "indexPage.album4.title",
+        "btnText": "indexPage.album4.btnText",
+        "albumCode": "food",
         "pageCode": "cakes",
         "cover": {
           "data": {

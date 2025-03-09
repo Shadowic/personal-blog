@@ -7,7 +7,7 @@
     </div>
     <Footer
       v-if="footer"
-      :titlesub="footer.titlesub"
+      :title="footer.title"
       :year="footer.year"
       :links="footer.links"
     />

@@ -24,9 +24,13 @@
         <p
           :class="animations1"
           class="content__subtitle"
-          v-html="index.welcome"
+          v-html="$t(index.subtitle)"
         />
-        <h1 :class="animations2" class="content__title" v-html="index.title" />
+        <h1
+          :class="animations2"
+          class="content__title"
+          v-html="$t(index.title)"
+        />
         <div class="content__descr-block">
           <p
             :class="animations3"
@@ -47,18 +51,20 @@
       <div :class="animations3" class="content__body">
         <div class="content__body-top">
           <BackgroundWord
-            :title="index.feed_title"
+            :title="$t(index.feed_title)"
             class="content__body-bgword"
           />
-          <p class="content__body-title" v-html="index.feed_subtitle" />
+          <p class="content__body-title" v-html="$t(index.feed_subtitle)" />
         </div>
         <div class="index__albums">
           <AlbumIndex
             v-for="(album, indexkey) in albums.data"
             :key="indexkey"
-            :title="album.attributes.title"
-            :album-code="album.attributes.albumCode"
-            :date="album.attributes.date"
+            :tag="$t(album.attributes.tag)"
+            :title="$t(album.attributes.title)"
+            :btn-text="$t(album.attributes.btnText)"
+            :album-code="$t(album.attributes.albumCode)"
+            :date="$t(album.attributes.date)"
             :page-code="album.attributes.pageCode"
             :cover="album.attributes.cover.data.attributes.formats.medium.url"
             class="animation-target"
@@ -68,8 +74,8 @@
       <FooterIndex
         v-if="footer"
         :title="footer.title"
-        :subtitle="footer.subtitle"
-        :description="footer.description"
+        :subtitle="$t(footer.subtitle)"
+        :description="$t(footer.description)"
         :links="footer.links"
       />
     </div>

@@ -6,10 +6,10 @@
       }
     }
   },
-  "welcome": "Personal blog",
-  "title": "Путешествия, о&nbsp;которых хочется рассказать",
+  "subtitle": "indexPage.subtitle",
+  "title": "indexPage.title",
   "description":
   "Добро пожаловать! Welcome! ¡Bienvenidos! Herzlich&nbsp;willkommen! Bienvenue! Benvenuti! Bem-vindos!",
-  "feed_title": "Maecenas sit",
-  "feed_subtitle": "Amet semper tortor"
+  "feed_title": "indexPage.bgWord",
+  "feed_subtitle": "indexPage.albumsTitle"
 }

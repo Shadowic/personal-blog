@@ -1,10 +1,8 @@
 {
-  "title": "Nunc ut volutpat purus",
-  "subtitle": "Pellentesque ac commodo tellus",
-  "titlesub": "Morbi finibus",
+  "title": "Shadowic",
+  "subtitle": "footer.subtitle",
   "year": "2024",
-  "description":
-  "uspendisse dolor ligula, semper in diam vitae, interdum sagittis tortor. Mauris id gravida enim. Pellentesque eget turpis placerat risus consequat varius malesuada a nulla.",
+  "description": "footer.description",
   "links": [
     {
       "is_shown": true,
@@ -49,7 +47,7 @@
       "is_shown": true,
       "id": 3,
       "url": "/",
-      "title": "insta",
+      "title": "pinterest",
       "icon": {
         "data": {
           "attributes": {
@@ -62,7 +60,7 @@
       "is_shown": true,
       "id": 4,
       "url": "/",
-      "title": "insta",
+      "title": "telegram",
       "icon": {
         "data": {
           "attributes": {

@@ -2,23 +2,21 @@
   <div class="album" :class="getAlbumClass()">
     <div class="album__description">
       <div class="album__top">
-        <p class="album__date">
+        <p v-if="date.length > 0" class="album__date">
           <time datetime="2001-05-01">{{ date }}</time>
         </p>
-        <div class="border__dots">
+        <div v-if="date.length > 0" class="border__dots">
           <div
             v-for="(item, index) in 5"
             :key="index"
             class="border__dot"
           ></div>
         </div>
-        <p class="album__tag">
-          {{ albumCode }}
-        </p>
+        <p class="album__tag" v-html="tag" />
       </div>
-      <p class="album__title">{{ title }}</p>
+      <p class="album__title" v-html="title" />
       <button class="button button__open">
-        <span>перейти к альбому</span>
+        <span v-html="btnText" />
         <svg
           width="18"
           height="8"
@@ -51,7 +49,15 @@
 <script>
 export default {
   props: {
+    tag: {
+      default: '',
+      type: String,
+    },
     title: {
+      default: '',
+      type: String,
+    },
+    btnText: {
       default: '',
       type: String,
     },
@@ -148,7 +154,7 @@ export default {
     font-size: 22px;
     font-weight: 600;
     transition: color 0.25s ease-in-out;
-    text-transform: lowercase;
+    //text-transform: lowercase;
     margin-top: 12px;
     @include md {
       font-size: 28px;

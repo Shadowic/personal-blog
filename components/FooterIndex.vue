@@ -1,10 +1,8 @@
 <template>
   <div class="footer">
-    <div class="footer__title">{{ title }}</div>
-    <div class="footer__subtitle">{{ subtitle }}</div>
-    <div class="footer__text">
-      {{ description }}
-    </div>
+    <div class="footer__title" v-html="title" />
+    <div class="footer__subtitle" v-html="subtitle" />
+    <div class="footer__text" v-html="description" />
     <div class="footer__breakline">
       <div v-for="(item, i) in 16" :key="i" class="footer__breakline-item" />
     </div>
@@ -92,7 +90,7 @@ export default {
     }
     @include lg {
       font-size: 0.9vw;
-      margin-top: 0.75vw;
+      margin-top: 0.35vw;
     }
   }
   &__text {

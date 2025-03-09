@@ -16,7 +16,10 @@
         />
       </div>
       <div class="about__title">
-        <BackgroundWord :title="about.page_title" class="about__title-bgword" />
+        <BackgroundWord
+          :title="$t(about.page_title)"
+          class="about__title-bgword"
+        />
         <p
           data-aos="zoom-out-up"
           data-aos-duration="1000"
@@ -29,14 +32,14 @@
         data-aos-duration="1000"
         data-aos-delay="100"
         class="subtitle"
-        v-html="about.subtitle"
+        v-html="$t(about.subtitle)"
       />
       <p
         data-aos="zoom-out-up"
         data-aos-duration="1000"
         data-aos-delay="110"
         class="description"
-        v-html="about.description"
+        v-html="$t(about.description)"
       />
     </div>
   </div>
@@ -132,8 +135,7 @@ export default {
     z-index: 0;
     @include md {
       font-size: 32px;
-      top: 22px;
-      left: 18px;
+      top: -8px;
     }
   }
 }
@@ -166,6 +168,7 @@ export default {
   @include lg {
     font-size: 16px;
     max-width: 480px;
+    margin-top: 4px;
   }
 }
 .description {

@@ -1,9 +1,9 @@
 [
   {
-    "title": "fougeres",
-    "description": "fougeresDesrc",
+    "title": "albumFougeres.title",
+    "description": "albumFougeres.description",
     "button": true,
-    "buttonText": "go",
+    "buttonText": "albumFougeres.buttonText",
     "albumCode": "ceramicon",
     "pageCode": "fuzhers",
     "imageMain": "/imgs/IMG_0001.webp",
@@ -17,10 +17,10 @@
     ]
   },
   {
-    "title": "cups",
-    "description": "cupsDesrc",
+    "title": "albumCups.title",
+    "description": "albumCups.description",
     "button": true,
-    "buttonText": "go",
+    "buttonText": "albumCups.buttonText",
     "albumCode": "ceramicon",
     "pageCode": "cups",
     "imageMain": "/imgs/IMG_0002.webp",
@@ -32,10 +32,10 @@
     ]
   },
   {
-    "title": "plates",
-    "description": "platesDesrc",
+    "title": "albumPlates.title",
+    "description": "albumPlates.description",
     "button": true,
-    "buttonText": "go",
+    "buttonText": "albumPlates.buttonText",
     "albumCode": "ceramicon",
     "pageCode": "plates",
     "imageMain": "/imgs/IMG_0003.webp",
@@ -48,10 +48,10 @@
     ]
   },
   {
-    "title": "mugs",
-    "description": "mugsDesrc",
+    "title": "albumMugs.title",
+    "description": "albumMugs.description",
     "button": true,
-    "buttonText": "go",
+    "buttonText": "albumMugs.buttonText",
     "albumCode": "ceramicon",
     "pageCode": "mugs",
     "imageMain": "/imgs/IMG_0004.webp",

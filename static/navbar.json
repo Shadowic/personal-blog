@@ -2,31 +2,31 @@
   "Menu": [
     {
       "url": "/",
-      "title": "mainPage"
+      "title": "menu.mainPage"
     },
     {
       "url": "/travel",
-      "title": "travel"
+      "title": "menu.travel"
     },
     {
       "url": "/foooood",
-      "title": "food"
+      "title": "menu.food"
     },
     {
       "url": "/ceramicon",
-      "title": "ceramic"
+      "title": "menu.ceramic"
     },
     {
       "url": "/test1",
-      "title": "test1"
+      "title": "menu.test1"
     },
     {
       "url": "/test2",
-      "title": "test2"
+      "title": "menu.test2"
     },
     {
       "url": "/about",
-      "title": "about"
+      "title": "menu.about"
     }
   ],
   "logo": {
