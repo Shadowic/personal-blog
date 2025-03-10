@@ -181,10 +181,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.animation-target {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
+//.animation-target {
+//  opacity: 0;
+//  transition: opacity 1s ease-in-out;
+//}
 .index-page {
   display: flex;
   flex-direction: column;
