@@ -1,5 +1,6 @@
 [
   {
+    "isOnIndex": false,
     "title": "albumFougeres.title",
     "description": "albumFougeres.description",
     "button": true,
@@ -25,6 +26,7 @@
     ]
   },
   {
+    "isOnIndex": false,
     "title": "albumCups.title",
     "description": "albumCups.description",
     "button": true,
@@ -46,6 +48,7 @@
     ]
   },
   {
+    "isOnIndex": false,
     "title": "albumPlates.title",
     "description": "albumPlates.description",
     "button": true,
@@ -69,6 +72,7 @@
     ]
   },
   {
+    "isOnIndex": true,
     "title": "albumMugs.title",
     "description": "albumMugs.description",
     "button": true,

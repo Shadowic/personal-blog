@@ -58,15 +58,15 @@
         </div>
         <div class="index__albums">
           <AlbumIndex
-            v-for="(album, indexkey) in albums.data"
+            v-for="(album, indexkey) in filteredAlbums"
             :key="indexkey"
-            :tag="$t(album.attributes.tag)"
-            :title="$t(album.attributes.title)"
-            :btn-text="$t(album.attributes.btnText)"
-            :album-code="$t(album.attributes.albumCode)"
-            :date="$t(album.attributes.date)"
-            :page-code="album.attributes.pageCode"
-            :cover="album.attributes.cover.data.attributes.formats.medium.url"
+            :tag="$t(album.albumCode)"
+            :title="$t(album.title)"
+            :btn-text="$t(album.buttonText)"
+            :album-code="$t(album.albumCode)"
+            :date="$t(album.caption)"
+            :page-code="album.pageCode"
+            :cover="album.imageMain"
             class="animation-target"
           />
         </div>
@@ -86,10 +86,26 @@
 import index from 'static/index.json'
 import navbar from 'static/navbar.json'
 import slider from 'static/indexslider.json'
-import albums from 'static/indexalbums.json'
+import albumsCeramic from 'static/albumsCeramic.json'
+import albums from 'static/albums.json'
 import footer from 'static/footer.json'
 
 export default {
+  asyncData() {
+    const allAlbums = [...albumsCeramic, ...albums]
+
+    const filteredAlbums = allAlbums.filter((album) => album.isOnIndex)
+
+    return {
+      index,
+      navbar,
+      slider,
+      albumsCeramic,
+      albums,
+      footer,
+      filteredAlbums,
+    }
+  },
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
   //     const [indexdata, slider, albums, footerdata] = await Promise.all([
@@ -119,11 +135,6 @@ export default {
   // },
   data() {
     return {
-      index,
-      navbar,
-      slider,
-      footer,
-      albums,
       animations: '',
       animations1: '',
       animations2: '',

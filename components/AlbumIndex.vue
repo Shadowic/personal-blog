@@ -198,6 +198,7 @@ export default {
     font-weight: 600;
     transition: color 0.25s ease-in-out;
     //text-transform: lowercase;
+    width: fit-content;
     margin-top: 12px;
     @include md {
       font-size: 28px;

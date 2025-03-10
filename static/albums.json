@@ -1,5 +1,7 @@
 [
   {
+    "isOnIndex": true,
+    "date": "",
     "title": "albumBrussels.title",
     "caption": "albumBrussels.caption",
     "description": "albumBrussels.description",
@@ -49,6 +51,8 @@
     ]
   },
   {
+    "isOnIndex": false,
+    "date": "",
     "title": "albumStockholm.title",
     "caption": "albumStockholm.caption",
     "description": "albumStockholm.description",
@@ -107,6 +111,8 @@
     ]
   },
   {
+    "isOnIndex": false,
+    "date": "",
     "title": "albumSibiu.title",
     "caption": "albumSibiu.caption",
     "description": "albumSibiu.description",
@@ -157,6 +163,8 @@
     ]
   },
   {
+    "isOnIndex": false,
+    "date": "",
     "title": "albumItaly.title",
     "caption": "albumItaly.caption",
     "description": "albumItaly.description",
@@ -206,6 +214,7 @@
     ]
   },
   {
+    "isOnIndex": false,
     "title": "albumCakes.title",
     "caption": "albumCakes.caption",
     "description": "albumCakes.description",
@@ -255,6 +264,7 @@
     ]
   },
   {
+    "isOnIndex": true,
     "title": "albumCookies.title",
     "caption": "albumCookies.caption",
     "description": "albumCookies.description",
@@ -311,6 +321,7 @@
     ]
   },
   {
+    "isOnIndex": true,
     "title": "albumBread.title",
     "caption": "albumBread.caption",
     "description": "albumBread.description",
@@ -367,6 +378,7 @@
     ]
   },
   {
+    "isOnIndex": false,
     "title": "albumPancakes.title",
     "caption": "albumPancakes.caption",
     "description": "albumPancakes.description",
