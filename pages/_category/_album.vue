@@ -30,13 +30,28 @@
 </template>
 
 <script>
-import rawImages from 'static/images.json'
+import rawImages from 'static/albums.json'
 
 export default {
   layout: 'page',
   transition: {
     name: 'change-route',
     mode: 'out-in',
+  },
+  asyncData({ params, error }) {
+    const { category, album } = params
+
+    const albumData = rawImages.find(
+      (item) => item.albumCode === category && item.pageCode === album
+    )
+
+    if (!albumData) {
+      return error({ statusCode: 404, message: 'Album not found' })
+    }
+
+    return {
+      albumData,
+    }
   },
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
@@ -59,24 +74,17 @@ export default {
   data() {
     return {
       openedImgIndex: -1,
-      rawImages,
     }
   },
   computed: {
     images() {
-      if (Array.isArray(this.album) && this.album.length > 0) {
-        return this.album
-      }
-      if (Array.isArray(this.photos) && this.photos.length > 0) {
-        return this.photos
-      }
-      return this.rawImages
+      return this.albumData?.imagesGallery || []
     },
     countImgs() {
       return this.images.length
     },
     isPhotoWithSidebar() {
-      return this.photos?.length > 0
+      return this.albumData?.photos?.length > 0
     },
   },
   mounted() {

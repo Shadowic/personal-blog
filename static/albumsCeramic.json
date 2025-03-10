@@ -14,6 +14,14 @@
       "/imgs/IMG_0001.webp",
       "/imgs/IMG_0001.webp",
       "/imgs/IMG_0001.webp"
+    ],
+    "imagesGallery": [
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp"
     ]
   },
   {
@@ -25,6 +33,12 @@
     "pageCode": "cups",
     "imageMain": "/imgs/IMG_0002.webp",
     "imagesPreview": [
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp"
+    ],
+    "imagesGallery": [
       "/imgs/IMG_0002.webp",
       "/imgs/IMG_0002.webp",
       "/imgs/IMG_0002.webp",
@@ -45,6 +59,13 @@
       "/imgs/IMG_0003.webp",
       "/imgs/IMG_0003.webp",
       "/imgs/IMG_0003.webp"
+    ],
+    "imagesGallery": [
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp"
     ]
   },
   {
@@ -56,6 +77,13 @@
     "pageCode": "mugs",
     "imageMain": "/imgs/IMG_0004.webp",
     "imagesPreview": [
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp"
+    ],
+    "imagesGallery": [
       "/imgs/IMG_0004.webp",
       "/imgs/IMG_0004.webp",
       "/imgs/IMG_0004.webp",
