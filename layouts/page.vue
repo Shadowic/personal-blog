@@ -5,6 +5,7 @@
     <div class="page-content">
       <Nuxt />
     </div>
+    <to-top />
     <Footer
       v-if="footer"
       :title="footer.title"
