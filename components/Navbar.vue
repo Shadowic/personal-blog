@@ -81,10 +81,10 @@ export default {
   &:hover,
   &:focus,
   &:active {
-    color: $ziggurat;
+    color: $cyan;
   }
   &.active {
-    color: $ziggurat;
+    color: $cyan;
   }
 }
 </style>

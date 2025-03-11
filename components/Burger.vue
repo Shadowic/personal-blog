@@ -81,7 +81,7 @@ export default {
   }
   @include lg {
     &:hover &-stripe {
-      background-color: $ziggurat;
+      background-color: $cyan;
     }
   }
 }

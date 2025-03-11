@@ -215,7 +215,7 @@ $height: 100px;
       width: 30px;
       height: 30px;
       border-radius: 50%;
-      background-color: $ziggurat;
+      background-color: $cyan;
       position: absolute;
       opacity: 0;
       transition: left 0.75s ease-in-out, right 0.75s ease-in-out,

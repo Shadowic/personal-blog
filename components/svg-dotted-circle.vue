@@ -35,7 +35,7 @@ export default {
   }
 }
 .circle-svg__hovered {
-  color: $ziggurat;
+  color: $cyan;
   circle {
     animation: circled 4s linear infinite;
     transform-origin: center;

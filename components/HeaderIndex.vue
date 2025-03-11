@@ -199,7 +199,7 @@ export default {
     font-weight: 600;
   }
   &__top {
-    color: $ziggurat;
+    color: $cyan;
     letter-spacing: 0.12em;
     font-size: 0.8vw;
   }

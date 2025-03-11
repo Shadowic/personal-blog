@@ -87,7 +87,7 @@ export default {
   backdrop-filter: blur(25px);
   &__bottom {
     text-align: center;
-    color: $ziggurat;
+    color: $cyan;
     animation: fade-in 0.25s 0.35s linear both;
     .open & {
       animation: fade-out 0.25s linear both;
@@ -163,7 +163,7 @@ export default {
   }
 }
 .subtitle {
-  color: $ziggurat;
+  color: $cyan;
   font-size: 10px;
   letter-spacing: 0.032em;
   margin-top: 4px;
