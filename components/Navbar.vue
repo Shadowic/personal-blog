@@ -5,6 +5,7 @@
       :key="index"
       :to="localePath(navitem.url)"
       class="nav__item"
+      :class="{ active: isActive(navitem.url) }"
       @click.native="$emit('onLinkClick')"
       >{{ $t(navitem.title) }}</nuxt-link
     >
@@ -17,6 +18,16 @@ export default {
     navbar: {
       type: Object,
       default: null,
+    },
+  },
+  methods: {
+    isActive(url) {
+      const currentRoute = this.$route.path
+      if (url === '/') {
+        return currentRoute === this.localePath(url)
+      } else {
+        return currentRoute.startsWith(this.localePath(url))
+      }
     },
   },
 }
@@ -39,23 +50,28 @@ export default {
   line-height: 1em;
   text-transform: uppercase;
   transform: translateY(10px);
-  transition-duration: 0.5s;
-  transition-timing-function: cubic-bezier(0.24, 0.55, 0.2, 0.91);
+  transition: color 0.2s ease-in-out,
+    transform 0.5s cubic-bezier(0.24, 0.55, 0.2, 0.91) 0.1s;
   cursor: pointer;
   &:nth-child(2) {
-    transition-delay: 0.3s;
+    transition: color 0.2s ease-in-out,
+      transform 0.5s cubic-bezier(0.24, 0.55, 0.2, 0.91) 0.3s;
   }
   &:nth-child(3) {
-    transition-delay: 0.4s;
+    transition: color 0.2s ease-in-out,
+      transform 0.5s cubic-bezier(0.24, 0.55, 0.2, 0.91) 0.4s;
   }
   &:nth-child(4) {
-    transition-delay: 0.5s;
+    transition: color 0.2s ease-in-out,
+      transform 0.5s cubic-bezier(0.24, 0.55, 0.2, 0.91) 0.5s;
   }
   &:nth-child(5) {
-    transition-delay: 0.6s;
+    transition: color 0.2s ease-in-out,
+      transform 0.5s cubic-bezier(0.24, 0.55, 0.2, 0.91) 0.6s;
   }
   &:nth-child(6) {
-    transition-delay: 0.7s;
+    transition: color 0.2s ease-in-out,
+      transform 0.5s cubic-bezier(0.24, 0.55, 0.2, 0.91) 0.7s;
   }
   .open & {
     opacity: 1;
@@ -66,7 +82,9 @@ export default {
   &:focus,
   &:active {
     color: $ziggurat;
-    transition: color 0.2s ease-out;
+  }
+  &.active {
+    color: $ziggurat;
   }
 }
 </style>
