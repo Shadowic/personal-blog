@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import albums from 'static/albumsCeramic.json'
+import albums from 'static/albums.json'
 
 export default {
   layout: 'page',
@@ -50,12 +50,25 @@ export default {
   data() {
     return {
       isTablet: false,
-      albums,
+      filteredAlbums: [],
+    }
+  },
+  fetch() {
+    try {
+      this.filteredAlbums = albums.filter(
+        (album) => album.albumCode === 'ceramicon'
+      )
+
+      if (this.filteredAlbums.length === 0) {
+        throw new Error('Альбомы не найдены')
+      }
+    } catch (err) {
+      this.$nuxt.error({ statusCode: 404, message: err.message })
     }
   },
   computed: {
     limitedAlbums() {
-      return this.albums.map((album) => ({
+      return this.filteredAlbums.map((album) => ({
         ...album,
         imagesPreview: this.isTablet
           ? album.imagesPreview.slice(0, 3)

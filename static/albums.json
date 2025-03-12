@@ -427,5 +427,101 @@
       "/imgs/IMG_9484.jpg",
       "/imgs/IMG_9484.jpg"
     ]
+  },
+  {
+    "isOnIndex": false,
+    "title": "albumFougeres.title",
+    "description": "albumFougeres.description",
+    "button": true,
+    "buttonText": "albumFougeres.buttonText",
+    "albumCode": "ceramicon",
+    "pageCode": "fuzhers",
+    "imageMain": "/imgs/IMG_0001.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp"
+    ],
+    "imagesGallery": [
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp",
+      "/imgs/IMG_0001.webp"
+    ]
+  },
+  {
+    "isOnIndex": false,
+    "title": "albumCups.title",
+    "description": "albumCups.description",
+    "button": true,
+    "buttonText": "albumCups.buttonText",
+    "albumCode": "ceramicon",
+    "pageCode": "cups",
+    "imageMain": "/imgs/IMG_0002.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp"
+    ],
+    "imagesGallery": [
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp",
+      "/imgs/IMG_0002.webp"
+    ]
+  },
+  {
+    "isOnIndex": false,
+    "title": "albumPlates.title",
+    "description": "albumPlates.description",
+    "button": true,
+    "buttonText": "albumPlates.buttonText",
+    "albumCode": "ceramicon",
+    "pageCode": "plates",
+    "imageMain": "/imgs/IMG_0003.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp"
+    ],
+    "imagesGallery": [
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp",
+      "/imgs/IMG_0003.webp"
+    ]
+  },
+  {
+    "isOnIndex": true,
+    "title": "albumMugs.title",
+    "description": "albumMugs.description",
+    "button": true,
+    "buttonText": "albumMugs.buttonText",
+    "albumCode": "ceramicon",
+    "pageCode": "mugs",
+    "imageMain": "/imgs/IMG_0004.webp",
+    "imagesPreview": [
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp"
+    ],
+    "imagesGallery": [
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp",
+      "/imgs/IMG_0004.webp"
+    ]
   }
 ]

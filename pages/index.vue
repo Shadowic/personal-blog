@@ -86,13 +86,12 @@
 import index from 'static/index.json'
 import navbar from 'static/navbar.json'
 import slider from 'static/indexslider.json'
-import albumsCeramic from 'static/albumsCeramic.json'
 import albums from 'static/albums.json'
 import footer from 'static/footer.json'
 
 export default {
   asyncData() {
-    const allAlbums = [...albumsCeramic, ...albums]
+    const allAlbums = [...albums]
 
     const filteredAlbums = allAlbums.filter((album) => album.isOnIndex)
 
@@ -100,7 +99,6 @@ export default {
       index,
       navbar,
       slider,
-      albumsCeramic,
       albums,
       footer,
       filteredAlbums,
@@ -209,7 +207,6 @@ export default {
     left: 0;
   }
 }
-
 .index__slider {
   height: 100vh;
   height: 100svh;
@@ -219,7 +216,6 @@ export default {
     flex: 0 1 38.542%;
   }
 }
-
 .index__content {
   flex: 1;
   overflow-y: auto;
@@ -228,7 +224,11 @@ export default {
     display: block;
   }
 }
-
+.index__albums {
+  @include md- {
+    margin-top: 48px;
+  }
+}
 .content {
   &__bg-leaves {
     display: none;

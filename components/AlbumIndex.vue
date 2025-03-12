@@ -1,5 +1,17 @@
 <template>
   <div class="album" :class="getAlbumClass()">
+    <div
+      class="album__image-container"
+      @mouseover="addClassHovered"
+      @mouseleave="removeClassHovered"
+    >
+      <nuxt-link
+        :to="localePath(`/${albumCode}/${pageCode}`)"
+        class="album__image"
+      >
+        <img :src="cover" alt="album cover" />
+      </nuxt-link>
+    </div>
     <div class="album__description">
       <div class="album__top">
         <p v-if="date.length > 0" class="album__date">
@@ -62,18 +74,6 @@
           </svg>
         </nuxt-link>
       </div>
-    </div>
-    <div
-      class="album__image-container"
-      @mouseover="addClassHovered"
-      @mouseleave="removeClassHovered"
-    >
-      <nuxt-link
-        :to="localePath(`/${albumCode}/${pageCode}`)"
-        class="album__image"
-      >
-        <img :src="cover" alt="album cover" />
-      </nuxt-link>
     </div>
   </div>
 </template>
@@ -274,6 +274,9 @@ export default {
   }
   &__image-container {
     overflow: hidden;
+    @include md- {
+      aspect-ratio: 4/3;
+    }
     @include md {
       position: absolute;
       inset: 0;

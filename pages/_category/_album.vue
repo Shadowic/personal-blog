@@ -38,21 +38,6 @@ export default {
     name: 'change-route',
     mode: 'out-in',
   },
-  asyncData({ params, error }) {
-    const { category, album } = params
-
-    const albumData = rawImages.find(
-      (item) => item.albumCode === category && item.pageCode === album
-    )
-
-    if (!albumData) {
-      return error({ statusCode: 404, message: 'Album not found' })
-    }
-
-    return {
-      albumData,
-    }
-  },
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
   //     const result = await $strapi.$http.$get(
@@ -74,7 +59,22 @@ export default {
   data() {
     return {
       openedImgIndex: -1,
+      albumData: [],
     }
+  },
+  fetch() {
+    const { category, album } = this.$route.params
+
+    const albumData = rawImages.find(
+      (item) => item.albumCode === category && item.pageCode === album
+    )
+
+    if (!albumData) {
+      this.$nuxt.error({ statusCode: 404, message: 'Album not found' })
+      return
+    }
+
+    this.albumData = albumData
   },
   computed: {
     images() {

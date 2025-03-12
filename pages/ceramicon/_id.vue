@@ -30,28 +30,13 @@
 </template>
 
 <script>
-import rawImages from 'static/albumsCeramic.json'
+import rawImages from 'static/albums.json'
 
 export default {
   layout: 'page',
   transition: {
     name: 'change-route',
     mode: 'out-in',
-  },
-  asyncData({ params, error }) {
-    const { id } = params
-
-    const albumData = rawImages.find(
-      (item) => item.albumCode === 'ceramicon' && item.pageCode === id
-    )
-
-    if (!albumData) {
-      return error({ statusCode: 404, message: 'Album not found' })
-    }
-
-    return {
-      albumData,
-    }
   },
   // async asyncData({ $strapi, i18n, params, error }) {
   //   try {
@@ -74,7 +59,22 @@ export default {
   data() {
     return {
       openedImgIndex: -1,
+      albumData: [],
     }
+  },
+  fetch() {
+    const { id } = this.$route.params
+
+    const albumData = rawImages.find(
+      (item) => item.albumCode === 'ceramicon' && item.pageCode === id
+    )
+
+    if (!albumData) {
+      this.$nuxt.error({ statusCode: 404, message: 'Album not found' })
+      return
+    }
+
+    this.albumData = albumData
   },
   computed: {
     images() {
