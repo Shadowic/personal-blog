@@ -17,12 +17,8 @@
       "title": "menu.ceramic"
     },
     {
-      "url": "/test1",
-      "title": "menu.test1"
-    },
-    {
-      "url": "/test2",
-      "title": "menu.test2"
+      "url": "/test",
+      "title": "menu.test"
     },
     {
       "url": "/about",

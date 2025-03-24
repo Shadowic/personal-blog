@@ -1,5 +1,7 @@
 <template>
-  <div class="test2">
+  <!-- Dynamic routes with params -->
+  <!--<NuxtLink :to="{ name: 'posts-id', params: { id: 123 } }">Post 123</NuxtLink>-->
+  <div class="test">
     <h1>Something new is coming soon</h1>
     <FlyingCircles />
     <ImageComparisonSlider />
@@ -10,13 +12,13 @@
 import FlyingCircles from '@/components/test/FlyingCircles'
 import ImageComparisonSlider from '@/components/test/ImageComparisonSlider'
 export default {
-  name: 'Test2',
+  name: 'Test',
   components: { ImageComparisonSlider, FlyingCircles },
 }
 </script>
 
 <style lang="scss" scoped>
-.test2 {
+.test {
   display: flex;
   flex-direction: column;
   justify-content: center;
