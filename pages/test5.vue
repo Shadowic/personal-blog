@@ -1,0 +1,60 @@
+<template>
+  <div class="test5">
+    <ParticlesBackground />
+    <div class="test5__albums">
+      <div class="test5__albums-bg" />
+      <div v-for="(item, i) in 24" :key="i" class="test5__album">
+        <img src="/imgs/IMG_0003.webp" alt="photo" />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style lang="scss">
+.test5 .particles-container {
+  background-color: #020a1d;
+}
+</style>
+
+<style lang="scss" scoped>
+.test5 {
+  min-height: 100vh;
+  color: #fafafa;
+  font-size: 2rem;
+  padding: 96px 20px;
+  &__albums {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 20px 80px;
+    gap: 58px 36px;
+    @include md- {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &__albums-bg {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    background: rgba(2, 10, 29, 0.25);
+    backdrop-filter: blur(5px);
+  }
+  &__album {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 12px 36px;
+    background-color: #1c294375;
+    border-radius: 16px;
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+  }
+}
+</style>
