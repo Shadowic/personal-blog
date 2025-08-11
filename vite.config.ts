@@ -11,7 +11,8 @@ export default defineConfig({
     strictPort: true
   },
   preview: {
-    port: 3000
+    port: 3000,
+    allowedHosts: ['shadowic.space']
   },
   plugins: [
     vue(),

@@ -1,6 +1,9 @@
 # Используем официальный образ Node.js на Alpine (меньше размер)
 FROM node:20-alpine
 
+ENV NUXT_HOST=0.0.0.0
+ENV NUXT_PORT=3000
+
 # Устанавливаем системные зависимости (если нужны)
 RUN apk add --no-cache python3 make g++
 
