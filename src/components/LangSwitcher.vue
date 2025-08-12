@@ -24,7 +24,9 @@ const changeLanguage = (lang: AppLocale) => {
 
 <style lang="scss" scoped>
 .language-switcher {
-  position: relative;
+  position: absolute;
+  top: 30px;
+  left: 40px;
   display: flex;
   gap: 22px;
   button {

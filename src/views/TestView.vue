@@ -12,7 +12,7 @@ import HeadingIcon from '../components/additionals/IconHeading.vue'
         <template #icon>
           <HeadingIcon />
         </template>
-        <template #heading>It's <span>test</span> page</template>
+        <template #heading>It's <b>test</b> page</template>
         <template #caption>test page content</template>
       </TheHeading>
       <div class="album__main">

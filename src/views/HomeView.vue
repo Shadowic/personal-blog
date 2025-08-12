@@ -7,7 +7,7 @@
           <template #icon>
             <HeadingIcon />
           </template>
-          <template #heading>It's <span>main</span> page</template>
+          <template #heading>It's <b>main</b> page</template>
         </TheHeading>
         <div class="albums__main">
           <div class="albums__main-bg" />

@@ -3,7 +3,7 @@
     <ParticlesBackground />
     <div class="container">
       <TheHeading>
-        <template #heading><span>{{ t(currentAlbum?.title) }},</span> bitte</template>
+        <template #heading><b>{{ t(currentAlbum?.title) }},</b> bitte</template>
         <template #caption><span v-html="t(currentAlbum?.description)" /></template>
       </TheHeading>
       <div class="album__main">

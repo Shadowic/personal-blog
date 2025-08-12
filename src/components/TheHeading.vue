@@ -30,10 +30,10 @@ const heading = ref<HTMLElement | null>(null)
 
 function updateHeadingStyle() {
   if (heading.value) {
-    const span = heading.value.querySelector('span')
-    if (span) {
+    const b = heading.value.querySelector('b')
+    if (b) {
       headingStyle.value = {
-        '--heading-text': `"${span.textContent?.trim() ?? ''}"`
+        '--heading-text': `"${b.textContent?.trim() ?? ''}"`
       }
     }
   }
@@ -84,13 +84,14 @@ onUpdated(() => {
   color: var(--color-heading);
 }
 
-.title-with-glitch span {
+.title-with-glitch b {
   display: inline-block;
   color: #fff !important;
   position: relative;
+  font-weight: inherit;
 }
 
-.title-with-glitch span:before, .title-with-glitch span:after {
+.title-with-glitch b:before, .title-with-glitch b:after {
   //font-weight: inherit;
   content: var(--heading-text, "");
   color: #fff;
@@ -100,13 +101,13 @@ onUpdated(() => {
   overflow: hidden;
 }
 
-.title-with-glitch span:before {
+.title-with-glitch b:before {
   left: 3px;
   text-shadow: -3px 0 red;
   animation: glitch-before 2s linear 0s infinite alternate;
 }
 
-.title-with-glitch span:after {
+.title-with-glitch b:after {
   left: -3px;
   text-shadow: -3px 0 blue;
   animation: glitch-after 2s linear 0s infinite alternate;

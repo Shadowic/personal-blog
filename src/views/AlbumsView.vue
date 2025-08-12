@@ -3,7 +3,7 @@
     <ParticlesBackground />
     <div class="container">
       <TheHeading>
-        <template #heading><span>Albums,</span> bitte</template>
+        <template #heading><b>Albums,</b> bitte</template>
       </TheHeading>
       <div class="albums__main">
         <div class="albums__main-bg" />
