@@ -5,6 +5,11 @@
       <TheHeading>
         <template #heading><b>Albums,</b> bitte</template>
       </TheHeading>
+      <SearchBar
+        v-if="route.name === 'all-albums'"
+        :album-codes="albumCodes"
+        @select="filterAlbums"
+      />
       <div class="albums__main">
         <div class="albums__main-bg" />
         <div v-for="(album, index) in displayedAlbums" :key="index" class="albums__item">
@@ -46,21 +51,34 @@
 import ParticlesBackground from '../components/additionals/ParticlesBackground.vue';
 import TheHeading from "../components/TheHeading.vue";
 import albums from '../data/albums.json';
-import { computed } from 'vue';
+import { ref, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import SearchBar from "../components/SearchBar.vue";
 const { t, te } = useI18n();
 
 const router = useRouter();
 const route = useRoute();
 
-const displayedAlbums = computed(() => {
-  // Если открыт /albums (все альбомы)
-  if (route.name === 'all-albums') return albums;
+const currentFilter = ref<string | null>(null);
 
-  // Если открыт /albums/travel (фильтр по albumCode)
-  return albums.filter(a => a.albumCode === route.params.albumCode);
+const displayedAlbums = computed(() => {
+  if (route.name !== 'all-albums') {
+    return albums.filter(a => a.albumCode === route.params.albumCode);
+  }
+  if (currentFilter.value) {
+    return albums.filter(a => a.albumCode === currentFilter.value);
+  }
+  return albums;
 });
+
+const albumCodes = computed(() => {
+  return [...new Set(albums.map(album => album.albumCode))];
+});
+
+const filterAlbums = (code: string | null) => {
+  currentFilter.value = code;
+};
 
 const goToAlbum = (album: any) => {
   router.push({

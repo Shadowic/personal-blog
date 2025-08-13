@@ -31,9 +31,14 @@ const changeLanguage = (lang: AppLocale) => {
   gap: 22px;
   button {
     height: fit-content;
-    padding: 8px 22px;
-    border-radius: 8px;
-    background-color: #778069;
+    padding: 10px 20px;
+    background-color: #6f8c96;
+    color: #d0d8db;
+    border-radius: 12px;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: #6f8c9685;
+    }
   }
 }
 </style>
