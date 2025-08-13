@@ -1,17 +1,18 @@
 <template>
   <div class="language-switcher">
-    <button
+    <TheButton
       v-for="lang in availableLocales"
       :key="lang"
       @click="changeLanguage(lang)"
     >
-      {{ lang }}
-    </button>
+      <template #button>{{ lang }}</template>
+    </TheButton>
   </div>
 </template>
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import TheButton from "./TheButton.vue";
 
 const { locale, availableLocales } = useI18n();
 
@@ -29,16 +30,5 @@ const changeLanguage = (lang: AppLocale) => {
   left: 40px;
   display: flex;
   gap: 22px;
-  button {
-    height: fit-content;
-    padding: 10px 20px;
-    background-color: #6f8c96;
-    color: #d0d8db;
-    border-radius: 12px;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    &:hover {
-      background-color: #6f8c9685;
-    }
-  }
 }
 </style>

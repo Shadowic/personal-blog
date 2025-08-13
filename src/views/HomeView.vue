@@ -45,12 +45,13 @@
               v-html="t(album.description)"
               class="albums__item-description"
             />
-            <button
+            <TheButton
               v-if="album.button"
-              v-html="t(album.buttonText)"
-              class="albums__item-btn"
               @click="goToAlbumList(album.albumCode)"
-            />
+              class="albums__item-btn"
+            >
+              <template #button>{{ t(album.buttonText) }}</template>
+            </TheButton>
           </div>
         </div>
       </div>
@@ -66,6 +67,7 @@ import { computed } from 'vue';
 import albums from '../data/albums.json';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
+import TheButton from "../components/TheButton.vue";
 const { t, te } = useI18n();
 const filteredAlbums = computed(() => albums.filter(album => album.isOnIndex));
 const router = useRouter();
@@ -110,6 +112,7 @@ const goToAlbumList = (albumCode: any) => {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 12px 12px 36px;
     background-color: #1c294375;
     border-radius: 16px;
@@ -146,12 +149,7 @@ const goToAlbumList = (albumCode: any) => {
       margin-top: 22px;
     }
     &-btn {
-      padding: 8px 18px;
-      background-color: #778069;
-      border-radius: 8px;
-      margin-top: 24px;
-      width: fit-content;
-      color: #d0d8db;
+      margin-top: 40px;
     }
   }
 }

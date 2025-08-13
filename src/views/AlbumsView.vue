@@ -35,12 +35,13 @@
             v-html="t(album.description)"
             class="albums__item-description"
           />
-          <button
+          <TheButton
             v-if="album.button"
-            v-html="t(album.buttonText)"
             class="albums__item-btn"
             @click="goToAlbum(album)"
-          />
+          >
+            <template #button>{{ t(album.buttonText) }}</template>
+          </TheButton>
         </div>
       </div>
     </div>
@@ -55,6 +56,7 @@ import { ref, computed } from 'vue';
 import { useRouter, useRoute } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import SearchBar from "../components/SearchBar.vue";
+import TheButton from "../components/TheButton.vue";
 const { t, te } = useI18n();
 
 const router = useRouter();
@@ -121,6 +123,7 @@ const goToAlbum = (album: any) => {
     position: relative;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     padding: 12px 12px 36px;
     background-color: #1c294375;
     border-radius: 16px;
@@ -145,12 +148,7 @@ const goToAlbum = (album: any) => {
       margin-top: 22px;
     }
     &-btn {
-      padding: 8px 18px;
-      background-color: #778069;
-      border-radius: 8px;
-      margin-top: 24px;
-      width: fit-content;
-      color: #d0d8db;
+      margin-top: 40px;
     }
   }
 }
