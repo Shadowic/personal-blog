@@ -1,6 +1,41 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import LangSwitcher from "./components/LangSwitcher.vue";
+import Coffee from "./components/svgs/coffee.vue";
+import Github from "./components/svgs/github.vue";
+import Loupe from "./components/svgs/loupe.vue";
+import Pinterest from "./components/svgs/pinterest.vue";
+import Telegram from "./components/svgs/tg.vue";
+import Coffee_cup from "./components/svgs/coffee_cup.vue";
+import Heart from "./components/svgs/heart.vue";
+
+const socialLinks = [
+  {
+    icon: Coffee,
+    url: 'https://shadowic.space',
+    title: 'Buy me a coffee :)'
+  },
+  {
+    icon: Github,
+    url: 'https://shadowic.space',
+    title: 'GitHub profile'
+  },
+  {
+    icon: Loupe,
+    url: 'https://shadowic.space',
+    title: 'Loupe profile'
+  },
+  {
+    icon: Pinterest,
+    url: 'https://shadowic.space',
+    title: 'Pinterest profile'
+  },
+  {
+    icon: Telegram,
+    url: 'https://shadowic.space',
+    title: 'Telegram profile'
+  },
+]
 </script>
 
 <template>
@@ -25,6 +60,29 @@ import LangSwitcher from "./components/LangSwitcher.vue";
   </header>
 
   <RouterView />
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__caption">
+          Made with <coffee_cup class="footer__caption-coffee"></coffee_cup> and <heart class="footer__caption-heart"></heart>
+        </div>
+        <ul class="footer__links">
+          <li v-for="link in socialLinks" :key="link.url">
+            <a
+              :href="link.url"
+              :title="link.title"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="footer__link"
+            >
+              <component :is="link.icon" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
 </template>
 
 <style lang="scss">
@@ -44,7 +102,6 @@ import LangSwitcher from "./components/LangSwitcher.vue";
     width: fit-content;
     margin: 0 auto;
     padding: 24px 24px 0;
-    list-style: none;
     color: #a28154;
     position: relative;
     transition: color 0.3s ease-in-out;
@@ -78,23 +135,51 @@ import LangSwitcher from "./components/LangSwitcher.vue";
     }
   }
 }
-
-//.headroom--not-top,
-//.headroom--top .headroom--not-bottom {
-//  .header {
-//    background: #020a1d40;
-//    backdrop-filter: blur(25px);
-//    padding-bottom: 12px;
-//  }
-//  .header__content {
-//    color: #c5ad8b;
-//  }
-//  .header__content::before,
-//  .header__content::after {
-//    background-color: transparent;
-//  }
-//  .header__content-item {
-//    border-color: transparent;
-//  }
-//}
+.footer {
+  position: relative;
+  display: flex;
+  font-family: 'DM Sans', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  padding: 36px 0 48px;
+  &__caption {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #d0d8db;
+    &-coffee {
+      width: 25px;
+      height: 25px;
+      transform: translateY(-2px);
+    }
+    &-heart {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  &__link {
+    display: flex;
+    width: 20px;
+    height: 20px;
+    svg {
+      transition: fill 0.2s ease-in-out;
+      fill: #5f7374;
+    }
+    &:hover {
+      filter: brightness(0) saturate(100%) invert(54%) sepia(14%) saturate(773%) hue-rotate(135deg) brightness(98%) contrast(86%);
+    }
+  }
+}
 </style>
