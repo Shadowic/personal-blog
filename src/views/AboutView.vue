@@ -11,7 +11,7 @@ const { t, te } = useI18n();
   <main class="about">
     <ParticlesBackground />
     <div class="container">
-      <TheHeading>
+      <TheHeading v-if="about.title">
         <template #icon>
           <HeadingIcon />
         </template>

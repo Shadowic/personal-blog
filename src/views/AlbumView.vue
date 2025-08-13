@@ -2,7 +2,7 @@
   <main class="album">
     <ParticlesBackground />
     <div class="container">
-      <TheHeading>
+      <TheHeading v-if="currentAlbum?.title">
         <template #heading><b>{{ t(currentAlbum?.title) }},</b> bitte</template>
         <template #caption><span v-html="t(currentAlbum?.description)" /></template>
       </TheHeading>

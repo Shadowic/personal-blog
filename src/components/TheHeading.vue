@@ -44,7 +44,11 @@ onMounted(() => {
 })
 
 onUpdated(() => {
-  updateHeadingStyle()
+  const currentText = heading.value?.querySelector('b')?.textContent?.trim() ?? ''
+  const styleText = headingStyle.value['--heading-text']?.replace(/^"|"$/g, '')
+  if (currentText !== styleText) {
+    updateHeadingStyle()
+  }
 })
 </script>
 
