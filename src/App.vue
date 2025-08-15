@@ -102,7 +102,7 @@ const socialLinks = [
     width: fit-content;
     margin: 0 auto;
     padding: 24px 24px 0;
-    color: #a28154;
+    color: var(--color-heading);
     position: relative;
     transition: color 0.3s ease-in-out;
     &:first-child::before,
@@ -111,7 +111,7 @@ const socialLinks = [
       display: block;
       width: 24px;
       height: 1.5px;
-      background-color: #a28154;
+      background-color: var(--color-border);
       position: absolute;
       bottom: 0.5px;
       transition: background-color 0.3s ease-in-out;
@@ -125,10 +125,10 @@ const socialLinks = [
   }
   &__content-item {
     padding: 12px 24px 12px;
-    border-bottom: 1.5px solid #a28154;
+    border-bottom: 1.5px solid var(--color-border);
     transition: border-color 0.3s ease-in-out;
     &:has(a.router-link-active.router-link-exact-active) {
-      border: 1.5px solid #a28154;
+      border: 1.5px solid var(--color-border);
       border-bottom-color: transparent;
       border-top-left-radius: 8px;
       border-top-right-radius: 8px;
@@ -147,7 +147,7 @@ const socialLinks = [
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #d0d8db;
+    color: var(--color-text);
     &-coffee {
       width: 25px;
       height: 25px;
@@ -174,11 +174,12 @@ const socialLinks = [
     width: 20px;
     height: 20px;
     svg {
-      transition: fill 0.2s ease-in-out;
-      fill: #5f7374;
+      transition: filter 0.3s ease-in-out;
+      fill: var(--color-text);
+      will-change: filter;
     }
-    &:hover {
-      filter: brightness(0) saturate(100%) invert(54%) sepia(14%) saturate(773%) hue-rotate(135deg) brightness(98%) contrast(86%);
+    &:hover svg {
+      filter: brightness(0) saturate(100%) invert(55%) sepia(7%) saturate(2902%) hue-rotate(308deg) brightness(86%) contrast(77%);
     }
   }
 }

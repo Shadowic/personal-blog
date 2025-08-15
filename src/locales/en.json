@@ -1,48 +1,4 @@
 {
-  "indexPage": {
-    "slider": {
-      "travel": {
-        "title": "travelling",
-        "description": "Don&rsquo;t be&nbsp;afraid to&nbsp;get lost, for it&nbsp;is&nbsp;then that you will find yourself"
-      },
-      "food": {
-        "title": "food",
-        "description": "Life&rsquo;s too short to&nbsp;eat boring food"
-      },
-      "ceramic": {
-        "title": "ceramic",
-        "description": "Every crack tells a&nbsp;story, every curve holds beauty. That&rsquo;s the magic of&nbsp;ceramics"
-      }
-    },
-    "subtitle": "personal blog",
-    "title": "Moments worth sharing",
-    "bgWord": "some photos",
-    "albumsTitle": "some photos",
-    "album1": {
-      "date": "",
-      "tag": "ceramicon",
-      "title": "A mug made with heart",
-      "btnText": "go to mugs"
-    },
-    "album2": {
-      "date": "",
-      "tag": "food",
-      "title": "Pictures of different baked goods",
-      "btnText": "go to baked goods"
-    },
-    "album3": {
-      "date": "september 2017",
-      "tag": "travelling",
-      "title": "Inspiring Pärnu",
-      "btnText": "visit Pärnu photos"
-    },
-    "album4": {
-      "date": "",
-      "tag": "food",
-      "title": "Lovely food pictures",
-      "btnText": "go to food pics"
-    }
-  },
   "albumBrussels": {
     "title": "Brussels",
     "caption": "february 2016",
@@ -110,6 +66,11 @@
     "title": "mugs",
     "description": "This mug is&nbsp;not just a&nbsp;vessel for drinks, but a&nbsp;true friend for mornings and evenings. Made of&nbsp;sturdy ceramic, it&nbsp;keeps your drink warm and offers coziness, while the bright design on&nbsp;its surface lifts your spirits. Whether you&rsquo;re drinking coffee, tea, or&nbsp;just water, this mug will make your ritual more pleasant and comfortable.",
     "buttonText": "go"
+  },
+  "index": {
+    "title": "It's <b>main</b> page",
+    "subtitle": "It's party time",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur sed erat fringilla mi gravida lacinia et ac est. Nullam sed diam scelerisque, dapibus nulla sit amet, pulvinar mi. Vestibulum ultricies lacinia fermentum. Nam et felis eu risus pretium interdum non non diam."
   },
   "about": {
     "title": "It's <b>about</b> page",

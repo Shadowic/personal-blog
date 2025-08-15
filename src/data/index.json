@@ -1,0 +1,16 @@
+{
+  "title": "index.title",
+  "subtitle": "index.subtitle",
+  "description": "index.description",
+  "cover": {
+    "data": {
+      "attributes": {
+        "formats": {
+          "medium": {
+            "url": "/imgs/IMG_0773.webp"
+          }
+        }
+      }
+    }
+  }
+}

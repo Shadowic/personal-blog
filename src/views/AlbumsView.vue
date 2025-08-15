@@ -127,7 +127,7 @@ const goToAlbum = (album: any) => {
     padding: 12px 12px 36px;
     background-color: #1c294375;
     border-radius: 16px;
-    color: $ocean;
+    color: var(--color-text);
     img {
       width: 100%;
       height: auto;

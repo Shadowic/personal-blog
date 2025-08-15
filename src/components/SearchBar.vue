@@ -3,8 +3,8 @@
     <TheButton
       v-for="(code, index) in albumCodes"
       :key="index"
-      :class="{ active: activeTab === index }"
       @click="chooseTab(code, index)"
+      :active="activeTab === index"
     >
       <template #button>{{ code }}</template>
     </TheButton>

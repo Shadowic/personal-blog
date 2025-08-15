@@ -4,11 +4,17 @@
       <ParticlesBackground />
       <div class="container">
         <TheHeading>
-          <template #icon>
-            <HeadingIcon />
-          </template>
-          <template #heading>It's <b>main</b> page</template>
+          <template #heading><span v-html="t(index.title)"></span></template>
         </TheHeading>
+        <div class="hero">
+          <div class="hero__main">
+            <p class="hero__subtitle" v-html="t(index.subtitle)" />
+            <p class="hero__description" v-html="t(index.description)" />
+          </div>
+          <div class="hero__cover">
+            <img :src="index.cover.data.attributes.formats.medium.url" width="1280" height="853" alt="cover photo" />
+          </div>
+        </div>
         <div class="albums__main">
           <div class="albums__main-bg" />
           <div v-for="(album, index) in filteredAlbums" :key="index" class="albums__item">
@@ -62,9 +68,9 @@
 <script setup lang="ts">
 import ParticlesBackground from '../components/additionals/ParticlesBackground.vue';
 import TheHeading from "../components/TheHeading.vue";
-import HeadingIcon from '../components/additionals/IconHeading.vue';
 import { computed } from 'vue';
 import albums from '../data/albums.json';
+import index from '../data/index.json';
 import { useRouter } from 'vue-router';
 import { useI18n } from 'vue-i18n';
 import TheButton from "../components/TheButton.vue";
@@ -90,7 +96,33 @@ const goToAlbumList = (albumCode: any) => {
 
 <style lang="scss" scoped>
 @use '../assets/variables' as *;
-
+.hero {
+  position: relative;
+  color: #d0d8db;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  &__description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  &__cover {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
 .albums {
   min-height: 100vh;
   padding-inline: 10px;
@@ -99,7 +131,7 @@ const goToAlbumList = (albumCode: any) => {
     grid-template-columns: repeat(4, 1fr);
     gap: 58px 36px;
     position: relative;
-    margin-top: 22px;
+    margin-top: 88px;
   }
   &__main-bg {
     position: absolute;

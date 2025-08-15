@@ -4,6 +4,7 @@
       v-for="lang in availableLocales"
       :key="lang"
       @click="changeLanguage(lang)"
+      :active="locale === lang"
     >
       <template #button>{{ lang }}</template>
     </TheButton>
@@ -12,13 +13,15 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
+import usePersistLocale from '../composables/usePersistLocale';
 import TheButton from "./TheButton.vue";
 
-const { locale, availableLocales } = useI18n();
+const { locale } = usePersistLocale();
+const { availableLocales } = useI18n();
 
 type AppLocale = typeof availableLocales[number];
 
-const changeLanguage = (lang: AppLocale) => {
+const changeLanguage = (lang: string) => {
   locale.value = lang;
 };
 </script>

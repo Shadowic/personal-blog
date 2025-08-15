@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import ParticlesBackground from '../components/additionals/ParticlesBackground.vue';
 import TheHeading from '../components/TheHeading.vue'
-import HeadingIcon from '../components/additionals/IconHeading.vue'
 import about from '../data/about.json';
 import { useI18n } from 'vue-i18n';
 const { t, te } = useI18n();
@@ -12,9 +11,6 @@ const { t, te } = useI18n();
     <ParticlesBackground />
     <div class="container">
       <TheHeading v-if="about.title">
-        <template #icon>
-          <HeadingIcon />
-        </template>
         <template #heading><span v-html="t(about.title)"></span></template>
         <template #caption><span v-html="t(about.subtitle)"></span></template>
       </TheHeading>
