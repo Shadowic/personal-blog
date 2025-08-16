@@ -84,6 +84,7 @@ onUpdated(() => {
   font-family: 'DM Sans', sans-serif;
   font-optical-sizing: auto;
   font-size: 7vw;
+  line-height: 1.15;
   font-weight: 800;
   color: var(--color-heading);
 }

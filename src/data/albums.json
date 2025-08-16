@@ -10,15 +10,6 @@
     "albumCode": "travel",
     "pageCode": "Brussels",
     "imageMain": "/imgs/IMG_0007.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0013.webp",
-      "/imgs/IMG_0009.webp",
-      "/imgs/IMG_0010.webp",
-      "/imgs/IMG_0011.webp",
-      "/imgs/IMG_0012.webp",
-      "/imgs/IMG_0014.webp",
-      "/imgs/IMG_0015.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0013.webp",
       "/imgs/IMG_0009.webp",
@@ -61,12 +52,6 @@
     "albumCode": "travel",
     "pageCode": "Stockholm",
     "imageMain": "/imgs/IMG_0017.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0018.webp",
-      "/imgs/IMG_0019.webp",
-      "/imgs/IMG_0020.webp",
-      "/imgs/IMG_0021.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0018.webp",
       "/imgs/IMG_0019.webp",
@@ -121,12 +106,6 @@
     "albumCode": "travel",
     "pageCode": "Sibiu",
     "imageMain": "/imgs/IMG_0022.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0024.webp",
-      "/imgs/IMG_0025.webp",
-      "/imgs/IMG_0026.webp",
-      "/imgs/IMG_0023.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0024.webp",
       "/imgs/IMG_0025.webp",
@@ -173,13 +152,6 @@
     "albumCode": "travel",
     "pageCode": "Italy",
     "imageMain": "/imgs/IMG_0027.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0028.webp",
-      "/imgs/IMG_0029.webp",
-      "/imgs/IMG_0030.webp",
-      "/imgs/IMG_0031.webp",
-      "/imgs/IMG_0032.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0028.webp",
       "/imgs/IMG_0029.webp",
@@ -223,13 +195,6 @@
     "albumCode": "foooood",
     "pageCode": "Cakes",
     "imageMain": "/imgs/IMG_9408.jpg",
-    "imagesPreview": [
-      "/imgs/IMG_9408.jpg",
-      "/imgs/IMG_9408.jpg",
-      "/imgs/IMG_9408.jpg",
-      "/imgs/IMG_9408.jpg",
-      "/imgs/IMG_9408.jpg"
-    ],
     "imagesGallery": [
       "/imgs/IMG_9408.jpg",
       "/imgs/IMG_9408.jpg",
@@ -273,14 +238,6 @@
     "albumCode": "foooood",
     "pageCode": "Cookies",
     "imageMain": "/imgs/IMG_9542.jpg",
-    "imagesPreview": [
-      "/imgs/IMG_9542.jpg",
-      "/imgs/IMG_9542.jpg",
-      "/imgs/IMG_9542.jpg",
-      "/imgs/IMG_9542.jpg",
-      "/imgs/IMG_9542.jpg",
-      "/imgs/IMG_9542.jpg"
-    ],
     "imagesGallery": [
       "/imgs/IMG_9542.jpg",
       "/imgs/IMG_9542.jpg",
@@ -330,14 +287,6 @@
     "albumCode": "foooood",
     "pageCode": "Bread",
     "imageMain": "/imgs/IMG_0006.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0006.webp",
-      "/imgs/IMG_0006.webp",
-      "/imgs/IMG_0006.webp",
-      "/imgs/IMG_0006.webp",
-      "/imgs/IMG_0006.webp",
-      "/imgs/IMG_0006.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0006.webp",
       "/imgs/IMG_0006.webp",
@@ -387,12 +336,6 @@
     "albumCode": "foooood",
     "pageCode": "Pancakes",
     "imageMain": "/imgs/IMG_9484.jpg",
-    "imagesPreview": [
-      "/imgs/IMG_9484.jpg",
-      "/imgs/IMG_9484.jpg",
-      "/imgs/IMG_9484.jpg",
-      "/imgs/IMG_9484.jpg"
-    ],
     "imagesGallery": [
       "/imgs/IMG_9484.jpg",
       "/imgs/IMG_9484.jpg",
@@ -437,14 +380,6 @@
     "albumCode": "ceramicon",
     "pageCode": "fuzhers",
     "imageMain": "/imgs/IMG_0001.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0001.webp",
-      "/imgs/IMG_0001.webp",
-      "/imgs/IMG_0001.webp",
-      "/imgs/IMG_0001.webp",
-      "/imgs/IMG_0001.webp",
-      "/imgs/IMG_0001.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0001.webp",
       "/imgs/IMG_0001.webp",
@@ -463,12 +398,6 @@
     "albumCode": "ceramicon",
     "pageCode": "cups",
     "imageMain": "/imgs/IMG_0002.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0002.webp",
-      "/imgs/IMG_0002.webp",
-      "/imgs/IMG_0002.webp",
-      "/imgs/IMG_0002.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0002.webp",
       "/imgs/IMG_0002.webp",
@@ -485,13 +414,6 @@
     "albumCode": "ceramicon",
     "pageCode": "plates",
     "imageMain": "/imgs/IMG_0003.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0003.webp",
-      "/imgs/IMG_0003.webp",
-      "/imgs/IMG_0003.webp",
-      "/imgs/IMG_0003.webp",
-      "/imgs/IMG_0003.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0003.webp",
       "/imgs/IMG_0003.webp",
@@ -509,13 +431,6 @@
     "albumCode": "ceramicon",
     "pageCode": "mugs",
     "imageMain": "/imgs/IMG_0004.webp",
-    "imagesPreview": [
-      "/imgs/IMG_0004.webp",
-      "/imgs/IMG_0004.webp",
-      "/imgs/IMG_0004.webp",
-      "/imgs/IMG_0004.webp",
-      "/imgs/IMG_0004.webp"
-    ],
     "imagesGallery": [
       "/imgs/IMG_0004.webp",
       "/imgs/IMG_0004.webp",
