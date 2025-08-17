@@ -32,6 +32,6 @@ const changeLanguage = (lang: string) => {
   top: 30px;
   left: 40px;
   display: flex;
-  gap: 22px;
+  gap: 12px;
 }
 </style>
