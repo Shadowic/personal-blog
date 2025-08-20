@@ -17,7 +17,17 @@ const { t, te } = useI18n();
       <div class="about__main">
         <p class="about__description" v-html="t(about.description)" />
         <div class="about__cover">
-          <img :src="about.cover.data.attributes.formats.medium.url" width="1280" height="853" alt="cover photo" />
+          <div>
+            <div class="about__cover-wrap">
+              <img
+                :src="about.cover.data.attributes.formats.medium.url"
+                width="1280"
+                height="853"
+                alt="cover photo"
+                class="about__cover-img"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -36,19 +46,32 @@ const { t, te } = useI18n();
     position: relative;
     color: #d0d8db;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr;
+    gap: 36px;
+    @include md {
+      grid-template-columns: 1fr minmax(160px, 33%);
+    }
   }
   &__description {
     font-size: 1.1rem;
     line-height: 1.6;
   }
   &__cover {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto;
-    img {
+    max-width: 340px;
+    align-self: center;
+    order: -1;
+    @include md {
+      order: unset;
+    }
+    &-wrap {
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 100%;
+    }
+    &-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
