@@ -12,6 +12,8 @@ const cache = new NodeCache({ stdTTL: 3600 });
 const PORT = process.env.PORT || 3001;
 const BUCKET_NAME = 'b01de1b4-shadowic-space-images';
 
+const apiBaseUrl = process.env.API_BASE_URL || `http://localhost:${PORT}`;
+
 // Инициализация S3 клиента
 const s3Client = new S3Client({
   region: 'ru-1',
