@@ -106,8 +106,6 @@ const goToAlbum = (album: any) => {
 @use '../assets/variables' as *;
 
 .albums {
-  min-height: 100vh;
-  padding-inline: 10px;
   &__main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

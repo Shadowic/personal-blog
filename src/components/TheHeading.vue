@@ -83,7 +83,7 @@ onUpdated(() => {
 .title-with-glitch {
   font-family: 'DM Sans', sans-serif;
   font-optical-sizing: auto;
-  font-size: 7vw;
+  font-size: clamp(4rem, 7vw, 152px);
   line-height: 1.15;
   font-weight: 800;
   color: var(--color-heading);

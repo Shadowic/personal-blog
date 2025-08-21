@@ -167,8 +167,6 @@ const getRandomPreviews = (previews: string[], count: number) => {
   }
 }
 .albums {
-  min-height: 100vh;
-  padding-inline: 10px;
   &__main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
