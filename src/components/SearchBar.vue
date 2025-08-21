@@ -46,6 +46,7 @@ const resetFilter = () => {
 .search-bar {
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
 }
 </style>

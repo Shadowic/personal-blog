@@ -13,13 +13,16 @@
       <div class="albums__main">
         <div class="albums__main-bg" />
         <div v-for="(album, index) in displayedAlbums" :key="index" class="albums__item">
-          <img
-            :src="album.imageMain"
-            width="100"
-            height="100"
-            :alt="t(album.title)"
-            draggable="false"
-          />
+          <div class="albums__item-cover">
+            <img
+              :src="album.imageMain"
+              width="100"
+              height="100"
+              :alt="t(album.title)"
+              draggable="false"
+              class="albums__item-image"
+            />
+          </div>
           <h2
             v-if="album.title"
             v-html="t(album.title)"
@@ -107,10 +110,14 @@ const goToAlbum = (album: any) => {
   padding-inline: 10px;
   &__main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 58px 36px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px 12px;
     position: relative;
     margin-top: 22px;
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 58px 36px;
+    }
   }
   &__main-bg {
     position: absolute;
@@ -128,11 +135,20 @@ const goToAlbum = (album: any) => {
     background-color: #1c294375;
     border-radius: 16px;
     color: var(--color-text);
-    img {
+    hyphens: auto;
+    &-cover {
       width: 100%;
-      height: auto;
-      object-fit: cover;
+      overflow: hidden;
       border-radius: 12px;
+      position: relative;
+      padding-bottom: 75%;
+    }
+    &-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
     &-title {
       font-family: 'DM Sans', sans-serif;
@@ -144,11 +160,19 @@ const goToAlbum = (album: any) => {
       margin-top: 12px;
     }
     &-description {
-      font-size: 16px;
-      margin-top: 22px;
+      font-size: 1rem;
+      margin-block: 12px 24px;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
     &-btn {
-      margin-top: 40px;
+      margin-top: auto;
+      @include md {
+        margin-top: 40px;
+      }
     }
   }
 }
