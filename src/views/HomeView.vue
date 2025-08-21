@@ -12,20 +12,30 @@
             <p class="hero__description" v-html="t(index.description)" />
           </div>
           <div class="hero__cover">
-            <img :src="index.cover.data.attributes.formats.medium.url" width="1280" height="853" alt="cover photo" />
+            <div class="hero__cover-wrap">
+              <img
+                :src="index.cover.data.attributes.formats.medium.url"
+                width="1280"
+                height="853"
+                alt="cover photo"
+                class="hero__cover-img"
+              />
+            </div>
           </div>
         </div>
         <div class="albums__main">
           <div class="albums__main-bg" />
           <div v-for="(album, index) in filteredAlbums" :key="index" class="albums__item">
             <div class="albums__item-cover">
-              <img
-                :src="album.imageMain"
-                width="100"
-                height="100"
-                :alt="t(album.title)"
-                draggable="false"
-              />
+              <div class="albums__item-cover-wrap">
+                <img
+                  :src="album.imageMain"
+                  width="100"
+                  height="100"
+                  :alt="t(album.title)"
+                  draggable="false"
+                />
+              </div>
             </div>
             <div class="albums__item-previews">
               <div
@@ -119,7 +129,11 @@ const getRandomPreviews = (previews: string[], count: number) => {
   position: relative;
   color: #d0d8db;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
+  gap: 36px;
+  @include md {
+    grid-template-columns: 1fr clamp(10px, 33%, 340px);
+  }
   &__main {
     display: flex;
     flex-direction: column;
@@ -130,12 +144,22 @@ const getRandomPreviews = (previews: string[], count: number) => {
     line-height: 1.6;
   }
   &__cover {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    overflow: hidden;
+    width: 100%;
+    max-width: 340px;
     margin: 0 auto;
-    img {
+    order: -1;
+    @include md {
+      order: unset;
+    }
+    &-wrap {
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      padding-bottom: 100%;
+    }
+    &-img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -147,10 +171,14 @@ const getRandomPreviews = (previews: string[], count: number) => {
   padding-inline: 10px;
   &__main {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 58px 36px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px 16px;
     position: relative;
     margin-top: 88px;
+    @include md {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 58px 36px;
+    }
   }
   &__main-bg {
     position: absolute;
@@ -164,10 +192,13 @@ const getRandomPreviews = (previews: string[], count: number) => {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 12px 12px 36px;
+    padding: 8px 8px 16px;
     background-color: #1c294375;
     border-radius: 16px;
     color: $ocean;
+    @include md {
+      padding: 12px 12px 36px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -186,8 +217,11 @@ const getRandomPreviews = (previews: string[], count: number) => {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       width: 100%;
-      gap: 12px 8px;
+      gap: 6px 4px;
       margin-top: 12px;
+      @include md {
+        gap: 12px 8px;
+      }
       img {
         border-radius: 4px;
       }
@@ -201,22 +235,28 @@ const getRandomPreviews = (previews: string[], count: number) => {
     }
     &-title {
       font-family: 'DM Sans', sans-serif;
-      font-size: 24px;
+      font-size: 1.4rem;
       margin-top: 24px;
     }
     &-caption {
-      font-size: 14px;
-      margin-top: 12px;
+      font-size: 0.8rem;
+      margin-top: 4px;
+      @include md {
+        margin-top: 12px;
+      }
     }
     &-description {
-      font-size: 16px;
-      margin-top: 22px;
+      font-size: 1rem;
+      margin-block: 12px 24px;
       display: -webkit-box;
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-bottom: 32px;
+      hyphens: auto;
+      @include md {
+        margin-block: 22px 32px;
+      }
     }
     &-btn {
       margin-top: auto;

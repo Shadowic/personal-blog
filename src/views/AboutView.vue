@@ -17,8 +17,7 @@ const { t, te } = useI18n();
       <div class="about__main">
         <p class="about__description" v-html="t(about.description)" />
         <div class="about__cover">
-          <div>
-            <div class="about__cover-wrap">
+          <div class="about__cover-wrap">
               <img
                 :src="about.cover.data.attributes.formats.medium.url"
                 width="1280"
@@ -27,7 +26,6 @@ const { t, te } = useI18n();
                 class="about__cover-img"
               />
             </div>
-          </div>
         </div>
       </div>
     </div>
@@ -49,7 +47,7 @@ const { t, te } = useI18n();
     grid-template-columns: 1fr;
     gap: 36px;
     @include md {
-      grid-template-columns: 1fr minmax(160px, 33%);
+      grid-template-columns: 1fr clamp(10px, 33%, 340px);
     }
   }
   &__description {
@@ -57,8 +55,9 @@ const { t, te } = useI18n();
     line-height: 1.6;
   }
   &__cover {
+    width: 100%;
     max-width: 340px;
-    align-self: center;
+    margin: 0 auto;
     order: -1;
     @include md {
       order: unset;
