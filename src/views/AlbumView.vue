@@ -55,14 +55,16 @@ const currentAlbum = computed(() => {
 
 <style lang="scss" scoped>
 .album {
-  min-height: 100vh;
-  padding-inline: 10px;
   &__main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 3rem 2rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem 1rem;
     position: relative;
     margin-top: 22px;
+    @include md {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3rem 2rem;
+    }
   }
   &__main-bg {
     position: absolute;
@@ -76,14 +78,21 @@ const currentAlbum = computed(() => {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 12px 12px 36px;
+    padding: 4px;
     background-color: #1c294375;
-    border-radius: 16px;
+    border-radius: 8px;
+    @include md {
+      padding: 12px 12px 36px;
+      border-radius: 16px;
+    }
     img {
       width: 100%;
       height: auto;
       object-fit: cover;
-      border-radius: 12px;
+      border-radius: 6px;
+      @include md {
+        border-radius: 12px;
+      }
     }
   }
 }
