@@ -40,23 +40,21 @@ const socialLinks = [
 
 <template>
   <header class="header">
-    <div class="container">
-      <ul class="header__content">
-        <li class="header__content-item active">
-          <RouterLink to="/">Main</RouterLink>
-        </li>
-        <li class="header__content-item">
-          <RouterLink :to="{ name: 'all-albums' }">Albums</RouterLink>
-        </li>
-        <li class="header__content-item">
-          <RouterLink :to="{ name: 'test-page' }">Test page</RouterLink>
-        </li>
-        <li class="header__content-item">
-          <RouterLink :to="{ name: 'about' }">About</RouterLink>
-        </li>
-      </ul>
-      <LangSwitcher />
-    </div>
+    <ul class="header__content">
+      <li class="header__content-item active">
+        <RouterLink to="/">Main</RouterLink>
+      </li>
+      <li class="header__content-item">
+        <RouterLink :to="{ name: 'all-albums' }">Albums</RouterLink>
+      </li>
+      <li class="header__content-item">
+        <RouterLink :to="{ name: 'test-page' }">Test page</RouterLink>
+      </li>
+      <li class="header__content-item">
+        <RouterLink :to="{ name: 'about' }">About</RouterLink>
+      </li>
+    </ul>
+    <LangSwitcher />
   </header>
 
   <RouterView />
@@ -93,40 +91,58 @@ const socialLinks = [
   transition: background 0.3s ease-in-out, backdrop-filter 0.3s ease-in-out;
   font-family: 'DM Sans', sans-serif;
   font-optical-sizing: auto;
+  font-size: 1rem;
   font-weight: 600;
   font-style: normal;
+  overflow: hidden;
   &__content {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
     width: fit-content;
     margin: 0 auto;
-    padding: 24px 24px 0;
+    padding: 12px 12px 0;
     color: var(--color-heading);
     position: relative;
     transition: color 0.3s ease-in-out;
+    @include sm {
+      padding: 24px 24px 0;
+    }
     &:first-child::before,
     &:first-child::after {
       content: '';
       display: block;
-      width: 24px;
+      width: 20px;
       height: 1.5px;
       background-color: var(--color-border);
       position: absolute;
-      bottom: 0.5px;
+      bottom: 0;
       transition: background-color 0.3s ease-in-out;
+      @include sm {
+        width: 24px;
+      }
     }
     &:first-child::before {
-      left: 0;
+      left: -8px;
+      @include sm {
+        left: 0;
+      }
     }
     &:first-child::after {
-      right: 0;
+      right: -8px;
+      @include sm {
+        right: 0;
+      }
     }
   }
   &__content-item {
-    padding: 12px 24px 12px;
+    padding: 8px 12px 8px;
     border-bottom: 1.5px solid var(--color-border);
     transition: border-color 0.3s ease-in-out;
+    align-content: center;
+    @include sm {
+      padding: 12px 24px 12px;
+    }
     &:has(a.router-link-active.router-link-exact-active) {
       border: 1.5px solid var(--color-border);
       border-bottom-color: transparent;
