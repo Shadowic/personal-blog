@@ -28,9 +28,6 @@ const changeLanguage = (lang: string) => {
 
 <style lang="scss" scoped>
 .language-switcher {
-  position: absolute;
-  top: 30px;
-  left: 40px;
   display: flex;
   gap: 12px;
 }

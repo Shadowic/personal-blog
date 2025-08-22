@@ -58,7 +58,7 @@ onUpdated(() => {
   flex-direction: column;
   position: relative;
   gap: 0.8rem;
-  margin: 5rem 0 4rem;
+  margin: 2rem 0 4rem;
   i {
     display: flex;
     place-items: center;

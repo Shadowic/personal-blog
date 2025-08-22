@@ -54,8 +54,11 @@ const socialLinks = [
         <RouterLink :to="{ name: 'about' }">About</RouterLink>
       </li>
     </ul>
-    <LangSwitcher />
   </header>
+
+  <div class="container" style="position: relative; z-index: 1; margin-top: 24px;">
+    <LangSwitcher />
+  </div>
 
   <RouterView />
 
