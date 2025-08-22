@@ -29,7 +29,10 @@ const s3Client = new S3Client({
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: ['https://shadowic.space', 'http://localhost:3000'],
+  credentials: true
+}))
 app.use(express.json());
 
 // Обработка потокового чтения из S3
