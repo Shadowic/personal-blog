@@ -14,7 +14,12 @@ interface Image {
 }
 
 export function useGalleryAPI() {
-  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3001'
+  // Для Docker: используем имя сервиса 'backend' вместо localhost
+  const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ||
+    `http://${window.location.hostname}:3001`
+
+  console.log('API Base URL:', apiBaseUrl)
+
   const albums = ref<Album[]>([])
   const albumImages = ref<Record<string, Image[]>>({})
   const isLoading = ref(false)
@@ -24,18 +29,35 @@ export function useGalleryAPI() {
     try {
       isLoading.value = true
       error.value = null
+      const url = `${apiBaseUrl}/api/albums`
+      console.log('Fetching albums from URL:', url)
 
-      const response = await fetch(`${apiBaseUrl}/api/albums`, {
+      const response = await fetch(url, {
         headers: {
           'Content-Type': 'application/json'
         }
       })
 
+      console.log('Response status:', response.status)
+      console.log('Response headers:', Object.fromEntries(response.headers.entries()))
+
       if (!response.ok) {
+        const text = await response.text()
+        console.log('Response text (first 200 chars):', text.substring(0, 200))
         throw new Error(`HTTP error! status: ${response.status}`)
       }
 
+      const contentType = response.headers.get('content-type')
+      console.log('Content-Type:', contentType)
+
+      if (!contentType || !contentType.includes('application/json')) {
+        const text = await response.text()
+        console.log('Non-JSON response (first 200 chars):', text.substring(0, 200))
+        throw new Error(`Expected JSON but got: ${contentType}`)
+      }
+
       albums.value = await response.json()
+      console.log('Successfully fetched albums:', albums.value.length)
     } catch (err) {
       error.value = (err as Error).message
       console.error('Failed to fetch albums:', err)
@@ -48,6 +70,7 @@ export function useGalleryAPI() {
     try {
       isLoading.value = true
       error.value = null
+      console.log('Fetching images from:', `${apiBaseUrl}/api/albums/${encodeURIComponent(albumName)}/images`)
 
       const response = await fetch(`${apiBaseUrl}/api/albums/${encodeURIComponent(albumName)}/images`, {
         headers: {
@@ -57,6 +80,11 @@ export function useGalleryAPI() {
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const contentType = response.headers.get('content-type')
+      if (!contentType || !contentType.includes('application/json')) {
+        throw new Error(`Expected JSON but got: ${contentType}`)
       }
 
       const images: Image[] = await response.json()
