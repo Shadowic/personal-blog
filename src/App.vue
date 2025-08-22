@@ -143,6 +143,7 @@ const socialLinks = [
     border-bottom: 1.5px solid var(--color-border);
     transition: border-color 0.3s ease-in-out;
     align-content: center;
+    text-align: center;
     @include sm {
       padding: 12px 24px 12px;
     }
