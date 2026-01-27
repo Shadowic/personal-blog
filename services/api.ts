@@ -16,7 +16,7 @@ interface Image {
 export function useGalleryAPI() {
   // Для Docker: используем имя сервиса 'backend' вместо localhost
   const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ||
-    `http://${window.location.hostname}:3001`
+    `https://${window.location.hostname}:3001`
 
   console.log('API Base URL:', apiBaseUrl)
 
